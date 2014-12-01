@@ -1,0 +1,37 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version: 2013.2
+  Build date: Thu Jun 13 16:07:59 PM 2013
+  Copyright (C) 2013 Xilinx Inc. All rights reserved.
+================================================================
+@I [LIC-101] Checked out feature [HLS]
+@I [HLS-10] Running '/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/bin/vivado_hls_bin'
+            for user 'kl694' on host 'amdpool-02' (Linux_x86_64 version 2.6.18-371.8.1.el5) on Mon Dec 01 10:45:34 EST 2014
+            in directory '/home/student/kl694/ece5775/final'
+@I [HLS-10] Creating and opening project '/home/student/kl694/ece5775/final/hls.prj'.
+@I [HLS-10] Adding design file 'combine.cpp' to the project.
+@I [HLS-10] Adding test bench file 'combine_test.cpp' to the project.
+@I [HLS-10] Adding design file 'cordic.cpp' to the project.
+@I [HLS-10] Adding design file 'fft.cpp' to the project.
+@I [HLS-10] Adding design file 'pitchshifting.cpp' to the project.
+@I [HLS-10] Creating and opening solution '/home/student/kl694/ece5775/final/hls.prj/solution2'.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Analyzing design file 'pitchshifting.cpp' ... 
+@I [HLS-10] Analyzing design file 'fft.cpp' ... 
+@I [HLS-10] Analyzing design file 'cordic.cpp' ... 
+@I [HLS-10] Importing test bench file 'combine_test.cpp' ... 
+@I [HLS-10] Analyzing design file 'combine.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@W [SYNCHK-23] combine.cpp:31: variable-indexed range selection may cause suboptimal QoR.
+@E [SYNCHK-71] combine.cpp:32: math function 'atan' is not supported for synthesis.
+@I [SYNCHK-10] 1 error(s), 1 warning(s).
+@E [HLS-70] Synthesizability check failed.
+@I [HLS-111] Elapsed time: 22.13 seconds; current memory usage: 58.3 MB.
+
+    while executing
+"csynth_design"
+    (file "run.tcl" line 18)
+@I [HLS-112] Total elapsed time: 126.180 seconds; peak memory usage: 58.3 MB.
+@I [LIC-101] Checked in feature [HLS]

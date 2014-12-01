@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Xilinx Vivado System Edition 2013.2
+unset LM_LICENSE_FILE
+export XILINXD_LICENSE_FILE=2100@flex.ece.cornell.edu
+source /opt/xilinx/Vivado/2013.2/settings64.sh
+#source /opt/xilinx/14.6/ISE_DS/settings64.sh
