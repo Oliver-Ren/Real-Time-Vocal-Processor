@@ -27,9 +27,12 @@ void cal_mag_phase(fixed_type magFrame[WIN_SIZE], fixed_type phaseFrame[WIN_SIZE
   fixed_type I, I_square;
   fixed_type arctan;
   for (i = 0; i<WIN_SIZE; i++){
-    square = real[i] * real[i] + imag[i] * imag[i];
-    magFrame[i] = (fixed_type)sqrt((double)square);
-    arctan = (fixed_type)atan((double)(imag[i]/real[i]));
+    // square = real[i] * real[i] + imag[i] * imag[i];
+    // magFrame[i] = (fixed_type)sqrt((double)square);
+    cordic_sqrt(real[i], imag[i], magFrame[i]);
+    //arctan = (fixed_type)atan((double)(imag[i]/real[i]));
+    cordic_atan(real[i], imag[i], arctan);
+
     if (real[i] > 0)
       phaseFrame[i] = arctan;
     else if (real[i] <0 && imag[i] >= 0)
@@ -40,15 +43,5 @@ void cal_mag_phase(fixed_type magFrame[WIN_SIZE], fixed_type phaseFrame[WIN_SIZE
       phaseFrame[i] = PI/2;
     else
       phaseFrame[i] = -PI/2;
-    //if(square < 1)
-      //I = 0.0;
-    //else
-      //I = 1.0;
-    //I_square = I * I; 
-    //magFrame[i] = (I_square*(I_square+6*square)+square*square)/(4*I*(I_square+square));
-      
-    //using namespace hls::hls;
-    //hls::cordic::atan_range_redux_cordic((float)(imag[i]/real[i]), (float)phaseFrame[i]);
-    //phaseFrame[i] = (double)(hls::cordic::atan_cordic((float)(imag[i]/real[i])));
   }
 }

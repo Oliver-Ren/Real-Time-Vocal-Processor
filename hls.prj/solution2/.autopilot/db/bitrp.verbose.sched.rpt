@@ -1,0 +1,301 @@
+
+
+================================================================
+== Vivado HLS Report for 'bitrp'
+================================================================
+* Date:           Mon Dec  1 20:03:17 2014
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        hls.prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      4.78|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  12289|  14337|  12289|  14337|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+        |             |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  12288|  14336|  12 ~ 14 |          -|          -|  1024|    no    |
+        | + Loop 1.1  |     10|     10|         1|          -|          -|    10|    no    |
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 5
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond)
+3 --> 
+	3  / (!exitcond2)
+	2  / (exitcond2 & !tmp)
+	4  / (exitcond2 & tmp)
+4 --> 
+	5  / true
+5 --> 
+	2  / true
+* FSM state operations: 
+
+ <State 1>: 1.39ns
+ST_1: stg_6 [1/1] 1.39ns
+entry:0  br label %bb9
+
+
+ <State 2>: 3.68ns
+ST_2: a_3 [1/1] 0.00ns
+bb9:0  %a_3 = phi i11 [ 0, %entry ], [ %i_1, %bb7 ], [ %i_1, %bb6 ] ; <i11> [#uses=4]
+
+ST_2: a_3_cast [1/1] 0.00ns
+bb9:1  %a_3_cast = zext i11 %a_3 to i32                ; <i32> [#uses=2]
+
+ST_2: empty_47 [1/1] 0.00ns
+bb9:2  %empty_47 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+
+ST_2: exitcond [1/1] 2.11ns
+bb9:3  %exitcond = icmp eq i11 %a_3, -1024             ; <i1> [#uses=1]
+
+ST_2: i_1 [1/1] 1.84ns
+bb9:4  %i_1 = add i11 %a_3, 1                          ; <i11> [#uses=2]
+
+ST_2: stg_12 [1/1] 1.57ns
+bb9:5  br i1 %exitcond, label %return, label %bb5
+
+ST_2: stg_13 [1/1] 0.00ns
+return:0  ret void
+
+
+ <State 3>: 2.52ns
+ST_3: a [1/1] 0.00ns
+bb5:0  %a = phi i32 [ %a_1, %bb4 ], [ %a_3_cast, %bb9 ] ; <i32> [#uses=2]
+
+ST_3: j [1/1] 0.00ns
+bb5:1  %j = phi i4 [ %j_2, %bb4 ], [ 0, %bb9 ]         ; <i4> [#uses=2]
+
+ST_3: b [1/1] 0.00ns
+bb5:2  %b = phi i32 [ %b_1, %bb4 ], [ 0, %bb9 ]        ; <i32> [#uses=3]
+
+ST_3: empty [1/1] 0.00ns
+bb5:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10) nounwind ; <i32> [#uses=0]
+
+ST_3: exitcond2 [1/1] 1.88ns
+bb5:4  %exitcond2 = icmp eq i4 %j, -6                  ; <i1> [#uses=1]
+
+ST_3: j_2 [1/1] 0.80ns
+bb5:5  %j_2 = add i4 %j, 1                             ; <i4> [#uses=1]
+
+ST_3: stg_20 [1/1] 0.00ns
+bb5:6  br i1 %exitcond2, label %bb6, label %bb4
+
+ST_3: tmp_37 [1/1] 0.00ns
+bb4:0  %tmp_37 = trunc i32 %b to i31                   ; <i31> [#uses=1]
+
+ST_3: tmp_38 [1/1] 0.00ns
+bb4:1  %tmp_38 = trunc i32 %a to i1                    ; <i1> [#uses=1]
+
+ST_3: b_1 [1/1] 0.00ns
+bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_37, i1 %tmp_38) ; <i32> [#uses=1]
+
+ST_3: tmp_s [1/1] 0.00ns
+bb4:3  %tmp_s = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %a, i32 1, i32 31) ; <i31> [#uses=1]
+
+ST_3: a_1 [1/1] 0.00ns
+bb4:4  %a_1 = sext i31 %tmp_s to i32                   ; <i32> [#uses=1]
+
+ST_3: stg_26 [1/1] 0.00ns
+bb4:5  br label %bb5
+
+ST_3: tmp [1/1] 2.52ns
+bb6:0  %tmp = icmp sgt i32 %b, %a_3_cast               ; <i1> [#uses=1]
+
+ST_3: stg_28 [1/1] 0.00ns
+bb6:1  br i1 %tmp, label %bb7, label %bb9
+
+ST_3: tmp_27 [1/1] 0.00ns
+bb7:0  %tmp_27 = zext i32 %b to i64                    ; <i64> [#uses=2]
+
+ST_3: xreal_V_addr [1/1] 0.00ns
+bb7:1  %xreal_V_addr = getelementptr [1024 x i32]* %xreal_V, i64 0, i64 %tmp_27 ; <i32*> [#uses=2]
+
+ST_3: tmp_28 [1/1] 0.00ns
+bb7:2  %tmp_28 = zext i11 %a_3 to i64                  ; <i64> [#uses=2]
+
+ST_3: xreal_V_addr_4 [1/1] 0.00ns
+bb7:3  %xreal_V_addr_4 = getelementptr [1024 x i32]* %xreal_V, i64 0, i64 %tmp_28 ; <i32*> [#uses=2]
+
+ST_3: t_V [2/2] 2.39ns
+bb7:4  %t_V = load i32* %xreal_V_addr_4                ; <i32> [#uses=1]
+
+ST_3: xreal_V_load_4 [2/2] 2.39ns
+bb7:5  %xreal_V_load_4 = load i32* %xreal_V_addr       ; <i32> [#uses=1]
+
+ST_3: ximag_V_addr [1/1] 0.00ns
+bb7:8  %ximag_V_addr = getelementptr [1024 x i32]* %ximag_V, i64 0, i64 %tmp_27 ; <i32*> [#uses=2]
+
+ST_3: ximag_V_addr_4 [1/1] 0.00ns
+bb7:9  %ximag_V_addr_4 = getelementptr [1024 x i32]* %ximag_V, i64 0, i64 %tmp_28 ; <i32*> [#uses=2]
+
+ST_3: t_V_5 [2/2] 2.39ns
+bb7:10  %t_V_5 = load i32* %ximag_V_addr_4              ; <i32> [#uses=1]
+
+ST_3: ximag_V_load_4 [2/2] 2.39ns
+bb7:11  %ximag_V_load_4 = load i32* %ximag_V_addr       ; <i32> [#uses=1]
+
+
+ <State 4>: 4.78ns
+ST_4: t_V [1/2] 2.39ns
+bb7:4  %t_V = load i32* %xreal_V_addr_4                ; <i32> [#uses=1]
+
+ST_4: xreal_V_load_4 [1/2] 2.39ns
+bb7:5  %xreal_V_load_4 = load i32* %xreal_V_addr       ; <i32> [#uses=1]
+
+ST_4: stg_41 [1/1] 2.39ns
+bb7:6  store i32 %xreal_V_load_4, i32* %xreal_V_addr_4
+
+ST_4: t_V_5 [1/2] 2.39ns
+bb7:10  %t_V_5 = load i32* %ximag_V_addr_4              ; <i32> [#uses=1]
+
+ST_4: ximag_V_load_4 [1/2] 2.39ns
+bb7:11  %ximag_V_load_4 = load i32* %ximag_V_addr       ; <i32> [#uses=1]
+
+ST_4: stg_44 [1/1] 2.39ns
+bb7:12  store i32 %ximag_V_load_4, i32* %ximag_V_addr_4
+
+
+ <State 5>: 2.39ns
+ST_5: stg_45 [1/1] 2.39ns
+bb7:7  store i32 %t_V, i32* %xreal_V_addr
+
+ST_5: stg_46 [1/1] 2.39ns
+bb7:13  store i32 %t_V_5, i32* %ximag_V_addr
+
+ST_5: stg_47 [1/1] 0.00ns
+bb7:14  br label %bb9
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

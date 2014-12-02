@@ -1,0 +1,273 @@
+
+
+================================================================
+== Vivado HLS Report for 'cordic'
+================================================================
+* Date:           Mon Dec  1 20:03:20 2014
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        hls.prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      6.21|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|  132|    1|  132|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  130|  130|         2|          -|          -|    65|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 4
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (!tmp)
+	4  / (tmp)
+2 --> 
+	3  / (!exitcond1)
+	4  / (exitcond1)
+3 --> 
+	2  / true
+4 --> 
+* FSM state operations: 
+
+ <State 1>: 5.10ns
+ST_1: theta_V_read [1/1] 1.01ns
+entry:0  %theta_V_read = call i32 @_ssdm_op_WireRead.i32(i32 %theta_V) nounwind ; <i32> [#uses=2]
+
+ST_1: tmp [1/1] 2.52ns
+entry:1  %tmp = icmp eq i32 %theta_V_read, 0             ; <i1> [#uses=1]
+
+ST_1: stg_7 [1/1] 1.57ns
+entry:2  br i1 %tmp, label %UnifiedReturnBlock, label %bb14
+
+
+ <State 2>: 6.21ns
+ST_2: p_Val2_s [1/1] 0.00ns
+bb14:0  %p_Val2_s = phi i32 [ %x_V_2, %bb2_ifconv ], [ 636750, %entry ] ; <i32> [#uses=4]
+
+ST_2: p_Val2_4 [1/1] 0.00ns
+bb14:1  %p_Val2_4 = phi i32 [ %current_angle_V, %bb2_ifconv ], [ 0, %entry ] ; <i32> [#uses=3]
+
+ST_2: p_Val2_3 [1/1] 0.00ns
+bb14:2  %p_Val2_3 = phi i32 [ %y_V_2, %bb2_ifconv ], [ 0, %entry ] ; <i32> [#uses=4]
+
+ST_2: step_1 [1/1] 0.00ns
+bb14:3  %step_1 = phi i7 [ %step, %bb2_ifconv ], [ 0, %entry ] ; <i7> [#uses=4]
+
+ST_2: empty [1/1] 0.00ns
+bb14:4  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 65, i64 65, i64 65) nounwind ; <i32> [#uses=0]
+
+ST_2: exitcond1 [1/1] 1.97ns
+bb14:5  %exitcond1 = icmp eq i7 %step_1, -63            ; <i1> [#uses=1]
+
+ST_2: step [1/1] 1.72ns
+bb14:6  %step = add i7 %step_1, 1                       ; <i7> [#uses=1]
+
+ST_2: stg_15 [1/1] 1.57ns
+bb14:7  br i1 %exitcond1, label %UnifiedReturnBlock, label %bb2_ifconv
+
+ST_2: tmp_s [1/1] 2.52ns
+bb2_ifconv:0  %tmp_s = icmp slt i32 %p_Val2_4, %theta_V_read  ; <i1> [#uses=3]
+
+ST_2: sh_assign_3_cast [1/1] 0.00ns
+bb2_ifconv:1  %sh_assign_3_cast = zext i7 %step_1 to i32      ; <i32> [#uses=2]
+
+ST_2: r_V [1/1] 2.40ns
+bb2_ifconv:2  %r_V = ashr i32 %p_Val2_3, %sh_assign_3_cast    ; <i32> [#uses=2]
+
+ST_2: t_V [1/1] 2.44ns
+bb2_ifconv:3  %t_V = sub i32 %p_Val2_s, %r_V                  ; <i32> [#uses=1]
+
+ST_2: r_V_1 [1/1] 2.40ns
+bb2_ifconv:4  %r_V_1 = ashr i32 %p_Val2_s, %sh_assign_3_cast  ; <i32> [#uses=2]
+
+ST_2: y_V [1/1] 2.44ns
+bb2_ifconv:5  %y_V = add i32 %p_Val2_3, %r_V_1                ; <i32> [#uses=1]
+
+ST_2: tmp_1 [1/1] 0.00ns
+bb2_ifconv:6  %tmp_1 = zext i7 %step_1 to i64                 ; <i64> [#uses=1]
+
+ST_2: cordic_ctab_V_addr [1/1] 0.00ns
+bb2_ifconv:7  %cordic_ctab_V_addr = getelementptr [64 x i20]* @cordic_ctab_V, i64 0, i64 %tmp_1 ; <i20*> [#uses=1]
+
+ST_2: p_Val2_5 [2/2] 2.39ns
+bb2_ifconv:8  %p_Val2_5 = load i20* %cordic_ctab_V_addr       ; <i20> [#uses=1]
+
+ST_2: t_V_1 [1/1] 2.44ns
+bb2_ifconv:11  %t_V_1 = add i32 %r_V, %p_Val2_s                ; <i32> [#uses=1]
+
+ST_2: y_V_1 [1/1] 2.44ns
+bb2_ifconv:12  %y_V_1 = sub i32 %p_Val2_3, %r_V_1              ; <i32> [#uses=1]
+
+ST_2: x_V_2 [1/1] 1.37ns
+bb2_ifconv:14  %x_V_2 = select i1 %tmp_s, i32 %t_V, i32 %t_V_1 ; <i32> [#uses=1]
+
+ST_2: y_V_2 [1/1] 1.37ns
+bb2_ifconv:15  %y_V_2 = select i1 %tmp_s, i32 %y_V, i32 %y_V_1 ; <i32> [#uses=1]
+
+
+ <State 3>: 6.20ns
+ST_3: p_Val2_5 [1/2] 2.39ns
+bb2_ifconv:8  %p_Val2_5 = load i20* %cordic_ctab_V_addr       ; <i20> [#uses=1]
+
+ST_3: p_Val2_15_cast [1/1] 0.00ns
+bb2_ifconv:9  %p_Val2_15_cast = zext i20 %p_Val2_5 to i32     ; <i32> [#uses=2]
+
+ST_3: r_V_s [1/1] 2.44ns
+bb2_ifconv:10  %r_V_s = add i32 %p_Val2_15_cast, %p_Val2_4     ; <i32> [#uses=1]
+
+ST_3: r_V_3 [1/1] 2.44ns
+bb2_ifconv:13  %r_V_3 = sub i32 %p_Val2_4, %p_Val2_15_cast     ; <i32> [#uses=1]
+
+ST_3: current_angle_V [1/1] 1.37ns
+bb2_ifconv:16  %current_angle_V = select i1 %tmp_s, i32 %r_V_s, i32 %r_V_3 ; <i32> [#uses=1]
+
+ST_3: stg_34 [1/1] 0.00ns
+bb2_ifconv:17  br label %bb14
+
+
+ <State 4>: 0.00ns
+ST_4: UnifiedRetVal1 [1/1] 0.00ns
+UnifiedReturnBlock:0  %UnifiedRetVal1 = phi i32 [ 0, %entry ], [ %p_Val2_3, %bb14 ] ; <i32> [#uses=1]
+
+ST_4: UnifiedRetVal_1 [1/1] 0.00ns
+UnifiedReturnBlock:1  %UnifiedRetVal_1 = phi i32 [ 1048576, %entry ], [ %p_Val2_s, %bb14 ] ; <i32> [#uses=1]
+
+ST_4: mrv_s [1/1] 0.00ns
+UnifiedReturnBlock:2  %mrv_s = insertvalue %cordic_ret undef, i32 %UnifiedRetVal1, 0 ; <%cordic_ret> [#uses=1]
+
+ST_4: UnifiedRetVal [1/1] 0.00ns
+UnifiedReturnBlock:3  %UnifiedRetVal = insertvalue %cordic_ret %mrv_s, i32 %UnifiedRetVal_1, 1 ; <%cordic_ret> [#uses=1]
+
+ST_4: stg_39 [1/1] 0.00ns
+UnifiedReturnBlock:4  ret %cordic_ret %UnifiedRetVal
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

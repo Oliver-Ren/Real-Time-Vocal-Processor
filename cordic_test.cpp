@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     // Compute sin/cos values for angles up to NUM_DEGREE
     for (int i = 0; i < 360; i++) {
         radian = i*PI/180;
-        cordic_general(radian, s, c);
+        cordic_sin_cos(radian, s, c);
         zs = sin((double)radian);
         zc = cos((double)radian);
         error_sin = (abs_double((double)s-zs)/zs)*100.0;

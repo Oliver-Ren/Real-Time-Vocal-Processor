@@ -1,0 +1,1466 @@
+@I [HLS-0] Workspace /home/student/kl694/ece5775/final/hls.prj/solution2 opened at Mon Dec 01 20:00:54 EST 2014
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 0.582 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.584 sec.
+@I [HLS-100] Command "import_lib /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.588 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.589 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.590 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.590 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.591 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.592 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.595 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.601 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.601 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.608 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.610 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.610 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.611 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.611 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.611 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.611 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 0.615 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.621 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.622 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.628 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 0.643 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 0.660 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.661 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.23Total elapsed time: 0.897 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.27Total elapsed time: 0.897 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.900 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.27Total elapsed time: 0.901 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.27Total elapsed time: 0.901 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.901 sec.
+@I [HLS-100] Command "import_lib /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.905 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.908 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.03Total elapsed time: 0.929 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.933 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.934 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.938 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.938 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 0.938 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 0.938 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.939 sec.
+@I [HLS-100] Command "import_lib /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.941 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.942 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.943 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.943 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.944 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.945 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.947 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.951 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.952 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.958 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.959 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.960 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.960 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.960 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.961 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.961 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 0.964 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.969 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.970 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.974 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.988 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 1.4 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.5 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.22Total elapsed time: 1.230 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.26Total elapsed time: 1.230 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.235 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.26Total elapsed time: 1.235 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.26Total elapsed time: 1.235 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.237 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.237 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.237 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.3Total elapsed time: 1.239 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.240 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.240 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.240 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 1.240 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.241 sec.
+@I [HLS-100] Command "import_lib /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.246 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.249 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 1.271 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.274 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.275 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.03Total elapsed time: 1.277 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.33Total elapsed time: 1.277 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.277 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.277 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.277 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.66Total elapsed time: 1.279 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.281 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.281 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.281 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 1.281 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.281 sec.
+@I [HLS-100] Command "import_lib /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.284 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.284 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.285 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.285 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.286 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.287 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.289 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.293 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.293 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.299 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.301 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.301 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.302 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.302 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.302 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.302 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 1.305 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.310 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.311 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.315 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 1.328 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.347 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.350 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.22Total elapsed time: 1.573 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.26Total elapsed time: 1.573 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.576 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.26Total elapsed time: 1.576 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.26Total elapsed time: 1.576 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.579 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.579 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.579 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.28Total elapsed time: 1.581 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.582 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.582 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0Total elapsed time: 1.582 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 1.582 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.583 sec.
+@I [HLS-100] Command "import_lib /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.586 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.588 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 1.611 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.614 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.614 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.04Total elapsed time: 1.616 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.32Total elapsed time: 1.616 sec.
+@I [HLS-100] Command "create_clock -period 10 "
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0Total elapsed time: 1.619 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Analyzing design file 'pitchshifting.cpp' ... 
+@0 [HLS-0] Analyzing design file 'pitchshifting.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec llvm-gcc -fno-builtin-isinf -fno-builtin-isnan  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/systemc/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include/ap_sysc" -fexceptions "pitchshifting.cpp"  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 4 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "pitchshifting.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.0.cpp.ap-line.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/jre/bin/java -Xmx512m -classpath   "/opt/xilinx/Vivado_HLS/2013.2/common/lib/autopilot.sourceprocessor.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/com.ibm.icu_4.4.2.v20110208.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/jargs.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.0.cpp.ap-line.cpp"  -m combine -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /home/student/kl694/ece5775/final/hls.prj/solution2/solution2.directive --source /home/student/kl694/ece5775/final/pitchshifting.cpp --error /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ce --tcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ve --vetcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --lp --ca --es --gf --nk --df --pd --p2d /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --sd --scff /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pp.0.cpp.ap-cdt.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pragma.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 28.213 sec.
+@I [HLS-0] CDT processor time: 21 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pragma.1.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pragma.2.cpp"
+
+@I [HLS-0] exec llvm-gcc  -w -fno-builtin-isinf -fno-builtin-isnan  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.pragma.2.cpp"  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.g.bc"
+@I [HLS-10] Analyzing design file 'fft.cpp' ... 
+@0 [HLS-0] Analyzing design file 'fft.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec llvm-gcc -fno-builtin-isinf -fno-builtin-isnan  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/systemc/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include/ap_sysc" -fexceptions "fft.cpp"  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 2 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "fft.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.0.cpp.ap-line.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/jre/bin/java -Xmx512m -classpath   "/opt/xilinx/Vivado_HLS/2013.2/common/lib/autopilot.sourceprocessor.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/com.ibm.icu_4.4.2.v20110208.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/jargs.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.0.cpp.ap-line.cpp"  -m combine -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /home/student/kl694/ece5775/final/hls.prj/solution2/solution2.directive --source /home/student/kl694/ece5775/final/fft.cpp --error /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ce --tcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ve --vetcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --lp --ca --es --gf --nk --df --pd --p2d /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --sd --scff /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pp.0.cpp.ap-cdt.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pragma.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 58.964 sec.
+@I [HLS-0] CDT processor time: 21 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pragma.1.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pragma.2.cpp"
+
+@I [HLS-0] exec llvm-gcc  -w -fno-builtin-isinf -fno-builtin-isnan  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.pragma.2.cpp"  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.g.bc"
+@I [HLS-10] Analyzing design file 'cordic.cpp' ... 
+@0 [HLS-0] Analyzing design file 'cordic.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec llvm-gcc -fno-builtin-isinf -fno-builtin-isnan  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/systemc/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include/ap_sysc" -fexceptions "cordic.cpp"  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 4 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "cordic.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.0.cpp.ap-line.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/jre/bin/java -Xmx512m -classpath   "/opt/xilinx/Vivado_HLS/2013.2/common/lib/autopilot.sourceprocessor.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/com.ibm.icu_4.4.2.v20110208.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/jargs.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.0.cpp.ap-line.cpp"  -m combine -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /home/student/kl694/ece5775/final/hls.prj/solution2/solution2.directive --source /home/student/kl694/ece5775/final/cordic.cpp --error /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ce --tcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ve --vetcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --lp --ca --es --gf --nk --df --pd --p2d /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --sd --scff /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pp.0.cpp.ap-cdt.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pragma.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 89.319 sec.
+@I [HLS-0] CDT processor time: 20 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pragma.1.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pragma.2.cpp"
+
+@I [HLS-0] exec llvm-gcc  -w -fno-builtin-isinf -fno-builtin-isnan  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.pragma.2.cpp"  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.g.bc"
+@I [HLS-10] Importing test bench file 'combine_test.cpp' ... 
+@0 [HLS-0] Importing test bench file 'combine_test.cpp' ... 
+@I [HLS-10] Analyzing design file 'combine.cpp' ... 
+@0 [HLS-0] Analyzing design file 'combine.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec llvm-gcc -fno-builtin-isinf -fno-builtin-isnan  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/systemc/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include" -I "/opt/xilinx/Vivado_HLS/2013.2/include/ap_sysc" -fexceptions "combine.cpp"  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 3 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "combine.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.0.cpp.ap-line.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/jre/bin/java -Xmx512m -classpath   "/opt/xilinx/Vivado_HLS/2013.2/common/lib/autopilot.sourceprocessor.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/com.ibm.icu_4.4.2.v20110208.jar:/opt/xilinx/Vivado_HLS/2013.2/common/lib/jargs.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.0.cpp.ap-line.cpp"  -m combine -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /home/student/kl694/ece5775/final/hls.prj/solution2/solution2.directive --source /home/student/kl694/ece5775/final/combine.cpp --error /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ce --tcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --ve --vetcl /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --lp --ca --es --gf --nk --df --pd --p2d /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db --sd --scff /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pp.0.cpp.ap-cdt.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pragma.0.cpp /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 119.973 sec.
+@I [HLS-0] CDT processor time: 21 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec llvm-gcc  -fno-builtin-isinf -fno-builtin-isnan -CC -E "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pragma.1.cpp"   -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pragma.2.cpp"
+
+@I [HLS-0] exec llvm-gcc  -w -fno-builtin-isinf -fno-builtin-isnan  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.pragma.2.cpp"  -DBIT_ACCURATE  -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot" -I "/opt/xilinx/Vivado_HLS/2013.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.g.bc"
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 125.142 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 125.143 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.bc" "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.bc" "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.bc" "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.bc"  -disable-opt  -L/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/lib -lm_basic -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.g.bc" "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/fft.g.bc" "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.g.bc" "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.g.bc"  -disable-opt  -L/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/lib -lm_basic -o "/home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 126.624 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] std xform: transform -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loopsimplify -indvars -instcombine  -simplifycfg -mem2reg -loopsimplify -indvars -instcombine  -gvn -gvn -instcombine -dse -adce  -break-crit-edges -deadtypeelim -simplifycfg -loop-delete  -global-array-opt  -find-syn-modules -top combine  -deadtypeelim -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -promote-dbg-pointer  -norm-name   /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g.bc -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [HLS-0] Std xform time: 8 seconds per iteration
+@I [HLS-0] syn check 1/2: transform -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -deadtypeelim -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -deadtypeelim -dce  -mem2reg -instcombine  -directive-preproc -mem2reg -dse -dce  -globaldce    /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g.1.bc -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 2 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   -interface-gen -constprop -dse -dce  /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g.2.prechk.bc -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.g.1.bc to /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform  -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadtypeelim -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce  -directive-preproc -mem2reg -dse -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -global-constprop -deadargelim  -instcombine -dce  -pointer-simplify -dce  -data-pack -instcombine -dce   -loopsimplify -indvars -instcombine  -gvn -loopsimplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -inst-simplify  -indvars -auto-loop-unroll -loopsimplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -gvn -disable-agg-range -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -array-transform-check  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce -auto-par -array-partition -instcombine -dce  -global-constprop -deadargelim -ptrArgReplace -mem2reg  -func-legal -instcombine -dce  -array-reshape -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -directive-preproc -mem2reg -dse -dce  -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -instcombine -simplifycfg -dce -loopsimplify -simplifycfg -loop-stream -instcombine -simplifycfg -dce  -function-stream -dce -globaldce  -array-streaming -instcombine -simplifycfg -dce      -simplifycfg -dce -loop-delete  -norm-name  /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o.1.bc -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-602] Inlining function 'swap' into 'bitrp' (fft.cpp:24) automatically.
+@I [XFORM-602] Inlining function 'cordic_sqrt' into 'cal_mag_phase' (combine.cpp:32) automatically.
+@I [XFORM-602] Inlining function 'cordic_sin_cos' into 'pitchshifting' (pitchshifting.cpp:50) automatically.
+@W [ANALYSIS-31] The program may have out of bound access of array variable 'cordic_ctab.V' in function 'cordic' (cordic.cpp:55).
+@W [ANALYSIS-31] The program may have out of bound access of array variable 'cordic_ctab.V' in function 'cordic' (cordic.cpp:61).
+@I [HLS-0] Presyn 1 time: 3 seconds per iteration
+@I [HLS-0] presyn 2: transform -keep-callgraph -scalarrepl -mem2reg  -indvars -loop-bound  -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o.1.tmp.bc -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-401] Performing if-conversion on hyperblock from (pitchshifting.cpp:62) to (pitchshifting.cpp:64) in function 'ap_fixed_fmod'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (cordic.cpp:80) to (cordic.cpp:79) in function 'cordic_atan'... converting 4 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (cordic.cpp:51) to (cordic.cpp:50) in function 'cordic'... converting 4 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (combine.cpp:10) to (combine.cpp:21) in function 'combine'... converting 2 basic blocks.
+@I [XFORM-602] Inlining function 'cordic_atan' into 'cal_mag_phase' (combine.cpp:34) automatically.
+@I [XFORM-602] Inlining function 'ap_fixed_fmod' into 'pitchshifting' (pitchshifting.cpp:23) automatically.
+@I [HLS-0] Presyn 2 time: 0 seconds per iteration
+@I [HLS-0] build ssdm: transform -function-uniquify -auto-function-inline  -loopsimplify -indvars -licm -loop-dep  -loop-bound -licm -loopsimplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-burst -dce  -promote-global-argument  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loopsimplify   -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce  -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify -doublePtrElim  -dce -doublePtrSimplify -promote-dbg-pointer -dce  -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loopsimplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -directive-preproc -inst-simplify -dce  -interface-gen -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loopsimplify  -clean-region -io-protocol  -find-region -mem2reg  -loopsimplify -phi-opt  -inst-simplify -inst-rectify -adce -cfgopt -simplifycfg  -strip-dead-prototypes  -interface-lower -bitop-lower -directive-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower  -loop-rewind -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o.2.bc -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@I [HLS-0] Build ssdm time: 1 seconds per iteration
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 16.68Total elapsed time: 143.999 sec.
+@I [HLS-111] Elapsed time: 32.98 seconds; current memory usage: 148 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 31.66Total elapsed time: 144.0 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'combine' ...
+@0 [HLS-0] Synthesizing 'combine' ...
+@I [HLS-100] Command "ap_set_top_model combine "
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 144.2 sec.
+@I [HLS-100] Command "get_model_list combine -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 144.2 sec.
+@I [HLS-100] Command "preproc_iomode -model combine "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.01Total elapsed time: 144.3 sec.
+@I [HLS-100] Command "preproc_iomode -model pitchshifting "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 144.3 sec.
+@I [HLS-100] Command "preproc_iomode -model IFFT "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 144.3 sec.
+@I [HLS-100] Command "preproc_iomode -model cordic "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 144.3 sec.
+@I [HLS-100] Command "preproc_iomode -model cal_mag_phase "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 144.3 sec.
+@I [HLS-100] Command "preproc_iomode -model FFT "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 144.3 sec.
+@I [HLS-100] Command "preproc_iomode -model bitrp "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 144.3 sec.
+@I [HLS-100] Command "get_model_list combine -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 144.4 sec.
+@I [HLS-0] Model list for configure: bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine
+@I [HLS-0] Configuring Module : bitrp ...
+@I [HLS-100] Command "set_default_model bitrp "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-100] Command "apply_spec_resource_limit bitrp "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-0] Configuring Module : FFT ...
+@I [HLS-100] Command "set_default_model FFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-100] Command "apply_spec_resource_limit FFT "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-0] Configuring Module : cal_mag_phase ...
+@I [HLS-100] Command "set_default_model cal_mag_phase "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-100] Command "apply_spec_resource_limit cal_mag_phase "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-0] Configuring Module : cordic ...
+@I [HLS-100] Command "set_default_model cordic "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-100] Command "apply_spec_resource_limit cordic "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 144.5 sec.
+@I [HLS-0] Configuring Module : IFFT ...
+@I [HLS-100] Command "set_default_model IFFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.6 sec.
+@I [HLS-100] Command "apply_spec_resource_limit IFFT "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 144.6 sec.
+@I [HLS-0] Configuring Module : pitchshifting ...
+@I [HLS-100] Command "set_default_model pitchshifting "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.6 sec.
+@I [HLS-100] Command "apply_spec_resource_limit pitchshifting "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 144.6 sec.
+@I [HLS-0] Configuring Module : combine ...
+@I [HLS-100] Command "set_default_model combine "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.6 sec.
+@I [HLS-100] Command "apply_spec_resource_limit combine "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 144.6 sec.
+@I [HLS-0] Model list for preprocess: bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine
+@I [HLS-0] Preprocessing Module: bitrp ...
+@I [HLS-100] Command "set_default_model bitrp "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.6 sec.
+@I [HLS-100] Command "cdfg_preprocess -model bitrp "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 144.7 sec.
+@I [HLS-100] Command "rtl_gen_preprocess bitrp "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 144.8 sec.
+@I [HLS-0] Preprocessing Module: FFT ...
+@I [HLS-100] Command "set_default_model FFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.8 sec.
+@I [HLS-100] Command "cdfg_preprocess -model FFT "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.01Total elapsed time: 144.9 sec.
+@I [HLS-100] Command "rtl_gen_preprocess FFT "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 144.10 sec.
+@I [HLS-0] Preprocessing Module: cal_mag_phase ...
+@I [HLS-100] Command "set_default_model cal_mag_phase "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.10 sec.
+@I [HLS-100] Command "cdfg_preprocess -model cal_mag_phase "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 144.11 sec.
+@I [HLS-100] Command "rtl_gen_preprocess cal_mag_phase "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 144.12 sec.
+@I [HLS-0] Preprocessing Module: cordic ...
+@I [HLS-100] Command "set_default_model cordic "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.12 sec.
+@I [HLS-100] Command "cdfg_preprocess -model cordic "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 144.13 sec.
+@I [HLS-100] Command "rtl_gen_preprocess cordic "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 144.14 sec.
+@I [HLS-0] Preprocessing Module: IFFT ...
+@I [HLS-100] Command "set_default_model IFFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.14 sec.
+@I [HLS-100] Command "cdfg_preprocess -model IFFT "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 144.15 sec.
+@I [HLS-100] Command "rtl_gen_preprocess IFFT "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 144.16 sec.
+@I [HLS-0] Preprocessing Module: pitchshifting ...
+@I [HLS-100] Command "set_default_model pitchshifting "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.16 sec.
+@I [HLS-100] Command "cdfg_preprocess -model pitchshifting "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 144.18 sec.
+@I [HLS-100] Command "rtl_gen_preprocess pitchshifting "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 144.19 sec.
+@I [HLS-0] Preprocessing Module: combine ...
+@I [HLS-100] Command "set_default_model combine "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.19 sec.
+@I [HLS-100] Command "cdfg_preprocess -model combine "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 144.20 sec.
+@I [HLS-100] Command "rtl_gen_preprocess combine "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 144.20 sec.
+@I [HLS-0] Model list for synthesis: bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'bitrp' 
+@0 [HLS-0] -- Scheduling module 'bitrp' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model bitrp "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.21 sec.
+@I [HLS-100] Command "schedule -model bitrp "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.07Total elapsed time: 144.101 sec.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 148 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 144.119 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 144.141 sec.
+@I [HLS-0] Finish scheduling bitrp.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'bitrp' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'bitrp' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model bitrp "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.143 sec.
+@I [HLS-100] Command "bind -model bitrp "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=bitrp
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 144.152 sec.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 148 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 144.182 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 144.205 sec.
+@I [HLS-0] Finish binding bitrp.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'FFT' 
+@0 [HLS-0] -- Scheduling module 'FFT' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model FFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 144.205 sec.
+@I [HLS-100] Command "schedule -model FFT "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.66Total elapsed time: 144.874 sec.
+@I [HLS-111] Elapsed time: 0.7 seconds; current memory usage: 149 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.06Total elapsed time: 144.935 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.08Total elapsed time: 145.11 sec.
+@I [HLS-0] Finish scheduling FFT.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'FFT' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'FFT' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model FFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 145.11 sec.
+@I [HLS-100] Command "bind -model FFT "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=FFT
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.09Total elapsed time: 145.107 sec.
+@I [HLS-111] Elapsed time: 0.23 seconds; current memory usage: 150 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.32Total elapsed time: 145.426 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.07Total elapsed time: 145.507 sec.
+@I [HLS-0] Finish binding FFT.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'cal_mag_phase' 
+@0 [HLS-0] -- Scheduling module 'cal_mag_phase' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model cal_mag_phase "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 145.508 sec.
+@I [HLS-100] Command "schedule -model cal_mag_phase "
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-21] Estimated delay (11.8ns) of 'mul' operation ('r.V', cordic.cpp:114->combine.cpp:32) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+@W [SCHED-21] Estimated clock period (11.8ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+@W [SCHED-21] The critical path consists of the following:
+	'mul' operation ('r.V', cordic.cpp:114->combine.cpp:32) (11.8 ns)
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.39Total elapsed time: 145.895 sec.
+@I [HLS-111] Elapsed time: 0.78 seconds; current memory usage: 150 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.05Total elapsed time: 145.943 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.05Total elapsed time: 146.5 sec.
+@I [HLS-0] Finish scheduling cal_mag_phase.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'cal_mag_phase' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'cal_mag_phase' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model cal_mag_phase "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 146.5 sec.
+@I [HLS-100] Command "bind -model cal_mag_phase "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=cal_mag_phase
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.06Total elapsed time: 146.63 sec.
+@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 151 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.19Total elapsed time: 146.255 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.06Total elapsed time: 146.322 sec.
+@I [HLS-0] Finish binding cal_mag_phase.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'cordic' 
+@0 [HLS-0] -- Scheduling module 'cordic' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model cordic "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 146.323 sec.
+@I [HLS-100] Command "schedule -model cordic "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.09Total elapsed time: 146.421 sec.
+@I [HLS-111] Elapsed time: 0.34 seconds; current memory usage: 151 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 146.436 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 146.453 sec.
+@I [HLS-0] Finish scheduling cordic.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'cordic' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'cordic' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model cordic "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 146.453 sec.
+@I [HLS-100] Command "bind -model cordic "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=cordic
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 146.461 sec.
+@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 151 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 146.490 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 146.509 sec.
+@I [HLS-0] Finish binding cordic.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'IFFT' 
+@0 [HLS-0] -- Scheduling module 'IFFT' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model IFFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 146.509 sec.
+@I [HLS-100] Command "schedule -model IFFT "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.76Total elapsed time: 147.268 sec.
+@I [HLS-111] Elapsed time: 0.8 seconds; current memory usage: 152 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.08Total elapsed time: 147.346 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.08Total elapsed time: 147.436 sec.
+@I [HLS-0] Finish scheduling IFFT.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'IFFT' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'IFFT' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model IFFT "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 147.437 sec.
+@I [HLS-100] Command "bind -model IFFT "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=IFFT
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.1Total elapsed time: 147.538 sec.
+@I [HLS-111] Elapsed time: 0.26 seconds; current memory usage: 153 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.33Total elapsed time: 147.869 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.08Total elapsed time: 147.962 sec.
+@I [HLS-0] Finish binding IFFT.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'pitchshifting' 
+@0 [HLS-0] -- Scheduling module 'pitchshifting' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model pitchshifting "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 147.962 sec.
+@I [HLS-100] Command "schedule -model pitchshifting "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.87Total elapsed time: 148.837 sec.
+@I [HLS-111] Elapsed time: 1.28 seconds; current memory usage: 154 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.08Total elapsed time: 148.916 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.09Total elapsed time: 149.14 sec.
+@I [HLS-0] Finish scheduling pitchshifting.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'pitchshifting' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'pitchshifting' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model pitchshifting "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 149.14 sec.
+@I [HLS-100] Command "bind -model pitchshifting "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=pitchshifting
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.3Total elapsed time: 149.313 sec.
+@I [HLS-111] Elapsed time: 0.47 seconds; current memory usage: 155 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.64Total elapsed time: 149.966 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.11Total elapsed time: 150.75 sec.
+@I [HLS-0] Finish binding pitchshifting.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'combine' 
+@0 [HLS-0] -- Scheduling module 'combine' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model combine "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 150.76 sec.
+@I [HLS-100] Command "schedule -model combine "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.11Total elapsed time: 150.194 sec.
+@I [HLS-111] Elapsed time: 0.86 seconds; current memory usage: 155 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 150.214 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 150.237 sec.
+@I [HLS-0] Finish scheduling combine.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'combine' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'combine' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model combine "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 150.237 sec.
+@I [HLS-100] Command "bind -model combine "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=combine
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-100] Command 'bind' returned 0; elapsed 1.08Total elapsed time: 151.323 sec.
+@I [HLS-111] Elapsed time: 1.12 seconds; current memory usage: 156 MB.
+@I [HLS-100] Command "report -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.99Total elapsed time: 152.310 sec.
+@I [HLS-100] Command "db_write -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 152.336 sec.
+@I [HLS-0] Finish binding combine.
+@I [HLS-100] Command "get_model_list combine -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 152.336 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess bitrp "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 152.337 sec.
+@I [HLS-100] Command "rtl_gen_preprocess FFT "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 152.338 sec.
+@I [HLS-100] Command "rtl_gen_preprocess cal_mag_phase "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 152.339 sec.
+@I [HLS-100] Command "rtl_gen_preprocess cordic "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 152.339 sec.
+@I [HLS-100] Command "rtl_gen_preprocess IFFT "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 152.340 sec.
+@I [HLS-100] Command "rtl_gen_preprocess pitchshifting "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 152.341 sec.
+@I [HLS-100] Command "rtl_gen_preprocess combine "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 152.342 sec.
+@I [HLS-0] Model list for RTL generation: bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'bitrp' 
+@0 [HLS-0] -- Generating RTL for module 'bitrp' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model bitrp -vendor xilinx -mg_file /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'bitrp'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.01Total elapsed time: 152.363 sec.
+@I [HLS-111] Elapsed time: 1.03 seconds; current memory usage: 157 MB.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 152.366 sec.
+@I [HLS-100] Command "gen_rtl bitrp -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/systemc/bitrp -synmodules bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 152.370 sec.
+@I [HLS-100] Command "gen_rtl bitrp -style xilinx -f -lang vhdl -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/vhdl/bitrp "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 152.373 sec.
+@I [HLS-100] Command "gen_rtl bitrp -style xilinx -f -lang vlog -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/verilog/bitrp "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 152.376 sec.
+@I [HLS-100] Command "gen_tb_info bitrp -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp -p /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 152.380 sec.
+@I [HLS-100] Command "report -model bitrp -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/bitrp_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 152.388 sec.
+@I [HLS-100] Command "report -model bitrp -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/bitrp_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 152.393 sec.
+@I [HLS-100] Command "report -model bitrp -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 152.428 sec.
+@I [HLS-100] Command "db_write -model bitrp -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 152.455 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'FFT' 
+@0 [HLS-0] -- Generating RTL for module 'FFT' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model FFT -vendor xilinx -mg_file /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.compgen.tcl "
+@I [RTGEN-100] Module generated: combine_mul_32s_14s_45_3|combine_mul_32s_14s_45_3_U3.
+@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U4.
+@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U5.
+@I [RTGEN-100] Module generated: combine_mul_32s_14s_45_3|combine_mul_32s_14s_45_3_U6.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_32_6|combine_mul_32s_32s_32_6_U7.
+@I [RTGEN-100] Module generated: combine_sdiv_32ns_32s_32_35|combine_sdiv_32ns_32s_32_35_U8.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U9.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U10.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U11.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U12.
+@I [RTGEN-100] Finished creating RTL model for 'FFT'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.06Total elapsed time: 152.540 sec.
+@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 158 MB.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 152.542 sec.
+@I [HLS-100] Command "gen_rtl FFT -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/systemc/FFT -synmodules bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 152.549 sec.
+@I [HLS-100] Command "gen_rtl FFT -style xilinx -f -lang vhdl -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/vhdl/FFT "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 152.554 sec.
+@I [HLS-100] Command "gen_rtl FFT -style xilinx -f -lang vlog -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/verilog/FFT "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 152.559 sec.
+@I [HLS-100] Command "gen_tb_info FFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT -p /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 152.563 sec.
+@I [HLS-100] Command "report -model FFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/FFT_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.09Total elapsed time: 152.649 sec.
+@I [HLS-100] Command "report -model FFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/FFT_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.08Total elapsed time: 152.728 sec.
+@I [HLS-100] Command "report -model FFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.38Total elapsed time: 153.115 sec.
+@I [HLS-100] Command "db_write -model FFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.14Total elapsed time: 153.273 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'cal_mag_phase' 
+@0 [HLS-0] -- Generating RTL for module 'cal_mag_phase' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model cal_mag_phase -vendor xilinx -mg_file /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.compgen.tcl "
+@I [RTGEN-100] Module generated: combine_mul_52s_53ns_105_11|combine_mul_52s_53ns_105_11_U16.
+@I [RTGEN-100] Module generated: combine_mul_32s_22s_54_3|combine_mul_32s_22s_54_3_U17.
+@I [RTGEN-100] Module generated: combine_mul_32s_22s_54_3|combine_mul_32s_22s_54_3_U18.
+@I [RTGEN-100] Finished creating RTL model for 'cal_mag_phase'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.07Total elapsed time: 153.395 sec.
+@I [HLS-111] Elapsed time: 0.83 seconds; current memory usage: 161 MB.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 153.397 sec.
+@I [HLS-100] Command "gen_rtl cal_mag_phase -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/systemc/cal_mag_phase -synmodules bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 153.404 sec.
+@I [HLS-100] Command "gen_rtl cal_mag_phase -style xilinx -f -lang vhdl -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/vhdl/cal_mag_phase "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 153.408 sec.
+@I [HLS-100] Command "gen_rtl cal_mag_phase -style xilinx -f -lang vlog -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/verilog/cal_mag_phase "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 153.413 sec.
+@I [HLS-100] Command "gen_tb_info cal_mag_phase -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase -p /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 153.417 sec.
+@I [HLS-100] Command "report -model cal_mag_phase -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/cal_mag_phase_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.06Total elapsed time: 153.478 sec.
+@I [HLS-100] Command "report -model cal_mag_phase -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/cal_mag_phase_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 153.527 sec.
+@I [HLS-100] Command "report -model cal_mag_phase -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.25Total elapsed time: 153.768 sec.
+@I [HLS-100] Command "db_write -model cal_mag_phase -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.1Total elapsed time: 153.885 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'cordic' 
+@0 [HLS-0] -- Generating RTL for module 'cordic' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model cordic -vendor xilinx -mg_file /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'cordic'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 153.963 sec.
+@I [HLS-111] Elapsed time: 0.54 seconds; current memory usage: 163 MB.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 153.964 sec.
+@I [HLS-100] Command "gen_rtl cordic -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/systemc/cordic -synmodules bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 153.968 sec.
+@I [HLS-100] Command "gen_rtl cordic -style xilinx -f -lang vhdl -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/vhdl/cordic "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 153.976 sec.
+@I [HLS-100] Command "gen_rtl cordic -style xilinx -f -lang vlog -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/verilog/cordic "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 153.986 sec.
+@I [HLS-100] Command "gen_tb_info cordic -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic -p /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 153.989 sec.
+@I [HLS-100] Command "report -model cordic -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/cordic_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 153.999 sec.
+@I [HLS-100] Command "report -model cordic -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/cordic_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 154.6 sec.
+@I [HLS-100] Command "report -model cordic -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 154.43 sec.
+@I [HLS-100] Command "db_write -model cordic -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 154.69 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'IFFT' 
+@0 [HLS-0] -- Generating RTL for module 'IFFT' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model IFFT -vendor xilinx -mg_file /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.compgen.tcl "
+@I [RTGEN-100] Module generated: combine_mul_32s_13ns_45_3|combine_mul_32s_13ns_45_3_U25.
+@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U26.
+@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U27.
+@I [RTGEN-100] Module generated: combine_mul_32s_13ns_45_3|combine_mul_32s_13ns_45_3_U28.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_32_6|combine_mul_32s_32s_32_6_U29.
+@I [RTGEN-100] Module generated: combine_sdiv_32ns_32s_32_35|combine_sdiv_32ns_32s_32_35_U30.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U31.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U32.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U33.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U34.
+@I [RTGEN-100] Finished creating RTL model for 'IFFT'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.08Total elapsed time: 154.163 sec.
+@I [HLS-111] Elapsed time: 0.17 seconds; current memory usage: 165 MB.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 154.165 sec.
+@I [HLS-100] Command "gen_rtl IFFT -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/systemc/IFFT -synmodules bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 154.173 sec.
+@I [HLS-100] Command "gen_rtl IFFT -style xilinx -f -lang vhdl -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/vhdl/IFFT "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 154.179 sec.
+@I [HLS-100] Command "gen_rtl IFFT -style xilinx -f -lang vlog -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/verilog/IFFT "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 154.184 sec.
+@I [HLS-100] Command "gen_tb_info IFFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT -p /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 154.188 sec.
+@I [HLS-100] Command "report -model IFFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/IFFT_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.09Total elapsed time: 154.275 sec.
+@I [HLS-100] Command "report -model IFFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/IFFT_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.07Total elapsed time: 154.357 sec.
+@I [HLS-100] Command "report -model IFFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.41Total elapsed time: 154.761 sec.
+@I [HLS-100] Command "db_write -model IFFT -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.17Total elapsed time: 154.936 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'pitchshifting' 
+@0 [HLS-0] -- Generating RTL for module 'pitchshifting' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model pitchshifting -vendor xilinx -mg_file /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.compgen.tcl "
+@I [RTGEN-100] Module generated: combine_mul_52s_53ns_105_11|combine_mul_52s_53ns_105_11_U37.
+@I [RTGEN-100] Module generated: combine_mul_32s_23ns_52_3|combine_mul_32s_23ns_52_3_U38.
+@I [RTGEN-100] Module generated: combine_mul_26s_9ns_32_3|combine_mul_26s_9ns_32_3_U39.
+@I [RTGEN-100] Module generated: combine_mul_52s_53ns_105_11|combine_mul_52s_53ns_105_11_U40.
+@I [RTGEN-100] Module generated: combine_mul_32s_23ns_52_3|combine_mul_32s_23ns_52_3_U41.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U42.
+@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U43.
+@I [RTGEN-100] Module generated: combine_mul_20ns_32s_52_3|combine_mul_20ns_32s_52_3_U44.
+@I [RTGEN-100] Module generated: combine_mul_72s_85ns_157_2|combine_mul_72s_85ns_157_2_U45.
+@I [RTGEN-100] Finished creating RTL model for 'pitchshifting'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.11Total elapsed time: 155.115 sec.
+@I [HLS-111] Elapsed time: 0.92 seconds; current memory usage: 169 MB.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 155.116 sec.
+@I [HLS-100] Command "gen_rtl pitchshifting -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/systemc/pitchshifting -synmodules bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 155.127 sec.
+@I [HLS-100] Command "gen_rtl pitchshifting -style xilinx -f -lang vhdl -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/vhdl/pitchshifting "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 155.134 sec.
+@I [HLS-100] Command "gen_rtl pitchshifting -style xilinx -f -lang vlog -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/verilog/pitchshifting "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 155.142 sec.
+@I [HLS-100] Command "gen_tb_info pitchshifting -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting -p /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 155.146 sec.
+@I [HLS-100] Command "report -model pitchshifting -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/pitchshifting_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.11Total elapsed time: 155.260 sec.
+@I [HLS-100] Command "report -model pitchshifting -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/pitchshifting_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.11Total elapsed time: 155.364 sec.
+@I [HLS-100] Command "report -model pitchshifting -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.75Total elapsed time: 156.124 sec.
+@I [HLS-100] Command "db_write -model pitchshifting -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.21Total elapsed time: 156.341 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'combine' 
+@0 [HLS-0] -- Generating RTL for module 'combine' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model combine -vendor xilinx -mg_file /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'combine/currentFrameWindowed_V' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'combine/imag_V' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'combine' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Module generated: combine_mul_57ns_60ns_116_14|combine_mul_57ns_60ns_116_14_U53.
+@I [RTGEN-100] Finished creating RTL model for 'combine'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 156.465 sec.
+@I [HLS-111] Elapsed time: 1.31 seconds; current memory usage: 173 MB.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 156.466 sec.
+@I [HLS-100] Command "gen_rtl combine -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/systemc/combine -synmodules bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 156.472 sec.
+@I [HLS-100] Command "gen_rtl combine -istop -style xilinx -f -lang vhdl -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/vhdl/combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 156.483 sec.
+@I [HLS-100] Command "gen_rtl combine -istop -style xilinx -f -lang vlog -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/verilog/combine "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 156.493 sec.
+@I [HLS-100] Command "export_constraint_db -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0Total elapsed time: 156.494 sec.
+@I [HLS-100] Command "report -model combine -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.64Total elapsed time: 157.145 sec.
+@I [HLS-100] Command "gen_tb_info combine -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine -p /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 157.154 sec.
+@I [HLS-100] Command "report -model combine -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/combine_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 157.166 sec.
+@I [HLS-100] Command "report -model combine -o /home/student/kl694/ece5775/final/hls.prj/solution2/syn/report/combine_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 157.175 sec.
+@I [HLS-100] Command "report -model combine -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.98Total elapsed time: 158.163 sec.
+@I [HLS-100] Command "db_write -model combine -o /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.03Total elapsed time: 158.196 sec.
+@I [HLS-100] Command "sc_get_clocks combine "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 158.218 sec.
+@I [HLS-100] Command "sc_get_portdomain combine "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 158.218 sec.
+@I [HLS-0] Model list for RTL component generation: bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine
+@I [HLS-0] Handling components in module [bitrp] ... 
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.223 sec.
+@I [HLS-0] Handling components in module [FFT] ... 
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.compgen.tcl "
+@I [HLS-0] Found component combine_mul_32s_14s_45_3.
+@I [HLS-0] Append model combine_mul_32s_14s_45_3
+@I [HLS-0] Found component combine_mul_32s_20ns_52_3.
+@I [HLS-0] Append model combine_mul_32s_20ns_52_3
+@I [HLS-0] Found component combine_mul_32s_32s_32_6.
+@I [HLS-0] Append model combine_mul_32s_32s_32_6
+@I [HLS-0] Found component combine_sdiv_32ns_32s_32_35.
+@I [HLS-0] Append model combine_sdiv_32ns_32s_32_35
+@I [HLS-0] Found component combine_mul_32s_32s_52_6.
+@I [HLS-0] Append model combine_mul_32s_32s_52_6
+@I [HLS-0] Found component FFT_wreal_V.
+@I [HLS-0] Append model FFT_wreal_V
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.225 sec.
+@I [HLS-0] Handling components in module [cal_mag_phase] ... 
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.compgen.tcl "
+@I [HLS-0] Found component combine_mul_52s_53ns_105_11.
+@I [HLS-0] Append model combine_mul_52s_53ns_105_11
+@I [HLS-0] Found component combine_mul_32s_22s_54_3.
+@I [HLS-0] Append model combine_mul_32s_22s_54_3
+@I [HLS-0] Found component cal_mag_phase_cordic_ctab_V.
+@I [HLS-0] Append model cal_mag_phase_cordic_ctab_V
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.226 sec.
+@I [HLS-0] Handling components in module [cordic] ... 
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.227 sec.
+@I [HLS-0] Handling components in module [IFFT] ... 
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.compgen.tcl "
+@I [HLS-0] Found component combine_mul_32s_13ns_45_3.
+@I [HLS-0] Append model combine_mul_32s_13ns_45_3
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.228 sec.
+@I [HLS-0] Handling components in module [pitchshifting] ... 
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.compgen.tcl "
+@I [HLS-0] Found component combine_mul_32s_23ns_52_3.
+@I [HLS-0] Append model combine_mul_32s_23ns_52_3
+@I [HLS-0] Found component combine_mul_26s_9ns_32_3.
+@I [HLS-0] Append model combine_mul_26s_9ns_32_3
+@I [HLS-0] Found component combine_mul_20ns_32s_52_3.
+@I [HLS-0] Append model combine_mul_20ns_32s_52_3
+@I [HLS-0] Found component combine_mul_72s_85ns_157_2.
+@I [HLS-0] Append model combine_mul_72s_85ns_157_2
+@I [HLS-0] Found component pitchshifting_wn_V_1.
+@I [HLS-0] Append model pitchshifting_wn_V_1
+@I [HLS-0] Found component pitchshifting_deltaPhiPrimeMod_V.
+@I [HLS-0] Append model pitchshifting_deltaPhiPrimeMod_V
+@I [HLS-0] Found component pitchshifting_real_V.
+@I [HLS-0] Append model pitchshifting_real_V
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 158.231 sec.
+@I [HLS-0] Handling components in module [combine] ... 
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.compgen.tcl "
+@I [HLS-0] Found component combine_mul_57ns_60ns_116_14.
+@I [HLS-0] Append model combine_mul_57ns_60ns_116_14
+@I [HLS-0] Found component combine_currentFrame_V.
+@I [HLS-0] Append model combine_currentFrame_V
+@I [HLS-0] Found component combine_previousPhase_V.
+@I [HLS-0] Append model combine_previousPhase_V
+@I [HLS-0] Found component combine_time_domain_V.
+@I [HLS-0] Append model combine_time_domain_V
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.233 sec.
+@I [HLS-0] Append model bitrp
+@I [HLS-0] Append model FFT
+@I [HLS-0] Append model cal_mag_phase
+@I [HLS-0] Append model cordic
+@I [HLS-0] Append model IFFT
+@I [HLS-0] Append model pitchshifting
+@I [HLS-0] Append model combine
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: combine_mul_32s_14s_45_3 combine_mul_32s_20ns_52_3 combine_mul_32s_32s_32_6 combine_sdiv_32ns_32s_32_35 combine_mul_32s_32s_52_6 FFT_wreal_V combine_mul_52s_53ns_105_11 combine_mul_32s_22s_54_3 cal_mag_phase_cordic_ctab_V combine_mul_32s_13ns_45_3 combine_mul_32s_23ns_52_3 combine_mul_26s_9ns_32_3 combine_mul_20ns_32s_52_3 combine_mul_72s_85ns_157_2 pitchshifting_wn_V_1 pitchshifting_deltaPhiPrimeMod_V pitchshifting_real_V combine_mul_57ns_60ns_116_14 combine_currentFrame_V combine_previousPhase_V combine_time_domain_V bitrp FFT cal_mag_phase cordic IFFT pitchshifting combine
+@I [HLS-0] To file: write model combine_mul_32s_14s_45_3
+@I [HLS-0] To file: write model combine_mul_32s_20ns_52_3
+@I [HLS-0] To file: write model combine_mul_32s_32s_32_6
+@I [HLS-0] To file: write model combine_sdiv_32ns_32s_32_35
+@I [HLS-0] To file: write model combine_mul_32s_32s_52_6
+@I [HLS-0] To file: write model FFT_wreal_V
+@I [HLS-0] To file: write model combine_mul_52s_53ns_105_11
+@I [HLS-0] To file: write model combine_mul_32s_22s_54_3
+@I [HLS-0] To file: write model cal_mag_phase_cordic_ctab_V
+@I [HLS-0] To file: write model combine_mul_32s_13ns_45_3
+@I [HLS-0] To file: write model combine_mul_32s_23ns_52_3
+@I [HLS-0] To file: write model combine_mul_26s_9ns_32_3
+@I [HLS-0] To file: write model combine_mul_20ns_32s_52_3
+@I [HLS-0] To file: write model combine_mul_72s_85ns_157_2
+@I [HLS-0] To file: write model pitchshifting_wn_V_1
+@I [HLS-0] To file: write model pitchshifting_deltaPhiPrimeMod_V
+@I [HLS-0] To file: write model pitchshifting_real_V
+@I [HLS-0] To file: write model combine_mul_57ns_60ns_116_14
+@I [HLS-0] To file: write model combine_currentFrame_V
+@I [HLS-0] To file: write model combine_previousPhase_V
+@I [HLS-0] To file: write model combine_time_domain_V
+@I [HLS-0] To file: write model bitrp
+@I [HLS-0] To file: write model FFT
+@I [HLS-0] To file: write model cal_mag_phase
+@I [HLS-0] To file: write model cordic
+@I [HLS-0] To file: write model IFFT
+@I [HLS-0] To file: write model pitchshifting
+@I [HLS-0] To file: write model combine
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-100] Command "export_ssdm /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.01Total elapsed time: 158.257 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.263 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.268 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.269 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.270 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.273 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.274 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.275 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 158.282 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.283 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.288 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 158.303 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 158.321 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.322 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.24Total elapsed time: 158.561 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.28Total elapsed time: 158.561 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.564 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.28Total elapsed time: 158.565 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.28Total elapsed time: 158.565 sec.
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/xilinx/Vivado_HLS/2013.2/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 158.569 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 158.569 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.571 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.572 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/bitrp.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.575 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/FFT.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_14s_45_3_Mul3S_0'
+@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_20ns_52_3_Mul3S_1'
+@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_32s_32_6_MulnS_0'
+@I [RTMG-282] Generating pipelined core: 'combine_sdiv_32ns_32s_32_35_div'
+@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_32s_52_6_MulnS_1'
+@I [RTMG-278] Implementing memory 'FFT_wreal_V_ram' using block RAMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.1Total elapsed time: 158.755 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cal_mag_phase.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'combine_mul_52s_53ns_105_11_MulnS_2'
+@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_22s_54_3_Mul3S_2'
+@I [RTMG-279] Implementing memory 'cal_mag_phase_cordic_ctab_V_rom' using auto ROMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.05Total elapsed time: 158.827 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/cordic.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 158.828 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/IFFT.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_13ns_45_3_Mul3S_3'
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 158.849 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/pitchshifting.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_23ns_52_3_Mul3S_4'
+@I [RTMG-282] Generating pipelined core: 'combine_mul_26s_9ns_32_3_Mul3S_5'
+@I [RTMG-282] Generating pipelined core: 'combine_mul_20ns_32s_52_3_Mul3S_6'
+@I [RTMG-282] Generating pipelined core: 'combine_mul_72s_85ns_157_2_Mul2S_0'
+@I [RTMG-279] Implementing memory 'pitchshifting_wn_V_1_rom' using auto ROMs.
+@I [RTMG-278] Implementing memory 'pitchshifting_deltaPhiPrimeMod_V_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'pitchshifting_real_V_ram' using block RAMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.2Total elapsed time: 159.96 sec.
+@I [HLS-100] Command "source /home/student/kl694/ece5775/final/hls.prj/solution2/.autopilot/db/combine.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'combine_mul_57ns_60ns_116_14_MulnS_3'
+@I [RTMG-279] Implementing memory 'combine_currentFrame_V_rom' using auto ROMs.
+@I [RTMG-278] Implementing memory 'combine_previousPhase_V_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'combine_time_domain_V_ram' using block RAMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 159.255 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'combine'.
+@I [WVHDL-304] Generating RTL VHDL for 'combine'.
+@I [WVLOG-307] Generating RTL Verilog for 'combine'.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 14.82Total elapsed time: 159.740 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 46.48Total elapsed time: 159.740 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.04Total elapsed time: 159.775 sec.

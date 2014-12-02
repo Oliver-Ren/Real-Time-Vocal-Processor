@@ -1,0 +1,689 @@
+
+
+================================================================
+== Vivado HLS Report for 'cal_mag_phase'
+================================================================
+* Date:           Mon Dec  1 20:03:19 2014
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        hls.prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|     11.82|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  476161|  476161|  476161|  476161|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  476160|  476160|       465|          -|          -|  1024|    no    |
+        | + Loop 1.1  |     320|     320|         5|          -|          -|    64|    no    |
+        | + Loop 1.2  |     128|     128|         2|          -|          -|    64|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 23
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond6)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / (!exitcond)
+	10  / (exitcond)
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	5  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / (!exitcond5)
+	2  / (exitcond5)
+23 --> 
+	22  / true
+* FSM state operations: 
+
+ <State 1>: 1.39ns
+ST_1: stg_24 [1/1] 1.39ns
+entry:0  br label %bb43
+
+
+ <State 2>: 2.39ns
+ST_2: i [1/1] 0.00ns
+bb43:0  %i = phi i11 [ 0, %entry ], [ %i_3, %bb37 ], [ %i_3, %bb35 ], [ %i_3, %bb17 ], [ %i_3, %bb12 ], [ %i_3, %bb1 ] ; <i11> [#uses=3]
+
+ST_2: empty_45 [1/1] 0.00ns
+bb43:1  %empty_45 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+
+ST_2: exitcond6 [1/1] 2.11ns
+bb43:2  %exitcond6 = icmp eq i11 %i, -1024              ; <i1> [#uses=1]
+
+ST_2: i_3 [1/1] 1.84ns
+bb43:3  %i_3 = add i11 %i, 1                            ; <i11> [#uses=5]
+
+ST_2: stg_29 [1/1] 0.00ns
+bb43:4  br i1 %exitcond6, label %return, label %bb
+
+ST_2: tmp [1/1] 0.00ns
+bb:0  %tmp = zext i11 %i to i64                       ; <i64> [#uses=7]
+
+ST_2: real_V_addr [1/1] 0.00ns
+bb:2  %real_V_addr = getelementptr [1024 x i32]* %real_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_2: p_Val2_20 [2/2] 2.39ns
+bb:4  %p_Val2_20 = load i32* %real_V_addr             ; <i32> [#uses=6]
+
+ST_2: stg_33 [1/1] 0.00ns
+return:0  ret void
+
+
+ <State 3>: 2.39ns
+ST_3: imag_V_addr [1/1] 0.00ns
+bb:3  %imag_V_addr = getelementptr [1024 x i32]* %imag_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_3: p_Val2_20 [1/2] 2.39ns
+bb:4  %p_Val2_20 = load i32* %real_V_addr             ; <i32> [#uses=6]
+
+ST_3: p_Val2_21 [2/2] 2.39ns
+bb:5  %p_Val2_21 = load i32* %imag_V_addr             ; <i32> [#uses=5]
+
+
+ <State 4>: 8.38ns
+ST_4: magFrame_V_addr [1/1] 0.00ns
+bb:1  %magFrame_V_addr = getelementptr [1024 x i32]* %magFrame_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_4: p_Val2_21 [1/2] 2.39ns
+bb:5  %p_Val2_21 = load i32* %imag_V_addr             ; <i32> [#uses=5]
+
+ST_4: tmp_27 [1/1] 0.00ns
+bb:6  %tmp_27 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_21, i32 31) ; <i1> [#uses=3]
+
+ST_4: p_shl [1/1] 0.00ns
+bb:7  %p_shl = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %p_Val2_21, i20 0) ; <i52> [#uses=2]
+
+ST_4: mt8_i_cast [1/1] 3.04ns
+bb:8  %mt8_i_cast = sub i52 0, %p_shl                 ; <i52> [#uses=1]
+
+ST_4: r_V_17 [1/1] 1.37ns
+bb:9  %r_V_17 = select i1 %tmp_27, i52 %mt8_i_cast, i52 %p_shl ; <i52> [#uses=1]
+
+ST_4: r_V_48_cast [1/1] 0.00ns
+bb:10  %r_V_48_cast = zext i52 %r_V_17 to i65          ; <i65> [#uses=1]
+
+ST_4: mt_i [1/1] 0.00ns
+bb:11  %mt_i = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %p_Val2_20, i20 0) ; <i52> [#uses=1]
+
+ST_4: mt_i_cast [1/1] 0.00ns
+bb:12  %mt_i_cast = sext i52 %mt_i to i53              ; <i53> [#uses=2]
+
+ST_4: mf_i [1/1] 3.04ns
+bb:13  %mf_i = sub i53 0, %mt_i_cast                   ; <i53> [#uses=1]
+
+ST_4: r_V_18 [1/1] 1.37ns
+bb:14  %r_V_18 = select i1 %tmp_27, i53 %mt_i_cast, i53 %mf_i ; <i53> [#uses=2]
+
+ST_4: yo_V [1/1] 0.00ns
+bb:15  %yo_V = call i32 @_ssdm_op_PartSelect.i32.i53.i32.i32(i53 %r_V_18, i32 20, i32 51) ; <i32> [#uses=1]
+
+ST_4: tmp_28 [1/1] 0.00ns
+bb:16  %tmp_28 = call i1 @_ssdm_op_BitSelect.i1.i53.i32(i53 %r_V_18, i32 51) ; <i1> [#uses=1]
+
+ST_4: ai_V [1/1] 1.37ns
+bb:17  %ai_V = select i1 %tmp_28, i22 1048576, i22 -1048576 ; <i22> [#uses=1]
+
+ST_4: stg_51 [1/1] 1.57ns
+bb:18  br label %bb19.i
+
+
+ <State 5>: 6.36ns
+ST_5: p_Val2_106_in_in_i [1/1] 0.00ns
+bb19.i:0  %p_Val2_106_in_in_i = phi i65 [ %r_V_48_cast, %bb ], [ %r_V_20, %bb9.i ] ; <i65> [#uses=3]
+
+ST_5: ai_V_1 [1/1] 0.00ns
+bb19.i:1  %ai_V_1 = phi i22 [ %ai_V, %bb ], [ %ai_V_2, %bb9.i ] ; <i22> [#uses=1]
+
+ST_5: p_Val2_24 [1/1] 0.00ns
+bb19.i:2  %p_Val2_24 = phi i32 [ %yo_V, %bb ], [ %y_iteration_V_7, %bb9.i ] ; <i32> [#uses=2]
+
+ST_5: i_2 [1/1] 0.00ns
+bb19.i:3  %i_2 = phi i7 [ 0, %bb ], [ %i_4, %bb9.i ]      ; <i7> [#uses=3]
+
+ST_5: empty [1/1] 0.00ns
+bb19.i:4  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind ; <i32> [#uses=0]
+
+ST_5: exitcond [1/1] 1.97ns
+bb19.i:5  %exitcond = icmp eq i7 %i_2, -64                ; <i1> [#uses=1]
+
+ST_5: i_4 [1/1] 1.72ns
+bb19.i:6  %i_4 = add i7 %i_2, 1                           ; <i7> [#uses=1]
+
+ST_5: stg_59 [1/1] 0.00ns
+bb19.i:7  br i1 %exitcond, label %cordic_sqrt.exit, label %bb9.i
+
+ST_5: sh_assign_5_cast_cast [1/1] 0.00ns
+bb9.i:0  %sh_assign_5_cast_cast = zext i7 %i_2 to i22    ; <i22> [#uses=1]
+
+ST_5: r_V_7 [1/1] 2.38ns
+bb9.i:1  %r_V_7 = ashr i22 %ai_V_1, %sh_assign_5_cast_cast ; <i22> [#uses=1]
+
+ST_5: tmp_22 [1/1] 0.00ns
+bb9.i:6  %tmp_22 = call i32 @_ssdm_op_PartSelect.i32.i65.i32.i32(i65 %p_Val2_106_in_in_i, i32 20, i32 51) ; <i32> [#uses=2]
+
+ST_5: tmp_21 [1/1] 0.00ns
+cordic_sqrt.exit:0  %tmp_21 = call i32 @_ssdm_op_PartSelect.i32.i65.i32.i32(i65 %p_Val2_106_in_in_i, i32 20, i32 51) ; <i32> [#uses=1]
+
+ST_5: t_V [1/1] 0.00ns
+cordic_sqrt.exit:1  %t_V = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_21, i20 0) ; <i52> [#uses=1]
+
+ST_5: sext_i_cast [1/1] 0.00ns
+cordic_sqrt.exit:2  %sext_i_cast = sext i52 %t_V to i105            ; <i105> [#uses=1]
+
+ST_5: mul_i [11/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+ST_5: tmp_29 [1/1] 0.00ns
+cordic_sqrt.exit:5  %tmp_29 = call i1 @_ssdm_op_BitSelect.i1.i65.i32(i65 %p_Val2_106_in_in_i, i32 51) ; <i1> [#uses=2]
+
+
+ <State 6>: 11.82ns
+ST_6: OP1_V_cast [1/1] 0.00ns
+bb9.i:2  %OP1_V_cast = sext i32 %p_Val2_24 to i54        ; <i54> [#uses=1]
+
+ST_6: OP2_V_cast [1/1] 0.00ns
+bb9.i:3  %OP2_V_cast = sext i22 %r_V_7 to i54            ; <i54> [#uses=2]
+
+ST_6: r_V_19 [3/3] 11.82ns
+bb9.i:4  %r_V_19 = mul i54 %OP1_V_cast, %OP2_V_cast      ; <i54> [#uses=1]
+
+ST_6: OP1_V_1_cast [1/1] 0.00ns
+bb9.i:11  %OP1_V_1_cast = sext i32 %tmp_22 to i54         ; <i54> [#uses=1]
+
+ST_6: r_V_21 [3/3] 6.36ns
+bb9.i:12  %r_V_21 = mul i54 %OP1_V_1_cast, %OP2_V_cast    ; <i54> [#uses=1]
+
+
+ <State 7>: 11.82ns
+ST_7: r_V_19 [2/3] 11.82ns
+bb9.i:4  %r_V_19 = mul i54 %OP1_V_cast, %OP2_V_cast      ; <i54> [#uses=1]
+
+ST_7: r_V_21 [2/3] 6.36ns
+bb9.i:12  %r_V_21 = mul i54 %OP1_V_1_cast, %OP2_V_cast    ; <i54> [#uses=1]
+
+
+ <State 8>: 11.82ns
+ST_8: r_V_19 [1/3] 11.82ns
+bb9.i:4  %r_V_19 = mul i54 %OP1_V_cast, %OP2_V_cast      ; <i54> [#uses=1]
+
+ST_8: r_V_21 [1/3] 6.36ns
+bb9.i:12  %r_V_21 = mul i54 %OP1_V_1_cast, %OP2_V_cast    ; <i54> [#uses=1]
+
+
+ <State 9>: 4.77ns
+ST_9: r_V_18_cast [1/1] 0.00ns
+bb9.i:5  %r_V_18_cast = sext i54 %r_V_19 to i64          ; <i64> [#uses=1]
+
+ST_9: lhs_V [1/1] 0.00ns
+bb9.i:7  %lhs_V = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_22, i20 0) ; <i52> [#uses=1]
+
+ST_9: lhs_V_cast [1/1] 0.00ns
+bb9.i:8  %lhs_V_cast = zext i52 %lhs_V to i65            ; <i65> [#uses=1]
+
+ST_9: rhs_V2_i [1/1] 0.00ns
+bb9.i:9  %rhs_V2_i = zext i64 %r_V_18_cast to i65        ; <i65> [#uses=1]
+
+ST_9: r_V_20 [1/1] 3.40ns
+bb9.i:10  %r_V_20 = sub nsw i65 %lhs_V_cast, %rhs_V2_i    ; <i65> [#uses=1]
+
+ST_9: r_V_20_cast [1/1] 0.00ns
+bb9.i:13  %r_V_20_cast = sext i54 %r_V_21 to i64          ; <i64> [#uses=1]
+
+ST_9: lhs_V_1 [1/1] 0.00ns
+bb9.i:14  %lhs_V_1 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %p_Val2_24, i20 0) ; <i52> [#uses=1]
+
+ST_9: lhs_V_1_cast [1/1] 0.00ns
+bb9.i:15  %lhs_V_1_cast = zext i52 %lhs_V_1 to i65        ; <i65> [#uses=1]
+
+ST_9: rhs_V_203_i [1/1] 0.00ns
+bb9.i:16  %rhs_V_203_i = zext i64 %r_V_20_cast to i65     ; <i65> [#uses=1]
+
+ST_9: r_V_22 [1/1] 3.40ns
+bb9.i:17  %r_V_22 = add nsw i65 %lhs_V_1_cast, %rhs_V_203_i ; <i65> [#uses=2]
+
+ST_9: y_iteration_V_7 [1/1] 0.00ns
+bb9.i:18  %y_iteration_V_7 = call i32 @_ssdm_op_PartSelect.i32.i65.i32.i32(i65 %r_V_22, i32 20, i32 51) ; <i32> [#uses=1]
+
+ST_9: tmp_30 [1/1] 0.00ns
+bb9.i:19  %tmp_30 = call i1 @_ssdm_op_BitSelect.i1.i65.i32(i65 %r_V_22, i32 51) ; <i1> [#uses=1]
+
+ST_9: ai_V_2 [1/1] 1.37ns
+bb9.i:20  %ai_V_2 = select i1 %tmp_30, i22 1048576, i22 -1048576 ; <i22> [#uses=1]
+
+ST_9: stg_90 [1/1] 0.00ns
+bb9.i:21  br label %bb19.i
+
+
+ <State 10>: 6.36ns
+ST_10: mul_i [10/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 11>: 6.36ns
+ST_11: mul_i [9/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 12>: 6.36ns
+ST_12: mul_i [8/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 13>: 6.36ns
+ST_13: mul_i [7/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 14>: 6.36ns
+ST_14: mul_i [6/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 15>: 6.36ns
+ST_15: mul_i [5/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 16>: 6.36ns
+ST_16: mul_i [4/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 17>: 6.36ns
+ST_17: mul_i [3/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 18>: 6.36ns
+ST_18: mul_i [2/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 19>: 6.36ns
+ST_19: mul_i [1/11] 6.36ns
+cordic_sqrt.exit:3  %mul_i = mul i105 %sext_i_cast, 5469649084576249 ; <i105> [#uses=2]
+
+
+ <State 20>: 6.09ns
+ST_20: neg_mul_i [1/1] 4.72ns
+cordic_sqrt.exit:4  %neg_mul_i = sub i105 0, %mul_i                 ; <i105> [#uses=1]
+
+ST_20: sel_i [1/1] 1.37ns
+cordic_sqrt.exit:6  %sel_i = select i1 %tmp_29, i105 %neg_mul_i, i105 %mul_i ; <i105> [#uses=1]
+
+ST_20: tmp_s [1/1] 0.00ns
+cordic_sqrt.exit:7  %tmp_s = call i32 @_ssdm_op_PartSelect.i32.i105.i32.i32(i105 %sel_i, i32 73, i32 104) ; <i32> [#uses=2]
+
+
+ <State 21>: 6.20ns
+ST_21: neg_ti_i [1/1] 2.44ns
+cordic_sqrt.exit:8  %neg_ti_i = sub i32 0, %tmp_s                   ; <i32> [#uses=1]
+
+ST_21: ssdm_int_32_true_V_write_assign [1/1] 1.37ns
+cordic_sqrt.exit:9  %ssdm_int_32_true_V_write_assign = select i1 %tmp_29, i32 %neg_ti_i, i32 %tmp_s ; <i32> [#uses=1]
+
+ST_21: stg_106 [1/1] 2.39ns
+cordic_sqrt.exit:10  store i32 %ssdm_int_32_true_V_write_assign, i32* %magFrame_V_addr
+
+ST_21: tmp_i3 [1/1] 2.52ns
+cordic_sqrt.exit:11  %tmp_i3 = icmp sgt i32 %p_Val2_20, 0            ; <i1> [#uses=3]
+
+ST_21: x_iteration_V [1/1] 2.44ns
+cordic_sqrt.exit:12  %x_iteration_V = sub i32 0, %p_Val2_20          ; <i32> [#uses=1]
+
+ST_21: y_iteration_V_1 [1/1] 2.44ns
+cordic_sqrt.exit:13  %y_iteration_V_1 = sub i32 0, %p_Val2_21        ; <i32> [#uses=1]
+
+ST_21: y_iteration_V_2 [1/1] 1.37ns
+cordic_sqrt.exit:14  %y_iteration_V_2 = select i1 %tmp_i3, i32 %p_Val2_21, i32 %y_iteration_V_1 ; <i32> [#uses=1]
+
+ST_21: x_iteration_V_1 [1/1] 1.37ns
+cordic_sqrt.exit:15  %x_iteration_V_1 = select i1 %tmp_i3, i32 %p_Val2_20, i32 %x_iteration_V ; <i32> [#uses=1]
+
+ST_21: stg_112 [1/1] 1.57ns
+cordic_sqrt.exit:16  br label %bb17.i
+
+
+ <State 22>: 6.21ns
+ST_22: p_Val2_31 [1/1] 0.00ns
+bb17.i:0  %p_Val2_31 = phi i32 [ 0, %cordic_sqrt.exit ], [ %storemerge_i, %bb5_ifconv.i ] ; <i32> [#uses=5]
+
+ST_22: p_Val2_29 [1/1] 0.00ns
+bb17.i:1  %p_Val2_29 = phi i32 [ %y_iteration_V_2, %cordic_sqrt.exit ], [ %y_iteration_V_5, %bb5_ifconv.i ] ; <i32> [#uses=4]
+
+ST_22: t_V_4 [1/1] 0.00ns
+bb17.i:2  %t_V_4 = phi i32 [ %x_iteration_V_1, %cordic_sqrt.exit ], [ %x_iteration_V_5, %bb5_ifconv.i ] ; <i32> [#uses=3]
+
+ST_22: step_2 [1/1] 0.00ns
+bb17.i:3  %step_2 = phi i7 [ 0, %cordic_sqrt.exit ], [ %step, %bb5_ifconv.i ] ; <i7> [#uses=4]
+
+ST_22: empty_44 [1/1] 0.00ns
+bb17.i:4  %empty_44 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind ; <i32> [#uses=0]
+
+ST_22: exitcond5 [1/1] 1.97ns
+bb17.i:5  %exitcond5 = icmp eq i7 %step_2, -64            ; <i1> [#uses=1]
+
+ST_22: step [1/1] 1.72ns
+bb17.i:6  %step = add i7 %step_2, 1                       ; <i7> [#uses=1]
+
+ST_22: stg_120 [1/1] 0.00ns
+bb17.i:7  br i1 %exitcond5, label %cordic_atan.exit, label %bb5_ifconv.i
+
+ST_22: tmp_31 [1/1] 0.00ns
+bb5_ifconv.i:0  %tmp_31 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_29, i32 31) ; <i1> [#uses=3]
+
+ST_22: sh_assign_1_i_cast [1/1] 0.00ns
+bb5_ifconv.i:1  %sh_assign_1_i_cast = zext i7 %step_2 to i32    ; <i32> [#uses=2]
+
+ST_22: r_V_23 [1/1] 2.40ns
+bb5_ifconv.i:2  %r_V_23 = ashr i32 %p_Val2_29, %sh_assign_1_i_cast ; <i32> [#uses=2]
+
+ST_22: x_iteration_V_3 [1/1] 2.44ns
+bb5_ifconv.i:3  %x_iteration_V_3 = sub i32 %t_V_4, %r_V_23      ; <i32> [#uses=1]
+
+ST_22: r_V_24 [1/1] 2.40ns
+bb5_ifconv.i:4  %r_V_24 = ashr i32 %t_V_4, %sh_assign_1_i_cast  ; <i32> [#uses=2]
+
+ST_22: y_iteration_V [1/1] 2.44ns
+bb5_ifconv.i:5  %y_iteration_V = add i32 %r_V_24, %p_Val2_29    ; <i32> [#uses=1]
+
+ST_22: tmp_6_i [1/1] 0.00ns
+bb5_ifconv.i:6  %tmp_6_i = zext i7 %step_2 to i64               ; <i64> [#uses=1]
+
+ST_22: cordic_ctab_V_addr [1/1] 0.00ns
+bb5_ifconv.i:7  %cordic_ctab_V_addr = getelementptr [64 x i20]* @cordic_ctab_V, i64 0, i64 %tmp_6_i ; <i20*> [#uses=1]
+
+ST_22: p_Val2_32 [2/2] 2.39ns
+bb5_ifconv.i:8  %p_Val2_32 = load i20* %cordic_ctab_V_addr      ; <i20> [#uses=1]
+
+ST_22: x_iteration_V_4 [1/1] 2.44ns
+bb5_ifconv.i:11  %x_iteration_V_4 = add i32 %r_V_23, %t_V_4      ; <i32> [#uses=1]
+
+ST_22: y_iteration_V_4 [1/1] 2.44ns
+bb5_ifconv.i:12  %y_iteration_V_4 = sub i32 %p_Val2_29, %r_V_24  ; <i32> [#uses=1]
+
+ST_22: y_iteration_V_5 [1/1] 1.37ns
+bb5_ifconv.i:14  %y_iteration_V_5 = select i1 %tmp_31, i32 %y_iteration_V, i32 %y_iteration_V_4 ; <i32> [#uses=1]
+
+ST_22: x_iteration_V_5 [1/1] 1.37ns
+bb5_ifconv.i:16  %x_iteration_V_5 = select i1 %tmp_31, i32 %x_iteration_V_3, i32 %x_iteration_V_4 ; <i32> [#uses=1]
+
+ST_22: stg_134 [1/1] 0.00ns
+cordic_atan.exit:0  br i1 %tmp_i3, label %bb1, label %bb2
+
+ST_22: tmp_32 [1/1] 0.00ns
+bb2:0  %tmp_32 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_20, i32 31) ; <i1> [#uses=2]
+
+ST_22: stg_136 [1/1] 0.00ns
+bb2:1  br i1 %tmp_32, label %bb5, label %bb22
+
+ST_22: stg_137 [1/1] 0.00ns
+bb5:0  br i1 %tmp_27, label %bb10, label %bb12
+
+ST_22: r_V [1/1] 2.44ns
+bb12:0  %r_V = add i32 %p_Val2_31, 3294198              ; <i32> [#uses=1]
+
+ST_22: phaseFrame_V_addr_1 [1/1] 0.00ns
+bb12:1  %phaseFrame_V_addr_1 = getelementptr [1024 x i32]* %phaseFrame_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_22: stg_140 [1/1] 2.39ns
+bb12:2  store i32 %r_V, i32* %phaseFrame_V_addr_1, align 4
+
+ST_22: stg_141 [1/1] 0.00ns
+bb12:3  br label %bb43
+
+ST_22: stg_142 [1/1] 0.00ns
+bb10:0  br i1 %tmp_32, label %bb17, label %bb22
+
+ST_22: not2 [1/1] 2.52ns
+bb22:0  %not2 = icmp eq i32 %p_Val2_20, 0               ; <i1> [#uses=1]
+
+ST_22: not3 [1/1] 2.52ns
+bb22:1  %not3 = icmp sgt i32 %p_Val2_21, 0              ; <i1> [#uses=1]
+
+ST_22: or_cond [1/1] 1.37ns
+bb22:2  %or_cond = and i1 %not2, %not3                  ; <i1> [#uses=1]
+
+ST_22: phaseFrame_V_addr_3 [1/1] 0.00ns
+bb22:3  %phaseFrame_V_addr_3 = getelementptr [1024 x i32]* %phaseFrame_V, i64 0, i64 %tmp ; <i32*> [#uses=2]
+
+ST_22: stg_147 [1/1] 0.00ns
+bb22:4  br i1 %or_cond, label %bb37, label %bb35
+
+ST_22: stg_148 [1/1] 2.39ns
+bb35:0  store i32 -1647099, i32* %phaseFrame_V_addr_3, align 4
+
+ST_22: stg_149 [1/1] 0.00ns
+bb35:1  br label %bb43
+
+ST_22: stg_150 [1/1] 2.39ns
+bb37:0  store i32 1647099, i32* %phaseFrame_V_addr_3, align 4
+
+ST_22: stg_151 [1/1] 0.00ns
+bb37:1  br label %bb43
+
+ST_22: r_V_s [1/1] 2.44ns
+bb17:0  %r_V_s = add i32 %p_Val2_31, -3294198           ; <i32> [#uses=1]
+
+ST_22: phaseFrame_V_addr_2 [1/1] 0.00ns
+bb17:1  %phaseFrame_V_addr_2 = getelementptr [1024 x i32]* %phaseFrame_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_22: stg_154 [1/1] 2.39ns
+bb17:2  store i32 %r_V_s, i32* %phaseFrame_V_addr_2, align 4
+
+ST_22: stg_155 [1/1] 0.00ns
+bb17:3  br label %bb43
+
+ST_22: phaseFrame_V_addr [1/1] 0.00ns
+bb1:0  %phaseFrame_V_addr = getelementptr [1024 x i32]* %phaseFrame_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_22: stg_157 [1/1] 2.39ns
+bb1:1  store i32 %p_Val2_31, i32* %phaseFrame_V_addr, align 4
+
+ST_22: stg_158 [1/1] 0.00ns
+bb1:2  br label %bb43
+
+
+ <State 23>: 6.20ns
+ST_23: p_Val2_32 [1/2] 2.39ns
+bb5_ifconv.i:8  %p_Val2_32 = load i20* %cordic_ctab_V_addr      ; <i20> [#uses=1]
+
+ST_23: p_Val2_7_i_cast [1/1] 0.00ns
+bb5_ifconv.i:9  %p_Val2_7_i_cast = zext i20 %p_Val2_32 to i32   ; <i32> [#uses=2]
+
+ST_23: r_V_i [1/1] 2.44ns
+bb5_ifconv.i:10  %r_V_i = sub i32 %p_Val2_31, %p_Val2_7_i_cast   ; <i32> [#uses=1]
+
+ST_23: r_V_12_i [1/1] 2.44ns
+bb5_ifconv.i:13  %r_V_12_i = add i32 %p_Val2_7_i_cast, %p_Val2_31 ; <i32> [#uses=1]
+
+ST_23: storemerge_i [1/1] 1.37ns
+bb5_ifconv.i:15  %storemerge_i = select i1 %tmp_31, i32 %r_V_i, i32 %r_V_12_i ; <i32> [#uses=1]
+
+ST_23: stg_164 [1/1] 0.00ns
+bb5_ifconv.i:17  br label %bb17.i
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

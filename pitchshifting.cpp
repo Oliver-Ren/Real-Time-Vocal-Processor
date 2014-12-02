@@ -47,7 +47,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   for (j = 0; j < WIN_SIZE; j++){
     real_angle[j] = ap_fixed_fmod(phaseCumulative[j], PI*2);
     
-    cordic_general(real_angle[j], sin_value[j], cos_value[j]);
+    cordic_sin_cos(real_angle[j], sin_value[j], cos_value[j]);
       
     real[j] = amplitude[j] * cos_value[j];
     imag[j] = amplitude[j] * sin_value[j];

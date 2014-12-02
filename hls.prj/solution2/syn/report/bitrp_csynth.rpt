@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vivado HLS Report for 'bitrp'
+================================================================
+* Date:           Mon Dec  1 20:03:25 2014
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        hls.prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      4.78|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  12289|  14337|  12289|  14337|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+        |             |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  12288|  14336|  12 ~ 14 |          -|          -|  1024|    no    |
+        | + Loop 1.1  |     10|     10|         1|          -|          -|    10|    no    |
+        +-------------+-------+-------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       0|     73|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    163|
+|Register         |        -|      -|     208|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     208|    236|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |i_1_fu_138_p2        |     +    |      0|  0|  11|          11|           1|
+    |j_2_fu_150_p2        |     +    |      0|  0|   4|           4|           1|
+    |exitcond2_fu_144_p2  |   icmp   |      0|  0|   4|           4|           4|
+    |exitcond_fu_132_p2   |   icmp   |      0|  0|  14|          11|          12|
+    |tmp_fu_186_p2        |   icmp   |      0|  0|  40|          32|          32|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0|  73|          62|          50|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |a_3_reg_82        |  11|          2|   11|         22|
+    |a_reg_96          |  32|          2|   32|         64|
+    |b_reg_116         |  32|          2|   32|         64|
+    |j_reg_105         |   4|          2|    4|          8|
+    |ximag_V_address0  |  10|          3|   10|         30|
+    |ximag_V_d0        |  32|          2|   32|         64|
+    |xreal_V_address0  |  10|          3|   10|         30|
+    |xreal_V_d0        |  32|          2|   32|         64|
+    +------------------+----+-----------+-----+-----------+
+    |Total             | 163|         18|  163|        346|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------+----+-----+-----------+
+    |          Name          | FF | Bits| Const Bits|
+    +------------------------+----+-----+-----------+
+    |a_3_cast_reg_203        |  11|   32|         21|
+    |a_3_reg_82              |  11|   11|          0|
+    |a_reg_96                |  32|   32|          0|
+    |ap_CS_fsm               |   3|    3|          0|
+    |b_reg_116               |  32|   32|          0|
+    |i_1_reg_212             |  11|   11|          0|
+    |j_reg_105               |   4|    4|          0|
+    |t_V_5_reg_266           |  32|   32|          0|
+    |t_V_reg_261             |  32|   32|          0|
+    |ximag_V_addr_4_reg_256  |  10|   10|          0|
+    |ximag_V_addr_reg_250    |  10|   10|          0|
+    |xreal_V_addr_4_reg_245  |  10|   10|          0|
+    |xreal_V_addr_reg_239    |  10|   10|          0|
+    +------------------------+----+-----+-----------+
+    |Total                   | 208|  229|         21|
+    +------------------------+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+-----------+--------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol | Source Object|    C Type    |
++------------------+-----+-----+-----------+--------------+--------------+
+|ap_clk            |  in |    1|          -|     bitrp    | return value |
+|ap_rst            |  in |    1|          -|     bitrp    | return value |
+|ap_start          |  in |    1|          -|     bitrp    | return value |
+|ap_done           | out |    1|          -|     bitrp    | return value |
+|ap_idle           | out |    1|          -|     bitrp    | return value |
+|ap_ready          | out |    1|          -|     bitrp    | return value |
+|xreal_V_address0  | out |   10| ap_memory |    xreal_V   |     array    |
+|xreal_V_ce0       | out |    1| ap_memory |    xreal_V   |     array    |
+|xreal_V_we0       | out |    1| ap_memory |    xreal_V   |     array    |
+|xreal_V_d0        | out |   32| ap_memory |    xreal_V   |     array    |
+|xreal_V_q0        |  in |   32| ap_memory |    xreal_V   |     array    |
+|xreal_V_address1  | out |   10| ap_memory |    xreal_V   |     array    |
+|xreal_V_ce1       | out |    1| ap_memory |    xreal_V   |     array    |
+|xreal_V_q1        |  in |   32| ap_memory |    xreal_V   |     array    |
+|ximag_V_address0  | out |   10| ap_memory |    ximag_V   |     array    |
+|ximag_V_ce0       | out |    1| ap_memory |    ximag_V   |     array    |
+|ximag_V_we0       | out |    1| ap_memory |    ximag_V   |     array    |
+|ximag_V_d0        | out |   32| ap_memory |    ximag_V   |     array    |
+|ximag_V_q0        |  in |   32| ap_memory |    ximag_V   |     array    |
+|ximag_V_address1  | out |   10| ap_memory |    ximag_V   |     array    |
+|ximag_V_ce1       | out |    1| ap_memory |    ximag_V   |     array    |
+|ximag_V_q1        |  in |   32| ap_memory |    ximag_V   |     array    |
++------------------+-----+-----+-----------+--------------+--------------+
+
