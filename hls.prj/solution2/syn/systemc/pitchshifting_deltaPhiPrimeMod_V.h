@@ -5,7 +5,7 @@
 // 
 // ==============================================================
 
-// Port list: {  2 3  }
+// Port list: {  0 1  }
 
 
 #ifndef _pitchshifting_deltaPhiPrimeMod_V_H_
@@ -186,10 +186,12 @@ SC_MODULE( pitchshifting_deltaPhiPrimeMod_V )
 
     sc_core::sc_in<sc_dt::sc_lv<AddressWidth> > address0;
     sc_core::sc_in<sc_dt::sc_logic> ce0;
-    sc_core::sc_out<sc_dt::sc_lv<DataWidth> > q0;
     sc_core::sc_in<sc_dt::sc_logic> we0;
     sc_core::sc_in<sc_dt::sc_lv<DataWidth> > d0;
 
+    sc_core::sc_in<sc_dt::sc_lv<AddressWidth> > address1;
+    sc_core::sc_in<sc_dt::sc_logic> ce1;
+    sc_core::sc_out<sc_dt::sc_lv<DataWidth> > q1;
 
     sc_core::sc_in<sc_dt::sc_logic> reset;
     sc_core::sc_in_clk clk;
@@ -211,10 +213,10 @@ SC_MODULE( pitchshifting_deltaPhiPrimeMod_V )
         sensitive << mem_q;
 
         SC_METHOD(proc_mem_ra);
-        sensitive << address0;
+        sensitive << address1;
 
         SC_METHOD(proc_mem_ce);
-        sensitive << ce0;
+        sensitive << ce1;
 
         SC_METHOD(proc_mem_wa);
         sensitive << address0;
@@ -224,6 +226,15 @@ SC_MODULE( pitchshifting_deltaPhiPrimeMod_V )
 
         SC_METHOD(proc_mem_d);
         sensitive << d0;
+
+        SC_METHOD(proc_op);
+        sensitive << ce0 << ce1 << we0;
+
+        SC_METHOD(proc_addr);
+        sensitive << address0 << address1;
+
+        SC_METHOD(proc_check);
+        sensitive << clk.pos();
 
     }
 
@@ -237,6 +248,9 @@ SC_MODULE( pitchshifting_deltaPhiPrimeMod_V )
     void proc_mem_wa();
     void proc_mem_we();
     void proc_mem_d();
+    void proc_op();
+    void proc_addr();
+    void proc_check();
 
 public:
     sc_core::sc_signal<sc_dt::sc_lv<1 * DataWidth> > mem_q;
@@ -247,6 +261,11 @@ public:
     sc_core::sc_signal<sc_dt::sc_lv<1> > mem_ce;
 
     pitchshifting_deltaPhiPrimeMod_V_core <1, 1, DataWidth, AddressWidth, AddressRange>* meminst;
+    sc_core::sc_signal<sc_dt::sc_logic> __re__[2];
+    sc_core::sc_signal<sc_dt::sc_logic> __we__[2];
+    sc_core::sc_signal<sc_dt::sc_lv<AddressWidth> > __addr__[2];
+
+
 };
 
 #endif //_pitchshifting_deltaPhiPrimeMod_V_H_

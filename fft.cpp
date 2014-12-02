@@ -10,7 +10,8 @@ void swap (fixed_type &a, fixed_type &b){
 void bitrp (fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
   int i, j, a, b, p;
 
-  for (i = 1, p = 0; i < WIN_SIZE; i *= 2){
+  for (i = 1, p = 0; i < WIN_SIZE; i = (i << 1) ){
+  // for (i = 1, p = 0; i < WIN_SIZE; i *= 2){
       p ++;
   }
   for (i = 0; i < WIN_SIZE; i ++){
@@ -28,7 +29,7 @@ void bitrp (fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
 }
 
 void FFT(fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
-  fixed_type wreal[WIN_SIZE/2], wimag[WIN_SIZE/2], treal, timag, ureal, uimag;
+  fixed_type wreal[(WIN_SIZE>>1)], wimag[(WIN_SIZE>>1)], treal, timag, ureal, uimag;
   int m, k, j, t, index1, index2;
     
   bitrp (xreal, ximag);
@@ -36,16 +37,17 @@ void FFT(fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
   timag = -0.0060999621699037165;
   wreal [0] = 1.0;
   wimag [0] = 0.0;
-  for (j = 1; j < WIN_SIZE/2 ; j ++){
+  for (j = 1; j < (WIN_SIZE >> 1) ; j ++){
     wreal [j] = wreal [j - 1] * treal - wimag [j - 1] * timag;
     wimag [j] = wreal [j - 1] * timag + wimag [j - 1] * treal;
   }
 
-  for (m = 2; m <= WIN_SIZE; m *= 2){
+  //for (m = 2; m <= WIN_SIZE; m *= 2){
+  for (m = 2; m <= WIN_SIZE; m = (m << 1)){
     for (k = 0; k < WIN_SIZE; k += m){
-      for (j = 0; j < m / 2; j ++){
+      for (j = 0; j < (m >> 1); j ++){
         index1 = k + j;
-        index2 = index1 + m / 2;
+        index2 = index1 + (m >> 1);
         t = WIN_SIZE * j / m;    
         treal = wreal [t] * xreal [index2] - wimag [t] * ximag [index2];
         timag = wreal [t] * ximag [index2] + wimag [t] * xreal [index2];
@@ -61,7 +63,7 @@ void FFT(fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
 }
 
 void IFFT (fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
-  fixed_type wreal[WIN_SIZE/2], wimag[WIN_SIZE/2], treal, timag, ureal, uimag;
+  fixed_type wreal[(WIN_SIZE>>1)], wimag[(WIN_SIZE>>1)], treal, timag, ureal, uimag;
   int m, k, j, t, index1, index2;
     
   bitrp (xreal, ximag);
@@ -70,16 +72,17 @@ void IFFT (fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
   timag = 0.0060999621699037165;
   wreal [0] = 1.0;
   wimag [0] = 0.0;
-  for (j = 1; j < WIN_SIZE/2; j ++) {
+  for (j = 1; j < (WIN_SIZE >> 1); j ++) {
     wreal [j] = wreal [j - 1] * treal - wimag [j - 1] * timag;
     wimag [j] = wreal [j - 1] * timag + wimag [j - 1] * treal;
   }
 
-  for (m = 2; m <= WIN_SIZE; m *= 2) {
+  //for (m = 2; m <= WIN_SIZE; m *= 2) {
+  for (m = 2; m <= WIN_SIZE; m = (m << 1)){
     for (k = 0; k < WIN_SIZE; k += m) {
-      for (j = 0; j < m / 2; j ++){
+      for (j = 0; j < (m >> 1); j ++){
         index1 = k + j;
-        index2 = index1 + m / 2;
+        index2 = index1 + (m >> 1);
         t = WIN_SIZE * j / m;    
         treal = wreal [t] * xreal [index2] - wimag [t] * ximag [index2];
         timag = wreal [t] * ximag [index2] + wimag [t] * xreal [index2];
@@ -94,8 +97,8 @@ void IFFT (fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
   }
 
   for (j=0; j < WIN_SIZE; j ++) {
-    xreal [j] /= WIN_SIZE;
-    ximag [j] /= WIN_SIZE;
+    xreal [j] *= WINSIZE_REVERSE; //xreal [j] /= WIN_SIZE;
+    ximag [j] *= WINSIZE_REVERSE; //ximag [j] /= WIN_SIZE;
   }
 }
 

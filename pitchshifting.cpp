@@ -12,25 +12,24 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   fixed_type f_real[WIN_SIZE];
   fixed_type phaseCumulative[WIN_SIZE];
   fixed_type outputMag[WIN_SIZE];
-  
-  // the main loop
-  int i;
-  for (i = 0; i < WIN_SIZE; i++){
+
+  for (int i = 0; i < WIN_SIZE; i++){
+    #pragma HLS PIPELINE II=1
     deltaPhi[i] = angle[i] - previousPhase[i];
-    deltaPhiPrime[i] = deltaPhi[i] - hop * 2 * PI * i / WIN_SIZE;
+    deltaPhiPrime[i] = deltaPhi[i] - (hop << 1) * PI * i * WINSIZE_REVERSE;
 
     if (deltaPhiPrime[i] + PI > 0)
-      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, 2 * PI) - PI;    
+      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI << 1) - PI;    
     else
-      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, 2 * PI) + PI;
+      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI << 1) + PI;
       
-    trueFreq[i] = 2 * PI * i /WIN_SIZE + deltaPhiPrimeMod[i] / (fixed_type)hop;
+    trueFreq[i] = (PI << 1) * i * WINSIZE_REVERSE + deltaPhiPrimeMod[i] * hop_reverse;
     
     // Get the phi_2u
     phi_2u[i] = hop * trueFreq[i];
     
     // Get the normalized true frequency
-    f_real[i] = (phi_2u[i] - previousPhase[i])/hop;
+    f_real[i] = (phi_2u[i] - previousPhase[i]) * hop_reverse;
     
     // Update previoius phase
     //previousPhase[i] = phaseFrame[i];
@@ -41,21 +40,25 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     // Get the magnitude
     outputMag[i] = amplitude[i];
   }
+
   fixed_type real[WIN_SIZE], imag[WIN_SIZE], real_angle[WIN_SIZE];
   fixed_type cos_value[WIN_SIZE], sin_value[WIN_SIZE];
-  int j;
-  for (j = 0; j < WIN_SIZE; j++){
-    real_angle[j] = ap_fixed_fmod(phaseCumulative[j], PI*2);
+
+  for (int j = 0; j < WIN_SIZE; j++){
+    #pragma HLS PIPELINE II=1
+    real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI<<1));
     
     cordic_sin_cos(real_angle[j], sin_value[j], cos_value[j]);
       
     real[j] = amplitude[j] * cos_value[j];
     imag[j] = amplitude[j] * sin_value[j];
   }
+
   IFFT(real, imag);
-  int m;
-  for (m = 0 ; m < WIN_SIZE; m++){
-    time_domain[m] = real[m] * wn[m] / sqrt_result;
+  
+  for (int m = 0 ; m < WIN_SIZE; m++){
+    #pragma HLS PIPELINE II=1
+    time_domain[m] = real[m] * wn[m] * sqrt_result_reverse;
   }
 }
 

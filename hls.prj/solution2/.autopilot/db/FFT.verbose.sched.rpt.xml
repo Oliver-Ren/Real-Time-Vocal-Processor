@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'FFT'" level="0">
-<item name = "Date">Mon Dec  1 20:03:18 2014
+<item name = "Date">Tue Dec  2 14:27:25 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -37,8 +37,8 @@
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">2555, 2555, 5, -, -, 511, no</column>
 <column name="- Loop 2">?, ?, ?, -, -, 10, no</column>
-<column name=" + Loop 2.1">?, ?, ?, -, -, ?, no</column>
-<column name="  ++ Loop 2.1.1">?, ?, 43, -, -, ?, no</column>
+<column name=" + Loop 2.1">?, ?, 8 ~ 46170898397, -, -, ?, no</column>
+<column name="  ++ Loop 2.1.1">0, 46170898389, 43, -, -, 0 ~ 1073741823, no</column>
 </table>
 </item>
 </section>

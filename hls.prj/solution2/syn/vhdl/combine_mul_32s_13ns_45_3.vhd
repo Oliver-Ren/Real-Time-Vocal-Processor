@@ -9,7 +9,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity combine_mul_32s_13ns_45_3_Mul3S_3 is
+entity combine_mul_32s_13ns_45_3_Mul3S_2 is
 port (
     clk: in std_logic;
     ce: in std_logic;
@@ -18,7 +18,7 @@ port (
     p: out std_logic_vector(45 - 1 downto 0));
 end entity;
 
-architecture behav of combine_mul_32s_13ns_45_3_Mul3S_3 is
+architecture behav of combine_mul_32s_13ns_45_3_Mul3S_2 is
     signal tmp_product : std_logic_vector(45 - 1 downto 0);
     signal a_i : std_logic_vector(32 - 1 downto 0);
     signal b_i : std_logic_vector(13 - 1 downto 0);
@@ -71,7 +71,7 @@ entity combine_mul_32s_13ns_45_3 is
 end entity;
 
 architecture arch of combine_mul_32s_13ns_45_3 is
-    component combine_mul_32s_13ns_45_3_Mul3S_3 is
+    component combine_mul_32s_13ns_45_3_Mul3S_2 is
         port (
             clk : IN STD_LOGIC;
             ce : IN STD_LOGIC;
@@ -84,7 +84,7 @@ architecture arch of combine_mul_32s_13ns_45_3 is
 
 
 begin
-    combine_mul_32s_13ns_45_3_Mul3S_3_U :  component combine_mul_32s_13ns_45_3_Mul3S_3
+    combine_mul_32s_13ns_45_3_Mul3S_2_U :  component combine_mul_32s_13ns_45_3_Mul3S_2
     port map (
         clk => clk,
         ce => ce,

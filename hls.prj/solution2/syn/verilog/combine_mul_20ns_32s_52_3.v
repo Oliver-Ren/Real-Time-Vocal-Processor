@@ -8,7 +8,7 @@
 
 `timescale 1 ns / 1 ps
 
-module combine_mul_20ns_32s_52_3_Mul3S_6(clk, ce, a, b, p);
+module combine_mul_20ns_32s_52_3_Mul3S_4(clk, ce, a, b, p);
 input clk;
 input ce;
 input[20 - 1 : 0] a; // synthesis attribute keep a "true"
@@ -54,7 +54,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-combine_mul_20ns_32s_52_3_Mul3S_6 combine_mul_20ns_32s_52_3_Mul3S_6_U(
+combine_mul_20ns_32s_52_3_Mul3S_4 combine_mul_20ns_32s_52_3_Mul3S_4_U(
     .clk( clk ),
     .ce( ce ),
     .a( din0 ),

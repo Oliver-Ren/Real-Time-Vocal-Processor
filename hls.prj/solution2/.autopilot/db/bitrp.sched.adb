@@ -151,7 +151,7 @@
 						<name>a_3_cast</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>17</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -166,7 +166,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>17</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -192,7 +192,7 @@
 						<name>exitcond</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -207,7 +207,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -234,7 +234,7 @@
 						<name>i_1</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -249,7 +249,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -276,7 +276,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -291,7 +291,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>16</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -409,7 +409,7 @@
 						<name>exitcond2</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -424,7 +424,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>19</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -451,7 +451,7 @@
 						<name>j_2</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -466,7 +466,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>19</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -493,49 +493,6 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>19</lineNumber>
-						<contextFuncName>bitrp</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/student/kl694/ece5775/final/</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>fft.cpp</first>
-											<second>bitrp</second>
-										</first>
-										<second>19</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>84</item>
-					<item>85</item>
-					<item>86</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-			</item>
-			<item class_id_reference="9" object_id="_15">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>20</id>
-						<name>tmp_37</name>
-						<fileName>fft.cpp</fileName>
-						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>20</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
@@ -560,21 +517,23 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>31</bitwidth>
+					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>1</count>
+					<count>3</count>
 					<item_version>0</item_version>
-					<item>49</item>
+					<item>84</item>
+					<item>85</item>
+					<item>86</item>
 				</oprand_edges>
-				<opcode>trunc</opcode>
+				<opcode>br</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_16">
+			<item class_id_reference="9" object_id="_15">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>21</id>
-						<name>tmp_38</name>
+						<id>20</id>
+						<name>tmp_107</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>21</lineNumber>
@@ -601,6 +560,47 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
+					<bitwidth>31</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>49</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_16">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>21</id>
+						<name>tmp_108</name>
+						<fileName>fft.cpp</fileName>
+						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
+						<lineNumber>22</lineNumber>
+						<contextFuncName>bitrp</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/student/kl694/ece5775/final/</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>fft.cpp</first>
+											<second>bitrp</second>
+										</first>
+										<second>22</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
 					<bitwidth>1</bitwidth>
 				</Value>
 				<oprand_edges>
@@ -618,7 +618,7 @@
 						<name>b_1</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>20</lineNumber>
+						<lineNumber>21</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -633,7 +633,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>20</second>
+										<second>21</second>
 									</item>
 								</second>
 							</item>
@@ -661,7 +661,7 @@
 						<name>tmp_s</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>21</lineNumber>
+						<lineNumber>22</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -676,7 +676,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>21</second>
+										<second>22</second>
 									</item>
 								</second>
 							</item>
@@ -705,7 +705,7 @@
 						<name>a_1</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>21</lineNumber>
+						<lineNumber>22</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -720,7 +720,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>21</second>
+										<second>22</second>
 									</item>
 								</second>
 							</item>
@@ -746,7 +746,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -761,7 +761,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>19</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -787,7 +787,7 @@
 						<name>tmp</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>23</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -802,7 +802,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>23</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -829,7 +829,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>23</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -844,7 +844,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>23</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -869,10 +869,10 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>tmp_27</name>
+						<name>tmp_24</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -887,7 +887,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -913,7 +913,7 @@
 						<name>xreal_V_addr</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -928,7 +928,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -953,10 +953,10 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>tmp_28</name>
+						<name>tmp_25</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -971,7 +971,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -997,7 +997,7 @@
 						<name>xreal_V_addr_4</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1012,7 +1012,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -1040,7 +1040,7 @@
 						<name>t_V</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1055,7 +1055,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -1081,7 +1081,7 @@
 						<name>xreal_V_load_4</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1096,7 +1096,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -1122,7 +1122,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1137,7 +1137,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -1166,7 +1166,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>24</lineNumber>
+						<lineNumber>25</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1181,7 +1181,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>24</second>
+										<second>25</second>
 									</item>
 								</second>
 							</item>
@@ -1209,7 +1209,7 @@
 						<name>ximag_V_addr</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>25</lineNumber>
+						<lineNumber>26</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1224,7 +1224,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>25</second>
+										<second>26</second>
 									</item>
 								</second>
 							</item>
@@ -1252,7 +1252,7 @@
 						<name>ximag_V_addr_4</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>25</lineNumber>
+						<lineNumber>26</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1267,7 +1267,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>25</second>
+										<second>26</second>
 									</item>
 								</second>
 							</item>
@@ -1292,10 +1292,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>t_V_5</name>
+						<name>t_V_62</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>25</lineNumber>
+						<lineNumber>26</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1310,7 +1310,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>25</second>
+										<second>26</second>
 									</item>
 								</second>
 							</item>
@@ -1336,7 +1336,7 @@
 						<name>ximag_V_load_4</name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>25</lineNumber>
+						<lineNumber>26</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1351,7 +1351,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>25</second>
+										<second>26</second>
 									</item>
 								</second>
 							</item>
@@ -1377,7 +1377,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>25</lineNumber>
+						<lineNumber>26</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1392,7 +1392,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>25</second>
+										<second>26</second>
 									</item>
 								</second>
 							</item>
@@ -1421,7 +1421,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>25</lineNumber>
+						<lineNumber>26</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1436,7 +1436,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>25</second>
+										<second>26</second>
 									</item>
 								</second>
 							</item>
@@ -1464,7 +1464,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>25</lineNumber>
+						<lineNumber>26</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1479,7 +1479,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>25</second>
+										<second>26</second>
 									</item>
 								</second>
 							</item>
@@ -1505,7 +1505,7 @@
 						<name></name>
 						<fileName>fft.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
-						<lineNumber>28</lineNumber>
+						<lineNumber>29</lineNumber>
 						<contextFuncName>bitrp</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1520,7 +1520,7 @@
 											<first>fft.cpp</first>
 											<second>bitrp</second>
 										</first>
-										<second>28</second>
+										<second>29</second>
 									</item>
 								</second>
 							</item>

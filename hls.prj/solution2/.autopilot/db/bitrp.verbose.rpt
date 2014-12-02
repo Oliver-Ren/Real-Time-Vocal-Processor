@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bitrp'
 ================================================================
-* Date:           Mon Dec  1 20:03:25 2014
+* Date:           Tue Dec  2 14:27:39 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -122,7 +122,7 @@
     |b_reg_116               |  32|   32|          0|
     |i_1_reg_212             |  11|   11|          0|
     |j_reg_105               |   4|    4|          0|
-    |t_V_5_reg_266           |  32|   32|          0|
+    |t_V_62_reg_266          |  32|   32|          0|
     |t_V_reg_261             |  32|   32|          0|
     |ximag_V_addr_4_reg_256  |  10|   10|          0|
     |ximag_V_addr_reg_250    |  10|   10|          0|
@@ -222,8 +222,8 @@ bb9:0  %a_3 = phi i11 [ 0, %entry ], [ %i_1, %bb7 ], [ %i_1, %bb6 ] ; <i11> [#us
 ST_2: a_3_cast [1/1] 0.00ns
 bb9:1  %a_3_cast = zext i11 %a_3 to i32                ; <i32> [#uses=2]
 
-ST_2: empty_47 [1/1] 0.00ns
-bb9:2  %empty_47 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+ST_2: empty_153 [1/1] 0.00ns
+bb9:2  %empty_153 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
 ST_2: exitcond [1/1] 2.11ns
 bb9:3  %exitcond = icmp eq i11 %a_3, -1024             ; <i1> [#uses=1]
@@ -260,14 +260,14 @@ bb5:5  %j_2 = add i4 %j, 1                             ; <i4> [#uses=1]
 ST_3: stg_20 [1/1] 0.00ns
 bb5:6  br i1 %exitcond2, label %bb6, label %bb4
 
-ST_3: tmp_37 [1/1] 0.00ns
-bb4:0  %tmp_37 = trunc i32 %b to i31                   ; <i31> [#uses=1]
+ST_3: tmp_107 [1/1] 0.00ns
+bb4:0  %tmp_107 = trunc i32 %b to i31                  ; <i31> [#uses=1]
 
-ST_3: tmp_38 [1/1] 0.00ns
-bb4:1  %tmp_38 = trunc i32 %a to i1                    ; <i1> [#uses=1]
+ST_3: tmp_108 [1/1] 0.00ns
+bb4:1  %tmp_108 = trunc i32 %a to i1                   ; <i1> [#uses=1]
 
 ST_3: b_1 [1/1] 0.00ns
-bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_37, i1 %tmp_38) ; <i32> [#uses=1]
+bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_107, i1 %tmp_108) ; <i32> [#uses=1]
 
 ST_3: tmp_s [1/1] 0.00ns
 bb4:3  %tmp_s = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %a, i32 1, i32 31) ; <i31> [#uses=1]
@@ -284,17 +284,17 @@ bb6:0  %tmp = icmp sgt i32 %b, %a_3_cast               ; <i1> [#uses=1]
 ST_3: stg_28 [1/1] 0.00ns
 bb6:1  br i1 %tmp, label %bb7, label %bb9
 
-ST_3: tmp_27 [1/1] 0.00ns
-bb7:0  %tmp_27 = zext i32 %b to i64                    ; <i64> [#uses=2]
+ST_3: tmp_24 [1/1] 0.00ns
+bb7:0  %tmp_24 = zext i32 %b to i64                    ; <i64> [#uses=2]
 
 ST_3: xreal_V_addr [1/1] 0.00ns
-bb7:1  %xreal_V_addr = getelementptr [1024 x i32]* %xreal_V, i64 0, i64 %tmp_27 ; <i32*> [#uses=2]
+bb7:1  %xreal_V_addr = getelementptr [1024 x i32]* %xreal_V, i64 0, i64 %tmp_24 ; <i32*> [#uses=2]
 
-ST_3: tmp_28 [1/1] 0.00ns
-bb7:2  %tmp_28 = zext i11 %a_3 to i64                  ; <i64> [#uses=2]
+ST_3: tmp_25 [1/1] 0.00ns
+bb7:2  %tmp_25 = zext i11 %a_3 to i64                  ; <i64> [#uses=2]
 
 ST_3: xreal_V_addr_4 [1/1] 0.00ns
-bb7:3  %xreal_V_addr_4 = getelementptr [1024 x i32]* %xreal_V, i64 0, i64 %tmp_28 ; <i32*> [#uses=2]
+bb7:3  %xreal_V_addr_4 = getelementptr [1024 x i32]* %xreal_V, i64 0, i64 %tmp_25 ; <i32*> [#uses=2]
 
 ST_3: t_V [2/2] 2.39ns
 bb7:4  %t_V = load i32* %xreal_V_addr_4                ; <i32> [#uses=1]
@@ -303,13 +303,13 @@ ST_3: xreal_V_load_4 [2/2] 2.39ns
 bb7:5  %xreal_V_load_4 = load i32* %xreal_V_addr       ; <i32> [#uses=1]
 
 ST_3: ximag_V_addr [1/1] 0.00ns
-bb7:8  %ximag_V_addr = getelementptr [1024 x i32]* %ximag_V, i64 0, i64 %tmp_27 ; <i32*> [#uses=2]
+bb7:8  %ximag_V_addr = getelementptr [1024 x i32]* %ximag_V, i64 0, i64 %tmp_24 ; <i32*> [#uses=2]
 
 ST_3: ximag_V_addr_4 [1/1] 0.00ns
-bb7:9  %ximag_V_addr_4 = getelementptr [1024 x i32]* %ximag_V, i64 0, i64 %tmp_28 ; <i32*> [#uses=2]
+bb7:9  %ximag_V_addr_4 = getelementptr [1024 x i32]* %ximag_V, i64 0, i64 %tmp_25 ; <i32*> [#uses=2]
 
-ST_3: t_V_5 [2/2] 2.39ns
-bb7:10  %t_V_5 = load i32* %ximag_V_addr_4              ; <i32> [#uses=1]
+ST_3: t_V_62 [2/2] 2.39ns
+bb7:10  %t_V_62 = load i32* %ximag_V_addr_4             ; <i32> [#uses=1]
 
 ST_3: ximag_V_load_4 [2/2] 2.39ns
 bb7:11  %ximag_V_load_4 = load i32* %ximag_V_addr       ; <i32> [#uses=1]
@@ -325,8 +325,8 @@ bb7:5  %xreal_V_load_4 = load i32* %xreal_V_addr       ; <i32> [#uses=1]
 ST_4: stg_41 [1/1] 2.39ns
 bb7:6  store i32 %xreal_V_load_4, i32* %xreal_V_addr_4
 
-ST_4: t_V_5 [1/2] 2.39ns
-bb7:10  %t_V_5 = load i32* %ximag_V_addr_4              ; <i32> [#uses=1]
+ST_4: t_V_62 [1/2] 2.39ns
+bb7:10  %t_V_62 = load i32* %ximag_V_addr_4             ; <i32> [#uses=1]
 
 ST_4: ximag_V_load_4 [1/2] 2.39ns
 bb7:11  %ximag_V_load_4 = load i32* %ximag_V_addr       ; <i32> [#uses=1]
@@ -340,7 +340,7 @@ ST_5: stg_45 [1/1] 2.39ns
 bb7:7  store i32 %t_V, i32* %xreal_V_addr
 
 ST_5: stg_46 [1/1] 2.39ns
-bb7:13  store i32 %t_V_5, i32* %ximag_V_addr
+bb7:13  store i32 %t_V_62, i32* %ximag_V_addr
 
 ST_5: stg_47 [1/1] 0.00ns
 bb7:14  br label %bb9
@@ -359,8 +359,8 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=<null>
-Port [ xreal_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x1ce02b40; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x1d6cea30; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ xreal_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0xa3b0ed0; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0xa3b0f30; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -370,7 +370,7 @@ Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; ex
 stg_6          (br               ) [ 011111]
 a_3            (phi              ) [ 001100]
 a_3_cast       (zext             ) [ 001111]
-empty_47       (speclooptripcount) [ 000000]
+empty_153      (speclooptripcount) [ 000000]
 exitcond       (icmp             ) [ 001111]
 i_1            (add              ) [ 011111]
 stg_12         (br               ) [ 001111]
@@ -382,24 +382,24 @@ empty          (speclooptripcount) [ 000000]
 exitcond2      (icmp             ) [ 001111]
 j_2            (add              ) [ 001111]
 stg_20         (br               ) [ 000000]
-tmp_37         (trunc            ) [ 000000]
-tmp_38         (trunc            ) [ 000000]
+tmp_107        (trunc            ) [ 000000]
+tmp_108        (trunc            ) [ 000000]
 b_1            (bitconcatenate   ) [ 001111]
 tmp_s          (partselect       ) [ 000000]
 a_1            (sext             ) [ 001111]
 stg_26         (br               ) [ 001111]
 tmp            (icmp             ) [ 001111]
 stg_28         (br               ) [ 011111]
-tmp_27         (zext             ) [ 000000]
+tmp_24         (zext             ) [ 000000]
 xreal_V_addr   (getelementptr    ) [ 000011]
-tmp_28         (zext             ) [ 000000]
+tmp_25         (zext             ) [ 000000]
 xreal_V_addr_4 (getelementptr    ) [ 000010]
 ximag_V_addr   (getelementptr    ) [ 000011]
 ximag_V_addr_4 (getelementptr    ) [ 000010]
 t_V            (load             ) [ 000001]
 xreal_V_load_4 (load             ) [ 000000]
 stg_41         (store            ) [ 000000]
-t_V_5          (load             ) [ 000001]
+t_V_62         (load             ) [ 000001]
 ximag_V_load_4 (load             ) [ 000000]
 stg_44         (store            ) [ 000000]
 stg_45         (store            ) [ 000000]
@@ -643,7 +643,7 @@ stg_47         (br               ) [ 011111]
 </pin_list>
 <bind>
 <opcode="load(27) store(28) " fcode="store"/>
-<opset="t_V_5/3 ximag_V_load_4/3 stg_44/4 stg_46/5 "/>
+<opset="t_V_62/3 ximag_V_load_4/3 stg_44/4 stg_46/5 "/>
 </bind>
 </comp>
 
@@ -804,25 +804,25 @@ stg_47         (br               ) [ 011111]
 </bind>
 </comp>
 
-<comp id="156" class="1004" name="tmp_37_fu_156">
+<comp id="156" class="1004" name="tmp_107_fu_156">
 <pin_list>
 <pin id="157" dir="0" index="0" bw="32" slack="0"/>
 <pin id="158" dir="1" index="1" bw="31" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(30) " fcode="trunc"/>
-<opset="tmp_37/3 "/>
+<opset="tmp_107/3 "/>
 </bind>
 </comp>
 
-<comp id="160" class="1004" name="tmp_38_fu_160">
+<comp id="160" class="1004" name="tmp_108_fu_160">
 <pin_list>
 <pin id="161" dir="0" index="0" bw="32" slack="0"/>
 <pin id="162" dir="1" index="1" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(30) " fcode="trunc"/>
-<opset="tmp_38/3 "/>
+<opset="tmp_108/3 "/>
 </bind>
 </comp>
 
@@ -876,25 +876,25 @@ stg_47         (br               ) [ 011111]
 </bind>
 </comp>
 
-<comp id="191" class="1004" name="tmp_27_fu_191">
+<comp id="191" class="1004" name="tmp_24_fu_191">
 <pin_list>
 <pin id="192" dir="0" index="0" bw="32" slack="0"/>
 <pin id="193" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(31) " fcode="zext"/>
-<opset="tmp_27/3 "/>
+<opset="tmp_24/3 "/>
 </bind>
 </comp>
 
-<comp id="197" class="1004" name="tmp_28_fu_197">
+<comp id="197" class="1004" name="tmp_25_fu_197">
 <pin_list>
 <pin id="198" dir="0" index="0" bw="11" slack="1"/>
 <pin id="199" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(31) " fcode="zext"/>
-<opset="tmp_28/3 "/>
+<opset="tmp_25/3 "/>
 </bind>
 </comp>
 
@@ -998,13 +998,13 @@ stg_47         (br               ) [ 011111]
 </bind>
 </comp>
 
-<comp id="266" class="1005" name="t_V_5_reg_266">
+<comp id="266" class="1005" name="t_V_62_reg_266">
 <pin_list>
 <pin id="267" dir="0" index="0" bw="32" slack="1"/>
 <pin id="268" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="t_V_5 "/>
+<opset="t_V_62 "/>
 </bind>
 </comp>
 
@@ -1177,21 +1177,21 @@ stg_47         (br               ) [ 011111]
 		exitcond2 : 1
 		j_2 : 1
 		stg_20 : 2
-		tmp_37 : 1
-		tmp_38 : 1
+		tmp_107 : 1
+		tmp_108 : 1
 		b_1 : 2
 		tmp_s : 1
 		a_1 : 2
 		tmp : 1
 		stg_28 : 2
-		tmp_27 : 1
+		tmp_24 : 1
 		xreal_V_addr : 2
 		xreal_V_addr_4 : 1
 		t_V : 2
 		xreal_V_load_4 : 3
 		ximag_V_addr : 2
 		ximag_V_addr_4 : 1
-		t_V_5 : 2
+		t_V_62 : 2
 		ximag_V_load_4 : 3
 	State 4
 		stg_41 : 1
@@ -1215,11 +1215,11 @@ stg_47         (br               ) [ 011111]
 |          |    j_2_fu_150    |    0    |    4    |
 |----------|------------------|---------|---------|
 |          |  a_3_cast_fu_128 |    0    |    0    |
-|   zext   |   tmp_27_fu_191  |    0    |    0    |
-|          |   tmp_28_fu_197  |    0    |    0    |
+|   zext   |   tmp_24_fu_191  |    0    |    0    |
+|          |   tmp_25_fu_197  |    0    |    0    |
 |----------|------------------|---------|---------|
-|   trunc  |   tmp_37_fu_156  |    0    |    0    |
-|          |   tmp_38_fu_160  |    0    |    0    |
+|   trunc  |  tmp_107_fu_156  |    0    |    0    |
+|          |  tmp_108_fu_160  |    0    |    0    |
 |----------|------------------|---------|---------|
 |bitconcatenate|    b_1_fu_164    |    0    |    0    |
 |----------|------------------|---------|---------|
@@ -1246,7 +1246,7 @@ N/A
 |      i_1_reg_212     |   11   |
 |      j_2_reg_221     |    4   |
 |       j_reg_105      |    4   |
-|     t_V_5_reg_266    |   32   |
+|    t_V_62_reg_266    |   32   |
 |      t_V_reg_261     |   32   |
 |ximag_V_addr_4_reg_256|   10   |
 | ximag_V_addr_reg_250 |   10   |

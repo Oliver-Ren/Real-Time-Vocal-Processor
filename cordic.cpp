@@ -1,38 +1,26 @@
-/*
-A CORDIC implementation of sine and cosine.
-
-INPUT:
-    double theta: Input angle 
-    
-OUTPUT:
-    double &s: Sin output
-    double &c: Cos output
-*/
 #include "cordic.h"
 #include <stdio.h>
-
-#define K_CONST 0.60725293510314 // Constant K
 
 #define ITERATION 64// interation times
 
 // The general CORDIC which is suitable for angle range in [0, 360)
 void cordic_sin_cos(fixed_type theta, fixed_type &s, fixed_type &c) {
   fixed_type cos_value, sin_value;
-  if (theta < PI/2){
+  if (theta < (PI>>1)){
       cordic(theta, s, c);
     }
     else if (theta < PI){
-      cordic((theta - PI/2), sin_value, cos_value);
+      cordic((theta - (PI>>1)), sin_value, cos_value);
       c = -sin_value;
       s = cos_value;
     }
-    else if (theta < PI*3/2){
+    else if (theta < PI * (fixed_type)1.5 ) {
       cordic((theta - PI), sin_value, cos_value);
       c = -cos_value;
       s = -sin_value;
     }
     else{
-      cordic((theta - PI*3/2), sin_value, cos_value);
+      cordic((theta -  PI * (fixed_type)1.5 ), sin_value, cos_value);
       c = sin_value;
       s = -cos_value;
     }
@@ -77,6 +65,7 @@ void cordic_atan(fixed_type x, fixed_type y, fixed_type &angle){
   }
   angle = 0; 
   for (int step=0; step<ITERATION; step++){
+    #pragma HLS PIPELINE II=1
     t = x_iteration;
     if (y_iteration < 0){
       x_iteration = t - (y_iteration>>step);
@@ -91,8 +80,6 @@ void cordic_atan(fixed_type x, fixed_type y, fixed_type &angle){
 }
 
 void cordic_sqrt(fixed_type x, fixed_type y, fixed_type& root) {
-  // cos_sin_type K = 1.64674351;
-  fixed_type K = 1.64676025812;
   fixed_type x_iteration, y_iteration;
   fixed_type ai;
 
@@ -111,6 +98,7 @@ void cordic_sqrt(fixed_type x, fixed_type y, fixed_type& root) {
     ai = -1;
 
   for(int i = 0; i < 64; i++){
+    #pragma HLS PIPELINE II=1
     x_iteration = xo - (yo * (ai >> i));
     y_iteration = yo + (xo * (ai >> i));
 
@@ -122,5 +110,5 @@ void cordic_sqrt(fixed_type x, fixed_type y, fixed_type& root) {
     xo = x_iteration;      
     yo = y_iteration;
   }
-  root = x_iteration / K;
+  root = x_iteration * K_CONST;
 }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bitrp'" level="0">
-<item name = "Date">Mon Dec  1 20:03:25 2014
+<item name = "Date">Tue Dec  2 14:27:39 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -107,7 +107,7 @@
 <column name="b_reg_116">32, 32, 0</column>
 <column name="i_1_reg_212">11, 11, 0</column>
 <column name="j_reg_105">4, 4, 0</column>
-<column name="t_V_5_reg_266">32, 32, 0</column>
+<column name="t_V_62_reg_266">32, 32, 0</column>
 <column name="t_V_reg_261">32, 32, 0</column>
 <column name="ximag_V_addr_4_reg_256">10, 10, 0</column>
 <column name="ximag_V_addr_reg_250">10, 10, 0</column>

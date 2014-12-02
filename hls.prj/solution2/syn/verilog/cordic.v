@@ -10,310 +10,1923 @@
 module cordic (
         ap_clk,
         ap_rst,
-        ap_start,
-        ap_done,
-        ap_idle,
-        ap_ready,
         theta_V,
         ap_return_0,
-        ap_return_1
+        ap_return_1,
+        ap_ce
 );
 
 input   ap_clk;
 input   ap_rst;
-input   ap_start;
-output   ap_done;
-output   ap_idle;
-output   ap_ready;
 input  [31:0] theta_V;
 output  [31:0] ap_return_0;
 output  [31:0] ap_return_1;
+input   ap_ce;
 
-reg ap_done;
-reg ap_idle;
-reg ap_ready;
-reg[31:0] ap_return_0;
-reg[31:0] ap_return_1;
-reg   [1:0] ap_CS_fsm = 2'b00;
-wire   [5:0] cordic_ctab_V_address0;
-reg    cordic_ctab_V_ce0;
-wire   [19:0] cordic_ctab_V_q0;
-wire   [6:0] step_fu_128_p2;
-reg   [6:0] step_reg_246;
-wire   [0:0] tmp_s_fu_134_p2;
-reg   [0:0] tmp_s_reg_251;
-wire   [0:0] exitcond1_fu_122_p2;
-wire   [31:0] x_V_2_fu_184_p3;
-reg   [31:0] x_V_2_reg_261;
-wire   [31:0] y_V_2_fu_192_p3;
-reg   [31:0] y_V_2_reg_266;
-wire   [31:0] current_angle_V_fu_216_p3;
-reg   [31:0] p_Val2_s_reg_44;
-wire   [0:0] tmp_fu_116_p2;
-reg   [31:0] p_Val2_4_reg_56;
-reg   [31:0] p_Val2_3_reg_68;
-reg   [6:0] step_1_reg_80;
-reg   [31:0] UnifiedRetVal1_reg_91;
-reg   [31:0] UnifiedRetVal_1_reg_103;
-wire   [63:0] tmp_1_fu_167_p1;
-wire   [31:0] sh_assign_3_cast_fu_139_p1;
-wire   [31:0] r_V_fu_143_p2;
-wire   [31:0] r_V_1_fu_155_p2;
-wire   [31:0] t_V_fu_149_p2;
-wire   [31:0] t_V_1_fu_172_p2;
-wire   [31:0] y_V_fu_161_p2;
-wire   [31:0] y_V_1_fu_178_p2;
-wire   [31:0] p_Val2_15_cast_fu_200_p1;
-wire   [31:0] r_V_s_fu_204_p2;
-wire   [31:0] r_V_3_fu_210_p2;
-reg   [31:0] ap_return_0_preg = 32'b00000000000000000000000000000000;
-reg   [31:0] ap_return_1_preg = 32'b00000000000000000000000000000000;
-reg   [1:0] ap_NS_fsm;
+reg   [31:0] theta_V_read_reg_2726;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it1;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it2;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it3;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it4;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it5;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it6;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it7;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it8;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it9;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it10;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it11;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it12;
+reg   [31:0] ap_reg_ppstg_theta_V_read_reg_2726_pp0_it13;
+wire   [0:0] tmp_s_fu_279_p2;
+reg   [0:0] tmp_s_reg_2750;
+reg   [0:0] ap_reg_ppstg_tmp_s_reg_2750_pp0_it1;
+reg   [0:0] ap_reg_ppstg_tmp_s_reg_2750_pp0_it2;
+reg   [0:0] ap_reg_ppstg_tmp_s_reg_2750_pp0_it3;
+reg   [0:0] ap_reg_ppstg_tmp_s_reg_2750_pp0_it4;
+wire   [0:0] tmp_81_1_fu_293_p2;
+reg   [0:0] tmp_81_1_reg_2758;
+reg   [0:0] ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it1;
+reg   [0:0] ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it2;
+reg   [0:0] ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it3;
+reg   [0:0] ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it4;
+wire   [21:0] r_V_106_1_fu_299_p3;
+reg   [21:0] r_V_106_1_reg_2765;
+wire   [21:0] r_V_111_1_fu_307_p3;
+reg   [21:0] r_V_111_1_reg_2770;
+wire   [0:0] tmp_81_2_fu_324_p2;
+reg   [0:0] tmp_81_2_reg_2775;
+reg   [0:0] ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it2;
+reg   [0:0] ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it3;
+reg   [0:0] ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it4;
+wire   [21:0] current_angle_V_1_fu_337_p2;
+reg   [21:0] current_angle_V_1_reg_2781;
+wire   [0:0] tmp_81_3_fu_346_p2;
+reg   [0:0] tmp_81_3_reg_2787;
+reg   [0:0] ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it3;
+reg   [0:0] ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it4;
+reg   [0:0] ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it5;
+wire   [21:0] current_angle_V_2_fu_359_p2;
+reg   [21:0] current_angle_V_2_reg_2793;
+wire   [0:0] tmp_81_4_fu_368_p2;
+reg   [0:0] tmp_81_4_reg_2798;
+reg   [0:0] ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it3;
+reg   [0:0] ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it4;
+reg   [0:0] ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it5;
+wire   [21:0] current_angle_V_3_fu_380_p2;
+reg   [21:0] current_angle_V_3_reg_2805;
+wire   [0:0] tmp_81_5_fu_389_p2;
+reg   [0:0] tmp_81_5_reg_2810;
+reg   [0:0] ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it4;
+reg   [0:0] ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it5;
+reg   [0:0] ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it6;
+wire   [21:0] p_Val2_35_v_cast_cast_fu_394_p3;
+reg   [21:0] p_Val2_35_v_cast_cast_reg_2816;
+wire   [0:0] tmp_81_6_fu_410_p2;
+reg   [0:0] tmp_81_6_reg_2821;
+reg   [0:0] ap_reg_ppstg_tmp_81_6_reg_2821_pp0_it5;
+reg   [0:0] ap_reg_ppstg_tmp_81_6_reg_2821_pp0_it6;
+wire   [21:0] current_angle_V_5_fu_423_p2;
+reg   [21:0] current_angle_V_5_reg_2827;
+wire   [21:0] x_V_92_fu_531_p3;
+reg   [21:0] x_V_92_reg_2833;
+wire   [21:0] y_V_93_fu_538_p3;
+reg   [21:0] y_V_93_reg_2839;
+reg   [18:0] tmp_2_reg_2844;
+reg   [18:0] tmp_3_reg_2849;
+wire   [0:0] tmp_81_7_fu_568_p2;
+reg   [0:0] tmp_81_7_reg_2854;
+reg   [0:0] ap_reg_ppstg_tmp_81_7_reg_2854_pp0_it6;
+reg   [0:0] ap_reg_ppstg_tmp_81_7_reg_2854_pp0_it7;
+wire   [21:0] current_angle_V_6_fu_581_p2;
+reg   [21:0] current_angle_V_6_reg_2860;
+wire   [0:0] tmp_81_8_fu_590_p2;
+reg   [0:0] tmp_81_8_reg_2865;
+reg   [0:0] ap_reg_ppstg_tmp_81_8_reg_2865_pp0_it6;
+reg   [0:0] ap_reg_ppstg_tmp_81_8_reg_2865_pp0_it7;
+wire   [26:0] x_V_93_fu_696_p3;
+reg   [26:0] x_V_93_reg_2872;
+wire   [28:0] y_V_95_fu_703_p3;
+reg   [28:0] y_V_95_reg_2878;
+reg   [23:0] tmp_6_reg_2884;
+reg   [21:0] tmp_7_reg_2889;
+wire   [21:0] current_angle_V_7_fu_737_p2;
+reg   [21:0] current_angle_V_7_reg_2894;
+wire   [0:0] tmp_81_9_fu_746_p2;
+reg   [0:0] tmp_81_9_reg_2899;
+reg   [0:0] ap_reg_ppstg_tmp_81_9_reg_2899_pp0_it7;
+reg   [0:0] ap_reg_ppstg_tmp_81_9_reg_2899_pp0_it8;
+wire   [21:0] p_Val2_63_v_cast_cast_fu_751_p3;
+reg   [21:0] p_Val2_63_v_cast_cast_reg_2905;
+wire   [26:0] x_V_95_fu_851_p3;
+reg   [26:0] x_V_95_reg_2910;
+wire   [28:0] y_V_97_fu_858_p3;
+reg   [28:0] y_V_97_reg_2916;
+reg   [21:0] tmp_11_reg_2922;
+reg   [19:0] tmp_12_reg_2927;
+wire   [0:0] tmp_81_s_fu_893_p2;
+reg   [0:0] tmp_81_s_reg_2932;
+reg   [0:0] ap_reg_ppstg_tmp_81_s_reg_2932_pp0_it8;
+wire   [21:0] current_angle_V_9_fu_906_p2;
+reg   [21:0] current_angle_V_9_reg_2938;
+wire   [26:0] x_V_97_fu_1004_p3;
+reg   [26:0] x_V_97_reg_2944;
+wire   [28:0] y_V_99_fu_1011_p3;
+reg   [28:0] y_V_99_reg_2949;
+reg   [19:0] tmp_15_reg_2955;
+reg   [17:0] tmp_16_reg_2960;
+wire   [0:0] tmp_81_10_fu_1041_p2;
+reg   [0:0] tmp_81_10_reg_2965;
+reg   [0:0] ap_reg_ppstg_tmp_81_10_reg_2965_pp0_it9;
+wire   [21:0] current_angle_V_10_fu_1054_p2;
+reg   [21:0] current_angle_V_10_reg_2971;
+wire   [0:0] tmp_81_11_fu_1063_p2;
+reg   [0:0] tmp_81_11_reg_2976;
+reg   [0:0] ap_reg_ppstg_tmp_81_11_reg_2976_pp0_it9;
+wire   [27:0] x_V_99_fu_1169_p3;
+reg   [27:0] x_V_99_reg_2983;
+wire   [29:0] y_V_101_fu_1176_p3;
+reg   [29:0] y_V_101_reg_2989;
+reg   [18:0] tmp_19_reg_2995;
+reg   [16:0] tmp_20_reg_3000;
+wire   [21:0] current_angle_V_11_fu_1210_p2;
+reg   [21:0] current_angle_V_11_reg_3005;
+wire   [0:0] tmp_81_12_fu_1219_p2;
+reg   [0:0] tmp_81_12_reg_3010;
+reg   [0:0] ap_reg_ppstg_tmp_81_12_reg_3010_pp0_it10;
+wire   [21:0] p_Val2_91_v_cast_cast_fu_1224_p3;
+reg   [21:0] p_Val2_91_v_cast_cast_reg_3016;
+wire   [27:0] x_V_101_fu_1324_p3;
+reg   [27:0] x_V_101_reg_3021;
+wire   [29:0] y_V_103_fu_1331_p3;
+reg   [29:0] y_V_103_reg_3027;
+reg   [16:0] tmp_23_reg_3033;
+reg   [14:0] tmp_24_reg_3038;
+wire   [0:0] tmp_81_13_fu_1366_p2;
+reg   [0:0] tmp_81_13_reg_3043;
+wire   [21:0] current_angle_V_13_fu_1379_p2;
+reg   [21:0] current_angle_V_13_reg_3049;
+wire   [27:0] x_V_103_fu_1477_p3;
+reg   [27:0] x_V_103_reg_3055;
+wire   [29:0] y_V_105_fu_1484_p3;
+reg   [29:0] y_V_105_reg_3061;
+wire   [0:0] tmp_81_14_fu_1494_p2;
+reg   [0:0] tmp_81_14_reg_3067;
+reg   [14:0] tmp_27_reg_3073;
+reg   [12:0] tmp_28_reg_3078;
+wire   [21:0] current_angle_V_14_fu_1527_p2;
+reg   [21:0] current_angle_V_14_reg_3083;
+wire   [0:0] tmp_81_15_fu_1536_p2;
+reg   [0:0] tmp_81_15_reg_3088;
+wire   [27:0] x_V_105_fu_1633_p3;
+reg   [27:0] x_V_105_reg_3095;
+wire   [29:0] y_V_107_fu_1640_p3;
+reg   [29:0] y_V_107_reg_3101;
+wire   [21:0] current_angle_V_15_fu_1654_p2;
+reg   [21:0] current_angle_V_15_reg_3107;
+wire   [0:0] tmp_81_16_fu_1663_p2;
+reg   [0:0] tmp_81_16_reg_3112;
+reg   [12:0] tmp_31_reg_3118;
+reg   [10:0] tmp_32_reg_3123;
+wire   [21:0] p_Val2_119_v_cast_cast_fu_1688_p3;
+reg   [21:0] p_Val2_119_v_cast_cast_reg_3128;
+wire   [27:0] x_V_107_fu_1801_p3;
+reg   [27:0] x_V_107_reg_3133;
+wire   [29:0] y_V_109_fu_1809_p3;
+reg   [29:0] y_V_109_reg_3139;
+wire   [21:0] current_angle_V_17_fu_1825_p2;
+reg   [21:0] current_angle_V_17_reg_3145;
+reg   [10:0] tmp_35_reg_3151;
+reg   [8:0] tmp_36_reg_3156;
+wire   [0:0] tmp_fu_1851_p2;
+reg   [0:0] tmp_reg_3161;
+reg   [0:0] ap_reg_ppstg_tmp_reg_3161_pp0_it15;
+reg   [0:0] ap_reg_ppstg_tmp_reg_3161_pp0_it16;
+reg   [0:0] ap_reg_ppstg_tmp_reg_3161_pp0_it17;
+reg   [0:0] ap_reg_ppstg_tmp_reg_3161_pp0_it18;
+reg   [0:0] ap_reg_ppstg_tmp_reg_3161_pp0_it19;
+wire   [0:0] tmp_81_19_fu_1923_p2;
+reg   [0:0] tmp_81_19_reg_3168;
+reg   [0:0] ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15;
+reg   [0:0] ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16;
+reg   [0:0] ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17;
+reg   [0:0] ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18;
+reg   [0:0] ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it19;
+wire   [27:0] t_V_38_fu_1942_p2;
+reg   [27:0] t_V_38_reg_3195;
+wire   [29:0] y_V_57_fu_1962_p2;
+reg   [29:0] y_V_57_reg_3200;
+wire   [27:0] t_V_39_fu_1968_p2;
+reg   [27:0] t_V_39_reg_3205;
+wire   [29:0] y_V_58_fu_1974_p2;
+reg   [29:0] y_V_58_reg_3210;
+wire   [27:0] t_V_42_fu_2070_p2;
+reg   [27:0] t_V_42_reg_3215;
+wire   [29:0] y_V_63_fu_2090_p2;
+reg   [29:0] y_V_63_reg_3220;
+wire   [27:0] t_V_43_fu_2096_p2;
+reg   [27:0] t_V_43_reg_3225;
+wire   [29:0] y_V_64_fu_2102_p2;
+reg   [29:0] y_V_64_reg_3230;
+wire   [27:0] t_V_46_fu_2198_p2;
+reg   [27:0] t_V_46_reg_3235;
+wire   [29:0] y_V_69_fu_2218_p2;
+reg   [29:0] y_V_69_reg_3240;
+wire   [27:0] t_V_47_fu_2224_p2;
+reg   [27:0] t_V_47_reg_3245;
+wire   [29:0] y_V_70_fu_2230_p2;
+reg   [29:0] y_V_70_reg_3250;
+wire   [27:0] t_V_50_fu_2326_p2;
+reg   [27:0] t_V_50_reg_3255;
+wire   [29:0] y_V_75_fu_2346_p2;
+reg   [29:0] y_V_75_reg_3260;
+wire   [27:0] t_V_51_fu_2352_p2;
+reg   [27:0] t_V_51_reg_3265;
+wire   [29:0] y_V_76_fu_2358_p2;
+reg   [29:0] y_V_76_reg_3270;
+wire   [27:0] t_V_54_fu_2452_p2;
+reg   [27:0] t_V_54_reg_3275;
+wire   [29:0] y_V_81_fu_2470_p2;
+reg   [29:0] y_V_81_reg_3280;
+wire   [27:0] t_V_55_fu_2476_p2;
+reg   [27:0] t_V_55_reg_3285;
+wire   [29:0] y_V_82_fu_2482_p2;
+reg   [29:0] y_V_82_reg_3290;
+wire   [27:0] t_V_58_fu_2572_p2;
+reg   [27:0] t_V_58_reg_3295;
+wire   [29:0] y_V_87_fu_2590_p2;
+reg   [29:0] y_V_87_reg_3300;
+wire   [27:0] t_V_59_fu_2596_p2;
+reg   [27:0] t_V_59_reg_3305;
+wire   [29:0] y_V_88_fu_2602_p2;
+reg   [29:0] y_V_88_reg_3310;
+wire   [31:0] current_angle_V_cast_cast_fu_285_p3;
+wire   [21:0] current_angle_V_fu_315_p3;
+wire   [31:0] tmp_81_2_fu_324_p0;
+wire   [21:0] p_Val2_14_v_cast_cast_fu_329_p3;
+wire   [31:0] tmp_81_3_fu_346_p0;
+wire   [21:0] p_Val2_21_v_cast_cast_fu_351_p3;
+wire   [31:0] tmp_81_4_fu_368_p0;
+wire   [21:0] p_Val2_28_v_cast_cast_fu_373_p3;
+wire   [31:0] tmp_81_5_fu_389_p0;
+wire   [21:0] current_angle_V_4_fu_402_p2;
+wire   [31:0] tmp_81_6_fu_410_p0;
+wire   [21:0] p_Val2_42_v_cast_cast_fu_415_p3;
+wire   [19:0] t_V_fu_429_p3;
+wire   [19:0] t_V_1_fu_443_p3;
+wire   [19:0] x_V_91_fu_457_p3;
+wire   [20:0] y_V_fu_436_p3;
+wire   [20:0] y_V_1_fu_450_p3;
+wire   [20:0] y_V_92_fu_468_p3;
+wire   [18:0] tmp_1_fu_479_p4;
+wire   [21:0] p_Val2_3_cast_cast_fu_464_p1;
+wire   [21:0] t_V_2_fu_493_p1;
+wire   [21:0] r_V_cast_cast_fu_489_p1;
+wire   [17:0] tmp_8_fu_499_p4;
+wire   [21:0] y_V_3_fu_513_p0;
+wire   [21:0] p_Val2_6_cast_fu_475_p1;
+wire   [21:0] r_V_2_cast_fu_509_p1;
+wire   [21:0] t_V_3_fu_519_p1;
+wire   [21:0] y_V_4_fu_525_p0;
+wire   [21:0] t_V_2_fu_493_p2;
+wire   [21:0] t_V_3_fu_519_p2;
+wire   [21:0] y_V_3_fu_513_p2;
+wire   [21:0] y_V_4_fu_525_p2;
+wire   [31:0] tmp_81_7_fu_568_p0;
+wire   [21:0] p_Val2_49_v_cast_cast_fu_573_p3;
+wire   [31:0] tmp_81_8_fu_590_p0;
+wire   [21:0] t_V_4_fu_601_p1;
+wire   [21:0] r_V_5_cast_cast_fu_598_p1;
+wire   [28:0] y_V_6_fu_609_p0;
+wire   [28:0] p_Val2_13_cast_cast_fu_595_p1;
+wire   [28:0] y_V_6_fu_609_p1;
+wire   [28:0] r_V_6_cast_cast_fu_606_p1;
+wire   [21:0] t_V_5_fu_615_p1;
+wire   [28:0] y_V_7_fu_620_p0;
+wire   [28:0] y_V_7_fu_620_p1;
+wire   [21:0] t_V_4_fu_601_p2;
+wire   [21:0] t_V_5_fu_615_p2;
+wire   [21:0] x_V_fu_626_p3;
+wire   [28:0] y_V_6_fu_609_p2;
+wire   [28:0] y_V_7_fu_620_p2;
+wire   [28:0] y_V_94_fu_637_p3;
+wire   [24:0] tmp_4_fu_644_p4;
+wire   [26:0] t_V_6_fu_658_p0;
+wire   [26:0] x_V_92_cast_fu_633_p1;
+wire   [26:0] t_V_6_fu_658_p1;
+wire   [26:0] r_V_9_cast_cast_fu_654_p1;
+wire   [17:0] tmp_5_fu_664_p4;
+wire   [28:0] y_V_9_fu_678_p1;
+wire   [28:0] r_V_10_cast_cast_fu_674_p1;
+wire   [26:0] t_V_7_fu_684_p0;
+wire   [26:0] t_V_7_fu_684_p1;
+wire   [28:0] y_V_10_fu_690_p1;
+wire   [26:0] t_V_6_fu_658_p2;
+wire   [26:0] t_V_7_fu_684_p2;
+wire   [28:0] y_V_9_fu_678_p2;
+wire   [28:0] y_V_10_fu_690_p2;
+wire   [21:0] p_Val2_56_v_cast_cast_fu_730_p3;
+wire   [31:0] tmp_81_9_fu_746_p0;
+wire   [26:0] t_V_8_fu_762_p1;
+wire   [26:0] r_V_13_cast_cast_fu_759_p1;
+wire   [28:0] y_V_12_fu_770_p1;
+wire   [28:0] r_V_14_cast_cast_fu_767_p1;
+wire   [26:0] t_V_9_fu_775_p1;
+wire   [28:0] y_V_13_fu_780_p1;
+wire   [26:0] t_V_8_fu_762_p2;
+wire   [26:0] t_V_9_fu_775_p2;
+wire   [28:0] y_V_12_fu_770_p2;
+wire   [28:0] y_V_13_fu_780_p2;
+wire   [28:0] y_V_96_fu_792_p3;
+wire   [22:0] tmp_9_fu_799_p4;
+wire   [26:0] x_V_94_fu_785_p3;
+wire   [26:0] t_V_10_fu_813_p1;
+wire   [26:0] r_V_17_cast_cast_fu_809_p1;
+wire   [20:0] tmp_10_fu_819_p4;
+wire   [28:0] y_V_15_fu_833_p1;
+wire   [28:0] r_V_18_cast_cast_fu_829_p1;
+wire   [26:0] t_V_11_fu_839_p1;
+wire   [28:0] y_V_16_fu_845_p1;
+wire   [26:0] t_V_10_fu_813_p2;
+wire   [26:0] t_V_11_fu_839_p2;
+wire   [28:0] y_V_15_fu_833_p2;
+wire   [28:0] y_V_16_fu_845_p2;
+wire   [21:0] current_angle_V_8_fu_885_p2;
+wire   [31:0] tmp_81_s_fu_893_p0;
+wire   [21:0] p_Val2_70_v_cast_cast_fu_898_p3;
+wire   [26:0] t_V_12_fu_915_p1;
+wire   [26:0] r_V_21_cast_cast_fu_912_p1;
+wire   [28:0] y_V_18_fu_923_p1;
+wire   [28:0] r_V_22_cast_cast_fu_920_p1;
+wire   [26:0] t_V_13_fu_928_p1;
+wire   [28:0] y_V_19_fu_933_p1;
+wire   [26:0] t_V_12_fu_915_p2;
+wire   [26:0] t_V_13_fu_928_p2;
+wire   [28:0] y_V_18_fu_923_p2;
+wire   [28:0] y_V_19_fu_933_p2;
+wire   [28:0] y_V_98_fu_945_p3;
+wire   [20:0] tmp_13_fu_952_p4;
+wire   [26:0] x_V_96_fu_938_p3;
+wire   [26:0] t_V_14_fu_966_p1;
+wire   [26:0] r_V_25_cast_cast_fu_962_p1;
+wire   [18:0] tmp_14_fu_972_p4;
+wire   [28:0] y_V_21_fu_986_p1;
+wire   [28:0] r_V_26_cast_cast_fu_982_p1;
+wire   [26:0] t_V_15_fu_992_p1;
+wire   [28:0] y_V_22_fu_998_p1;
+wire   [26:0] t_V_14_fu_966_p2;
+wire   [26:0] t_V_15_fu_992_p2;
+wire   [28:0] y_V_21_fu_986_p2;
+wire   [28:0] y_V_22_fu_998_p2;
+wire   [31:0] tmp_81_10_fu_1041_p0;
+wire   [21:0] p_Val2_77_v_cast_cast_fu_1046_p3;
+wire   [31:0] tmp_81_11_fu_1063_p0;
+wire   [27:0] t_V_16_fu_1074_p0;
+wire   [27:0] x_V_97_cast_fu_1068_p1;
+wire   [27:0] t_V_16_fu_1074_p1;
+wire   [27:0] r_V_29_cast_cast_fu_1071_p1;
+wire   [28:0] y_V_24_fu_1083_p1;
+wire   [28:0] r_V_30_cast_cast_fu_1080_p1;
+wire   [27:0] t_V_17_fu_1088_p0;
+wire   [27:0] t_V_17_fu_1088_p1;
+wire   [28:0] y_V_25_fu_1094_p1;
+wire   [27:0] t_V_16_fu_1074_p2;
+wire   [27:0] t_V_17_fu_1088_p2;
+wire   [28:0] y_V_24_fu_1083_p2;
+wire   [28:0] y_V_25_fu_1094_p2;
+wire   [28:0] y_V_100_fu_1106_p3;
+wire   [18:0] tmp_17_fu_1117_p4;
+wire   [27:0] x_V_98_fu_1099_p3;
+wire   [27:0] t_V_18_fu_1131_p1;
+wire   [27:0] r_V_33_cast_cast_fu_1127_p1;
+wire   [17:0] tmp_18_fu_1137_p4;
+wire   [29:0] y_V_27_fu_1151_p0;
+wire   [29:0] y_V_100_cast_fu_1113_p1;
+wire   [29:0] y_V_27_fu_1151_p1;
+wire   [29:0] r_V_34_cast_fu_1147_p1;
+wire   [27:0] t_V_19_fu_1157_p1;
+wire   [29:0] y_V_28_fu_1163_p0;
+wire   [29:0] y_V_28_fu_1163_p1;
+wire   [27:0] t_V_18_fu_1131_p2;
+wire   [27:0] t_V_19_fu_1157_p2;
+wire   [29:0] y_V_27_fu_1151_p2;
+wire   [29:0] y_V_28_fu_1163_p2;
+wire   [21:0] p_Val2_84_v_cast_cast_fu_1203_p3;
+wire   [31:0] tmp_81_12_fu_1219_p0;
+wire   [27:0] t_V_20_fu_1235_p1;
+wire   [27:0] r_V_37_cast_cast_fu_1232_p1;
+wire   [29:0] y_V_30_fu_1243_p1;
+wire   [29:0] r_V_38_cast_cast_fu_1240_p1;
+wire   [27:0] t_V_21_fu_1248_p1;
+wire   [29:0] y_V_31_fu_1253_p1;
+wire   [27:0] t_V_20_fu_1235_p2;
+wire   [27:0] t_V_21_fu_1248_p2;
+wire   [29:0] y_V_30_fu_1243_p2;
+wire   [29:0] y_V_31_fu_1253_p2;
+wire   [29:0] y_V_102_fu_1265_p3;
+wire   [17:0] tmp_21_fu_1272_p4;
+wire   [27:0] x_V_100_fu_1258_p3;
+wire   [27:0] t_V_22_fu_1286_p1;
+wire   [27:0] r_V_cast_fu_1282_p1;
+wire   [15:0] tmp_22_fu_1292_p4;
+wire   [29:0] y_V_33_fu_1306_p1;
+wire   [29:0] r_V_42_cast_cast_fu_1302_p1;
+wire   [27:0] t_V_23_fu_1312_p1;
+wire   [29:0] y_V_34_fu_1318_p1;
+wire   [27:0] t_V_22_fu_1286_p2;
+wire   [27:0] t_V_23_fu_1312_p2;
+wire   [29:0] y_V_33_fu_1306_p2;
+wire   [29:0] y_V_34_fu_1318_p2;
+wire   [21:0] current_angle_V_12_fu_1358_p2;
+wire   [31:0] tmp_81_13_fu_1366_p0;
+wire   [21:0] p_Val2_98_v_cast_cast_fu_1371_p3;
+wire   [27:0] t_V_24_fu_1388_p1;
+wire   [27:0] r_V_1_cast_fu_1385_p1;
+wire   [29:0] y_V_36_fu_1396_p1;
+wire   [29:0] r_V_46_cast_cast_fu_1393_p1;
+wire   [27:0] t_V_25_fu_1401_p1;
+wire   [29:0] y_V_37_fu_1406_p1;
+wire   [27:0] t_V_24_fu_1388_p2;
+wire   [27:0] t_V_25_fu_1401_p2;
+wire   [29:0] y_V_36_fu_1396_p2;
+wire   [29:0] y_V_37_fu_1406_p2;
+wire   [29:0] y_V_104_fu_1418_p3;
+wire   [15:0] tmp_25_fu_1425_p4;
+wire   [27:0] x_V_102_fu_1411_p3;
+wire   [27:0] t_V_26_fu_1439_p1;
+wire   [27:0] r_V_2_cast1_fu_1435_p1;
+wire   [13:0] tmp_26_fu_1445_p4;
+wire   [29:0] y_V_39_fu_1459_p1;
+wire   [29:0] r_V_50_cast_cast_fu_1455_p1;
+wire   [27:0] t_V_27_fu_1465_p1;
+wire   [29:0] y_V_40_fu_1471_p1;
+wire   [27:0] t_V_26_fu_1439_p2;
+wire   [27:0] t_V_27_fu_1465_p2;
+wire   [29:0] y_V_39_fu_1459_p2;
+wire   [29:0] y_V_40_fu_1471_p2;
+wire   [31:0] tmp_81_14_fu_1494_p0;
+wire   [21:0] p_Val2_105_v_cast_cast_fu_1519_p3;
+wire   [31:0] tmp_81_15_fu_1536_p0;
+wire   [27:0] t_V_28_fu_1544_p1;
+wire   [27:0] r_V_3_cast_fu_1541_p1;
+wire   [29:0] y_V_42_fu_1552_p1;
+wire   [29:0] r_V_54_cast_cast_fu_1549_p1;
+wire   [27:0] t_V_29_fu_1557_p1;
+wire   [29:0] y_V_43_fu_1562_p1;
+wire   [27:0] t_V_28_fu_1544_p2;
+wire   [27:0] t_V_29_fu_1557_p2;
+wire   [29:0] y_V_42_fu_1552_p2;
+wire   [29:0] y_V_43_fu_1562_p2;
+wire   [29:0] y_V_106_fu_1574_p3;
+wire   [13:0] tmp_29_fu_1581_p4;
+wire   [27:0] x_V_104_fu_1567_p3;
+wire   [27:0] t_V_30_fu_1595_p1;
+wire   [27:0] r_V_4_cast_fu_1591_p1;
+wire   [11:0] tmp_30_fu_1601_p4;
+wire   [29:0] y_V_45_fu_1615_p1;
+wire   [29:0] r_V_58_cast_cast_fu_1611_p1;
+wire   [27:0] t_V_31_fu_1621_p1;
+wire   [29:0] y_V_46_fu_1627_p1;
+wire   [27:0] t_V_30_fu_1595_p2;
+wire   [27:0] t_V_31_fu_1621_p2;
+wire   [29:0] y_V_45_fu_1615_p2;
+wire   [29:0] y_V_46_fu_1627_p2;
+wire   [21:0] p_Val2_112_v_cast_cast_fu_1647_p3;
+wire   [31:0] tmp_81_16_fu_1663_p0;
+wire   [27:0] t_V_32_fu_1699_p1;
+wire   [27:0] r_V_5_cast9_fu_1696_p1;
+wire   [29:0] y_V_48_fu_1707_p1;
+wire   [29:0] r_V_62_cast_cast_fu_1704_p1;
+wire   [27:0] t_V_33_fu_1712_p1;
+wire   [29:0] y_V_49_fu_1717_p1;
+wire   [27:0] t_V_32_fu_1699_p2;
+wire   [27:0] t_V_33_fu_1712_p2;
+wire   [29:0] y_V_48_fu_1707_p2;
+wire   [29:0] y_V_49_fu_1717_p2;
+wire   [21:0] current_angle_V_16_fu_1736_p2;
+wire   [31:0] tmp_81_17_fu_1744_p0;
+wire   [29:0] y_V_108_fu_1729_p3;
+wire   [11:0] tmp_33_fu_1749_p4;
+wire   [27:0] x_V_106_fu_1722_p3;
+wire   [27:0] t_V_34_fu_1763_p1;
+wire   [27:0] r_V_6_cast8_fu_1759_p1;
+wire   [9:0] tmp_34_fu_1769_p4;
+wire   [29:0] y_V_51_fu_1783_p1;
+wire   [29:0] r_V_66_cast_cast_fu_1779_p1;
+wire   [27:0] t_V_35_fu_1789_p1;
+wire   [29:0] y_V_52_fu_1795_p1;
+wire   [0:0] tmp_81_17_fu_1744_p2;
+wire   [27:0] t_V_34_fu_1763_p2;
+wire   [27:0] t_V_35_fu_1789_p2;
+wire   [29:0] y_V_51_fu_1783_p2;
+wire   [29:0] y_V_52_fu_1795_p2;
+wire   [21:0] p_Val2_126_v_cast_cast_fu_1817_p3;
+wire   [31:0] tmp_81_18_fu_1859_p0;
+wire   [27:0] t_V_36_fu_1867_p1;
+wire   [27:0] r_V_7_cast_fu_1864_p1;
+wire   [29:0] y_V_54_fu_1875_p1;
+wire   [29:0] r_V_70_cast_cast_fu_1872_p1;
+wire   [27:0] t_V_37_fu_1880_p1;
+wire   [29:0] y_V_55_fu_1885_p1;
+wire   [0:0] tmp_81_18_fu_1859_p2;
+wire   [27:0] t_V_36_fu_1867_p2;
+wire   [27:0] t_V_37_fu_1880_p2;
+wire   [29:0] y_V_54_fu_1875_p2;
+wire   [29:0] y_V_55_fu_1885_p2;
+wire   [21:0] p_Val2_135_v_cast_cast_fu_1906_p3;
+wire   [21:0] p_Val2_57_fu_1914_p2;
+wire   [31:0] tmp_81_19_fu_1923_p0;
+wire   [29:0] y_V_110_fu_1898_p3;
+wire   [9:0] tmp_37_fu_1928_p4;
+wire   [27:0] x_V_108_fu_1890_p3;
+wire   [27:0] t_V_38_fu_1942_p1;
+wire   [27:0] r_V_8_cast_fu_1938_p1;
+wire   [7:0] tmp_38_fu_1948_p4;
+wire   [29:0] y_V_57_fu_1962_p1;
+wire   [29:0] r_V_74_cast_cast_fu_1958_p1;
+wire   [27:0] t_V_39_fu_1968_p1;
+wire   [29:0] y_V_58_fu_1974_p1;
+wire   [29:0] y_V_111_fu_1985_p3;
+wire   [8:0] tmp_39_fu_1990_p4;
+wire   [27:0] x_V_109_fu_1980_p3;
+wire   [27:0] t_V_40_fu_2004_p1;
+wire   [27:0] r_V_9_cast7_fu_2000_p1;
+wire   [6:0] tmp_40_fu_2010_p4;
+wire   [29:0] y_V_60_fu_2024_p1;
+wire   [29:0] r_V_78_cast_cast_fu_2020_p1;
+wire   [27:0] t_V_41_fu_2030_p1;
+wire   [29:0] y_V_61_fu_2036_p1;
+wire   [27:0] t_V_40_fu_2004_p2;
+wire   [27:0] t_V_41_fu_2030_p2;
+wire   [29:0] y_V_60_fu_2024_p2;
+wire   [29:0] y_V_61_fu_2036_p2;
+wire   [29:0] y_V_112_fu_2049_p3;
+wire   [7:0] tmp_41_fu_2056_p4;
+wire   [27:0] x_V_110_fu_2042_p3;
+wire   [27:0] t_V_42_fu_2070_p1;
+wire   [27:0] r_V_10_cast6_fu_2066_p1;
+wire   [5:0] tmp_42_fu_2076_p4;
+wire   [29:0] y_V_63_fu_2090_p1;
+wire   [29:0] r_V_82_cast_cast_fu_2086_p1;
+wire   [27:0] t_V_43_fu_2096_p1;
+wire   [29:0] y_V_64_fu_2102_p1;
+wire   [29:0] y_V_113_fu_2113_p3;
+wire   [6:0] tmp_43_fu_2118_p4;
+wire   [27:0] x_V_111_fu_2108_p3;
+wire   [27:0] t_V_44_fu_2132_p1;
+wire   [27:0] r_V_11_cast_fu_2128_p1;
+wire   [4:0] tmp_44_fu_2138_p4;
+wire   [29:0] y_V_66_fu_2152_p1;
+wire   [29:0] r_V_86_cast_cast_fu_2148_p1;
+wire   [27:0] t_V_45_fu_2158_p1;
+wire   [29:0] y_V_67_fu_2164_p1;
+wire   [27:0] t_V_44_fu_2132_p2;
+wire   [27:0] t_V_45_fu_2158_p2;
+wire   [29:0] y_V_66_fu_2152_p2;
+wire   [29:0] y_V_67_fu_2164_p2;
+wire   [29:0] y_V_114_fu_2177_p3;
+wire   [5:0] tmp_45_fu_2184_p4;
+wire   [27:0] x_V_112_fu_2170_p3;
+wire   [27:0] t_V_46_fu_2198_p1;
+wire   [27:0] r_V_12_cast_fu_2194_p1;
+wire   [3:0] tmp_46_fu_2204_p4;
+wire   [29:0] y_V_69_fu_2218_p1;
+wire   [29:0] r_V_90_cast_cast_fu_2214_p1;
+wire   [27:0] t_V_47_fu_2224_p1;
+wire   [29:0] y_V_70_fu_2230_p1;
+wire   [29:0] y_V_115_fu_2241_p3;
+wire   [4:0] tmp_47_fu_2246_p4;
+wire   [27:0] x_V_113_fu_2236_p3;
+wire   [27:0] t_V_48_fu_2260_p1;
+wire   [27:0] r_V_13_cast5_fu_2256_p1;
+wire   [2:0] tmp_48_fu_2266_p4;
+wire   [29:0] y_V_72_fu_2280_p1;
+wire   [29:0] r_V_94_cast_cast_fu_2276_p1;
+wire   [27:0] t_V_49_fu_2286_p1;
+wire   [29:0] y_V_73_fu_2292_p1;
+wire   [27:0] t_V_48_fu_2260_p2;
+wire   [27:0] t_V_49_fu_2286_p2;
+wire   [29:0] y_V_72_fu_2280_p2;
+wire   [29:0] y_V_73_fu_2292_p2;
+wire   [29:0] y_V_116_fu_2305_p3;
+wire   [3:0] tmp_49_fu_2312_p4;
+wire   [27:0] x_V_114_fu_2298_p3;
+wire   [27:0] t_V_50_fu_2326_p1;
+wire   [27:0] r_V_14_cast4_fu_2322_p1;
+wire   [1:0] tmp_50_fu_2332_p4;
+wire   [29:0] y_V_75_fu_2346_p1;
+wire   [29:0] r_V_98_cast_cast_fu_2342_p1;
+wire   [27:0] t_V_51_fu_2352_p1;
+wire   [29:0] y_V_76_fu_2358_p1;
+wire   [29:0] y_V_117_fu_2369_p3;
+wire   [2:0] tmp_51_fu_2374_p4;
+wire   [27:0] x_V_115_fu_2364_p3;
+wire   [27:0] t_V_52_fu_2388_p1;
+wire   [27:0] r_V_15_cast_fu_2384_p1;
+wire   [0:0] tmp_52_fu_2394_p3;
+wire   [29:0] y_V_78_fu_2406_p1;
+wire   [29:0] r_V_102_cast_cast_fu_2402_p1;
+wire   [27:0] t_V_53_fu_2412_p1;
+wire   [29:0] y_V_79_fu_2418_p1;
+wire   [27:0] t_V_52_fu_2388_p2;
+wire   [27:0] t_V_53_fu_2412_p2;
+wire   [29:0] y_V_78_fu_2406_p2;
+wire   [29:0] y_V_79_fu_2418_p2;
+wire   [29:0] y_V_118_fu_2431_p3;
+wire   [1:0] tmp_53_fu_2438_p4;
+wire   [27:0] x_V_116_fu_2424_p3;
+wire   [27:0] t_V_54_fu_2452_p1;
+wire   [27:0] r_V_16_cast_fu_2448_p1;
+wire   [0:0] tmp_54_fu_2458_p3;
+wire   [29:0] y_V_81_fu_2470_p1;
+wire   [29:0] r_V_106_cast_cast_fu_2466_p1;
+wire   [27:0] t_V_55_fu_2476_p1;
+wire   [29:0] y_V_82_fu_2482_p1;
+wire   [29:0] y_V_119_fu_2493_p3;
+wire   [0:0] tmp_55_fu_2498_p3;
+wire   [27:0] x_V_117_fu_2488_p3;
+wire   [27:0] t_V_56_fu_2510_p1;
+wire   [27:0] r_V_17_cast3_fu_2506_p1;
+wire   [0:0] tmp_56_fu_2516_p3;
+wire   [29:0] y_V_84_fu_2528_p1;
+wire   [29:0] r_V_110_cast_cast_fu_2524_p1;
+wire   [27:0] t_V_57_fu_2534_p1;
+wire   [29:0] y_V_85_fu_2540_p1;
+wire   [27:0] t_V_56_fu_2510_p2;
+wire   [27:0] t_V_57_fu_2534_p2;
+wire   [29:0] y_V_84_fu_2528_p2;
+wire   [29:0] y_V_85_fu_2540_p2;
+wire   [29:0] y_V_120_fu_2553_p3;
+wire   [0:0] tmp_57_fu_2560_p3;
+wire   [27:0] x_V_118_fu_2546_p3;
+wire   [27:0] t_V_58_fu_2572_p1;
+wire   [27:0] r_V_18_cast2_fu_2568_p1;
+wire   [0:0] tmp_58_fu_2578_p3;
+wire   [29:0] y_V_87_fu_2590_p1;
+wire   [29:0] r_V_114_cast_cast_fu_2586_p1;
+wire   [27:0] t_V_59_fu_2596_p1;
+wire   [29:0] y_V_88_fu_2602_p1;
+wire   [29:0] y_V_121_fu_2613_p3;
+wire   [0:0] tmp_59_fu_2618_p3;
+wire   [27:0] x_V_119_fu_2608_p3;
+wire   [27:0] t_V_60_fu_2630_p1;
+wire   [27:0] r_V_19_cast_fu_2626_p1;
+wire   [0:0] tmp_60_fu_2636_p3;
+wire   [29:0] y_V_90_fu_2648_p1;
+wire   [29:0] r_V_118_cast_cast_fu_2644_p1;
+wire   [27:0] t_V_61_fu_2654_p1;
+wire   [29:0] y_V_91_fu_2660_p1;
+wire   [29:0] y_V_91_fu_2660_p2;
+wire   [0:0] sel_tmp1_fu_2673_p2;
+wire   [0:0] sel_tmp2_fu_2678_p2;
+wire   [29:0] y_V_90_fu_2648_p2;
+wire   [29:0] sel_tmp_fu_2666_p3;
+wire   [29:0] UnifiedRetVal1_fu_2683_p3;
+wire   [27:0] t_V_61_fu_2654_p2;
+wire   [27:0] t_V_60_fu_2630_p2;
+wire   [27:0] sel_tmp4_fu_2695_p3;
+wire   [27:0] UnifiedRetVal_1_fu_2702_p3;
+wire   [31:0] UnifiedRetVal1_cast_fu_2691_p1;
+wire   [31:0] UnifiedRetVal_1_cast_fu_2710_p1;
 parameter    ap_const_logic_1 = 1'b1;
-parameter    ap_const_logic_0 = 1'b0;
-parameter    ap_ST_st1_fsm_0 = 2'b00;
-parameter    ap_ST_st2_fsm_1 = 2'b1;
-parameter    ap_ST_st3_fsm_2 = 2'b10;
-parameter    ap_ST_st4_fsm_3 = 2'b11;
-parameter    ap_const_lv1_0 = 1'b0;
-parameter    ap_const_lv32_9B74E = 32'b10011011011101001110;
-parameter    ap_const_lv32_0 = 32'b00000000000000000000000000000000;
-parameter    ap_const_lv7_0 = 7'b0000000;
-parameter    ap_const_lv32_100000 = 32'b100000000000000000000;
-parameter    ap_const_lv7_41 = 7'b1000001;
-parameter    ap_const_lv7_1 = 7'b1;
 parameter    ap_true = 1'b1;
+parameter    ap_const_lv1_0 = 1'b0;
+parameter    ap_const_lv32_0 = 32'b00000000000000000000000000000000;
+parameter    ap_const_lv32_C90FD = 32'b11001001000011111101;
+parameter    ap_const_lv32_FFF36F03 = 32'b11111111111100110110111100000011;
+parameter    ap_const_lv22_13FC16 = 22'b100111111110000010110;
+parameter    ap_const_lv22_3ADA1C = 22'b1110101101101000011100;
+parameter    ap_const_lv22_525E4 = 22'b1010010010111100100;
+parameter    ap_const_lv22_2C03EA = 22'b1011000000001111101010;
+parameter    ap_const_lv22_3EB6E = 22'b111110101101101110;
+parameter    ap_const_lv22_3C1492 = 22'b1111000001010010010010;
+parameter    ap_const_lv22_1FD5B = 22'b11111110101011011;
+parameter    ap_const_lv22_3E02A5 = 22'b1111100000001010100101;
+parameter    ap_const_lv22_FFAA = 22'b1111111110101010;
+parameter    ap_const_lv22_3F0056 = 22'b1111110000000001010110;
+parameter    ap_const_lv22_7FF5 = 22'b111111111110101;
+parameter    ap_const_lv22_3F800B = 22'b1111111000000000001011;
+parameter    ap_const_lv22_3FFE = 22'b11111111111110;
+parameter    ap_const_lv22_3FC002 = 22'b1111111100000000000010;
+parameter    ap_const_lv20_4DBA7 = 20'b1001101101110100111;
+parameter    ap_const_lv20_E92F5 = 20'b11101001001011110101;
+parameter    ap_const_lv21_E92F5 = 21'b11101001001011110101;
+parameter    ap_const_lv21_1B2459 = 21'b110110010010001011001;
+parameter    ap_const_lv21_4DBA7 = 21'b1001101101110100111;
+parameter    ap_const_lv21_116D0B = 21'b100010110110100001011;
+parameter    ap_const_lv32_2 = 32'b10;
+parameter    ap_const_lv32_14 = 32'b10100;
+parameter    ap_const_lv32_13 = 32'b10011;
+parameter    ap_const_lv32_3 = 32'b11;
+parameter    ap_const_lv32_15 = 32'b10101;
+parameter    ap_const_lv22_1FFF = 22'b1111111111111;
+parameter    ap_const_lv22_3FE001 = 22'b1111111110000000000001;
+parameter    ap_const_lv32_4 = 32'b100;
+parameter    ap_const_lv32_1C = 32'b11100;
+parameter    ap_const_lv32_5 = 32'b101;
+parameter    ap_const_lv32_1A = 32'b11010;
+parameter    ap_const_lv22_FFF = 22'b111111111111;
+parameter    ap_const_lv22_3FF001 = 22'b1111111111000000000001;
+parameter    ap_const_lv22_7FF = 22'b11111111111;
+parameter    ap_const_lv22_3FF801 = 22'b1111111111100000000001;
+parameter    ap_const_lv32_6 = 32'b110;
+parameter    ap_const_lv32_7 = 32'b111;
+parameter    ap_const_lv22_3FF = 22'b1111111111;
+parameter    ap_const_lv22_3FFC01 = 22'b1111111111110000000001;
+parameter    ap_const_lv32_8 = 32'b1000;
+parameter    ap_const_lv32_9 = 32'b1001;
+parameter    ap_const_lv22_1FF = 22'b111111111;
+parameter    ap_const_lv22_3FFE01 = 22'b1111111111111000000001;
+parameter    ap_const_lv32_A = 32'b1010;
+parameter    ap_const_lv32_1B = 32'b11011;
+parameter    ap_const_lv32_B = 32'b1011;
+parameter    ap_const_lv32_1D = 32'b11101;
+parameter    ap_const_lv22_FF = 22'b11111111;
+parameter    ap_const_lv22_3FFF01 = 22'b1111111111111100000001;
+parameter    ap_const_lv22_7F = 22'b1111111;
+parameter    ap_const_lv22_3FFF81 = 22'b1111111111111110000001;
+parameter    ap_const_lv32_C = 32'b1100;
+parameter    ap_const_lv32_D = 32'b1101;
+parameter    ap_const_lv22_3F = 22'b111111;
+parameter    ap_const_lv22_3FFFC1 = 22'b1111111111111111000001;
+parameter    ap_const_lv32_E = 32'b1110;
+parameter    ap_const_lv32_F = 32'b1111;
+parameter    ap_const_lv22_1F = 22'b11111;
+parameter    ap_const_lv22_3FFFE1 = 22'b1111111111111111100001;
+parameter    ap_const_lv32_10 = 32'b10000;
+parameter    ap_const_lv22_F = 22'b1111;
+parameter    ap_const_lv22_3FFFF1 = 22'b1111111111111111110001;
+parameter    ap_const_lv32_11 = 32'b10001;
+parameter    ap_const_lv22_7 = 22'b111;
+parameter    ap_const_lv22_3FFFF9 = 22'b1111111111111111111001;
+parameter    ap_const_lv32_12 = 32'b10010;
+parameter    ap_const_lv22_3 = 22'b11;
+parameter    ap_const_lv22_3FFFFD = 22'b1111111111111111111101;
+parameter    ap_const_lv22_1 = 22'b1;
+parameter    ap_const_lv22_3FFFFF = 22'b1111111111111111111111;
+parameter    ap_const_lv32_16 = 32'b10110;
+parameter    ap_const_lv32_17 = 32'b10111;
+parameter    ap_const_lv32_18 = 32'b11000;
+parameter    ap_const_lv32_19 = 32'b11001;
+parameter    ap_const_lv30_0 = 30'b000000000000000000000000000000;
+parameter    ap_const_lv1_1 = 1'b1;
+parameter    ap_const_lv28_100000 = 28'b100000000000000000000;
+parameter    ap_const_logic_0 = 1'b0;
 
 
-cal_mag_phase_cordic_ctab_V #(
-    .DataWidth( 20 ),
-    .AddressRange( 64 ),
-    .AddressWidth( 6 ))
-cordic_ctab_V_U(
-    .clk( ap_clk ),
-    .reset( ap_rst ),
-    .address0( cordic_ctab_V_address0 ),
-    .ce0( cordic_ctab_V_ce0 ),
-    .q0( cordic_ctab_V_q0 )
-);
 
 
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if ((ap_const_logic_1 == ap_ce)) begin
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it1 <= theta_V_read_reg_2726;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it10 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it9;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it11 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it10;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it12 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it11;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it13 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it12;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it2 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it1;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it3 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it2;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it4 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it3;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it5 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it4;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it6 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it5;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it7 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it6;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it8 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it7;
+        ap_reg_ppstg_theta_V_read_reg_2726_pp0_it9 <= ap_reg_ppstg_theta_V_read_reg_2726_pp0_it8;
+        ap_reg_ppstg_tmp_81_10_reg_2965_pp0_it9 <= tmp_81_10_reg_2965;
+        ap_reg_ppstg_tmp_81_11_reg_2976_pp0_it9 <= tmp_81_11_reg_2976;
+        ap_reg_ppstg_tmp_81_12_reg_3010_pp0_it10 <= tmp_81_12_reg_3010;
+        ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15 <= tmp_81_19_reg_3168;
+        ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16 <= ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15;
+        ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17 <= ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16;
+        ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18 <= ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17;
+        ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it19 <= ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18;
+        ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it1 <= tmp_81_1_reg_2758;
+        ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it2 <= ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it1;
+        ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it3 <= ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it2;
+        ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it4 <= ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it3;
+        ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it2 <= tmp_81_2_reg_2775;
+        ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it3 <= ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it2;
+        ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it4 <= ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it3;
+        ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it3 <= tmp_81_3_reg_2787;
+        ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it4 <= ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it3;
+        ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it5 <= ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it4;
+        ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it3 <= tmp_81_4_reg_2798;
+        ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it4 <= ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it3;
+        ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it5 <= ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it4;
+        ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it4 <= tmp_81_5_reg_2810;
+        ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it5 <= ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it4;
+        ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it6 <= ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it5;
+        ap_reg_ppstg_tmp_81_6_reg_2821_pp0_it5 <= tmp_81_6_reg_2821;
+        ap_reg_ppstg_tmp_81_6_reg_2821_pp0_it6 <= ap_reg_ppstg_tmp_81_6_reg_2821_pp0_it5;
+        ap_reg_ppstg_tmp_81_7_reg_2854_pp0_it6 <= tmp_81_7_reg_2854;
+        ap_reg_ppstg_tmp_81_7_reg_2854_pp0_it7 <= ap_reg_ppstg_tmp_81_7_reg_2854_pp0_it6;
+        ap_reg_ppstg_tmp_81_8_reg_2865_pp0_it6 <= tmp_81_8_reg_2865;
+        ap_reg_ppstg_tmp_81_8_reg_2865_pp0_it7 <= ap_reg_ppstg_tmp_81_8_reg_2865_pp0_it6;
+        ap_reg_ppstg_tmp_81_9_reg_2899_pp0_it7 <= tmp_81_9_reg_2899;
+        ap_reg_ppstg_tmp_81_9_reg_2899_pp0_it8 <= ap_reg_ppstg_tmp_81_9_reg_2899_pp0_it7;
+        ap_reg_ppstg_tmp_81_s_reg_2932_pp0_it8 <= tmp_81_s_reg_2932;
+        ap_reg_ppstg_tmp_reg_3161_pp0_it15 <= tmp_reg_3161;
+        ap_reg_ppstg_tmp_reg_3161_pp0_it16 <= ap_reg_ppstg_tmp_reg_3161_pp0_it15;
+        ap_reg_ppstg_tmp_reg_3161_pp0_it17 <= ap_reg_ppstg_tmp_reg_3161_pp0_it16;
+        ap_reg_ppstg_tmp_reg_3161_pp0_it18 <= ap_reg_ppstg_tmp_reg_3161_pp0_it17;
+        ap_reg_ppstg_tmp_reg_3161_pp0_it19 <= ap_reg_ppstg_tmp_reg_3161_pp0_it18;
+        ap_reg_ppstg_tmp_s_reg_2750_pp0_it1 <= tmp_s_reg_2750;
+        ap_reg_ppstg_tmp_s_reg_2750_pp0_it2 <= ap_reg_ppstg_tmp_s_reg_2750_pp0_it1;
+        ap_reg_ppstg_tmp_s_reg_2750_pp0_it3 <= ap_reg_ppstg_tmp_s_reg_2750_pp0_it2;
+        ap_reg_ppstg_tmp_s_reg_2750_pp0_it4 <= ap_reg_ppstg_tmp_s_reg_2750_pp0_it3;
+        current_angle_V_10_reg_2971[1] <= current_angle_V_10_fu_1054_p2[1];
+current_angle_V_10_reg_2971[2] <= current_angle_V_10_fu_1054_p2[2];
+current_angle_V_10_reg_2971[3] <= current_angle_V_10_fu_1054_p2[3];
+current_angle_V_10_reg_2971[4] <= current_angle_V_10_fu_1054_p2[4];
+current_angle_V_10_reg_2971[5] <= current_angle_V_10_fu_1054_p2[5];
+current_angle_V_10_reg_2971[6] <= current_angle_V_10_fu_1054_p2[6];
+current_angle_V_10_reg_2971[7] <= current_angle_V_10_fu_1054_p2[7];
+current_angle_V_10_reg_2971[8] <= current_angle_V_10_fu_1054_p2[8];
+current_angle_V_10_reg_2971[9] <= current_angle_V_10_fu_1054_p2[9];
+current_angle_V_10_reg_2971[10] <= current_angle_V_10_fu_1054_p2[10];
+current_angle_V_10_reg_2971[11] <= current_angle_V_10_fu_1054_p2[11];
+current_angle_V_10_reg_2971[12] <= current_angle_V_10_fu_1054_p2[12];
+current_angle_V_10_reg_2971[13] <= current_angle_V_10_fu_1054_p2[13];
+current_angle_V_10_reg_2971[14] <= current_angle_V_10_fu_1054_p2[14];
+current_angle_V_10_reg_2971[15] <= current_angle_V_10_fu_1054_p2[15];
+current_angle_V_10_reg_2971[16] <= current_angle_V_10_fu_1054_p2[16];
+current_angle_V_10_reg_2971[17] <= current_angle_V_10_fu_1054_p2[17];
+current_angle_V_10_reg_2971[18] <= current_angle_V_10_fu_1054_p2[18];
+current_angle_V_10_reg_2971[19] <= current_angle_V_10_fu_1054_p2[19];
+current_angle_V_10_reg_2971[20] <= current_angle_V_10_fu_1054_p2[20];
+current_angle_V_10_reg_2971[21] <= current_angle_V_10_fu_1054_p2[21];
+        current_angle_V_11_reg_3005[1] <= current_angle_V_11_fu_1210_p2[1];
+current_angle_V_11_reg_3005[2] <= current_angle_V_11_fu_1210_p2[2];
+current_angle_V_11_reg_3005[3] <= current_angle_V_11_fu_1210_p2[3];
+current_angle_V_11_reg_3005[4] <= current_angle_V_11_fu_1210_p2[4];
+current_angle_V_11_reg_3005[5] <= current_angle_V_11_fu_1210_p2[5];
+current_angle_V_11_reg_3005[6] <= current_angle_V_11_fu_1210_p2[6];
+current_angle_V_11_reg_3005[7] <= current_angle_V_11_fu_1210_p2[7];
+current_angle_V_11_reg_3005[8] <= current_angle_V_11_fu_1210_p2[8];
+current_angle_V_11_reg_3005[9] <= current_angle_V_11_fu_1210_p2[9];
+current_angle_V_11_reg_3005[10] <= current_angle_V_11_fu_1210_p2[10];
+current_angle_V_11_reg_3005[11] <= current_angle_V_11_fu_1210_p2[11];
+current_angle_V_11_reg_3005[12] <= current_angle_V_11_fu_1210_p2[12];
+current_angle_V_11_reg_3005[13] <= current_angle_V_11_fu_1210_p2[13];
+current_angle_V_11_reg_3005[14] <= current_angle_V_11_fu_1210_p2[14];
+current_angle_V_11_reg_3005[15] <= current_angle_V_11_fu_1210_p2[15];
+current_angle_V_11_reg_3005[16] <= current_angle_V_11_fu_1210_p2[16];
+current_angle_V_11_reg_3005[17] <= current_angle_V_11_fu_1210_p2[17];
+current_angle_V_11_reg_3005[18] <= current_angle_V_11_fu_1210_p2[18];
+current_angle_V_11_reg_3005[19] <= current_angle_V_11_fu_1210_p2[19];
+current_angle_V_11_reg_3005[20] <= current_angle_V_11_fu_1210_p2[20];
+current_angle_V_11_reg_3005[21] <= current_angle_V_11_fu_1210_p2[21];
+        current_angle_V_13_reg_3049[1] <= current_angle_V_13_fu_1379_p2[1];
+current_angle_V_13_reg_3049[2] <= current_angle_V_13_fu_1379_p2[2];
+current_angle_V_13_reg_3049[3] <= current_angle_V_13_fu_1379_p2[3];
+current_angle_V_13_reg_3049[4] <= current_angle_V_13_fu_1379_p2[4];
+current_angle_V_13_reg_3049[5] <= current_angle_V_13_fu_1379_p2[5];
+current_angle_V_13_reg_3049[6] <= current_angle_V_13_fu_1379_p2[6];
+current_angle_V_13_reg_3049[7] <= current_angle_V_13_fu_1379_p2[7];
+current_angle_V_13_reg_3049[8] <= current_angle_V_13_fu_1379_p2[8];
+current_angle_V_13_reg_3049[9] <= current_angle_V_13_fu_1379_p2[9];
+current_angle_V_13_reg_3049[10] <= current_angle_V_13_fu_1379_p2[10];
+current_angle_V_13_reg_3049[11] <= current_angle_V_13_fu_1379_p2[11];
+current_angle_V_13_reg_3049[12] <= current_angle_V_13_fu_1379_p2[12];
+current_angle_V_13_reg_3049[13] <= current_angle_V_13_fu_1379_p2[13];
+current_angle_V_13_reg_3049[14] <= current_angle_V_13_fu_1379_p2[14];
+current_angle_V_13_reg_3049[15] <= current_angle_V_13_fu_1379_p2[15];
+current_angle_V_13_reg_3049[16] <= current_angle_V_13_fu_1379_p2[16];
+current_angle_V_13_reg_3049[17] <= current_angle_V_13_fu_1379_p2[17];
+current_angle_V_13_reg_3049[18] <= current_angle_V_13_fu_1379_p2[18];
+current_angle_V_13_reg_3049[19] <= current_angle_V_13_fu_1379_p2[19];
+current_angle_V_13_reg_3049[20] <= current_angle_V_13_fu_1379_p2[20];
+current_angle_V_13_reg_3049[21] <= current_angle_V_13_fu_1379_p2[21];
+        current_angle_V_14_reg_3083[1] <= current_angle_V_14_fu_1527_p2[1];
+current_angle_V_14_reg_3083[2] <= current_angle_V_14_fu_1527_p2[2];
+current_angle_V_14_reg_3083[3] <= current_angle_V_14_fu_1527_p2[3];
+current_angle_V_14_reg_3083[4] <= current_angle_V_14_fu_1527_p2[4];
+current_angle_V_14_reg_3083[5] <= current_angle_V_14_fu_1527_p2[5];
+current_angle_V_14_reg_3083[6] <= current_angle_V_14_fu_1527_p2[6];
+current_angle_V_14_reg_3083[7] <= current_angle_V_14_fu_1527_p2[7];
+current_angle_V_14_reg_3083[8] <= current_angle_V_14_fu_1527_p2[8];
+current_angle_V_14_reg_3083[9] <= current_angle_V_14_fu_1527_p2[9];
+current_angle_V_14_reg_3083[10] <= current_angle_V_14_fu_1527_p2[10];
+current_angle_V_14_reg_3083[11] <= current_angle_V_14_fu_1527_p2[11];
+current_angle_V_14_reg_3083[12] <= current_angle_V_14_fu_1527_p2[12];
+current_angle_V_14_reg_3083[13] <= current_angle_V_14_fu_1527_p2[13];
+current_angle_V_14_reg_3083[14] <= current_angle_V_14_fu_1527_p2[14];
+current_angle_V_14_reg_3083[15] <= current_angle_V_14_fu_1527_p2[15];
+current_angle_V_14_reg_3083[16] <= current_angle_V_14_fu_1527_p2[16];
+current_angle_V_14_reg_3083[17] <= current_angle_V_14_fu_1527_p2[17];
+current_angle_V_14_reg_3083[18] <= current_angle_V_14_fu_1527_p2[18];
+current_angle_V_14_reg_3083[19] <= current_angle_V_14_fu_1527_p2[19];
+current_angle_V_14_reg_3083[20] <= current_angle_V_14_fu_1527_p2[20];
+current_angle_V_14_reg_3083[21] <= current_angle_V_14_fu_1527_p2[21];
+        current_angle_V_15_reg_3107[1] <= current_angle_V_15_fu_1654_p2[1];
+current_angle_V_15_reg_3107[2] <= current_angle_V_15_fu_1654_p2[2];
+current_angle_V_15_reg_3107[3] <= current_angle_V_15_fu_1654_p2[3];
+current_angle_V_15_reg_3107[4] <= current_angle_V_15_fu_1654_p2[4];
+current_angle_V_15_reg_3107[5] <= current_angle_V_15_fu_1654_p2[5];
+current_angle_V_15_reg_3107[6] <= current_angle_V_15_fu_1654_p2[6];
+current_angle_V_15_reg_3107[7] <= current_angle_V_15_fu_1654_p2[7];
+current_angle_V_15_reg_3107[8] <= current_angle_V_15_fu_1654_p2[8];
+current_angle_V_15_reg_3107[9] <= current_angle_V_15_fu_1654_p2[9];
+current_angle_V_15_reg_3107[10] <= current_angle_V_15_fu_1654_p2[10];
+current_angle_V_15_reg_3107[11] <= current_angle_V_15_fu_1654_p2[11];
+current_angle_V_15_reg_3107[12] <= current_angle_V_15_fu_1654_p2[12];
+current_angle_V_15_reg_3107[13] <= current_angle_V_15_fu_1654_p2[13];
+current_angle_V_15_reg_3107[14] <= current_angle_V_15_fu_1654_p2[14];
+current_angle_V_15_reg_3107[15] <= current_angle_V_15_fu_1654_p2[15];
+current_angle_V_15_reg_3107[16] <= current_angle_V_15_fu_1654_p2[16];
+current_angle_V_15_reg_3107[17] <= current_angle_V_15_fu_1654_p2[17];
+current_angle_V_15_reg_3107[18] <= current_angle_V_15_fu_1654_p2[18];
+current_angle_V_15_reg_3107[19] <= current_angle_V_15_fu_1654_p2[19];
+current_angle_V_15_reg_3107[20] <= current_angle_V_15_fu_1654_p2[20];
+current_angle_V_15_reg_3107[21] <= current_angle_V_15_fu_1654_p2[21];
+        current_angle_V_17_reg_3145[1] <= current_angle_V_17_fu_1825_p2[1];
+current_angle_V_17_reg_3145[2] <= current_angle_V_17_fu_1825_p2[2];
+current_angle_V_17_reg_3145[3] <= current_angle_V_17_fu_1825_p2[3];
+current_angle_V_17_reg_3145[4] <= current_angle_V_17_fu_1825_p2[4];
+current_angle_V_17_reg_3145[5] <= current_angle_V_17_fu_1825_p2[5];
+current_angle_V_17_reg_3145[6] <= current_angle_V_17_fu_1825_p2[6];
+current_angle_V_17_reg_3145[7] <= current_angle_V_17_fu_1825_p2[7];
+current_angle_V_17_reg_3145[8] <= current_angle_V_17_fu_1825_p2[8];
+current_angle_V_17_reg_3145[9] <= current_angle_V_17_fu_1825_p2[9];
+current_angle_V_17_reg_3145[10] <= current_angle_V_17_fu_1825_p2[10];
+current_angle_V_17_reg_3145[11] <= current_angle_V_17_fu_1825_p2[11];
+current_angle_V_17_reg_3145[12] <= current_angle_V_17_fu_1825_p2[12];
+current_angle_V_17_reg_3145[13] <= current_angle_V_17_fu_1825_p2[13];
+current_angle_V_17_reg_3145[14] <= current_angle_V_17_fu_1825_p2[14];
+current_angle_V_17_reg_3145[15] <= current_angle_V_17_fu_1825_p2[15];
+current_angle_V_17_reg_3145[16] <= current_angle_V_17_fu_1825_p2[16];
+current_angle_V_17_reg_3145[17] <= current_angle_V_17_fu_1825_p2[17];
+current_angle_V_17_reg_3145[18] <= current_angle_V_17_fu_1825_p2[18];
+current_angle_V_17_reg_3145[19] <= current_angle_V_17_fu_1825_p2[19];
+current_angle_V_17_reg_3145[20] <= current_angle_V_17_fu_1825_p2[20];
+current_angle_V_17_reg_3145[21] <= current_angle_V_17_fu_1825_p2[21];
+        current_angle_V_1_reg_2781[1] <= current_angle_V_1_fu_337_p2[1];
+current_angle_V_1_reg_2781[2] <= current_angle_V_1_fu_337_p2[2];
+current_angle_V_1_reg_2781[3] <= current_angle_V_1_fu_337_p2[3];
+current_angle_V_1_reg_2781[4] <= current_angle_V_1_fu_337_p2[4];
+current_angle_V_1_reg_2781[5] <= current_angle_V_1_fu_337_p2[5];
+current_angle_V_1_reg_2781[6] <= current_angle_V_1_fu_337_p2[6];
+current_angle_V_1_reg_2781[7] <= current_angle_V_1_fu_337_p2[7];
+current_angle_V_1_reg_2781[8] <= current_angle_V_1_fu_337_p2[8];
+current_angle_V_1_reg_2781[9] <= current_angle_V_1_fu_337_p2[9];
+current_angle_V_1_reg_2781[10] <= current_angle_V_1_fu_337_p2[10];
+current_angle_V_1_reg_2781[11] <= current_angle_V_1_fu_337_p2[11];
+current_angle_V_1_reg_2781[12] <= current_angle_V_1_fu_337_p2[12];
+current_angle_V_1_reg_2781[13] <= current_angle_V_1_fu_337_p2[13];
+current_angle_V_1_reg_2781[14] <= current_angle_V_1_fu_337_p2[14];
+current_angle_V_1_reg_2781[15] <= current_angle_V_1_fu_337_p2[15];
+current_angle_V_1_reg_2781[16] <= current_angle_V_1_fu_337_p2[16];
+current_angle_V_1_reg_2781[17] <= current_angle_V_1_fu_337_p2[17];
+current_angle_V_1_reg_2781[18] <= current_angle_V_1_fu_337_p2[18];
+current_angle_V_1_reg_2781[19] <= current_angle_V_1_fu_337_p2[19];
+current_angle_V_1_reg_2781[20] <= current_angle_V_1_fu_337_p2[20];
+current_angle_V_1_reg_2781[21] <= current_angle_V_1_fu_337_p2[21];
+        current_angle_V_2_reg_2793[1] <= current_angle_V_2_fu_359_p2[1];
+current_angle_V_2_reg_2793[2] <= current_angle_V_2_fu_359_p2[2];
+current_angle_V_2_reg_2793[3] <= current_angle_V_2_fu_359_p2[3];
+current_angle_V_2_reg_2793[4] <= current_angle_V_2_fu_359_p2[4];
+current_angle_V_2_reg_2793[5] <= current_angle_V_2_fu_359_p2[5];
+current_angle_V_2_reg_2793[6] <= current_angle_V_2_fu_359_p2[6];
+current_angle_V_2_reg_2793[7] <= current_angle_V_2_fu_359_p2[7];
+current_angle_V_2_reg_2793[8] <= current_angle_V_2_fu_359_p2[8];
+current_angle_V_2_reg_2793[9] <= current_angle_V_2_fu_359_p2[9];
+current_angle_V_2_reg_2793[10] <= current_angle_V_2_fu_359_p2[10];
+current_angle_V_2_reg_2793[11] <= current_angle_V_2_fu_359_p2[11];
+current_angle_V_2_reg_2793[12] <= current_angle_V_2_fu_359_p2[12];
+current_angle_V_2_reg_2793[13] <= current_angle_V_2_fu_359_p2[13];
+current_angle_V_2_reg_2793[14] <= current_angle_V_2_fu_359_p2[14];
+current_angle_V_2_reg_2793[15] <= current_angle_V_2_fu_359_p2[15];
+current_angle_V_2_reg_2793[16] <= current_angle_V_2_fu_359_p2[16];
+current_angle_V_2_reg_2793[17] <= current_angle_V_2_fu_359_p2[17];
+current_angle_V_2_reg_2793[18] <= current_angle_V_2_fu_359_p2[18];
+current_angle_V_2_reg_2793[19] <= current_angle_V_2_fu_359_p2[19];
+current_angle_V_2_reg_2793[20] <= current_angle_V_2_fu_359_p2[20];
+current_angle_V_2_reg_2793[21] <= current_angle_V_2_fu_359_p2[21];
+        current_angle_V_3_reg_2805[1] <= current_angle_V_3_fu_380_p2[1];
+current_angle_V_3_reg_2805[2] <= current_angle_V_3_fu_380_p2[2];
+current_angle_V_3_reg_2805[3] <= current_angle_V_3_fu_380_p2[3];
+current_angle_V_3_reg_2805[4] <= current_angle_V_3_fu_380_p2[4];
+current_angle_V_3_reg_2805[5] <= current_angle_V_3_fu_380_p2[5];
+current_angle_V_3_reg_2805[6] <= current_angle_V_3_fu_380_p2[6];
+current_angle_V_3_reg_2805[7] <= current_angle_V_3_fu_380_p2[7];
+current_angle_V_3_reg_2805[8] <= current_angle_V_3_fu_380_p2[8];
+current_angle_V_3_reg_2805[9] <= current_angle_V_3_fu_380_p2[9];
+current_angle_V_3_reg_2805[10] <= current_angle_V_3_fu_380_p2[10];
+current_angle_V_3_reg_2805[11] <= current_angle_V_3_fu_380_p2[11];
+current_angle_V_3_reg_2805[12] <= current_angle_V_3_fu_380_p2[12];
+current_angle_V_3_reg_2805[13] <= current_angle_V_3_fu_380_p2[13];
+current_angle_V_3_reg_2805[14] <= current_angle_V_3_fu_380_p2[14];
+current_angle_V_3_reg_2805[15] <= current_angle_V_3_fu_380_p2[15];
+current_angle_V_3_reg_2805[16] <= current_angle_V_3_fu_380_p2[16];
+current_angle_V_3_reg_2805[17] <= current_angle_V_3_fu_380_p2[17];
+current_angle_V_3_reg_2805[18] <= current_angle_V_3_fu_380_p2[18];
+current_angle_V_3_reg_2805[19] <= current_angle_V_3_fu_380_p2[19];
+current_angle_V_3_reg_2805[20] <= current_angle_V_3_fu_380_p2[20];
+current_angle_V_3_reg_2805[21] <= current_angle_V_3_fu_380_p2[21];
+        current_angle_V_5_reg_2827[1] <= current_angle_V_5_fu_423_p2[1];
+current_angle_V_5_reg_2827[2] <= current_angle_V_5_fu_423_p2[2];
+current_angle_V_5_reg_2827[3] <= current_angle_V_5_fu_423_p2[3];
+current_angle_V_5_reg_2827[4] <= current_angle_V_5_fu_423_p2[4];
+current_angle_V_5_reg_2827[5] <= current_angle_V_5_fu_423_p2[5];
+current_angle_V_5_reg_2827[6] <= current_angle_V_5_fu_423_p2[6];
+current_angle_V_5_reg_2827[7] <= current_angle_V_5_fu_423_p2[7];
+current_angle_V_5_reg_2827[8] <= current_angle_V_5_fu_423_p2[8];
+current_angle_V_5_reg_2827[9] <= current_angle_V_5_fu_423_p2[9];
+current_angle_V_5_reg_2827[10] <= current_angle_V_5_fu_423_p2[10];
+current_angle_V_5_reg_2827[11] <= current_angle_V_5_fu_423_p2[11];
+current_angle_V_5_reg_2827[12] <= current_angle_V_5_fu_423_p2[12];
+current_angle_V_5_reg_2827[13] <= current_angle_V_5_fu_423_p2[13];
+current_angle_V_5_reg_2827[14] <= current_angle_V_5_fu_423_p2[14];
+current_angle_V_5_reg_2827[15] <= current_angle_V_5_fu_423_p2[15];
+current_angle_V_5_reg_2827[16] <= current_angle_V_5_fu_423_p2[16];
+current_angle_V_5_reg_2827[17] <= current_angle_V_5_fu_423_p2[17];
+current_angle_V_5_reg_2827[18] <= current_angle_V_5_fu_423_p2[18];
+current_angle_V_5_reg_2827[19] <= current_angle_V_5_fu_423_p2[19];
+current_angle_V_5_reg_2827[20] <= current_angle_V_5_fu_423_p2[20];
+current_angle_V_5_reg_2827[21] <= current_angle_V_5_fu_423_p2[21];
+        current_angle_V_6_reg_2860[1] <= current_angle_V_6_fu_581_p2[1];
+current_angle_V_6_reg_2860[2] <= current_angle_V_6_fu_581_p2[2];
+current_angle_V_6_reg_2860[3] <= current_angle_V_6_fu_581_p2[3];
+current_angle_V_6_reg_2860[4] <= current_angle_V_6_fu_581_p2[4];
+current_angle_V_6_reg_2860[5] <= current_angle_V_6_fu_581_p2[5];
+current_angle_V_6_reg_2860[6] <= current_angle_V_6_fu_581_p2[6];
+current_angle_V_6_reg_2860[7] <= current_angle_V_6_fu_581_p2[7];
+current_angle_V_6_reg_2860[8] <= current_angle_V_6_fu_581_p2[8];
+current_angle_V_6_reg_2860[9] <= current_angle_V_6_fu_581_p2[9];
+current_angle_V_6_reg_2860[10] <= current_angle_V_6_fu_581_p2[10];
+current_angle_V_6_reg_2860[11] <= current_angle_V_6_fu_581_p2[11];
+current_angle_V_6_reg_2860[12] <= current_angle_V_6_fu_581_p2[12];
+current_angle_V_6_reg_2860[13] <= current_angle_V_6_fu_581_p2[13];
+current_angle_V_6_reg_2860[14] <= current_angle_V_6_fu_581_p2[14];
+current_angle_V_6_reg_2860[15] <= current_angle_V_6_fu_581_p2[15];
+current_angle_V_6_reg_2860[16] <= current_angle_V_6_fu_581_p2[16];
+current_angle_V_6_reg_2860[17] <= current_angle_V_6_fu_581_p2[17];
+current_angle_V_6_reg_2860[18] <= current_angle_V_6_fu_581_p2[18];
+current_angle_V_6_reg_2860[19] <= current_angle_V_6_fu_581_p2[19];
+current_angle_V_6_reg_2860[20] <= current_angle_V_6_fu_581_p2[20];
+current_angle_V_6_reg_2860[21] <= current_angle_V_6_fu_581_p2[21];
+        current_angle_V_7_reg_2894[1] <= current_angle_V_7_fu_737_p2[1];
+current_angle_V_7_reg_2894[2] <= current_angle_V_7_fu_737_p2[2];
+current_angle_V_7_reg_2894[3] <= current_angle_V_7_fu_737_p2[3];
+current_angle_V_7_reg_2894[4] <= current_angle_V_7_fu_737_p2[4];
+current_angle_V_7_reg_2894[5] <= current_angle_V_7_fu_737_p2[5];
+current_angle_V_7_reg_2894[6] <= current_angle_V_7_fu_737_p2[6];
+current_angle_V_7_reg_2894[7] <= current_angle_V_7_fu_737_p2[7];
+current_angle_V_7_reg_2894[8] <= current_angle_V_7_fu_737_p2[8];
+current_angle_V_7_reg_2894[9] <= current_angle_V_7_fu_737_p2[9];
+current_angle_V_7_reg_2894[10] <= current_angle_V_7_fu_737_p2[10];
+current_angle_V_7_reg_2894[11] <= current_angle_V_7_fu_737_p2[11];
+current_angle_V_7_reg_2894[12] <= current_angle_V_7_fu_737_p2[12];
+current_angle_V_7_reg_2894[13] <= current_angle_V_7_fu_737_p2[13];
+current_angle_V_7_reg_2894[14] <= current_angle_V_7_fu_737_p2[14];
+current_angle_V_7_reg_2894[15] <= current_angle_V_7_fu_737_p2[15];
+current_angle_V_7_reg_2894[16] <= current_angle_V_7_fu_737_p2[16];
+current_angle_V_7_reg_2894[17] <= current_angle_V_7_fu_737_p2[17];
+current_angle_V_7_reg_2894[18] <= current_angle_V_7_fu_737_p2[18];
+current_angle_V_7_reg_2894[19] <= current_angle_V_7_fu_737_p2[19];
+current_angle_V_7_reg_2894[20] <= current_angle_V_7_fu_737_p2[20];
+current_angle_V_7_reg_2894[21] <= current_angle_V_7_fu_737_p2[21];
+        current_angle_V_9_reg_2938[1] <= current_angle_V_9_fu_906_p2[1];
+current_angle_V_9_reg_2938[2] <= current_angle_V_9_fu_906_p2[2];
+current_angle_V_9_reg_2938[3] <= current_angle_V_9_fu_906_p2[3];
+current_angle_V_9_reg_2938[4] <= current_angle_V_9_fu_906_p2[4];
+current_angle_V_9_reg_2938[5] <= current_angle_V_9_fu_906_p2[5];
+current_angle_V_9_reg_2938[6] <= current_angle_V_9_fu_906_p2[6];
+current_angle_V_9_reg_2938[7] <= current_angle_V_9_fu_906_p2[7];
+current_angle_V_9_reg_2938[8] <= current_angle_V_9_fu_906_p2[8];
+current_angle_V_9_reg_2938[9] <= current_angle_V_9_fu_906_p2[9];
+current_angle_V_9_reg_2938[10] <= current_angle_V_9_fu_906_p2[10];
+current_angle_V_9_reg_2938[11] <= current_angle_V_9_fu_906_p2[11];
+current_angle_V_9_reg_2938[12] <= current_angle_V_9_fu_906_p2[12];
+current_angle_V_9_reg_2938[13] <= current_angle_V_9_fu_906_p2[13];
+current_angle_V_9_reg_2938[14] <= current_angle_V_9_fu_906_p2[14];
+current_angle_V_9_reg_2938[15] <= current_angle_V_9_fu_906_p2[15];
+current_angle_V_9_reg_2938[16] <= current_angle_V_9_fu_906_p2[16];
+current_angle_V_9_reg_2938[17] <= current_angle_V_9_fu_906_p2[17];
+current_angle_V_9_reg_2938[18] <= current_angle_V_9_fu_906_p2[18];
+current_angle_V_9_reg_2938[19] <= current_angle_V_9_fu_906_p2[19];
+current_angle_V_9_reg_2938[20] <= current_angle_V_9_fu_906_p2[20];
+current_angle_V_9_reg_2938[21] <= current_angle_V_9_fu_906_p2[21];
+        p_Val2_119_v_cast_cast_reg_3128[1] <= p_Val2_119_v_cast_cast_fu_1688_p3[1];
+p_Val2_119_v_cast_cast_reg_3128[2] <= p_Val2_119_v_cast_cast_fu_1688_p3[2];
+p_Val2_119_v_cast_cast_reg_3128[3] <= p_Val2_119_v_cast_cast_fu_1688_p3[3];
+p_Val2_119_v_cast_cast_reg_3128[4] <= p_Val2_119_v_cast_cast_fu_1688_p3[4];
+p_Val2_119_v_cast_cast_reg_3128[5] <= p_Val2_119_v_cast_cast_fu_1688_p3[5];
+p_Val2_119_v_cast_cast_reg_3128[6] <= p_Val2_119_v_cast_cast_fu_1688_p3[6];
+p_Val2_119_v_cast_cast_reg_3128[7] <= p_Val2_119_v_cast_cast_fu_1688_p3[7];
+p_Val2_119_v_cast_cast_reg_3128[8] <= p_Val2_119_v_cast_cast_fu_1688_p3[8];
+p_Val2_119_v_cast_cast_reg_3128[9] <= p_Val2_119_v_cast_cast_fu_1688_p3[9];
+p_Val2_119_v_cast_cast_reg_3128[10] <= p_Val2_119_v_cast_cast_fu_1688_p3[10];
+p_Val2_119_v_cast_cast_reg_3128[11] <= p_Val2_119_v_cast_cast_fu_1688_p3[11];
+p_Val2_119_v_cast_cast_reg_3128[12] <= p_Val2_119_v_cast_cast_fu_1688_p3[12];
+p_Val2_119_v_cast_cast_reg_3128[13] <= p_Val2_119_v_cast_cast_fu_1688_p3[13];
+p_Val2_119_v_cast_cast_reg_3128[14] <= p_Val2_119_v_cast_cast_fu_1688_p3[14];
+p_Val2_119_v_cast_cast_reg_3128[15] <= p_Val2_119_v_cast_cast_fu_1688_p3[15];
+p_Val2_119_v_cast_cast_reg_3128[16] <= p_Val2_119_v_cast_cast_fu_1688_p3[16];
+p_Val2_119_v_cast_cast_reg_3128[17] <= p_Val2_119_v_cast_cast_fu_1688_p3[17];
+p_Val2_119_v_cast_cast_reg_3128[18] <= p_Val2_119_v_cast_cast_fu_1688_p3[18];
+p_Val2_119_v_cast_cast_reg_3128[19] <= p_Val2_119_v_cast_cast_fu_1688_p3[19];
+p_Val2_119_v_cast_cast_reg_3128[20] <= p_Val2_119_v_cast_cast_fu_1688_p3[20];
+p_Val2_119_v_cast_cast_reg_3128[21] <= p_Val2_119_v_cast_cast_fu_1688_p3[21];
+        p_Val2_35_v_cast_cast_reg_2816[1] <= p_Val2_35_v_cast_cast_fu_394_p3[1];
+p_Val2_35_v_cast_cast_reg_2816[2] <= p_Val2_35_v_cast_cast_fu_394_p3[2];
+p_Val2_35_v_cast_cast_reg_2816[3] <= p_Val2_35_v_cast_cast_fu_394_p3[3];
+p_Val2_35_v_cast_cast_reg_2816[4] <= p_Val2_35_v_cast_cast_fu_394_p3[4];
+p_Val2_35_v_cast_cast_reg_2816[5] <= p_Val2_35_v_cast_cast_fu_394_p3[5];
+p_Val2_35_v_cast_cast_reg_2816[6] <= p_Val2_35_v_cast_cast_fu_394_p3[6];
+p_Val2_35_v_cast_cast_reg_2816[7] <= p_Val2_35_v_cast_cast_fu_394_p3[7];
+p_Val2_35_v_cast_cast_reg_2816[8] <= p_Val2_35_v_cast_cast_fu_394_p3[8];
+p_Val2_35_v_cast_cast_reg_2816[9] <= p_Val2_35_v_cast_cast_fu_394_p3[9];
+p_Val2_35_v_cast_cast_reg_2816[10] <= p_Val2_35_v_cast_cast_fu_394_p3[10];
+p_Val2_35_v_cast_cast_reg_2816[11] <= p_Val2_35_v_cast_cast_fu_394_p3[11];
+p_Val2_35_v_cast_cast_reg_2816[12] <= p_Val2_35_v_cast_cast_fu_394_p3[12];
+p_Val2_35_v_cast_cast_reg_2816[13] <= p_Val2_35_v_cast_cast_fu_394_p3[13];
+p_Val2_35_v_cast_cast_reg_2816[14] <= p_Val2_35_v_cast_cast_fu_394_p3[14];
+p_Val2_35_v_cast_cast_reg_2816[15] <= p_Val2_35_v_cast_cast_fu_394_p3[15];
+p_Val2_35_v_cast_cast_reg_2816[16] <= p_Val2_35_v_cast_cast_fu_394_p3[16];
+p_Val2_35_v_cast_cast_reg_2816[17] <= p_Val2_35_v_cast_cast_fu_394_p3[17];
+p_Val2_35_v_cast_cast_reg_2816[18] <= p_Val2_35_v_cast_cast_fu_394_p3[18];
+p_Val2_35_v_cast_cast_reg_2816[19] <= p_Val2_35_v_cast_cast_fu_394_p3[19];
+p_Val2_35_v_cast_cast_reg_2816[20] <= p_Val2_35_v_cast_cast_fu_394_p3[20];
+p_Val2_35_v_cast_cast_reg_2816[21] <= p_Val2_35_v_cast_cast_fu_394_p3[21];
+        p_Val2_63_v_cast_cast_reg_2905[1] <= p_Val2_63_v_cast_cast_fu_751_p3[1];
+p_Val2_63_v_cast_cast_reg_2905[2] <= p_Val2_63_v_cast_cast_fu_751_p3[2];
+p_Val2_63_v_cast_cast_reg_2905[3] <= p_Val2_63_v_cast_cast_fu_751_p3[3];
+p_Val2_63_v_cast_cast_reg_2905[4] <= p_Val2_63_v_cast_cast_fu_751_p3[4];
+p_Val2_63_v_cast_cast_reg_2905[5] <= p_Val2_63_v_cast_cast_fu_751_p3[5];
+p_Val2_63_v_cast_cast_reg_2905[6] <= p_Val2_63_v_cast_cast_fu_751_p3[6];
+p_Val2_63_v_cast_cast_reg_2905[7] <= p_Val2_63_v_cast_cast_fu_751_p3[7];
+p_Val2_63_v_cast_cast_reg_2905[8] <= p_Val2_63_v_cast_cast_fu_751_p3[8];
+p_Val2_63_v_cast_cast_reg_2905[9] <= p_Val2_63_v_cast_cast_fu_751_p3[9];
+p_Val2_63_v_cast_cast_reg_2905[10] <= p_Val2_63_v_cast_cast_fu_751_p3[10];
+p_Val2_63_v_cast_cast_reg_2905[11] <= p_Val2_63_v_cast_cast_fu_751_p3[11];
+p_Val2_63_v_cast_cast_reg_2905[12] <= p_Val2_63_v_cast_cast_fu_751_p3[12];
+p_Val2_63_v_cast_cast_reg_2905[13] <= p_Val2_63_v_cast_cast_fu_751_p3[13];
+p_Val2_63_v_cast_cast_reg_2905[14] <= p_Val2_63_v_cast_cast_fu_751_p3[14];
+p_Val2_63_v_cast_cast_reg_2905[15] <= p_Val2_63_v_cast_cast_fu_751_p3[15];
+p_Val2_63_v_cast_cast_reg_2905[16] <= p_Val2_63_v_cast_cast_fu_751_p3[16];
+p_Val2_63_v_cast_cast_reg_2905[17] <= p_Val2_63_v_cast_cast_fu_751_p3[17];
+p_Val2_63_v_cast_cast_reg_2905[18] <= p_Val2_63_v_cast_cast_fu_751_p3[18];
+p_Val2_63_v_cast_cast_reg_2905[19] <= p_Val2_63_v_cast_cast_fu_751_p3[19];
+p_Val2_63_v_cast_cast_reg_2905[20] <= p_Val2_63_v_cast_cast_fu_751_p3[20];
+p_Val2_63_v_cast_cast_reg_2905[21] <= p_Val2_63_v_cast_cast_fu_751_p3[21];
+        p_Val2_91_v_cast_cast_reg_3016[1] <= p_Val2_91_v_cast_cast_fu_1224_p3[1];
+p_Val2_91_v_cast_cast_reg_3016[2] <= p_Val2_91_v_cast_cast_fu_1224_p3[2];
+p_Val2_91_v_cast_cast_reg_3016[3] <= p_Val2_91_v_cast_cast_fu_1224_p3[3];
+p_Val2_91_v_cast_cast_reg_3016[4] <= p_Val2_91_v_cast_cast_fu_1224_p3[4];
+p_Val2_91_v_cast_cast_reg_3016[5] <= p_Val2_91_v_cast_cast_fu_1224_p3[5];
+p_Val2_91_v_cast_cast_reg_3016[6] <= p_Val2_91_v_cast_cast_fu_1224_p3[6];
+p_Val2_91_v_cast_cast_reg_3016[7] <= p_Val2_91_v_cast_cast_fu_1224_p3[7];
+p_Val2_91_v_cast_cast_reg_3016[8] <= p_Val2_91_v_cast_cast_fu_1224_p3[8];
+p_Val2_91_v_cast_cast_reg_3016[9] <= p_Val2_91_v_cast_cast_fu_1224_p3[9];
+p_Val2_91_v_cast_cast_reg_3016[10] <= p_Val2_91_v_cast_cast_fu_1224_p3[10];
+p_Val2_91_v_cast_cast_reg_3016[11] <= p_Val2_91_v_cast_cast_fu_1224_p3[11];
+p_Val2_91_v_cast_cast_reg_3016[12] <= p_Val2_91_v_cast_cast_fu_1224_p3[12];
+p_Val2_91_v_cast_cast_reg_3016[13] <= p_Val2_91_v_cast_cast_fu_1224_p3[13];
+p_Val2_91_v_cast_cast_reg_3016[14] <= p_Val2_91_v_cast_cast_fu_1224_p3[14];
+p_Val2_91_v_cast_cast_reg_3016[15] <= p_Val2_91_v_cast_cast_fu_1224_p3[15];
+p_Val2_91_v_cast_cast_reg_3016[16] <= p_Val2_91_v_cast_cast_fu_1224_p3[16];
+p_Val2_91_v_cast_cast_reg_3016[17] <= p_Val2_91_v_cast_cast_fu_1224_p3[17];
+p_Val2_91_v_cast_cast_reg_3016[18] <= p_Val2_91_v_cast_cast_fu_1224_p3[18];
+p_Val2_91_v_cast_cast_reg_3016[19] <= p_Val2_91_v_cast_cast_fu_1224_p3[19];
+p_Val2_91_v_cast_cast_reg_3016[20] <= p_Val2_91_v_cast_cast_fu_1224_p3[20];
+p_Val2_91_v_cast_cast_reg_3016[21] <= p_Val2_91_v_cast_cast_fu_1224_p3[21];
+        r_V_106_1_reg_2765[1] <= r_V_106_1_fu_299_p3[1];
+r_V_106_1_reg_2765[3] <= r_V_106_1_fu_299_p3[3];
+r_V_106_1_reg_2765[9] <= r_V_106_1_fu_299_p3[9];
+r_V_106_1_reg_2765[10] <= r_V_106_1_fu_299_p3[10];
+r_V_106_1_reg_2765[13] <= r_V_106_1_fu_299_p3[13];
+r_V_106_1_reg_2765[16] <= r_V_106_1_fu_299_p3[16];
+r_V_106_1_reg_2765[19] <= r_V_106_1_fu_299_p3[19];
+r_V_106_1_reg_2765[21] <= r_V_106_1_fu_299_p3[21];
+        r_V_111_1_reg_2770[1] <= r_V_111_1_fu_307_p3[1];
+r_V_111_1_reg_2770[2] <= r_V_111_1_fu_307_p3[2];
+r_V_111_1_reg_2770[3] <= r_V_111_1_fu_307_p3[3];
+r_V_111_1_reg_2770[9] <= r_V_111_1_fu_307_p3[9];
+r_V_111_1_reg_2770[10] <= r_V_111_1_fu_307_p3[10];
+r_V_111_1_reg_2770[13] <= r_V_111_1_fu_307_p3[13];
+r_V_111_1_reg_2770[16] <= r_V_111_1_fu_307_p3[16];
+r_V_111_1_reg_2770[19] <= r_V_111_1_fu_307_p3[19];
+r_V_111_1_reg_2770[21] <= r_V_111_1_fu_307_p3[21];
+        t_V_38_reg_3195 <= t_V_38_fu_1942_p2;
+        t_V_39_reg_3205 <= t_V_39_fu_1968_p2;
+        theta_V_read_reg_2726 <= theta_V;
+        tmp_11_reg_2922 <= {{y_V_97_fu_858_p3[ap_const_lv32_1C : ap_const_lv32_7]}};
+        tmp_12_reg_2927 <= {{x_V_95_fu_851_p3[ap_const_lv32_1A : ap_const_lv32_7]}};
+        tmp_15_reg_2955 <= {{y_V_99_fu_1011_p3[ap_const_lv32_1C : ap_const_lv32_9]}};
+        tmp_16_reg_2960 <= {{x_V_97_fu_1004_p3[ap_const_lv32_1A : ap_const_lv32_9]}};
+        tmp_19_reg_2995 <= {{y_V_101_fu_1176_p3[ap_const_lv32_1D : ap_const_lv32_B]}};
+        tmp_20_reg_3000 <= {{x_V_99_fu_1169_p3[ap_const_lv32_1B : ap_const_lv32_B]}};
+        tmp_23_reg_3033 <= {{y_V_103_fu_1331_p3[ap_const_lv32_1D : ap_const_lv32_D]}};
+        tmp_24_reg_3038 <= {{x_V_101_fu_1324_p3[ap_const_lv32_1B : ap_const_lv32_D]}};
+        tmp_27_reg_3073 <= {{y_V_105_fu_1484_p3[ap_const_lv32_1D : ap_const_lv32_F]}};
+        tmp_28_reg_3078 <= {{x_V_103_fu_1477_p3[ap_const_lv32_1B : ap_const_lv32_F]}};
+        tmp_2_reg_2844 <= {{y_V_93_fu_538_p3[ap_const_lv32_15 : ap_const_lv32_3]}};
+        tmp_31_reg_3118 <= {{y_V_107_fu_1640_p3[ap_const_lv32_1D : ap_const_lv32_11]}};
+        tmp_32_reg_3123 <= {{x_V_105_fu_1633_p3[ap_const_lv32_1B : ap_const_lv32_11]}};
+        tmp_35_reg_3151 <= {{y_V_109_fu_1809_p3[ap_const_lv32_1D : ap_const_lv32_13]}};
+        tmp_36_reg_3156 <= {{x_V_107_fu_1801_p3[ap_const_lv32_1B : ap_const_lv32_13]}};
+        tmp_3_reg_2849 <= {{x_V_92_fu_531_p3[ap_const_lv32_15 : ap_const_lv32_3]}};
+        tmp_6_reg_2884 <= {{y_V_95_fu_703_p3[ap_const_lv32_1C : ap_const_lv32_5]}};
+        tmp_7_reg_2889 <= {{x_V_93_fu_696_p3[ap_const_lv32_1A : ap_const_lv32_5]}};
+        tmp_81_10_reg_2965 <= tmp_81_10_fu_1041_p2;
+        tmp_81_11_reg_2976 <= tmp_81_11_fu_1063_p2;
+        tmp_81_12_reg_3010 <= tmp_81_12_fu_1219_p2;
+        tmp_81_13_reg_3043 <= tmp_81_13_fu_1366_p2;
+        tmp_81_14_reg_3067 <= tmp_81_14_fu_1494_p2;
+        tmp_81_15_reg_3088 <= tmp_81_15_fu_1536_p2;
+        tmp_81_16_reg_3112 <= tmp_81_16_fu_1663_p2;
+        tmp_81_19_reg_3168 <= tmp_81_19_fu_1923_p2;
+        tmp_81_1_reg_2758 <= tmp_81_1_fu_293_p2;
+        tmp_81_2_reg_2775 <= tmp_81_2_fu_324_p2;
+        tmp_81_3_reg_2787 <= tmp_81_3_fu_346_p2;
+        tmp_81_4_reg_2798 <= tmp_81_4_fu_368_p2;
+        tmp_81_5_reg_2810 <= tmp_81_5_fu_389_p2;
+        tmp_81_6_reg_2821 <= tmp_81_6_fu_410_p2;
+        tmp_81_7_reg_2854 <= tmp_81_7_fu_568_p2;
+        tmp_81_8_reg_2865 <= tmp_81_8_fu_590_p2;
+        tmp_81_9_reg_2899 <= tmp_81_9_fu_746_p2;
+        tmp_81_s_reg_2932 <= tmp_81_s_fu_893_p2;
+        tmp_reg_3161 <= tmp_fu_1851_p2;
+        tmp_s_reg_2750 <= tmp_s_fu_279_p2;
+        x_V_101_reg_3021 <= x_V_101_fu_1324_p3;
+        x_V_103_reg_3055 <= x_V_103_fu_1477_p3;
+        x_V_105_reg_3095 <= x_V_105_fu_1633_p3;
+        x_V_107_reg_3133 <= x_V_107_fu_1801_p3;
+        x_V_92_reg_2833 <= x_V_92_fu_531_p3;
+        x_V_93_reg_2872 <= x_V_93_fu_696_p3;
+        x_V_95_reg_2910 <= x_V_95_fu_851_p3;
+        x_V_97_reg_2944 <= x_V_97_fu_1004_p3;
+        x_V_99_reg_2983 <= x_V_99_fu_1169_p3;
+        y_V_101_reg_2989 <= y_V_101_fu_1176_p3;
+        y_V_103_reg_3027 <= y_V_103_fu_1331_p3;
+        y_V_105_reg_3061 <= y_V_105_fu_1484_p3;
+        y_V_107_reg_3101 <= y_V_107_fu_1640_p3;
+        y_V_109_reg_3139 <= y_V_109_fu_1809_p3;
+        y_V_57_reg_3200 <= y_V_57_fu_1962_p2;
+        y_V_58_reg_3210 <= y_V_58_fu_1974_p2;
+        y_V_93_reg_2839[1] <= y_V_93_fu_538_p3[1];
+y_V_93_reg_2839[2] <= y_V_93_fu_538_p3[2];
+y_V_93_reg_2839[3] <= y_V_93_fu_538_p3[3];
+y_V_93_reg_2839[4] <= y_V_93_fu_538_p3[4];
+y_V_93_reg_2839[5] <= y_V_93_fu_538_p3[5];
+y_V_93_reg_2839[6] <= y_V_93_fu_538_p3[6];
+y_V_93_reg_2839[7] <= y_V_93_fu_538_p3[7];
+y_V_93_reg_2839[8] <= y_V_93_fu_538_p3[8];
+y_V_93_reg_2839[9] <= y_V_93_fu_538_p3[9];
+y_V_93_reg_2839[10] <= y_V_93_fu_538_p3[10];
+y_V_93_reg_2839[11] <= y_V_93_fu_538_p3[11];
+y_V_93_reg_2839[12] <= y_V_93_fu_538_p3[12];
+y_V_93_reg_2839[13] <= y_V_93_fu_538_p3[13];
+y_V_93_reg_2839[14] <= y_V_93_fu_538_p3[14];
+y_V_93_reg_2839[15] <= y_V_93_fu_538_p3[15];
+y_V_93_reg_2839[16] <= y_V_93_fu_538_p3[16];
+y_V_93_reg_2839[17] <= y_V_93_fu_538_p3[17];
+y_V_93_reg_2839[18] <= y_V_93_fu_538_p3[18];
+y_V_93_reg_2839[19] <= y_V_93_fu_538_p3[19];
+y_V_93_reg_2839[20] <= y_V_93_fu_538_p3[20];
+y_V_93_reg_2839[21] <= y_V_93_fu_538_p3[21];
+        y_V_95_reg_2878 <= y_V_95_fu_703_p3;
+        y_V_97_reg_2916 <= y_V_97_fu_858_p3;
+        y_V_99_reg_2949 <= y_V_99_fu_1011_p3;
+    end
+end
 
-/// the current state (ap_CS_fsm) of the state machine. ///
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & ~(tmp_81_19_reg_3168 == ap_const_lv1_0))) begin
+        t_V_42_reg_3215 <= t_V_42_fu_2070_p2;
+        y_V_63_reg_3220 <= y_V_63_fu_2090_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & (tmp_81_19_reg_3168 == ap_const_lv1_0))) begin
+        t_V_43_reg_3225 <= t_V_43_fu_2096_p2;
+        y_V_64_reg_3230 <= y_V_64_fu_2102_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & ~(ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15 == ap_const_lv1_0))) begin
+        t_V_46_reg_3235 <= t_V_46_fu_2198_p2;
+        y_V_69_reg_3240 <= y_V_69_fu_2218_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & (ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15 == ap_const_lv1_0))) begin
+        t_V_47_reg_3245 <= t_V_47_fu_2224_p2;
+        y_V_70_reg_3250 <= y_V_70_fu_2230_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & ~(ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16 == ap_const_lv1_0))) begin
+        t_V_50_reg_3255 <= t_V_50_fu_2326_p2;
+        y_V_75_reg_3260 <= y_V_75_fu_2346_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & (ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16 == ap_const_lv1_0))) begin
+        t_V_51_reg_3265 <= t_V_51_fu_2352_p2;
+        y_V_76_reg_3270 <= y_V_76_fu_2358_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & ~(ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17 == ap_const_lv1_0))) begin
+        t_V_54_reg_3275 <= t_V_54_fu_2452_p2;
+        y_V_81_reg_3280 <= y_V_81_fu_2470_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & (ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17 == ap_const_lv1_0))) begin
+        t_V_55_reg_3285 <= t_V_55_fu_2476_p2;
+        y_V_82_reg_3290 <= y_V_82_fu_2482_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & ~(ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18 == ap_const_lv1_0))) begin
+        t_V_58_reg_3295 <= t_V_58_fu_2572_p2;
+        y_V_87_reg_3300 <= y_V_87_fu_2590_p2;
+    end
+end
+
+/// assign process. ///
+always @(posedge ap_clk)
+begin
+    if (((ap_const_logic_1 == ap_ce) & (ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18 == ap_const_lv1_0))) begin
+        t_V_59_reg_3305 <= t_V_59_fu_2596_p2;
+        y_V_88_reg_3310 <= y_V_88_fu_2602_p2;
+    end
+end
+assign UnifiedRetVal1_cast_fu_2691_p1 = $signed(UnifiedRetVal1_fu_2683_p3);
+assign UnifiedRetVal1_fu_2683_p3 = ((sel_tmp2_fu_2678_p2)? y_V_90_fu_2648_p2: sel_tmp_fu_2666_p3);
+assign UnifiedRetVal_1_cast_fu_2710_p1 = $signed(UnifiedRetVal_1_fu_2702_p3);
+assign UnifiedRetVal_1_fu_2702_p3 = ((sel_tmp2_fu_2678_p2)? t_V_60_fu_2630_p2: sel_tmp4_fu_2695_p3);
+assign ap_return_0 = UnifiedRetVal1_cast_fu_2691_p1;
+assign ap_return_1 = UnifiedRetVal_1_cast_fu_2710_p1;
+assign current_angle_V_10_fu_1054_p2 = (current_angle_V_9_reg_2938 + p_Val2_77_v_cast_cast_fu_1046_p3);
+assign current_angle_V_11_fu_1210_p2 = (current_angle_V_10_reg_2971 + p_Val2_84_v_cast_cast_fu_1203_p3);
+assign current_angle_V_12_fu_1358_p2 = (current_angle_V_11_reg_3005 + p_Val2_91_v_cast_cast_reg_3016);
+assign current_angle_V_13_fu_1379_p2 = (current_angle_V_12_fu_1358_p2 + p_Val2_98_v_cast_cast_fu_1371_p3);
+assign current_angle_V_14_fu_1527_p2 = (current_angle_V_13_reg_3049 + p_Val2_105_v_cast_cast_fu_1519_p3);
+assign current_angle_V_15_fu_1654_p2 = (current_angle_V_14_reg_3083 + p_Val2_112_v_cast_cast_fu_1647_p3);
+assign current_angle_V_16_fu_1736_p2 = (current_angle_V_15_reg_3107 + p_Val2_119_v_cast_cast_reg_3128);
+assign current_angle_V_17_fu_1825_p2 = (current_angle_V_16_fu_1736_p2 + p_Val2_126_v_cast_cast_fu_1817_p3);
+assign current_angle_V_1_fu_337_p2 = (current_angle_V_fu_315_p3 + p_Val2_14_v_cast_cast_fu_329_p3);
+assign current_angle_V_2_fu_359_p2 = (current_angle_V_1_reg_2781 + p_Val2_21_v_cast_cast_fu_351_p3);
+assign current_angle_V_3_fu_380_p2 = (current_angle_V_2_reg_2793 + p_Val2_28_v_cast_cast_fu_373_p3);
+assign current_angle_V_4_fu_402_p2 = (current_angle_V_3_reg_2805 + p_Val2_35_v_cast_cast_reg_2816);
+assign current_angle_V_5_fu_423_p2 = (current_angle_V_4_fu_402_p2 + p_Val2_42_v_cast_cast_fu_415_p3);
+assign current_angle_V_6_fu_581_p2 = (current_angle_V_5_reg_2827 + p_Val2_49_v_cast_cast_fu_573_p3);
+assign current_angle_V_7_fu_737_p2 = (current_angle_V_6_reg_2860 + p_Val2_56_v_cast_cast_fu_730_p3);
+assign current_angle_V_8_fu_885_p2 = (current_angle_V_7_reg_2894 + p_Val2_63_v_cast_cast_reg_2905);
+assign current_angle_V_9_fu_906_p2 = (current_angle_V_8_fu_885_p2 + p_Val2_70_v_cast_cast_fu_898_p3);
+assign current_angle_V_cast_cast_fu_285_p3 = ((tmp_s_fu_279_p2)? ap_const_lv32_C90FD: ap_const_lv32_FFF36F03);
+assign current_angle_V_fu_315_p3 = ((tmp_81_1_reg_2758)? r_V_106_1_reg_2765: r_V_111_1_reg_2770);
+assign p_Val2_105_v_cast_cast_fu_1519_p3 = ((tmp_81_14_fu_1494_p2)? ap_const_lv22_1F: ap_const_lv22_3FFFE1);
+assign p_Val2_112_v_cast_cast_fu_1647_p3 = ((tmp_81_15_reg_3088)? ap_const_lv22_F: ap_const_lv22_3FFFF1);
+assign p_Val2_119_v_cast_cast_fu_1688_p3 = ((tmp_81_16_fu_1663_p2)? ap_const_lv22_7: ap_const_lv22_3FFFF9);
+assign p_Val2_126_v_cast_cast_fu_1817_p3 = ((tmp_81_17_fu_1744_p2)? ap_const_lv22_3: ap_const_lv22_3FFFFD);
+assign p_Val2_135_v_cast_cast_fu_1906_p3 = ((tmp_81_18_fu_1859_p2)? ap_const_lv22_1: ap_const_lv22_3FFFFF);
+assign p_Val2_13_cast_cast_fu_595_p1 = $signed(y_V_93_reg_2839);
+assign p_Val2_14_v_cast_cast_fu_329_p3 = ((tmp_81_2_fu_324_p2)? ap_const_lv22_3EB6E: ap_const_lv22_3C1492);
+assign p_Val2_21_v_cast_cast_fu_351_p3 = ((tmp_81_3_fu_346_p2)? ap_const_lv22_1FD5B: ap_const_lv22_3E02A5);
+assign p_Val2_28_v_cast_cast_fu_373_p3 = ((tmp_81_4_reg_2798)? ap_const_lv22_FFAA: ap_const_lv22_3F0056);
+assign p_Val2_35_v_cast_cast_fu_394_p3 = ((tmp_81_5_fu_389_p2)? ap_const_lv22_7FF5: ap_const_lv22_3F800B);
+assign p_Val2_3_cast_cast_fu_464_p1 = $unsigned(x_V_91_fu_457_p3);
+assign p_Val2_42_v_cast_cast_fu_415_p3 = ((tmp_81_6_fu_410_p2)? ap_const_lv22_3FFE: ap_const_lv22_3FC002);
+assign p_Val2_49_v_cast_cast_fu_573_p3 = ((tmp_81_7_fu_568_p2)? ap_const_lv22_1FFF: ap_const_lv22_3FE001);
+assign p_Val2_56_v_cast_cast_fu_730_p3 = ((tmp_81_8_reg_2865)? ap_const_lv22_FFF: ap_const_lv22_3FF001);
+assign p_Val2_57_fu_1914_p2 = (current_angle_V_17_reg_3145 + p_Val2_135_v_cast_cast_fu_1906_p3);
+assign p_Val2_63_v_cast_cast_fu_751_p3 = ((tmp_81_9_fu_746_p2)? ap_const_lv22_7FF: ap_const_lv22_3FF801);
+assign p_Val2_6_cast_fu_475_p1 = $signed(y_V_92_fu_468_p3);
+assign p_Val2_70_v_cast_cast_fu_898_p3 = ((tmp_81_s_fu_893_p2)? ap_const_lv22_3FF: ap_const_lv22_3FFC01);
+assign p_Val2_77_v_cast_cast_fu_1046_p3 = ((tmp_81_10_fu_1041_p2)? ap_const_lv22_1FF: ap_const_lv22_3FFE01);
+assign p_Val2_84_v_cast_cast_fu_1203_p3 = ((tmp_81_11_reg_2976)? ap_const_lv22_FF: ap_const_lv22_3FFF01);
+assign p_Val2_91_v_cast_cast_fu_1224_p3 = ((tmp_81_12_fu_1219_p2)? ap_const_lv22_7F: ap_const_lv22_3FFF81);
+assign p_Val2_98_v_cast_cast_fu_1371_p3 = ((tmp_81_13_fu_1366_p2)? ap_const_lv22_3F: ap_const_lv22_3FFFC1);
+assign r_V_102_cast_cast_fu_2402_p1 = $signed(tmp_52_fu_2394_p3);
+assign r_V_106_1_fu_299_p3 = ((tmp_s_fu_279_p2)? ap_const_lv22_13FC16: ap_const_lv22_3ADA1C);
+assign r_V_106_cast_cast_fu_2466_p1 = $signed(tmp_54_fu_2458_p3);
+assign r_V_10_cast6_fu_2066_p1 = $signed(tmp_41_fu_2056_p4);
+assign r_V_10_cast_cast_fu_674_p1 = $signed(tmp_5_fu_664_p4);
+assign r_V_110_cast_cast_fu_2524_p1 = $signed(tmp_56_fu_2516_p3);
+assign r_V_111_1_fu_307_p3 = ((tmp_s_fu_279_p2)? ap_const_lv22_525E4: ap_const_lv22_2C03EA);
+assign r_V_114_cast_cast_fu_2586_p1 = $signed(tmp_58_fu_2578_p3);
+assign r_V_118_cast_cast_fu_2644_p1 = $signed(tmp_60_fu_2636_p3);
+assign r_V_11_cast_fu_2128_p1 = $signed(tmp_43_fu_2118_p4);
+assign r_V_12_cast_fu_2194_p1 = $signed(tmp_45_fu_2184_p4);
+assign r_V_13_cast5_fu_2256_p1 = $signed(tmp_47_fu_2246_p4);
+assign r_V_13_cast_cast_fu_759_p1 = $signed(tmp_6_reg_2884);
+assign r_V_14_cast4_fu_2322_p1 = $signed(tmp_49_fu_2312_p4);
+assign r_V_14_cast_cast_fu_767_p1 = $signed(tmp_7_reg_2889);
+assign r_V_15_cast_fu_2384_p1 = $signed(tmp_51_fu_2374_p4);
+assign r_V_16_cast_fu_2448_p1 = $signed(tmp_53_fu_2438_p4);
+assign r_V_17_cast3_fu_2506_p1 = $signed(tmp_55_fu_2498_p3);
+assign r_V_17_cast_cast_fu_809_p1 = $signed(tmp_9_fu_799_p4);
+assign r_V_18_cast2_fu_2568_p1 = $signed(tmp_57_fu_2560_p3);
+assign r_V_18_cast_cast_fu_829_p1 = $signed(tmp_10_fu_819_p4);
+assign r_V_19_cast_fu_2626_p1 = $signed(tmp_59_fu_2618_p3);
+assign r_V_1_cast_fu_1385_p1 = $signed(tmp_23_reg_3033);
+assign r_V_21_cast_cast_fu_912_p1 = $signed(tmp_11_reg_2922);
+assign r_V_22_cast_cast_fu_920_p1 = $signed(tmp_12_reg_2927);
+assign r_V_25_cast_cast_fu_962_p1 = $signed(tmp_13_fu_952_p4);
+assign r_V_26_cast_cast_fu_982_p1 = $signed(tmp_14_fu_972_p4);
+assign r_V_29_cast_cast_fu_1071_p1 = $signed(tmp_15_reg_2955);
+assign r_V_2_cast1_fu_1435_p1 = $signed(tmp_25_fu_1425_p4);
+assign r_V_2_cast_fu_509_p1 = $unsigned(tmp_8_fu_499_p4);
+assign r_V_30_cast_cast_fu_1080_p1 = $signed(tmp_16_reg_2960);
+assign r_V_33_cast_cast_fu_1127_p1 = $signed(tmp_17_fu_1117_p4);
+assign r_V_34_cast_fu_1147_p1 = $signed(tmp_18_fu_1137_p4);
+assign r_V_37_cast_cast_fu_1232_p1 = $signed(tmp_19_reg_2995);
+assign r_V_38_cast_cast_fu_1240_p1 = $signed(tmp_20_reg_3000);
+assign r_V_3_cast_fu_1541_p1 = $signed(tmp_27_reg_3073);
+assign r_V_42_cast_cast_fu_1302_p1 = $signed(tmp_22_fu_1292_p4);
+assign r_V_46_cast_cast_fu_1393_p1 = $signed(tmp_24_reg_3038);
+assign r_V_4_cast_fu_1591_p1 = $signed(tmp_29_fu_1581_p4);
+assign r_V_50_cast_cast_fu_1455_p1 = $signed(tmp_26_fu_1445_p4);
+assign r_V_54_cast_cast_fu_1549_p1 = $signed(tmp_28_reg_3078);
+assign r_V_58_cast_cast_fu_1611_p1 = $signed(tmp_30_fu_1601_p4);
+assign r_V_5_cast9_fu_1696_p1 = $signed(tmp_31_reg_3118);
+assign r_V_5_cast_cast_fu_598_p1 = $signed(tmp_2_reg_2844);
+assign r_V_62_cast_cast_fu_1704_p1 = $signed(tmp_32_reg_3123);
+assign r_V_66_cast_cast_fu_1779_p1 = $signed(tmp_34_fu_1769_p4);
+assign r_V_6_cast8_fu_1759_p1 = $signed(tmp_33_fu_1749_p4);
+assign r_V_6_cast_cast_fu_606_p1 = $signed(tmp_3_reg_2849);
+assign r_V_70_cast_cast_fu_1872_p1 = $signed(tmp_36_reg_3156);
+assign r_V_74_cast_cast_fu_1958_p1 = $signed(tmp_38_fu_1948_p4);
+assign r_V_78_cast_cast_fu_2020_p1 = $signed(tmp_40_fu_2010_p4);
+assign r_V_7_cast_fu_1864_p1 = $signed(tmp_35_reg_3151);
+assign r_V_82_cast_cast_fu_2086_p1 = $signed(tmp_42_fu_2076_p4);
+assign r_V_86_cast_cast_fu_2148_p1 = $signed(tmp_44_fu_2138_p4);
+assign r_V_8_cast_fu_1938_p1 = $signed(tmp_37_fu_1928_p4);
+assign r_V_90_cast_cast_fu_2214_p1 = $signed(tmp_46_fu_2204_p4);
+assign r_V_94_cast_cast_fu_2276_p1 = $signed(tmp_48_fu_2266_p4);
+assign r_V_98_cast_cast_fu_2342_p1 = $signed(tmp_50_fu_2332_p4);
+assign r_V_9_cast7_fu_2000_p1 = $signed(tmp_39_fu_1990_p4);
+assign r_V_9_cast_cast_fu_654_p1 = $signed(tmp_4_fu_644_p4);
+assign r_V_cast_cast_fu_489_p1 = $signed(tmp_1_fu_479_p4);
+assign r_V_cast_fu_1282_p1 = $signed(tmp_21_fu_1272_p4);
+assign sel_tmp1_fu_2673_p2 = (ap_reg_ppstg_tmp_reg_3161_pp0_it19 ^ ap_const_lv1_1);
+assign sel_tmp2_fu_2678_p2 = (ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it19 & sel_tmp1_fu_2673_p2);
+assign sel_tmp4_fu_2695_p3 = ((ap_reg_ppstg_tmp_reg_3161_pp0_it19)? ap_const_lv28_100000: t_V_61_fu_2654_p2);
+assign sel_tmp_fu_2666_p3 = ((ap_reg_ppstg_tmp_reg_3161_pp0_it19)? ap_const_lv30_0: y_V_91_fu_2660_p2);
+assign t_V_10_fu_813_p1 = r_V_17_cast_cast_fu_809_p1;
+assign t_V_10_fu_813_p2 = (x_V_94_fu_785_p3 - t_V_10_fu_813_p1);
+assign t_V_11_fu_839_p1 = r_V_17_cast_cast_fu_809_p1;
+assign t_V_11_fu_839_p2 = (x_V_94_fu_785_p3 + t_V_11_fu_839_p1);
+assign t_V_12_fu_915_p1 = r_V_21_cast_cast_fu_912_p1;
+assign t_V_12_fu_915_p2 = (x_V_95_reg_2910 - t_V_12_fu_915_p1);
+assign t_V_13_fu_928_p1 = r_V_21_cast_cast_fu_912_p1;
+assign t_V_13_fu_928_p2 = (x_V_95_reg_2910 + t_V_13_fu_928_p1);
+assign t_V_14_fu_966_p1 = r_V_25_cast_cast_fu_962_p1;
+assign t_V_14_fu_966_p2 = (x_V_96_fu_938_p3 - t_V_14_fu_966_p1);
+assign t_V_15_fu_992_p1 = r_V_25_cast_cast_fu_962_p1;
+assign t_V_15_fu_992_p2 = (x_V_96_fu_938_p3 + t_V_15_fu_992_p1);
+assign t_V_16_fu_1074_p0 = x_V_97_cast_fu_1068_p1;
+assign t_V_16_fu_1074_p1 = r_V_29_cast_cast_fu_1071_p1;
+assign t_V_16_fu_1074_p2 = (t_V_16_fu_1074_p0 - t_V_16_fu_1074_p1);
+assign t_V_17_fu_1088_p0 = x_V_97_cast_fu_1068_p1;
+assign t_V_17_fu_1088_p1 = r_V_29_cast_cast_fu_1071_p1;
+assign t_V_17_fu_1088_p2 = (t_V_17_fu_1088_p0 + t_V_17_fu_1088_p1);
+assign t_V_18_fu_1131_p1 = r_V_33_cast_cast_fu_1127_p1;
+assign t_V_18_fu_1131_p2 = (x_V_98_fu_1099_p3 - t_V_18_fu_1131_p1);
+assign t_V_19_fu_1157_p1 = r_V_33_cast_cast_fu_1127_p1;
+assign t_V_19_fu_1157_p2 = (x_V_98_fu_1099_p3 + t_V_19_fu_1157_p1);
+assign t_V_1_fu_443_p3 = ((ap_reg_ppstg_tmp_s_reg_2750_pp0_it4)? ap_const_lv20_E92F5: ap_const_lv20_4DBA7);
+assign t_V_20_fu_1235_p1 = r_V_37_cast_cast_fu_1232_p1;
+assign t_V_20_fu_1235_p2 = (x_V_99_reg_2983 - t_V_20_fu_1235_p1);
+assign t_V_21_fu_1248_p1 = r_V_37_cast_cast_fu_1232_p1;
+assign t_V_21_fu_1248_p2 = (x_V_99_reg_2983 + t_V_21_fu_1248_p1);
+assign t_V_22_fu_1286_p1 = r_V_cast_fu_1282_p1;
+assign t_V_22_fu_1286_p2 = (x_V_100_fu_1258_p3 - t_V_22_fu_1286_p1);
+assign t_V_23_fu_1312_p1 = r_V_cast_fu_1282_p1;
+assign t_V_23_fu_1312_p2 = (x_V_100_fu_1258_p3 + t_V_23_fu_1312_p1);
+assign t_V_24_fu_1388_p1 = r_V_1_cast_fu_1385_p1;
+assign t_V_24_fu_1388_p2 = (x_V_101_reg_3021 - t_V_24_fu_1388_p1);
+assign t_V_25_fu_1401_p1 = r_V_1_cast_fu_1385_p1;
+assign t_V_25_fu_1401_p2 = (x_V_101_reg_3021 + t_V_25_fu_1401_p1);
+assign t_V_26_fu_1439_p1 = r_V_2_cast1_fu_1435_p1;
+assign t_V_26_fu_1439_p2 = (x_V_102_fu_1411_p3 - t_V_26_fu_1439_p1);
+assign t_V_27_fu_1465_p1 = r_V_2_cast1_fu_1435_p1;
+assign t_V_27_fu_1465_p2 = (x_V_102_fu_1411_p3 + t_V_27_fu_1465_p1);
+assign t_V_28_fu_1544_p1 = r_V_3_cast_fu_1541_p1;
+assign t_V_28_fu_1544_p2 = (x_V_103_reg_3055 - t_V_28_fu_1544_p1);
+assign t_V_29_fu_1557_p1 = r_V_3_cast_fu_1541_p1;
+assign t_V_29_fu_1557_p2 = (x_V_103_reg_3055 + t_V_29_fu_1557_p1);
+assign t_V_2_fu_493_p1 = r_V_cast_cast_fu_489_p1;
+assign t_V_2_fu_493_p2 = (p_Val2_3_cast_cast_fu_464_p1 - t_V_2_fu_493_p1);
+assign t_V_30_fu_1595_p1 = r_V_4_cast_fu_1591_p1;
+assign t_V_30_fu_1595_p2 = (x_V_104_fu_1567_p3 - t_V_30_fu_1595_p1);
+assign t_V_31_fu_1621_p1 = r_V_4_cast_fu_1591_p1;
+assign t_V_31_fu_1621_p2 = (x_V_104_fu_1567_p3 + t_V_31_fu_1621_p1);
+assign t_V_32_fu_1699_p1 = r_V_5_cast9_fu_1696_p1;
+assign t_V_32_fu_1699_p2 = (x_V_105_reg_3095 - t_V_32_fu_1699_p1);
+assign t_V_33_fu_1712_p1 = r_V_5_cast9_fu_1696_p1;
+assign t_V_33_fu_1712_p2 = (x_V_105_reg_3095 + t_V_33_fu_1712_p1);
+assign t_V_34_fu_1763_p1 = r_V_6_cast8_fu_1759_p1;
+assign t_V_34_fu_1763_p2 = (x_V_106_fu_1722_p3 - t_V_34_fu_1763_p1);
+assign t_V_35_fu_1789_p1 = r_V_6_cast8_fu_1759_p1;
+assign t_V_35_fu_1789_p2 = (x_V_106_fu_1722_p3 + t_V_35_fu_1789_p1);
+assign t_V_36_fu_1867_p1 = r_V_7_cast_fu_1864_p1;
+assign t_V_36_fu_1867_p2 = (x_V_107_reg_3133 - t_V_36_fu_1867_p1);
+assign t_V_37_fu_1880_p1 = r_V_7_cast_fu_1864_p1;
+assign t_V_37_fu_1880_p2 = (x_V_107_reg_3133 + t_V_37_fu_1880_p1);
+assign t_V_38_fu_1942_p1 = r_V_8_cast_fu_1938_p1;
+assign t_V_38_fu_1942_p2 = (x_V_108_fu_1890_p3 - t_V_38_fu_1942_p1);
+assign t_V_39_fu_1968_p1 = r_V_8_cast_fu_1938_p1;
+assign t_V_39_fu_1968_p2 = (x_V_108_fu_1890_p3 + t_V_39_fu_1968_p1);
+assign t_V_3_fu_519_p1 = r_V_cast_cast_fu_489_p1;
+assign t_V_3_fu_519_p2 = (p_Val2_3_cast_cast_fu_464_p1 + t_V_3_fu_519_p1);
+assign t_V_40_fu_2004_p1 = r_V_9_cast7_fu_2000_p1;
+assign t_V_40_fu_2004_p2 = (x_V_109_fu_1980_p3 - t_V_40_fu_2004_p1);
+assign t_V_41_fu_2030_p1 = r_V_9_cast7_fu_2000_p1;
+assign t_V_41_fu_2030_p2 = (x_V_109_fu_1980_p3 + t_V_41_fu_2030_p1);
+assign t_V_42_fu_2070_p1 = r_V_10_cast6_fu_2066_p1;
+assign t_V_42_fu_2070_p2 = (x_V_110_fu_2042_p3 - t_V_42_fu_2070_p1);
+assign t_V_43_fu_2096_p1 = r_V_10_cast6_fu_2066_p1;
+assign t_V_43_fu_2096_p2 = (x_V_110_fu_2042_p3 + t_V_43_fu_2096_p1);
+assign t_V_44_fu_2132_p1 = r_V_11_cast_fu_2128_p1;
+assign t_V_44_fu_2132_p2 = (x_V_111_fu_2108_p3 - t_V_44_fu_2132_p1);
+assign t_V_45_fu_2158_p1 = r_V_11_cast_fu_2128_p1;
+assign t_V_45_fu_2158_p2 = (x_V_111_fu_2108_p3 + t_V_45_fu_2158_p1);
+assign t_V_46_fu_2198_p1 = r_V_12_cast_fu_2194_p1;
+assign t_V_46_fu_2198_p2 = (x_V_112_fu_2170_p3 - t_V_46_fu_2198_p1);
+assign t_V_47_fu_2224_p1 = r_V_12_cast_fu_2194_p1;
+assign t_V_47_fu_2224_p2 = (x_V_112_fu_2170_p3 + t_V_47_fu_2224_p1);
+assign t_V_48_fu_2260_p1 = r_V_13_cast5_fu_2256_p1;
+assign t_V_48_fu_2260_p2 = (x_V_113_fu_2236_p3 - t_V_48_fu_2260_p1);
+assign t_V_49_fu_2286_p1 = r_V_13_cast5_fu_2256_p1;
+assign t_V_49_fu_2286_p2 = (x_V_113_fu_2236_p3 + t_V_49_fu_2286_p1);
+assign t_V_4_fu_601_p1 = r_V_5_cast_cast_fu_598_p1;
+assign t_V_4_fu_601_p2 = (x_V_92_reg_2833 - t_V_4_fu_601_p1);
+assign t_V_50_fu_2326_p1 = r_V_14_cast4_fu_2322_p1;
+assign t_V_50_fu_2326_p2 = (x_V_114_fu_2298_p3 - t_V_50_fu_2326_p1);
+assign t_V_51_fu_2352_p1 = r_V_14_cast4_fu_2322_p1;
+assign t_V_51_fu_2352_p2 = (x_V_114_fu_2298_p3 + t_V_51_fu_2352_p1);
+assign t_V_52_fu_2388_p1 = r_V_15_cast_fu_2384_p1;
+assign t_V_52_fu_2388_p2 = (x_V_115_fu_2364_p3 - t_V_52_fu_2388_p1);
+assign t_V_53_fu_2412_p1 = r_V_15_cast_fu_2384_p1;
+assign t_V_53_fu_2412_p2 = (x_V_115_fu_2364_p3 + t_V_53_fu_2412_p1);
+assign t_V_54_fu_2452_p1 = r_V_16_cast_fu_2448_p1;
+assign t_V_54_fu_2452_p2 = (x_V_116_fu_2424_p3 - t_V_54_fu_2452_p1);
+assign t_V_55_fu_2476_p1 = r_V_16_cast_fu_2448_p1;
+assign t_V_55_fu_2476_p2 = (x_V_116_fu_2424_p3 + t_V_55_fu_2476_p1);
+assign t_V_56_fu_2510_p1 = r_V_17_cast3_fu_2506_p1;
+assign t_V_56_fu_2510_p2 = (x_V_117_fu_2488_p3 - t_V_56_fu_2510_p1);
+assign t_V_57_fu_2534_p1 = r_V_17_cast3_fu_2506_p1;
+assign t_V_57_fu_2534_p2 = (x_V_117_fu_2488_p3 + t_V_57_fu_2534_p1);
+assign t_V_58_fu_2572_p1 = r_V_18_cast2_fu_2568_p1;
+assign t_V_58_fu_2572_p2 = (x_V_118_fu_2546_p3 - t_V_58_fu_2572_p1);
+assign t_V_59_fu_2596_p1 = r_V_18_cast2_fu_2568_p1;
+assign t_V_59_fu_2596_p2 = (x_V_118_fu_2546_p3 + t_V_59_fu_2596_p1);
+assign t_V_5_fu_615_p1 = r_V_5_cast_cast_fu_598_p1;
+assign t_V_5_fu_615_p2 = (x_V_92_reg_2833 + t_V_5_fu_615_p1);
+assign t_V_60_fu_2630_p1 = r_V_19_cast_fu_2626_p1;
+assign t_V_60_fu_2630_p2 = (x_V_119_fu_2608_p3 - t_V_60_fu_2630_p1);
+assign t_V_61_fu_2654_p1 = r_V_19_cast_fu_2626_p1;
+assign t_V_61_fu_2654_p2 = (x_V_119_fu_2608_p3 + t_V_61_fu_2654_p1);
+assign t_V_6_fu_658_p0 = x_V_92_cast_fu_633_p1;
+assign t_V_6_fu_658_p1 = r_V_9_cast_cast_fu_654_p1;
+assign t_V_6_fu_658_p2 = (t_V_6_fu_658_p0 - t_V_6_fu_658_p1);
+assign t_V_7_fu_684_p0 = x_V_92_cast_fu_633_p1;
+assign t_V_7_fu_684_p1 = r_V_9_cast_cast_fu_654_p1;
+assign t_V_7_fu_684_p2 = (t_V_7_fu_684_p0 + t_V_7_fu_684_p1);
+assign t_V_8_fu_762_p1 = r_V_13_cast_cast_fu_759_p1;
+assign t_V_8_fu_762_p2 = (x_V_93_reg_2872 - t_V_8_fu_762_p1);
+assign t_V_9_fu_775_p1 = r_V_13_cast_cast_fu_759_p1;
+assign t_V_9_fu_775_p2 = (x_V_93_reg_2872 + t_V_9_fu_775_p1);
+assign t_V_fu_429_p3 = ((ap_reg_ppstg_tmp_s_reg_2750_pp0_it4)? ap_const_lv20_4DBA7: ap_const_lv20_E92F5);
+assign tmp_10_fu_819_p4 = {{x_V_94_fu_785_p3[ap_const_lv32_1A : ap_const_lv32_6]}};
+assign tmp_13_fu_952_p4 = {{y_V_98_fu_945_p3[ap_const_lv32_1C : ap_const_lv32_8]}};
+assign tmp_14_fu_972_p4 = {{x_V_96_fu_938_p3[ap_const_lv32_1A : ap_const_lv32_8]}};
+assign tmp_17_fu_1117_p4 = {{y_V_100_fu_1106_p3[ap_const_lv32_1C : ap_const_lv32_A]}};
+assign tmp_18_fu_1137_p4 = {{x_V_98_fu_1099_p3[ap_const_lv32_1B : ap_const_lv32_A]}};
+assign tmp_1_fu_479_p4 = {{y_V_92_fu_468_p3[ap_const_lv32_14 : ap_const_lv32_2]}};
+assign tmp_21_fu_1272_p4 = {{y_V_102_fu_1265_p3[ap_const_lv32_1D : ap_const_lv32_C]}};
+assign tmp_22_fu_1292_p4 = {{x_V_100_fu_1258_p3[ap_const_lv32_1B : ap_const_lv32_C]}};
+assign tmp_25_fu_1425_p4 = {{y_V_104_fu_1418_p3[ap_const_lv32_1D : ap_const_lv32_E]}};
+assign tmp_26_fu_1445_p4 = {{x_V_102_fu_1411_p3[ap_const_lv32_1B : ap_const_lv32_E]}};
+assign tmp_29_fu_1581_p4 = {{y_V_106_fu_1574_p3[ap_const_lv32_1D : ap_const_lv32_10]}};
+assign tmp_30_fu_1601_p4 = {{x_V_104_fu_1567_p3[ap_const_lv32_1B : ap_const_lv32_10]}};
+assign tmp_33_fu_1749_p4 = {{y_V_108_fu_1729_p3[ap_const_lv32_1D : ap_const_lv32_12]}};
+assign tmp_34_fu_1769_p4 = {{x_V_106_fu_1722_p3[ap_const_lv32_1B : ap_const_lv32_12]}};
+assign tmp_37_fu_1928_p4 = {{y_V_110_fu_1898_p3[ap_const_lv32_1D : ap_const_lv32_14]}};
+assign tmp_38_fu_1948_p4 = {{x_V_108_fu_1890_p3[ap_const_lv32_1B : ap_const_lv32_14]}};
+assign tmp_39_fu_1990_p4 = {{y_V_111_fu_1985_p3[ap_const_lv32_1D : ap_const_lv32_15]}};
+assign tmp_40_fu_2010_p4 = {{x_V_109_fu_1980_p3[ap_const_lv32_1B : ap_const_lv32_15]}};
+assign tmp_41_fu_2056_p4 = {{y_V_112_fu_2049_p3[ap_const_lv32_1D : ap_const_lv32_16]}};
+assign tmp_42_fu_2076_p4 = {{x_V_110_fu_2042_p3[ap_const_lv32_1B : ap_const_lv32_16]}};
+assign tmp_43_fu_2118_p4 = {{y_V_113_fu_2113_p3[ap_const_lv32_1D : ap_const_lv32_17]}};
+assign tmp_44_fu_2138_p4 = {{x_V_111_fu_2108_p3[ap_const_lv32_1B : ap_const_lv32_17]}};
+assign tmp_45_fu_2184_p4 = {{y_V_114_fu_2177_p3[ap_const_lv32_1D : ap_const_lv32_18]}};
+assign tmp_46_fu_2204_p4 = {{x_V_112_fu_2170_p3[ap_const_lv32_1B : ap_const_lv32_18]}};
+assign tmp_47_fu_2246_p4 = {{y_V_115_fu_2241_p3[ap_const_lv32_1D : ap_const_lv32_19]}};
+assign tmp_48_fu_2266_p4 = {{x_V_113_fu_2236_p3[ap_const_lv32_1B : ap_const_lv32_19]}};
+assign tmp_49_fu_2312_p4 = {{y_V_116_fu_2305_p3[ap_const_lv32_1D : ap_const_lv32_1A]}};
+assign tmp_4_fu_644_p4 = {{y_V_94_fu_637_p3[ap_const_lv32_1C : ap_const_lv32_4]}};
+assign tmp_50_fu_2332_p4 = {{x_V_114_fu_2298_p3[ap_const_lv32_1B : ap_const_lv32_1A]}};
+assign tmp_51_fu_2374_p4 = {{y_V_117_fu_2369_p3[ap_const_lv32_1D : ap_const_lv32_1B]}};
+assign tmp_52_fu_2394_p3 = x_V_115_fu_2364_p3[ap_const_lv32_1B];
+assign tmp_53_fu_2438_p4 = {{y_V_118_fu_2431_p3[ap_const_lv32_1D : ap_const_lv32_1C]}};
+assign tmp_54_fu_2458_p3 = x_V_116_fu_2424_p3[ap_const_lv32_1B];
+assign tmp_55_fu_2498_p3 = y_V_119_fu_2493_p3[ap_const_lv32_1D];
+assign tmp_56_fu_2516_p3 = x_V_117_fu_2488_p3[ap_const_lv32_1B];
+assign tmp_57_fu_2560_p3 = y_V_120_fu_2553_p3[ap_const_lv32_1D];
+assign tmp_58_fu_2578_p3 = x_V_118_fu_2546_p3[ap_const_lv32_1B];
+assign tmp_59_fu_2618_p3 = y_V_121_fu_2613_p3[ap_const_lv32_1D];
+assign tmp_5_fu_664_p4 = {{x_V_fu_626_p3[ap_const_lv32_15 : ap_const_lv32_4]}};
+assign tmp_60_fu_2636_p3 = x_V_119_fu_2608_p3[ap_const_lv32_1B];
+assign tmp_81_10_fu_1041_p0 = $signed(current_angle_V_9_reg_2938);
+assign tmp_81_10_fu_1041_p2 = ($signed(tmp_81_10_fu_1041_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it7)? 1'b1: 1'b0);
+assign tmp_81_11_fu_1063_p0 = $signed(current_angle_V_10_fu_1054_p2);
+assign tmp_81_11_fu_1063_p2 = ($signed(tmp_81_11_fu_1063_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it7)? 1'b1: 1'b0);
+assign tmp_81_12_fu_1219_p0 = $signed(current_angle_V_11_fu_1210_p2);
+assign tmp_81_12_fu_1219_p2 = ($signed(tmp_81_12_fu_1219_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it8)? 1'b1: 1'b0);
+assign tmp_81_13_fu_1366_p0 = $signed(current_angle_V_12_fu_1358_p2);
+assign tmp_81_13_fu_1366_p2 = ($signed(tmp_81_13_fu_1366_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it9)? 1'b1: 1'b0);
+assign tmp_81_14_fu_1494_p0 = $signed(current_angle_V_13_reg_3049);
+assign tmp_81_14_fu_1494_p2 = ($signed(tmp_81_14_fu_1494_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it10)? 1'b1: 1'b0);
+assign tmp_81_15_fu_1536_p0 = $signed(current_angle_V_14_fu_1527_p2);
+assign tmp_81_15_fu_1536_p2 = ($signed(tmp_81_15_fu_1536_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it10)? 1'b1: 1'b0);
+assign tmp_81_16_fu_1663_p0 = $signed(current_angle_V_15_fu_1654_p2);
+assign tmp_81_16_fu_1663_p2 = ($signed(tmp_81_16_fu_1663_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it11)? 1'b1: 1'b0);
+assign tmp_81_17_fu_1744_p0 = $signed(current_angle_V_16_fu_1736_p2);
+assign tmp_81_17_fu_1744_p2 = ($signed(tmp_81_17_fu_1744_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it12)? 1'b1: 1'b0);
+assign tmp_81_18_fu_1859_p0 = $signed(current_angle_V_17_reg_3145);
+assign tmp_81_18_fu_1859_p2 = ($signed(tmp_81_18_fu_1859_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it13)? 1'b1: 1'b0);
+assign tmp_81_19_fu_1923_p0 = $signed(p_Val2_57_fu_1914_p2);
+assign tmp_81_19_fu_1923_p2 = ($signed(tmp_81_19_fu_1923_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it13)? 1'b1: 1'b0);
+assign tmp_81_1_fu_293_p2 = ($signed(current_angle_V_cast_cast_fu_285_p3) < $signed(theta_V)? 1'b1: 1'b0);
+assign tmp_81_2_fu_324_p0 = $signed(current_angle_V_fu_315_p3);
+assign tmp_81_2_fu_324_p2 = ($signed(tmp_81_2_fu_324_p0) < $signed(theta_V_read_reg_2726)? 1'b1: 1'b0);
+assign tmp_81_3_fu_346_p0 = $signed(current_angle_V_1_reg_2781);
+assign tmp_81_3_fu_346_p2 = ($signed(tmp_81_3_fu_346_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it1)? 1'b1: 1'b0);
+assign tmp_81_4_fu_368_p0 = $signed(current_angle_V_2_fu_359_p2);
+assign tmp_81_4_fu_368_p2 = ($signed(tmp_81_4_fu_368_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it1)? 1'b1: 1'b0);
+assign tmp_81_5_fu_389_p0 = $signed(current_angle_V_3_fu_380_p2);
+assign tmp_81_5_fu_389_p2 = ($signed(tmp_81_5_fu_389_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it2)? 1'b1: 1'b0);
+assign tmp_81_6_fu_410_p0 = $signed(current_angle_V_4_fu_402_p2);
+assign tmp_81_6_fu_410_p2 = ($signed(tmp_81_6_fu_410_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it3)? 1'b1: 1'b0);
+assign tmp_81_7_fu_568_p0 = $signed(current_angle_V_5_reg_2827);
+assign tmp_81_7_fu_568_p2 = ($signed(tmp_81_7_fu_568_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it4)? 1'b1: 1'b0);
+assign tmp_81_8_fu_590_p0 = $signed(current_angle_V_6_fu_581_p2);
+assign tmp_81_8_fu_590_p2 = ($signed(tmp_81_8_fu_590_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it4)? 1'b1: 1'b0);
+assign tmp_81_9_fu_746_p0 = $signed(current_angle_V_7_fu_737_p2);
+assign tmp_81_9_fu_746_p2 = ($signed(tmp_81_9_fu_746_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it5)? 1'b1: 1'b0);
+assign tmp_81_s_fu_893_p0 = $signed(current_angle_V_8_fu_885_p2);
+assign tmp_81_s_fu_893_p2 = ($signed(tmp_81_s_fu_893_p0) < $signed(ap_reg_ppstg_theta_V_read_reg_2726_pp0_it6)? 1'b1: 1'b0);
+assign tmp_8_fu_499_p4 = {{x_V_91_fu_457_p3[ap_const_lv32_13 : ap_const_lv32_2]}};
+assign tmp_9_fu_799_p4 = {{y_V_96_fu_792_p3[ap_const_lv32_1C : ap_const_lv32_6]}};
+assign tmp_fu_1851_p2 = (ap_reg_ppstg_theta_V_read_reg_2726_pp0_it13 == ap_const_lv32_0? 1'b1: 1'b0);
+assign tmp_s_fu_279_p2 = ($signed(theta_V) > $signed(32'b00000000000000000000000000000000)? 1'b1: 1'b0);
+assign x_V_100_fu_1258_p3 = ((ap_reg_ppstg_tmp_81_10_reg_2965_pp0_it9)? t_V_20_fu_1235_p2: t_V_21_fu_1248_p2);
+assign x_V_101_fu_1324_p3 = ((ap_reg_ppstg_tmp_81_11_reg_2976_pp0_it9)? t_V_22_fu_1286_p2: t_V_23_fu_1312_p2);
+assign x_V_102_fu_1411_p3 = ((ap_reg_ppstg_tmp_81_12_reg_3010_pp0_it10)? t_V_24_fu_1388_p2: t_V_25_fu_1401_p2);
+assign x_V_103_fu_1477_p3 = ((tmp_81_13_reg_3043)? t_V_26_fu_1439_p2: t_V_27_fu_1465_p2);
+assign x_V_104_fu_1567_p3 = ((tmp_81_14_reg_3067)? t_V_28_fu_1544_p2: t_V_29_fu_1557_p2);
+assign x_V_105_fu_1633_p3 = ((tmp_81_15_reg_3088)? t_V_30_fu_1595_p2: t_V_31_fu_1621_p2);
+assign x_V_106_fu_1722_p3 = ((tmp_81_16_reg_3112)? t_V_32_fu_1699_p2: t_V_33_fu_1712_p2);
+assign x_V_107_fu_1801_p3 = ((tmp_81_17_fu_1744_p2)? t_V_34_fu_1763_p2: t_V_35_fu_1789_p2);
+assign x_V_108_fu_1890_p3 = ((tmp_81_18_fu_1859_p2)? t_V_36_fu_1867_p2: t_V_37_fu_1880_p2);
+assign x_V_109_fu_1980_p3 = ((tmp_81_19_reg_3168)? t_V_38_reg_3195: t_V_39_reg_3205);
+assign x_V_110_fu_2042_p3 = ((tmp_81_19_reg_3168)? t_V_40_fu_2004_p2: t_V_41_fu_2030_p2);
+assign x_V_111_fu_2108_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15)? t_V_42_reg_3215: t_V_43_reg_3225);
+assign x_V_112_fu_2170_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15)? t_V_44_fu_2132_p2: t_V_45_fu_2158_p2);
+assign x_V_113_fu_2236_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16)? t_V_46_reg_3235: t_V_47_reg_3245);
+assign x_V_114_fu_2298_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16)? t_V_48_fu_2260_p2: t_V_49_fu_2286_p2);
+assign x_V_115_fu_2364_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17)? t_V_50_reg_3255: t_V_51_reg_3265);
+assign x_V_116_fu_2424_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17)? t_V_52_fu_2388_p2: t_V_53_fu_2412_p2);
+assign x_V_117_fu_2488_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18)? t_V_54_reg_3275: t_V_55_reg_3285);
+assign x_V_118_fu_2546_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18)? t_V_56_fu_2510_p2: t_V_57_fu_2534_p2);
+assign x_V_119_fu_2608_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it19)? t_V_58_reg_3295: t_V_59_reg_3305);
+assign x_V_91_fu_457_p3 = ((ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it4)? t_V_fu_429_p3: t_V_1_fu_443_p3);
+assign x_V_92_cast_fu_633_p1 = $signed(x_V_fu_626_p3);
+assign x_V_92_fu_531_p3 = ((ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it4)? t_V_2_fu_493_p2: t_V_3_fu_519_p2);
+assign x_V_93_fu_696_p3 = ((ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it5)? t_V_6_fu_658_p2: t_V_7_fu_684_p2);
+assign x_V_94_fu_785_p3 = ((ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it6)? t_V_8_fu_762_p2: t_V_9_fu_775_p2);
+assign x_V_95_fu_851_p3 = ((ap_reg_ppstg_tmp_81_6_reg_2821_pp0_it6)? t_V_10_fu_813_p2: t_V_11_fu_839_p2);
+assign x_V_96_fu_938_p3 = ((ap_reg_ppstg_tmp_81_7_reg_2854_pp0_it7)? t_V_12_fu_915_p2: t_V_13_fu_928_p2);
+assign x_V_97_cast_fu_1068_p1 = $signed(x_V_97_reg_2944);
+assign x_V_97_fu_1004_p3 = ((ap_reg_ppstg_tmp_81_8_reg_2865_pp0_it7)? t_V_14_fu_966_p2: t_V_15_fu_992_p2);
+assign x_V_98_fu_1099_p3 = ((ap_reg_ppstg_tmp_81_9_reg_2899_pp0_it8)? t_V_16_fu_1074_p2: t_V_17_fu_1088_p2);
+assign x_V_99_fu_1169_p3 = ((ap_reg_ppstg_tmp_81_s_reg_2932_pp0_it8)? t_V_18_fu_1131_p2: t_V_19_fu_1157_p2);
+assign x_V_fu_626_p3 = ((ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it5)? t_V_4_fu_601_p2: t_V_5_fu_615_p2);
+assign y_V_100_cast_fu_1113_p1 = $signed(y_V_100_fu_1106_p3);
+assign y_V_100_fu_1106_p3 = ((ap_reg_ppstg_tmp_81_9_reg_2899_pp0_it8)? y_V_24_fu_1083_p2: y_V_25_fu_1094_p2);
+assign y_V_101_fu_1176_p3 = ((ap_reg_ppstg_tmp_81_s_reg_2932_pp0_it8)? y_V_27_fu_1151_p2: y_V_28_fu_1163_p2);
+assign y_V_102_fu_1265_p3 = ((ap_reg_ppstg_tmp_81_10_reg_2965_pp0_it9)? y_V_30_fu_1243_p2: y_V_31_fu_1253_p2);
+assign y_V_103_fu_1331_p3 = ((ap_reg_ppstg_tmp_81_11_reg_2976_pp0_it9)? y_V_33_fu_1306_p2: y_V_34_fu_1318_p2);
+assign y_V_104_fu_1418_p3 = ((ap_reg_ppstg_tmp_81_12_reg_3010_pp0_it10)? y_V_36_fu_1396_p2: y_V_37_fu_1406_p2);
+assign y_V_105_fu_1484_p3 = ((tmp_81_13_reg_3043)? y_V_39_fu_1459_p2: y_V_40_fu_1471_p2);
+assign y_V_106_fu_1574_p3 = ((tmp_81_14_reg_3067)? y_V_42_fu_1552_p2: y_V_43_fu_1562_p2);
+assign y_V_107_fu_1640_p3 = ((tmp_81_15_reg_3088)? y_V_45_fu_1615_p2: y_V_46_fu_1627_p2);
+assign y_V_108_fu_1729_p3 = ((tmp_81_16_reg_3112)? y_V_48_fu_1707_p2: y_V_49_fu_1717_p2);
+assign y_V_109_fu_1809_p3 = ((tmp_81_17_fu_1744_p2)? y_V_51_fu_1783_p2: y_V_52_fu_1795_p2);
+assign y_V_10_fu_690_p1 = r_V_10_cast_cast_fu_674_p1;
+assign y_V_10_fu_690_p2 = (y_V_94_fu_637_p3 - y_V_10_fu_690_p1);
+assign y_V_110_fu_1898_p3 = ((tmp_81_18_fu_1859_p2)? y_V_54_fu_1875_p2: y_V_55_fu_1885_p2);
+assign y_V_111_fu_1985_p3 = ((tmp_81_19_reg_3168)? y_V_57_reg_3200: y_V_58_reg_3210);
+assign y_V_112_fu_2049_p3 = ((tmp_81_19_reg_3168)? y_V_60_fu_2024_p2: y_V_61_fu_2036_p2);
+assign y_V_113_fu_2113_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15)? y_V_63_reg_3220: y_V_64_reg_3230);
+assign y_V_114_fu_2177_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it15)? y_V_66_fu_2152_p2: y_V_67_fu_2164_p2);
+assign y_V_115_fu_2241_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16)? y_V_69_reg_3240: y_V_70_reg_3250);
+assign y_V_116_fu_2305_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it16)? y_V_72_fu_2280_p2: y_V_73_fu_2292_p2);
+assign y_V_117_fu_2369_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17)? y_V_75_reg_3260: y_V_76_reg_3270);
+assign y_V_118_fu_2431_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it17)? y_V_78_fu_2406_p2: y_V_79_fu_2418_p2);
+assign y_V_119_fu_2493_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18)? y_V_81_reg_3280: y_V_82_reg_3290);
+assign y_V_120_fu_2553_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it18)? y_V_84_fu_2528_p2: y_V_85_fu_2540_p2);
+assign y_V_121_fu_2613_p3 = ((ap_reg_ppstg_tmp_81_19_reg_3168_pp0_it19)? y_V_87_reg_3300: y_V_88_reg_3310);
+assign y_V_12_fu_770_p1 = r_V_14_cast_cast_fu_767_p1;
+assign y_V_12_fu_770_p2 = (y_V_95_reg_2878 + y_V_12_fu_770_p1);
+assign y_V_13_fu_780_p1 = r_V_14_cast_cast_fu_767_p1;
+assign y_V_13_fu_780_p2 = (y_V_95_reg_2878 - y_V_13_fu_780_p1);
+assign y_V_15_fu_833_p1 = r_V_18_cast_cast_fu_829_p1;
+assign y_V_15_fu_833_p2 = (y_V_96_fu_792_p3 + y_V_15_fu_833_p1);
+assign y_V_16_fu_845_p1 = r_V_18_cast_cast_fu_829_p1;
+assign y_V_16_fu_845_p2 = (y_V_96_fu_792_p3 - y_V_16_fu_845_p1);
+assign y_V_18_fu_923_p1 = r_V_22_cast_cast_fu_920_p1;
+assign y_V_18_fu_923_p2 = (y_V_97_reg_2916 + y_V_18_fu_923_p1);
+assign y_V_19_fu_933_p1 = r_V_22_cast_cast_fu_920_p1;
+assign y_V_19_fu_933_p2 = (y_V_97_reg_2916 - y_V_19_fu_933_p1);
+assign y_V_1_fu_450_p3 = ((ap_reg_ppstg_tmp_s_reg_2750_pp0_it4)? ap_const_lv21_4DBA7: ap_const_lv21_116D0B);
+assign y_V_21_fu_986_p1 = r_V_26_cast_cast_fu_982_p1;
+assign y_V_21_fu_986_p2 = (y_V_98_fu_945_p3 + y_V_21_fu_986_p1);
+assign y_V_22_fu_998_p1 = r_V_26_cast_cast_fu_982_p1;
+assign y_V_22_fu_998_p2 = (y_V_98_fu_945_p3 - y_V_22_fu_998_p1);
+assign y_V_24_fu_1083_p1 = r_V_30_cast_cast_fu_1080_p1;
+assign y_V_24_fu_1083_p2 = (y_V_99_reg_2949 + y_V_24_fu_1083_p1);
+assign y_V_25_fu_1094_p1 = r_V_30_cast_cast_fu_1080_p1;
+assign y_V_25_fu_1094_p2 = (y_V_99_reg_2949 - y_V_25_fu_1094_p1);
+assign y_V_27_fu_1151_p0 = y_V_100_cast_fu_1113_p1;
+assign y_V_27_fu_1151_p1 = r_V_34_cast_fu_1147_p1;
+assign y_V_27_fu_1151_p2 = (y_V_27_fu_1151_p0 + y_V_27_fu_1151_p1);
+assign y_V_28_fu_1163_p0 = y_V_100_cast_fu_1113_p1;
+assign y_V_28_fu_1163_p1 = r_V_34_cast_fu_1147_p1;
+assign y_V_28_fu_1163_p2 = (y_V_28_fu_1163_p0 - y_V_28_fu_1163_p1);
+assign y_V_30_fu_1243_p1 = r_V_38_cast_cast_fu_1240_p1;
+assign y_V_30_fu_1243_p2 = (y_V_101_reg_2989 + y_V_30_fu_1243_p1);
+assign y_V_31_fu_1253_p1 = r_V_38_cast_cast_fu_1240_p1;
+assign y_V_31_fu_1253_p2 = (y_V_101_reg_2989 - y_V_31_fu_1253_p1);
+assign y_V_33_fu_1306_p1 = r_V_42_cast_cast_fu_1302_p1;
+assign y_V_33_fu_1306_p2 = (y_V_102_fu_1265_p3 + y_V_33_fu_1306_p1);
+assign y_V_34_fu_1318_p1 = r_V_42_cast_cast_fu_1302_p1;
+assign y_V_34_fu_1318_p2 = (y_V_102_fu_1265_p3 - y_V_34_fu_1318_p1);
+assign y_V_36_fu_1396_p1 = r_V_46_cast_cast_fu_1393_p1;
+assign y_V_36_fu_1396_p2 = (y_V_103_reg_3027 + y_V_36_fu_1396_p1);
+assign y_V_37_fu_1406_p1 = r_V_46_cast_cast_fu_1393_p1;
+assign y_V_37_fu_1406_p2 = (y_V_103_reg_3027 - y_V_37_fu_1406_p1);
+assign y_V_39_fu_1459_p1 = r_V_50_cast_cast_fu_1455_p1;
+assign y_V_39_fu_1459_p2 = (y_V_104_fu_1418_p3 + y_V_39_fu_1459_p1);
+assign y_V_3_fu_513_p0 = p_Val2_6_cast_fu_475_p1;
+assign y_V_3_fu_513_p2 = (y_V_3_fu_513_p0 + r_V_2_cast_fu_509_p1);
+assign y_V_40_fu_1471_p1 = r_V_50_cast_cast_fu_1455_p1;
+assign y_V_40_fu_1471_p2 = (y_V_104_fu_1418_p3 - y_V_40_fu_1471_p1);
+assign y_V_42_fu_1552_p1 = r_V_54_cast_cast_fu_1549_p1;
+assign y_V_42_fu_1552_p2 = (y_V_105_reg_3061 + y_V_42_fu_1552_p1);
+assign y_V_43_fu_1562_p1 = r_V_54_cast_cast_fu_1549_p1;
+assign y_V_43_fu_1562_p2 = (y_V_105_reg_3061 - y_V_43_fu_1562_p1);
+assign y_V_45_fu_1615_p1 = r_V_58_cast_cast_fu_1611_p1;
+assign y_V_45_fu_1615_p2 = (y_V_106_fu_1574_p3 + y_V_45_fu_1615_p1);
+assign y_V_46_fu_1627_p1 = r_V_58_cast_cast_fu_1611_p1;
+assign y_V_46_fu_1627_p2 = (y_V_106_fu_1574_p3 - y_V_46_fu_1627_p1);
+assign y_V_48_fu_1707_p1 = r_V_62_cast_cast_fu_1704_p1;
+assign y_V_48_fu_1707_p2 = (y_V_107_reg_3101 + y_V_48_fu_1707_p1);
+assign y_V_49_fu_1717_p1 = r_V_62_cast_cast_fu_1704_p1;
+assign y_V_49_fu_1717_p2 = (y_V_107_reg_3101 - y_V_49_fu_1717_p1);
+assign y_V_4_fu_525_p0 = p_Val2_6_cast_fu_475_p1;
+assign y_V_4_fu_525_p2 = (y_V_4_fu_525_p0 - r_V_2_cast_fu_509_p1);
+assign y_V_51_fu_1783_p1 = r_V_66_cast_cast_fu_1779_p1;
+assign y_V_51_fu_1783_p2 = (y_V_108_fu_1729_p3 + y_V_51_fu_1783_p1);
+assign y_V_52_fu_1795_p1 = r_V_66_cast_cast_fu_1779_p1;
+assign y_V_52_fu_1795_p2 = (y_V_108_fu_1729_p3 - y_V_52_fu_1795_p1);
+assign y_V_54_fu_1875_p1 = r_V_70_cast_cast_fu_1872_p1;
+assign y_V_54_fu_1875_p2 = (y_V_109_reg_3139 + y_V_54_fu_1875_p1);
+assign y_V_55_fu_1885_p1 = r_V_70_cast_cast_fu_1872_p1;
+assign y_V_55_fu_1885_p2 = (y_V_109_reg_3139 - y_V_55_fu_1885_p1);
+assign y_V_57_fu_1962_p1 = r_V_74_cast_cast_fu_1958_p1;
+assign y_V_57_fu_1962_p2 = (y_V_110_fu_1898_p3 + y_V_57_fu_1962_p1);
+assign y_V_58_fu_1974_p1 = r_V_74_cast_cast_fu_1958_p1;
+assign y_V_58_fu_1974_p2 = (y_V_110_fu_1898_p3 - y_V_58_fu_1974_p1);
+assign y_V_60_fu_2024_p1 = r_V_78_cast_cast_fu_2020_p1;
+assign y_V_60_fu_2024_p2 = (y_V_111_fu_1985_p3 + y_V_60_fu_2024_p1);
+assign y_V_61_fu_2036_p1 = r_V_78_cast_cast_fu_2020_p1;
+assign y_V_61_fu_2036_p2 = (y_V_111_fu_1985_p3 - y_V_61_fu_2036_p1);
+assign y_V_63_fu_2090_p1 = r_V_82_cast_cast_fu_2086_p1;
+assign y_V_63_fu_2090_p2 = (y_V_112_fu_2049_p3 + y_V_63_fu_2090_p1);
+assign y_V_64_fu_2102_p1 = r_V_82_cast_cast_fu_2086_p1;
+assign y_V_64_fu_2102_p2 = (y_V_112_fu_2049_p3 - y_V_64_fu_2102_p1);
+assign y_V_66_fu_2152_p1 = r_V_86_cast_cast_fu_2148_p1;
+assign y_V_66_fu_2152_p2 = (y_V_113_fu_2113_p3 + y_V_66_fu_2152_p1);
+assign y_V_67_fu_2164_p1 = r_V_86_cast_cast_fu_2148_p1;
+assign y_V_67_fu_2164_p2 = (y_V_113_fu_2113_p3 - y_V_67_fu_2164_p1);
+assign y_V_69_fu_2218_p1 = r_V_90_cast_cast_fu_2214_p1;
+assign y_V_69_fu_2218_p2 = (y_V_114_fu_2177_p3 + y_V_69_fu_2218_p1);
+assign y_V_6_fu_609_p0 = p_Val2_13_cast_cast_fu_595_p1;
+assign y_V_6_fu_609_p1 = r_V_6_cast_cast_fu_606_p1;
+assign y_V_6_fu_609_p2 = (y_V_6_fu_609_p0 + y_V_6_fu_609_p1);
+assign y_V_70_fu_2230_p1 = r_V_90_cast_cast_fu_2214_p1;
+assign y_V_70_fu_2230_p2 = (y_V_114_fu_2177_p3 - y_V_70_fu_2230_p1);
+assign y_V_72_fu_2280_p1 = r_V_94_cast_cast_fu_2276_p1;
+assign y_V_72_fu_2280_p2 = (y_V_115_fu_2241_p3 + y_V_72_fu_2280_p1);
+assign y_V_73_fu_2292_p1 = r_V_94_cast_cast_fu_2276_p1;
+assign y_V_73_fu_2292_p2 = (y_V_115_fu_2241_p3 - y_V_73_fu_2292_p1);
+assign y_V_75_fu_2346_p1 = r_V_98_cast_cast_fu_2342_p1;
+assign y_V_75_fu_2346_p2 = (y_V_116_fu_2305_p3 + y_V_75_fu_2346_p1);
+assign y_V_76_fu_2358_p1 = r_V_98_cast_cast_fu_2342_p1;
+assign y_V_76_fu_2358_p2 = (y_V_116_fu_2305_p3 - y_V_76_fu_2358_p1);
+assign y_V_78_fu_2406_p1 = r_V_102_cast_cast_fu_2402_p1;
+assign y_V_78_fu_2406_p2 = (y_V_117_fu_2369_p3 + y_V_78_fu_2406_p1);
+assign y_V_79_fu_2418_p1 = r_V_102_cast_cast_fu_2402_p1;
+assign y_V_79_fu_2418_p2 = (y_V_117_fu_2369_p3 - y_V_79_fu_2418_p1);
+assign y_V_7_fu_620_p0 = p_Val2_13_cast_cast_fu_595_p1;
+assign y_V_7_fu_620_p1 = r_V_6_cast_cast_fu_606_p1;
+assign y_V_7_fu_620_p2 = (y_V_7_fu_620_p0 - y_V_7_fu_620_p1);
+assign y_V_81_fu_2470_p1 = r_V_106_cast_cast_fu_2466_p1;
+assign y_V_81_fu_2470_p2 = (y_V_118_fu_2431_p3 + y_V_81_fu_2470_p1);
+assign y_V_82_fu_2482_p1 = r_V_106_cast_cast_fu_2466_p1;
+assign y_V_82_fu_2482_p2 = (y_V_118_fu_2431_p3 - y_V_82_fu_2482_p1);
+assign y_V_84_fu_2528_p1 = r_V_110_cast_cast_fu_2524_p1;
+assign y_V_84_fu_2528_p2 = (y_V_119_fu_2493_p3 + y_V_84_fu_2528_p1);
+assign y_V_85_fu_2540_p1 = r_V_110_cast_cast_fu_2524_p1;
+assign y_V_85_fu_2540_p2 = (y_V_119_fu_2493_p3 - y_V_85_fu_2540_p1);
+assign y_V_87_fu_2590_p1 = r_V_114_cast_cast_fu_2586_p1;
+assign y_V_87_fu_2590_p2 = (y_V_120_fu_2553_p3 + y_V_87_fu_2590_p1);
+assign y_V_88_fu_2602_p1 = r_V_114_cast_cast_fu_2586_p1;
+assign y_V_88_fu_2602_p2 = (y_V_120_fu_2553_p3 - y_V_88_fu_2602_p1);
+assign y_V_90_fu_2648_p1 = r_V_118_cast_cast_fu_2644_p1;
+assign y_V_90_fu_2648_p2 = (y_V_121_fu_2613_p3 + y_V_90_fu_2648_p1);
+assign y_V_91_fu_2660_p1 = r_V_118_cast_cast_fu_2644_p1;
+assign y_V_91_fu_2660_p2 = (y_V_121_fu_2613_p3 - y_V_91_fu_2660_p1);
+assign y_V_92_fu_468_p3 = ((ap_reg_ppstg_tmp_81_1_reg_2758_pp0_it4)? y_V_fu_436_p3: y_V_1_fu_450_p3);
+assign y_V_93_fu_538_p3 = ((ap_reg_ppstg_tmp_81_2_reg_2775_pp0_it4)? y_V_3_fu_513_p2: y_V_4_fu_525_p2);
+assign y_V_94_fu_637_p3 = ((ap_reg_ppstg_tmp_81_3_reg_2787_pp0_it5)? y_V_6_fu_609_p2: y_V_7_fu_620_p2);
+assign y_V_95_fu_703_p3 = ((ap_reg_ppstg_tmp_81_4_reg_2798_pp0_it5)? y_V_9_fu_678_p2: y_V_10_fu_690_p2);
+assign y_V_96_fu_792_p3 = ((ap_reg_ppstg_tmp_81_5_reg_2810_pp0_it6)? y_V_12_fu_770_p2: y_V_13_fu_780_p2);
+assign y_V_97_fu_858_p3 = ((ap_reg_ppstg_tmp_81_6_reg_2821_pp0_it6)? y_V_15_fu_833_p2: y_V_16_fu_845_p2);
+assign y_V_98_fu_945_p3 = ((ap_reg_ppstg_tmp_81_7_reg_2854_pp0_it7)? y_V_18_fu_923_p2: y_V_19_fu_933_p2);
+assign y_V_99_fu_1011_p3 = ((ap_reg_ppstg_tmp_81_8_reg_2865_pp0_it7)? y_V_21_fu_986_p2: y_V_22_fu_998_p2);
+assign y_V_9_fu_678_p1 = r_V_10_cast_cast_fu_674_p1;
+assign y_V_9_fu_678_p2 = (y_V_94_fu_637_p3 + y_V_9_fu_678_p1);
+assign y_V_fu_436_p3 = ((ap_reg_ppstg_tmp_s_reg_2750_pp0_it4)? ap_const_lv21_E92F5: ap_const_lv21_1B2459);
 always @ (posedge ap_clk)
-begin : ap_ret_ap_CS_fsm
-    if (ap_rst == 1'b1) begin
-        ap_CS_fsm <= ap_ST_st1_fsm_0;
-    end else begin
-        ap_CS_fsm <= ap_NS_fsm;
-    end
-end
-
-/// ap_return_0_preg assign process. ///
-always @ (posedge ap_clk)
-begin : ap_ret_ap_return_0_preg
-    if (ap_rst == 1'b1) begin
-        ap_return_0_preg <= ap_const_lv32_0;
-    end else begin
-        if ((ap_ST_st4_fsm_3 == ap_CS_fsm)) begin
-            ap_return_0_preg <= UnifiedRetVal1_reg_91;
-        end
-    end
-end
-
-/// ap_return_1_preg assign process. ///
-always @ (posedge ap_clk)
-begin : ap_ret_ap_return_1_preg
-    if (ap_rst == 1'b1) begin
-        ap_return_1_preg <= ap_const_lv32_0;
-    end else begin
-        if ((ap_ST_st4_fsm_3 == ap_CS_fsm)) begin
-            ap_return_1_preg <= UnifiedRetVal_1_reg_103;
-        end
-    end
-end
-
-/// assign process. ///
-always @(posedge ap_clk)
 begin
-    if (((ap_ST_st2_fsm_1 == ap_CS_fsm) & ~(exitcond1_fu_122_p2 == ap_const_lv1_0))) begin
-        UnifiedRetVal1_reg_91 <= p_Val2_3_reg_68;
-    end else if (((ap_ST_st1_fsm_0 == ap_CS_fsm) & ~(ap_start == ap_const_logic_0) & ~(ap_const_lv1_0 == tmp_fu_116_p2))) begin
-        UnifiedRetVal1_reg_91 <= ap_const_lv32_0;
-    end
+    r_V_106_1_reg_2765[0] <= 1'b0;
+    r_V_106_1_reg_2765[2:2] <= 1'b1;
+    r_V_106_1_reg_2765[8:4] <= 5'b00001;
+    r_V_106_1_reg_2765[12:11] <= 2'b11;
+    r_V_106_1_reg_2765[15:14] <= 2'b11;
+    r_V_106_1_reg_2765[18:17] <= 2'b01;
+    r_V_106_1_reg_2765[20] <= 1'b1;
+    r_V_111_1_reg_2770[0] <= 1'b0;
+    r_V_111_1_reg_2770[8:4] <= 5'b11110;
+    r_V_111_1_reg_2770[12:11] <= 2'b00;
+    r_V_111_1_reg_2770[15:14] <= 2'b00;
+    r_V_111_1_reg_2770[18:17] <= 2'b10;
+    r_V_111_1_reg_2770[20] <= 1'b0;
+    current_angle_V_1_reg_2781[0] <= 1'b0;
+    current_angle_V_2_reg_2793[0] <= 1'b1;
+    current_angle_V_3_reg_2805[0] <= 1'b1;
+    p_Val2_35_v_cast_cast_reg_2816[0] <= 1'b1;
+    current_angle_V_5_reg_2827[0] <= 1'b0;
+    y_V_93_reg_2839[0] <= 1'b0;
+    current_angle_V_6_reg_2860[0] <= 1'b1;
+    current_angle_V_7_reg_2894[0] <= 1'b0;
+    p_Val2_63_v_cast_cast_reg_2905[0] <= 1'b1;
+    current_angle_V_9_reg_2938[0] <= 1'b0;
+    current_angle_V_10_reg_2971[0] <= 1'b1;
+    current_angle_V_11_reg_3005[0] <= 1'b0;
+    p_Val2_91_v_cast_cast_reg_3016[0] <= 1'b1;
+    current_angle_V_13_reg_3049[0] <= 1'b0;
+    current_angle_V_14_reg_3083[0] <= 1'b1;
+    current_angle_V_15_reg_3107[0] <= 1'b0;
+    p_Val2_119_v_cast_cast_reg_3128[0] <= 1'b1;
+    current_angle_V_17_reg_3145[0] <= 1'b0;
 end
 
-/// assign process. ///
-always @(posedge ap_clk)
-begin
-    if (((ap_ST_st2_fsm_1 == ap_CS_fsm) & ~(exitcond1_fu_122_p2 == ap_const_lv1_0))) begin
-        UnifiedRetVal_1_reg_103 <= p_Val2_s_reg_44;
-    end else if (((ap_ST_st1_fsm_0 == ap_CS_fsm) & ~(ap_start == ap_const_logic_0) & ~(ap_const_lv1_0 == tmp_fu_116_p2))) begin
-        UnifiedRetVal_1_reg_103 <= ap_const_lv32_100000;
-    end
-end
-
-/// assign process. ///
-always @(posedge ap_clk)
-begin
-    if (((ap_ST_st1_fsm_0 == ap_CS_fsm) & ~(ap_start == ap_const_logic_0) & (ap_const_lv1_0 == tmp_fu_116_p2))) begin
-        p_Val2_3_reg_68 <= ap_const_lv32_0;
-    end else if ((ap_ST_st3_fsm_2 == ap_CS_fsm)) begin
-        p_Val2_3_reg_68 <= y_V_2_reg_266;
-    end
-end
-
-/// assign process. ///
-always @(posedge ap_clk)
-begin
-    if (((ap_ST_st1_fsm_0 == ap_CS_fsm) & ~(ap_start == ap_const_logic_0) & (ap_const_lv1_0 == tmp_fu_116_p2))) begin
-        p_Val2_4_reg_56 <= ap_const_lv32_0;
-    end else if ((ap_ST_st3_fsm_2 == ap_CS_fsm)) begin
-        p_Val2_4_reg_56 <= current_angle_V_fu_216_p3;
-    end
-end
-
-/// assign process. ///
-always @(posedge ap_clk)
-begin
-    if (((ap_ST_st1_fsm_0 == ap_CS_fsm) & ~(ap_start == ap_const_logic_0) & (ap_const_lv1_0 == tmp_fu_116_p2))) begin
-        p_Val2_s_reg_44 <= ap_const_lv32_9B74E;
-    end else if ((ap_ST_st3_fsm_2 == ap_CS_fsm)) begin
-        p_Val2_s_reg_44 <= x_V_2_reg_261;
-    end
-end
-
-/// assign process. ///
-always @(posedge ap_clk)
-begin
-    if (((ap_ST_st1_fsm_0 == ap_CS_fsm) & ~(ap_start == ap_const_logic_0) & (ap_const_lv1_0 == tmp_fu_116_p2))) begin
-        step_1_reg_80 <= ap_const_lv7_0;
-    end else if ((ap_ST_st3_fsm_2 == ap_CS_fsm)) begin
-        step_1_reg_80 <= step_reg_246;
-    end
-end
-
-/// assign process. ///
-always @(posedge ap_clk)
-begin
-    if ((ap_ST_st2_fsm_1 == ap_CS_fsm)) begin
-        step_reg_246 <= step_fu_128_p2;
-    end
-end
-
-/// assign process. ///
-always @(posedge ap_clk)
-begin
-    if (((ap_ST_st2_fsm_1 == ap_CS_fsm) & (exitcond1_fu_122_p2 == ap_const_lv1_0))) begin
-        tmp_s_reg_251 <= tmp_s_fu_134_p2;
-        x_V_2_reg_261 <= x_V_2_fu_184_p3;
-        y_V_2_reg_266 <= y_V_2_fu_192_p3;
-    end
-end
-
-/// ap_done assign process. ///
-always @ (ap_start or ap_CS_fsm)
-begin
-    if (((~(ap_const_logic_1 == ap_start) & (ap_ST_st1_fsm_0 == ap_CS_fsm)) | (ap_ST_st4_fsm_3 == ap_CS_fsm))) begin
-        ap_done = ap_const_logic_1;
-    end else begin
-        ap_done = ap_const_logic_0;
-    end
-end
-
-/// ap_idle assign process. ///
-always @ (ap_start or ap_CS_fsm)
-begin
-    if ((~(ap_const_logic_1 == ap_start) & (ap_ST_st1_fsm_0 == ap_CS_fsm))) begin
-        ap_idle = ap_const_logic_1;
-    end else begin
-        ap_idle = ap_const_logic_0;
-    end
-end
-
-/// ap_ready assign process. ///
-always @ (ap_CS_fsm)
-begin
-    if ((ap_ST_st4_fsm_3 == ap_CS_fsm)) begin
-        ap_ready = ap_const_logic_1;
-    end else begin
-        ap_ready = ap_const_logic_0;
-    end
-end
-
-/// ap_return_0 assign process. ///
-always @ (ap_CS_fsm or UnifiedRetVal1_reg_91 or ap_return_0_preg)
-begin
-    if ((ap_ST_st4_fsm_3 == ap_CS_fsm)) begin
-        ap_return_0 = UnifiedRetVal1_reg_91;
-    end else begin
-        ap_return_0 = ap_return_0_preg;
-    end
-end
-
-/// ap_return_1 assign process. ///
-always @ (ap_CS_fsm or UnifiedRetVal_1_reg_103 or ap_return_1_preg)
-begin
-    if ((ap_ST_st4_fsm_3 == ap_CS_fsm)) begin
-        ap_return_1 = UnifiedRetVal_1_reg_103;
-    end else begin
-        ap_return_1 = ap_return_1_preg;
-    end
-end
-
-/// cordic_ctab_V_ce0 assign process. ///
-always @ (ap_CS_fsm or exitcond1_fu_122_p2)
-begin
-    if (((ap_ST_st2_fsm_1 == ap_CS_fsm) & (exitcond1_fu_122_p2 == ap_const_lv1_0))) begin
-        cordic_ctab_V_ce0 = ap_const_logic_1;
-    end else begin
-        cordic_ctab_V_ce0 = ap_const_logic_0;
-    end
-end
-always @ (ap_start or ap_CS_fsm or exitcond1_fu_122_p2 or tmp_fu_116_p2)
-begin
-    case (ap_CS_fsm)
-        ap_ST_st1_fsm_0 : 
-            if ((~(ap_start == ap_const_logic_0) & ~(ap_const_lv1_0 == tmp_fu_116_p2))) begin
-                ap_NS_fsm = ap_ST_st4_fsm_3;
-            end else if ((~(ap_start == ap_const_logic_0) & (ap_const_lv1_0 == tmp_fu_116_p2))) begin
-                ap_NS_fsm = ap_ST_st2_fsm_1;
-            end else begin
-                ap_NS_fsm = ap_ST_st1_fsm_0;
-            end
-        ap_ST_st2_fsm_1 : 
-            if (~(exitcond1_fu_122_p2 == ap_const_lv1_0)) begin
-                ap_NS_fsm = ap_ST_st4_fsm_3;
-            end else begin
-                ap_NS_fsm = ap_ST_st3_fsm_2;
-            end
-        ap_ST_st3_fsm_2 : 
-            ap_NS_fsm = ap_ST_st2_fsm_1;
-        ap_ST_st4_fsm_3 : 
-            ap_NS_fsm = ap_ST_st1_fsm_0;
-        default : 
-            ap_NS_fsm = 'bx;
-    endcase
-end
-assign cordic_ctab_V_address0 = tmp_1_fu_167_p1;
-assign current_angle_V_fu_216_p3 = ((tmp_s_reg_251)? r_V_s_fu_204_p2: r_V_3_fu_210_p2);
-assign exitcond1_fu_122_p2 = (step_1_reg_80 == ap_const_lv7_41? 1'b1: 1'b0);
-assign p_Val2_15_cast_fu_200_p1 = $unsigned(cordic_ctab_V_q0);
-assign r_V_1_fu_155_p2 = $signed(p_Val2_s_reg_44) >>> sh_assign_3_cast_fu_139_p1;
-assign r_V_3_fu_210_p2 = (p_Val2_4_reg_56 - p_Val2_15_cast_fu_200_p1);
-assign r_V_fu_143_p2 = $signed(p_Val2_3_reg_68) >>> sh_assign_3_cast_fu_139_p1;
-assign r_V_s_fu_204_p2 = (p_Val2_15_cast_fu_200_p1 + p_Val2_4_reg_56);
-assign sh_assign_3_cast_fu_139_p1 = $unsigned(step_1_reg_80);
-assign step_fu_128_p2 = (step_1_reg_80 + ap_const_lv7_1);
-assign t_V_1_fu_172_p2 = (r_V_fu_143_p2 + p_Val2_s_reg_44);
-assign t_V_fu_149_p2 = (p_Val2_s_reg_44 - r_V_fu_143_p2);
-assign tmp_1_fu_167_p1 = $unsigned(step_1_reg_80);
-assign tmp_fu_116_p2 = (theta_V == ap_const_lv32_0? 1'b1: 1'b0);
-assign tmp_s_fu_134_p2 = ($signed(p_Val2_4_reg_56) < $signed(theta_V)? 1'b1: 1'b0);
-assign x_V_2_fu_184_p3 = ((tmp_s_fu_134_p2)? t_V_fu_149_p2: t_V_1_fu_172_p2);
-assign y_V_1_fu_178_p2 = (p_Val2_3_reg_68 - r_V_1_fu_155_p2);
-assign y_V_2_fu_192_p3 = ((tmp_s_fu_134_p2)? y_V_fu_161_p2: y_V_1_fu_178_p2);
-assign y_V_fu_161_p2 = (p_Val2_3_reg_68 + r_V_1_fu_155_p2);
 
 
 endmodule //cordic

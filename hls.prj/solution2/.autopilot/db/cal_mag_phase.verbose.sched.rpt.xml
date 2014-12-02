@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cal_mag_phase'" level="0">
-<item name = "Date">Mon Dec  1 20:03:19 2014
+<item name = "Date">Tue Dec  2 14:27:30 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="default">10.00, 11.82, 1.25</column>
+<column name="default">10.00, 8.75, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">476161, 476161, 476161, 476161, none</column>
+<column name="">1061, 1061, 1061, 1061, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,9 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">476160, 476160, 465, -, -, 1024, no</column>
-<column name=" + Loop 1.1">320, 320, 5, -, -, 64, no</column>
-<column name=" + Loop 1.2">128, 128, 2, -, -, 64, no</column>
+<column name="- Loop 1">1059, 1059, 37, 1, 1, 1024, yes</column>
 </table>
 </item>
 </section>

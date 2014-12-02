@@ -56,8 +56,8 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( exitcond_fu_132_p2 );
 
     SC_METHOD(thread_b_1_fu_164_p3);
-    sensitive << ( tmp_37_fu_156_p1 );
-    sensitive << ( tmp_38_fu_160_p1 );
+    sensitive << ( tmp_107_fu_156_p1 );
+    sensitive << ( tmp_108_fu_160_p1 );
 
     SC_METHOD(thread_exitcond2_fu_144_p2);
     sensitive << ( ap_CS_fsm );
@@ -73,17 +73,17 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_j_2_fu_150_p2);
     sensitive << ( j_reg_105 );
 
-    SC_METHOD(thread_tmp_27_fu_191_p1);
+    SC_METHOD(thread_tmp_107_fu_156_p1);
     sensitive << ( b_reg_116 );
 
-    SC_METHOD(thread_tmp_28_fu_197_p1);
-    sensitive << ( a_3_reg_82 );
-
-    SC_METHOD(thread_tmp_37_fu_156_p1);
-    sensitive << ( b_reg_116 );
-
-    SC_METHOD(thread_tmp_38_fu_160_p1);
+    SC_METHOD(thread_tmp_108_fu_160_p1);
     sensitive << ( a_reg_96 );
+
+    SC_METHOD(thread_tmp_24_fu_191_p1);
+    sensitive << ( b_reg_116 );
+
+    SC_METHOD(thread_tmp_25_fu_197_p1);
+    sensitive << ( a_3_reg_82 );
 
     SC_METHOD(thread_tmp_fu_186_p2);
     sensitive << ( ap_CS_fsm );
@@ -98,11 +98,11 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_CS_fsm );
     sensitive << ( ximag_V_addr_reg_250 );
     sensitive << ( ximag_V_addr_4_reg_256 );
-    sensitive << ( tmp_28_fu_197_p1 );
+    sensitive << ( tmp_25_fu_197_p1 );
 
     SC_METHOD(thread_ximag_V_address1);
     sensitive << ( ap_CS_fsm );
-    sensitive << ( tmp_27_fu_191_p1 );
+    sensitive << ( tmp_24_fu_191_p1 );
 
     SC_METHOD(thread_ximag_V_ce0);
     sensitive << ( ap_CS_fsm );
@@ -117,7 +117,7 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_ximag_V_d0);
     sensitive << ( ap_CS_fsm );
     sensitive << ( ximag_V_q1 );
-    sensitive << ( t_V_5_reg_266 );
+    sensitive << ( t_V_62_reg_266 );
 
     SC_METHOD(thread_ximag_V_we0);
     sensitive << ( ap_CS_fsm );
@@ -126,11 +126,11 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_CS_fsm );
     sensitive << ( xreal_V_addr_reg_239 );
     sensitive << ( xreal_V_addr_4_reg_245 );
-    sensitive << ( tmp_28_fu_197_p1 );
+    sensitive << ( tmp_25_fu_197_p1 );
 
     SC_METHOD(thread_xreal_V_address1);
     sensitive << ( ap_CS_fsm );
-    sensitive << ( tmp_27_fu_191_p1 );
+    sensitive << ( tmp_24_fu_191_p1 );
 
     SC_METHOD(thread_xreal_V_ce0);
     sensitive << ( ap_CS_fsm );
@@ -203,16 +203,16 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, ximag_V_addr_reg_250, "ximag_V_addr_reg_250");
     sc_trace(mVcdFile, ximag_V_addr_4_reg_256, "ximag_V_addr_4_reg_256");
     sc_trace(mVcdFile, t_V_reg_261, "t_V_reg_261");
-    sc_trace(mVcdFile, t_V_5_reg_266, "t_V_5_reg_266");
+    sc_trace(mVcdFile, t_V_62_reg_266, "t_V_62_reg_266");
     sc_trace(mVcdFile, a_3_reg_82, "a_3_reg_82");
     sc_trace(mVcdFile, a_reg_96, "a_reg_96");
     sc_trace(mVcdFile, exitcond_fu_132_p2, "exitcond_fu_132_p2");
     sc_trace(mVcdFile, j_reg_105, "j_reg_105");
     sc_trace(mVcdFile, b_reg_116, "b_reg_116");
-    sc_trace(mVcdFile, tmp_27_fu_191_p1, "tmp_27_fu_191_p1");
-    sc_trace(mVcdFile, tmp_28_fu_197_p1, "tmp_28_fu_197_p1");
-    sc_trace(mVcdFile, tmp_37_fu_156_p1, "tmp_37_fu_156_p1");
-    sc_trace(mVcdFile, tmp_38_fu_160_p1, "tmp_38_fu_160_p1");
+    sc_trace(mVcdFile, tmp_24_fu_191_p1, "tmp_24_fu_191_p1");
+    sc_trace(mVcdFile, tmp_25_fu_197_p1, "tmp_25_fu_197_p1");
+    sc_trace(mVcdFile, tmp_107_fu_156_p1, "tmp_107_fu_156_p1");
+    sc_trace(mVcdFile, tmp_108_fu_160_p1, "tmp_108_fu_160_p1");
     sc_trace(mVcdFile, tmp_s_fu_172_p4, "tmp_s_fu_172_p4");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
 
@@ -266,14 +266,14 @@ void bitrp::thread_ap_clk_no_reset_() {
         i_1_reg_212 = i_1_fu_138_p2.read();
     }
     if (esl_seteq<1,3,3>(ap_ST_st4_fsm_3, ap_CS_fsm.read())) {
-        t_V_5_reg_266 = ximag_V_q0.read();
+        t_V_62_reg_266 = ximag_V_q0.read();
         t_V_reg_261 = xreal_V_q0.read();
     }
     if ((esl_seteq<1,3,3>(ap_ST_st3_fsm_2, ap_CS_fsm.read()) && !esl_seteq<1,1,1>(exitcond2_fu_144_p2.read(), ap_const_lv1_0) && !esl_seteq<1,1,1>(ap_const_lv1_0, tmp_fu_186_p2.read()))) {
-        ximag_V_addr_4_reg_256 =  (sc_lv<10>) (tmp_28_fu_197_p1.read());
-        ximag_V_addr_reg_250 =  (sc_lv<10>) (tmp_27_fu_191_p1.read());
-        xreal_V_addr_4_reg_245 =  (sc_lv<10>) (tmp_28_fu_197_p1.read());
-        xreal_V_addr_reg_239 =  (sc_lv<10>) (tmp_27_fu_191_p1.read());
+        ximag_V_addr_4_reg_256 =  (sc_lv<10>) (tmp_25_fu_197_p1.read());
+        ximag_V_addr_reg_250 =  (sc_lv<10>) (tmp_24_fu_191_p1.read());
+        xreal_V_addr_4_reg_245 =  (sc_lv<10>) (tmp_25_fu_197_p1.read());
+        xreal_V_addr_reg_239 =  (sc_lv<10>) (tmp_24_fu_191_p1.read());
     }
 }
 
@@ -315,7 +315,7 @@ void bitrp::thread_ap_ready() {
 }
 
 void bitrp::thread_b_1_fu_164_p3() {
-    b_1_fu_164_p3 = esl_concat<31,1>(tmp_37_fu_156_p1.read(), tmp_38_fu_160_p1.read());
+    b_1_fu_164_p3 = esl_concat<31,1>(tmp_107_fu_156_p1.read(), tmp_108_fu_160_p1.read());
 }
 
 void bitrp::thread_exitcond2_fu_144_p2() {
@@ -334,20 +334,20 @@ void bitrp::thread_j_2_fu_150_p2() {
     j_2_fu_150_p2 = (!j_reg_105.read().is_01() || !ap_const_lv4_1.is_01())? sc_lv<4>(): (sc_bigint<4>(j_reg_105.read()) + sc_biguint<4>(ap_const_lv4_1));
 }
 
-void bitrp::thread_tmp_27_fu_191_p1() {
-    tmp_27_fu_191_p1 = esl_zext<64,32>(b_reg_116.read());
+void bitrp::thread_tmp_107_fu_156_p1() {
+    tmp_107_fu_156_p1 = b_reg_116.read().range(31-1, 0);
 }
 
-void bitrp::thread_tmp_28_fu_197_p1() {
-    tmp_28_fu_197_p1 = esl_zext<64,11>(a_3_reg_82.read());
+void bitrp::thread_tmp_108_fu_160_p1() {
+    tmp_108_fu_160_p1 = a_reg_96.read().range(1-1, 0);
 }
 
-void bitrp::thread_tmp_37_fu_156_p1() {
-    tmp_37_fu_156_p1 = b_reg_116.read().range(31-1, 0);
+void bitrp::thread_tmp_24_fu_191_p1() {
+    tmp_24_fu_191_p1 = esl_zext<64,32>(b_reg_116.read());
 }
 
-void bitrp::thread_tmp_38_fu_160_p1() {
-    tmp_38_fu_160_p1 = a_reg_96.read().range(1-1, 0);
+void bitrp::thread_tmp_25_fu_197_p1() {
+    tmp_25_fu_197_p1 = esl_zext<64,11>(a_3_reg_82.read());
 }
 
 void bitrp::thread_tmp_fu_186_p2() {
@@ -364,14 +364,14 @@ void bitrp::thread_ximag_V_address0() {
     } else if (esl_seteq<1,3,3>(ap_ST_st4_fsm_3, ap_CS_fsm.read())) {
         ximag_V_address0 = ximag_V_addr_4_reg_256.read();
     } else if (esl_seteq<1,3,3>(ap_ST_st3_fsm_2, ap_CS_fsm.read())) {
-        ximag_V_address0 =  (sc_lv<10>) (tmp_28_fu_197_p1.read());
+        ximag_V_address0 =  (sc_lv<10>) (tmp_25_fu_197_p1.read());
     } else {
         ximag_V_address0 = ximag_V_addr_4_reg_256.read();
     }
 }
 
 void bitrp::thread_ximag_V_address1() {
-    ximag_V_address1 =  (sc_lv<10>) (tmp_27_fu_191_p1.read());
+    ximag_V_address1 =  (sc_lv<10>) (tmp_24_fu_191_p1.read());
 }
 
 void bitrp::thread_ximag_V_ce0() {
@@ -398,11 +398,11 @@ void bitrp::thread_ximag_V_ce1() {
 
 void bitrp::thread_ximag_V_d0() {
     if (esl_seteq<1,3,3>(ap_ST_st5_fsm_4, ap_CS_fsm.read())) {
-        ximag_V_d0 = t_V_5_reg_266.read();
+        ximag_V_d0 = t_V_62_reg_266.read();
     } else if (esl_seteq<1,3,3>(ap_ST_st4_fsm_3, ap_CS_fsm.read())) {
         ximag_V_d0 = ximag_V_q1.read();
     } else {
-        ximag_V_d0 = t_V_5_reg_266.read();
+        ximag_V_d0 = t_V_62_reg_266.read();
     }
 }
 
@@ -421,14 +421,14 @@ void bitrp::thread_xreal_V_address0() {
     } else if (esl_seteq<1,3,3>(ap_ST_st4_fsm_3, ap_CS_fsm.read())) {
         xreal_V_address0 = xreal_V_addr_4_reg_245.read();
     } else if (esl_seteq<1,3,3>(ap_ST_st3_fsm_2, ap_CS_fsm.read())) {
-        xreal_V_address0 =  (sc_lv<10>) (tmp_28_fu_197_p1.read());
+        xreal_V_address0 =  (sc_lv<10>) (tmp_25_fu_197_p1.read());
     } else {
         xreal_V_address0 = xreal_V_addr_4_reg_245.read();
     }
 }
 
 void bitrp::thread_xreal_V_address1() {
-    xreal_V_address1 =  (sc_lv<10>) (tmp_27_fu_191_p1.read());
+    xreal_V_address1 =  (sc_lv<10>) (tmp_24_fu_191_p1.read());
 }
 
 void bitrp::thread_xreal_V_ce0() {

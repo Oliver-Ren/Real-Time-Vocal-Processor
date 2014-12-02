@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cal_mag_phase'" level="0">
-<item name = "Date">Mon Dec  1 20:03:27 2014
+<item name = "Date">Tue Dec  2 14:27:42 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="default">10.00, 11.82, 1.25</column>
+<column name="default">10.00, 8.75, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,20 +24,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">476161, 476161, 476161, 476161, none</column>
+<column name="">1061, 1061, 1061, 1061, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_cordic_sqrt_fu_139">cordic_sqrt, 35, 35, 1, 1, function</column>
+<column name="grp_cordic_atan_fu_148">cordic_atan, 11, 11, 1, 1, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">476160, 476160, 465, -, -, 1024, no</column>
-<column name=" + Loop 1.1">320, 320, 5, -, -, 64, no</column>
-<column name=" + Loop 1.2">128, 128, 2, -, -, 64, no</column>
+<column name="- Loop 1">1059, 1059, 37, 1, 1, 1024, yes</column>
 </table>
 </item>
 </section>
@@ -49,29 +49,27 @@
 <section name = "Utilization Estimates" level="0">
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="Expression">-, -, 0, 1557</column>
+<column name="Expression">-, -, 0, 202</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">-, 13, 90, 48</column>
-<column name="Memory">1, -, -, -</column>
-<column name="Multiplexer">-, -, -, 260</column>
-<column name="Register">-, -, 701, -</column>
-<column name="ShiftMemory">-, -, -, -</column>
+<column name="Instance">-, 2, 3172, 12624</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 72</column>
+<column name="Register">-, -, 151, -</column>
+<column name="ShiftMemory">-, -, 0, 30</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">~0, 5, ~0, 3</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, 3, 24</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="combine_mul_32s_22s_54_3_U17">combine_mul_32s_22s_54_3, 0, 2, 0, 0</column>
-<column name="combine_mul_32s_22s_54_3_U18">combine_mul_32s_22s_54_3, 0, 2, 0, 0</column>
-<column name="combine_mul_52s_53ns_105_11_U16">combine_mul_52s_53ns_105_11, 0, 9, 90, 48</column>
+<column name="grp_cordic_atan_fu_148">cordic_atan, 0, 0, 1060, 4206</column>
+<column name="grp_cordic_sqrt_fu_139">cordic_sqrt, 0, 2, 2112, 8418</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="7">Memory, Module, BRAM_18K, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="cordic_ctab_V_U">cal_mag_phase_cordic_ctab_V, 1, 64, 20, 1, 1280</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -80,102 +78,86 @@
 </item>
 <item name = "Shift register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="exitcond1_reg_244">0, 2, 1, 0</column>
+<column name="tmp_129_reg_288">0, 2, 1, 0</column>
+<column name="tmp_130_reg_292">0, 2, 1, 0</column>
+<column name="tmp_reg_253">0, 22, 64, 53</column>
+<column name="tmp_s_reg_284">0, 2, 1, 0</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_3_fu_280_p2">+, 0, 0, 11, 11, 1</column>
-<column name="i_4_fu_382_p2">+, 0, 0, 7, 7, 1</column>
-<column name="r_V_12_i_fu_711_p2">+, 0, 0, 32, 32, 32</column>
-<column name="r_V_22_fu_489_p2">+, 0, 0, 65, 65, 65</column>
-<column name="r_V_fu_671_p2">+, 0, 0, 32, 32, 22</column>
-<column name="r_V_s_fu_694_p2">+, 0, 0, 32, 32, 23</column>
-<column name="step_fu_589_p2">+, 0, 0, 7, 7, 1</column>
-<column name="x_iteration_V_4_fu_636_p2">+, 0, 0, 32, 32, 32</column>
-<column name="y_iteration_V_fu_625_p2">+, 0, 0, 32, 32, 32</column>
-<column name="mf_i_fu_336_p2">-, 0, 0, 53, 1, 53</column>
-<column name="mt8_i_cast_fu_307_p2">-, 0, 0, 52, 1, 52</column>
-<column name="neg_mul_i_fu_521_p2">-, 0, 0, 105, 1, 105</column>
-<column name="neg_ti_i_fu_542_p2">-, 0, 0, 32, 1, 32</column>
-<column name="r_V_20_fu_464_p2">-, 0, 0, 65, 65, 65</column>
-<column name="r_V_i_fu_705_p2">-, 0, 0, 32, 32, 32</column>
-<column name="x_iteration_V_3_fu_613_p2">-, 0, 0, 32, 32, 32</column>
-<column name="x_iteration_V_fu_559_p2">-, 0, 0, 32, 1, 32</column>
-<column name="y_iteration_V_1_fu_564_p2">-, 0, 0, 32, 1, 32</column>
-<column name="y_iteration_V_4_fu_642_p2">-, 0, 0, 32, 32, 32</column>
-<column name="ai_V_2_fu_513_p3">Select, 0, 0, 22, 1, 21</column>
-<column name="ai_V_fu_368_p3">Select, 0, 0, 22, 1, 21</column>
-<column name="magFrame_V_d0">Select, 0, 0, 32, 1, 32</column>
-<column name="r_V_17_fu_313_p3">Select, 0, 0, 52, 1, 52</column>
-<column name="r_V_18_fu_342_p3">Select, 0, 0, 53, 1, 53</column>
-<column name="sel_i_fu_526_p3">Select, 0, 0, 105, 1, 105</column>
-<column name="storemerge_i_fu_717_p3">Select, 0, 0, 32, 1, 32</column>
-<column name="x_iteration_V_1_fu_576_p3">Select, 0, 0, 32, 1, 32</column>
-<column name="x_iteration_V_5_fu_656_p3">Select, 0, 0, 32, 1, 32</column>
-<column name="y_iteration_V_2_fu_569_p3">Select, 0, 0, 32, 1, 32</column>
-<column name="y_iteration_V_5_fu_648_p3">Select, 0, 0, 32, 1, 32</column>
-<column name="ap_sig_bdd_573">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sig_bdd_577">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sig_bdd_580">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sig_bdd_582">and, 0, 0, 2, 1, 1</column>
-<column name="ap_sig_bdd_584">and, 0, 0, 2, 1, 1</column>
-<column name="or_cond_fu_688_p2">and, 0, 0, 2, 1, 1</column>
-<column name="r_V_23_fu_607_p2">ashr, 0, 0, 88, 32, 32</column>
-<column name="r_V_24_fu_619_p2">ashr, 0, 0, 88, 32, 32</column>
-<column name="r_V_7_fu_392_p2">ashr, 0, 0, 56, 22, 22</column>
-<column name="exitcond5_fu_583_p2">icmp, 0, 0, 8, 7, 8</column>
-<column name="exitcond6_fu_274_p2">icmp, 0, 0, 14, 11, 12</column>
-<column name="exitcond_fu_376_p2">icmp, 0, 0, 8, 7, 8</column>
-<column name="not2_fu_678_p2">icmp, 0, 0, 40, 32, 1</column>
-<column name="not3_fu_683_p2">icmp, 0, 0, 40, 32, 1</column>
-<column name="tmp_i3_fu_554_p2">icmp, 0, 0, 40, 32, 1</column>
+<column name="i_2_fu_160_p2">+, 0, 0, 11, 11, 1</column>
+<column name="r_V_fu_215_p2">+, 0, 0, 23, 23, 22</column>
+<column name="r_V_s_fu_229_p2">+, 0, 0, 24, 24, 23</column>
+<column name="ap_sig_bdd_339">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sig_bdd_545">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sig_bdd_595">and, 0, 0, 2, 1, 1</column>
+<column name="ap_sig_bdd_597">and, 0, 0, 2, 1, 1</column>
+<column name="or_cond_fu_206_p2">and, 0, 0, 2, 1, 1</column>
+<column name="exitcond1_fu_154_p2">icmp, 0, 0, 14, 11, 12</column>
+<column name="not2_fu_194_p2">icmp, 0, 0, 40, 32, 1</column>
+<column name="not3_fu_200_p2">icmp, 0, 0, 40, 32, 1</column>
+<column name="tmp_s_fu_172_p2">icmp, 0, 0, 40, 32, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="i_2_reg_210">7, 2, 7, 14</column>
-<column name="i_reg_163">11, 2, 11, 22</column>
-<column name="p_Val2_106_in_in_i_reg_182">65, 2, 65, 130</column>
-<column name="p_Val2_24_reg_200">32, 2, 32, 64</column>
-<column name="p_Val2_29_reg_234">32, 2, 32, 64</column>
-<column name="p_Val2_31_reg_221">32, 2, 32, 64</column>
-<column name="phaseFrame_V_address0">10, 4, 10, 40</column>
-<column name="phaseFrame_V_d0">32, 5, 32, 160</column>
-<column name="step_2_reg_252">7, 2, 7, 14</column>
-<column name="t_V_4_reg_243">32, 2, 32, 64</column>
+<column name="i_reg_127">11, 2, 11, 22</column>
+<column name="phaseFrame_V_address1">10, 3, 10, 30</column>
+<column name="phaseFrame_V_d0">25, 2, 25, 50</column>
+<column name="phaseFrame_V_d1">26, 3, 26, 78</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="4">Name, FF, Bits, Const Bits</keys>
-<column name="ai_V_1_reg_191">1, 22, 21</column>
-<column name="ap_CS_fsm">5, 5, 0</column>
-<column name="i_2_reg_210">7, 7, 0</column>
-<column name="i_3_reg_727">11, 11, 0</column>
-<column name="i_4_reg_800">7, 7, 0</column>
-<column name="i_reg_163">11, 11, 0</column>
-<column name="magFrame_V_addr_reg_766">10, 10, 0</column>
-<column name="mul_i_reg_868">105, 105, 0</column>
-<column name="p_Val2_106_in_in_i_reg_182">65, 65, 0</column>
-<column name="p_Val2_20_reg_756">32, 32, 0</column>
-<column name="p_Val2_21_reg_771">32, 32, 0</column>
-<column name="p_Val2_24_reg_200">32, 32, 0</column>
-<column name="p_Val2_29_reg_234">32, 32, 0</column>
-<column name="p_Val2_31_reg_221">32, 32, 0</column>
-<column name="r_V_19_reg_843">54, 54, 0</column>
-<column name="r_V_21_reg_848">54, 54, 0</column>
-<column name="r_V_7_reg_805">22, 22, 0</column>
-<column name="step_2_reg_252">7, 7, 0</column>
-<column name="step_reg_897">7, 7, 0</column>
-<column name="t_V_4_reg_243">32, 32, 0</column>
-<column name="tmp_22_reg_810">32, 32, 0</column>
-<column name="tmp_27_reg_778">1, 1, 0</column>
-<column name="tmp_29_reg_821">1, 1, 0</column>
-<column name="tmp_31_reg_902">1, 1, 0</column>
-<column name="tmp_i3_reg_880">1, 1, 0</column>
-<column name="tmp_reg_736">11, 64, 53</column>
-<column name="tmp_s_reg_874">32, 32, 0</column>
-<column name="x_iteration_V_5_reg_917">32, 32, 0</column>
-<column name="y_iteration_V_5_reg_912">32, 32, 0</column>
+<column name="ap_CS_fsm">2, 2, 0</column>
+<column name="ap_reg_ppiten_pp0_it0">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it1">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it10">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it11">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it12">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it13">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it14">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it15">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it16">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it17">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it18">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it19">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it2">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it20">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it21">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it22">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it23">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it24">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it25">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it26">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it27">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it28">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it29">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it3">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it30">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it31">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it32">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it33">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it34">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it35">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it36">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it4">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it5">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it6">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it7">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it8">1, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it9">1, 1, 0</column>
+<column name="arctan_V_reg_300">22, 22, 0</column>
+<column name="exitcond1_reg_244">1, 1, 0</column>
+<column name="i_reg_127">11, 11, 0</column>
+<column name="imag_V_load_reg_278">32, 32, 0</column>
+<column name="real_V_load_reg_272">32, 32, 0</column>
+<column name="tmp_129_reg_288">1, 1, 0</column>
+<column name="tmp_130_reg_292">1, 1, 0</column>
+<column name="tmp_reg_253">11, 64, 53</column>
+<column name="tmp_s_reg_284">1, 1, 0</column>
 </table>
 </item>
 </section>
@@ -198,7 +180,11 @@
 <column name="phaseFrame_V_address0">out, 10, ap_memory, phaseFrame_V, array</column>
 <column name="phaseFrame_V_ce0">out, 1, ap_memory, phaseFrame_V, array</column>
 <column name="phaseFrame_V_we0">out, 1, ap_memory, phaseFrame_V, array</column>
-<column name="phaseFrame_V_d0">out, 32, ap_memory, phaseFrame_V, array</column>
+<column name="phaseFrame_V_d0">out, 26, ap_memory, phaseFrame_V, array</column>
+<column name="phaseFrame_V_address1">out, 10, ap_memory, phaseFrame_V, array</column>
+<column name="phaseFrame_V_ce1">out, 1, ap_memory, phaseFrame_V, array</column>
+<column name="phaseFrame_V_we1">out, 1, ap_memory, phaseFrame_V, array</column>
+<column name="phaseFrame_V_d1">out, 26, ap_memory, phaseFrame_V, array</column>
 <column name="real_V_address0">out, 10, ap_memory, real_V, array</column>
 <column name="real_V_ce0">out, 1, ap_memory, real_V, array</column>
 <column name="real_V_q0">in, 32, ap_memory, real_V, array</column>

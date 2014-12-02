@@ -71,16 +71,16 @@ architecture behav of bitrp is
     signal ximag_V_addr_reg_250 : STD_LOGIC_VECTOR (9 downto 0);
     signal ximag_V_addr_4_reg_256 : STD_LOGIC_VECTOR (9 downto 0);
     signal t_V_reg_261 : STD_LOGIC_VECTOR (31 downto 0);
-    signal t_V_5_reg_266 : STD_LOGIC_VECTOR (31 downto 0);
+    signal t_V_62_reg_266 : STD_LOGIC_VECTOR (31 downto 0);
     signal a_3_reg_82 : STD_LOGIC_VECTOR (10 downto 0);
     signal a_reg_96 : STD_LOGIC_VECTOR (31 downto 0);
     signal exitcond_fu_132_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal j_reg_105 : STD_LOGIC_VECTOR (3 downto 0);
     signal b_reg_116 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_27_fu_191_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_28_fu_197_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_37_fu_156_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_38_fu_160_p1 : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_24_fu_191_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_25_fu_197_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_107_fu_156_p1 : STD_LOGIC_VECTOR (30 downto 0);
+    signal tmp_108_fu_160_p1 : STD_LOGIC_VECTOR (0 downto 0);
     signal tmp_s_fu_172_p4 : STD_LOGIC_VECTOR (30 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (2 downto 0);
 
@@ -176,7 +176,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_ST_st4_fsm_3 = ap_CS_fsm)) then
-                t_V_5_reg_266 <= ximag_V_q0;
+                t_V_62_reg_266 <= ximag_V_q0;
                 t_V_reg_261 <= xreal_V_q0;
             end if;
         end if;
@@ -187,10 +187,10 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_ST_st3_fsm_2 = ap_CS_fsm) and not((exitcond2_fu_144_p2 = ap_const_lv1_0)) and not((ap_const_lv1_0 = tmp_fu_186_p2)))) then
-                ximag_V_addr_4_reg_256 <= tmp_28_fu_197_p1(10 - 1 downto 0);
-                ximag_V_addr_reg_250 <= tmp_27_fu_191_p1(10 - 1 downto 0);
-                xreal_V_addr_4_reg_245 <= tmp_28_fu_197_p1(10 - 1 downto 0);
-                xreal_V_addr_reg_239 <= tmp_27_fu_191_p1(10 - 1 downto 0);
+                ximag_V_addr_4_reg_256 <= tmp_25_fu_197_p1(10 - 1 downto 0);
+                ximag_V_addr_reg_250 <= tmp_24_fu_191_p1(10 - 1 downto 0);
+                xreal_V_addr_4_reg_245 <= tmp_25_fu_197_p1(10 - 1 downto 0);
+                xreal_V_addr_reg_239 <= tmp_24_fu_191_p1(10 - 1 downto 0);
             end if;
         end if;
     end process;
@@ -266,33 +266,33 @@ begin
         end if; 
     end process;
 
-    b_1_fu_164_p3 <= (tmp_37_fu_156_p1 & tmp_38_fu_160_p1);
+    b_1_fu_164_p3 <= (tmp_107_fu_156_p1 & tmp_108_fu_160_p1);
     exitcond2_fu_144_p2 <= "1" when (j_reg_105 = ap_const_lv4_A) else "0";
     exitcond_fu_132_p2 <= "1" when (a_3_reg_82 = ap_const_lv11_400) else "0";
     i_1_fu_138_p2 <= std_logic_vector(unsigned(a_3_reg_82) + unsigned(ap_const_lv11_1));
     j_2_fu_150_p2 <= std_logic_vector(unsigned(j_reg_105) + unsigned(ap_const_lv4_1));
-    tmp_27_fu_191_p1 <= std_logic_vector(resize(unsigned(b_reg_116),64));
-    tmp_28_fu_197_p1 <= std_logic_vector(resize(unsigned(a_3_reg_82),64));
-    tmp_37_fu_156_p1 <= b_reg_116(31 - 1 downto 0);
-    tmp_38_fu_160_p1 <= a_reg_96(1 - 1 downto 0);
+    tmp_107_fu_156_p1 <= b_reg_116(31 - 1 downto 0);
+    tmp_108_fu_160_p1 <= a_reg_96(1 - 1 downto 0);
+    tmp_24_fu_191_p1 <= std_logic_vector(resize(unsigned(b_reg_116),64));
+    tmp_25_fu_197_p1 <= std_logic_vector(resize(unsigned(a_3_reg_82),64));
     tmp_fu_186_p2 <= "1" when (signed(b_reg_116) > signed(a_3_cast_reg_203)) else "0";
     tmp_s_fu_172_p4 <= a_reg_96(31 downto 1);
 
     -- ximag_V_address0 assign process. --
-    ximag_V_address0_assign_proc : process(ap_CS_fsm, ximag_V_addr_reg_250, ximag_V_addr_4_reg_256, tmp_28_fu_197_p1)
+    ximag_V_address0_assign_proc : process(ap_CS_fsm, ximag_V_addr_reg_250, ximag_V_addr_4_reg_256, tmp_25_fu_197_p1)
     begin
         if ((ap_ST_st5_fsm_4 = ap_CS_fsm)) then 
             ximag_V_address0 <= ximag_V_addr_reg_250;
         elsif ((ap_ST_st4_fsm_3 = ap_CS_fsm)) then 
             ximag_V_address0 <= ximag_V_addr_4_reg_256;
         elsif ((ap_ST_st3_fsm_2 = ap_CS_fsm)) then 
-            ximag_V_address0 <= tmp_28_fu_197_p1(10 - 1 downto 0);
+            ximag_V_address0 <= tmp_25_fu_197_p1(10 - 1 downto 0);
         else 
             ximag_V_address0 <= ximag_V_addr_4_reg_256;
         end if; 
     end process;
 
-    ximag_V_address1 <= tmp_27_fu_191_p1(10 - 1 downto 0);
+    ximag_V_address1 <= tmp_24_fu_191_p1(10 - 1 downto 0);
 
     -- ximag_V_ce0 assign process. --
     ximag_V_ce0_assign_proc : process(ap_CS_fsm, exitcond2_fu_144_p2, tmp_fu_186_p2)
@@ -317,14 +317,14 @@ begin
 
 
     -- ximag_V_d0 assign process. --
-    ximag_V_d0_assign_proc : process(ap_CS_fsm, ximag_V_q1, t_V_5_reg_266)
+    ximag_V_d0_assign_proc : process(ap_CS_fsm, ximag_V_q1, t_V_62_reg_266)
     begin
         if ((ap_ST_st5_fsm_4 = ap_CS_fsm)) then 
-            ximag_V_d0 <= t_V_5_reg_266;
+            ximag_V_d0 <= t_V_62_reg_266;
         elsif ((ap_ST_st4_fsm_3 = ap_CS_fsm)) then 
             ximag_V_d0 <= ximag_V_q1;
         else 
-            ximag_V_d0 <= t_V_5_reg_266;
+            ximag_V_d0 <= t_V_62_reg_266;
         end if; 
     end process;
 
@@ -341,20 +341,20 @@ begin
 
 
     -- xreal_V_address0 assign process. --
-    xreal_V_address0_assign_proc : process(ap_CS_fsm, xreal_V_addr_reg_239, xreal_V_addr_4_reg_245, tmp_28_fu_197_p1)
+    xreal_V_address0_assign_proc : process(ap_CS_fsm, xreal_V_addr_reg_239, xreal_V_addr_4_reg_245, tmp_25_fu_197_p1)
     begin
         if ((ap_ST_st5_fsm_4 = ap_CS_fsm)) then 
             xreal_V_address0 <= xreal_V_addr_reg_239;
         elsif ((ap_ST_st4_fsm_3 = ap_CS_fsm)) then 
             xreal_V_address0 <= xreal_V_addr_4_reg_245;
         elsif ((ap_ST_st3_fsm_2 = ap_CS_fsm)) then 
-            xreal_V_address0 <= tmp_28_fu_197_p1(10 - 1 downto 0);
+            xreal_V_address0 <= tmp_25_fu_197_p1(10 - 1 downto 0);
         else 
             xreal_V_address0 <= xreal_V_addr_4_reg_245;
         end if; 
     end process;
 
-    xreal_V_address1 <= tmp_27_fu_191_p1(10 - 1 downto 0);
+    xreal_V_address1 <= tmp_24_fu_191_p1(10 - 1 downto 0);
 
     -- xreal_V_ce0 assign process. --
     xreal_V_ce0_assign_proc : process(ap_CS_fsm, exitcond2_fu_144_p2, tmp_fu_186_p2)
