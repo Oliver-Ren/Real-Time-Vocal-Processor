@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cordic_atan'" level="0">
-<item name = "Date">Tue Dec  2 14:27:41 2014
+<item name = "Date">Tue Dec  2 14:36:12 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>

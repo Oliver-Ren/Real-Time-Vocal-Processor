@@ -17134,6 +17134,23 @@
 			<pipe_depth>46</pipe_depth>
 		</item>
 		<item class_id_reference="46" object_id="_1138">
+			<region_name>Loop 3</region_name>
+			<basic_blocks>
+				<count>2</count>
+				<item_version>0</item_version>
+				<item>196</item>
+				<item>215</item>
+			</basic_blocks>
+			<nodes>
+				<count>0</count>
+				<item_version>0</item_version>
+			</nodes>
+			<anchor_node>-1</anchor_node>
+			<region_type>8</region_type>
+			<interval>1</interval>
+			<pipe_depth>10</pipe_depth>
+		</item>
+		<item class_id_reference="46" object_id="_1139">
 			<region_name>Loop 1</region_name>
 			<basic_blocks>
 				<count>5</count>
@@ -17152,23 +17169,6 @@
 			<region_type>8</region_type>
 			<interval>1</interval>
 			<pipe_depth>24</pipe_depth>
-		</item>
-		<item class_id_reference="46" object_id="_1139">
-			<region_name>Loop 3</region_name>
-			<basic_blocks>
-				<count>2</count>
-				<item_version>0</item_version>
-				<item>196</item>
-				<item>215</item>
-			</basic_blocks>
-			<nodes>
-				<count>0</count>
-				<item_version>0</item_version>
-			</nodes>
-			<anchor_node>-1</anchor_node>
-			<region_type>8</region_type>
-			<interval>1</interval>
-			<pipe_depth>10</pipe_depth>
 		</item>
 	</regions>
 	<dp_fu_nodes class_id="47" tracking_level="0" version="0">

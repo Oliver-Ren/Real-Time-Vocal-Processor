@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'FFT'
 ================================================================
-* Date:           Tue Dec  2 14:27:39 2014
+* Date:           Tue Dec  2 14:36:10 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -1065,8 +1065,8 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=<null>
-Port [ xreal_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x8fbaa30; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x5d25bc0; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ xreal_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x218888d0; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x1b0a4ca0; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
