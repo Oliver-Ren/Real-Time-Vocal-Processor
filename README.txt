@@ -1,3 +1,6 @@
+ECE5775 Final Project: Real-Time-Vocal-Processor
+Chengxiang Ren, Lingbo Kou, Kang Li
+
 1 Download the whole folder into amdpool.
 2 Type in . ./setup in command line
 3 Type in make to compile the project
@@ -11,10 +14,8 @@ Note:
   cordic.cpp is the modified version of CORDIC from Assignment 1. The
   cordic_general function is to calculate the sin and cos of a given
   fixed_type number.
-  fft.cpp pitchshifting.cpp cordic.cpp are all synthesizable. But combine.cpp
-  cannot.
-2 This project cannot be synthesized in vivado_hls yet since there is 
-  sqrt and atan in the program.
+  All the blocks are synthesizable.
+2 The cordic version of sqrt and arctan is in cordic.cpp
 3 The data set "currentFrame.dat" is the input file and "wn.dat" is 
   the look up table of the window function. The output is the time domain
   signal after pitch shift.
