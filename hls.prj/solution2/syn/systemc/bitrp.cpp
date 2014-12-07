@@ -56,8 +56,8 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( exitcond_fu_132_p2 );
 
     SC_METHOD(thread_b_1_fu_164_p3);
-    sensitive << ( tmp_107_fu_156_p1 );
-    sensitive << ( tmp_108_fu_160_p1 );
+    sensitive << ( tmp_108_fu_156_p1 );
+    sensitive << ( tmp_109_fu_160_p1 );
 
     SC_METHOD(thread_exitcond2_fu_144_p2);
     sensitive << ( ap_CS_fsm );
@@ -73,10 +73,10 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_j_2_fu_150_p2);
     sensitive << ( j_reg_105 );
 
-    SC_METHOD(thread_tmp_107_fu_156_p1);
+    SC_METHOD(thread_tmp_108_fu_156_p1);
     sensitive << ( b_reg_116 );
 
-    SC_METHOD(thread_tmp_108_fu_160_p1);
+    SC_METHOD(thread_tmp_109_fu_160_p1);
     sensitive << ( a_reg_96 );
 
     SC_METHOD(thread_tmp_24_fu_191_p1);
@@ -211,8 +211,8 @@ bitrp::bitrp(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, b_reg_116, "b_reg_116");
     sc_trace(mVcdFile, tmp_24_fu_191_p1, "tmp_24_fu_191_p1");
     sc_trace(mVcdFile, tmp_25_fu_197_p1, "tmp_25_fu_197_p1");
-    sc_trace(mVcdFile, tmp_107_fu_156_p1, "tmp_107_fu_156_p1");
-    sc_trace(mVcdFile, tmp_108_fu_160_p1, "tmp_108_fu_160_p1");
+    sc_trace(mVcdFile, tmp_108_fu_156_p1, "tmp_108_fu_156_p1");
+    sc_trace(mVcdFile, tmp_109_fu_160_p1, "tmp_109_fu_160_p1");
     sc_trace(mVcdFile, tmp_s_fu_172_p4, "tmp_s_fu_172_p4");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
 
@@ -315,7 +315,7 @@ void bitrp::thread_ap_ready() {
 }
 
 void bitrp::thread_b_1_fu_164_p3() {
-    b_1_fu_164_p3 = esl_concat<31,1>(tmp_107_fu_156_p1.read(), tmp_108_fu_160_p1.read());
+    b_1_fu_164_p3 = esl_concat<31,1>(tmp_108_fu_156_p1.read(), tmp_109_fu_160_p1.read());
 }
 
 void bitrp::thread_exitcond2_fu_144_p2() {
@@ -334,12 +334,12 @@ void bitrp::thread_j_2_fu_150_p2() {
     j_2_fu_150_p2 = (!j_reg_105.read().is_01() || !ap_const_lv4_1.is_01())? sc_lv<4>(): (sc_bigint<4>(j_reg_105.read()) + sc_biguint<4>(ap_const_lv4_1));
 }
 
-void bitrp::thread_tmp_107_fu_156_p1() {
-    tmp_107_fu_156_p1 = b_reg_116.read().range(31-1, 0);
+void bitrp::thread_tmp_108_fu_156_p1() {
+    tmp_108_fu_156_p1 = b_reg_116.read().range(31-1, 0);
 }
 
-void bitrp::thread_tmp_108_fu_160_p1() {
-    tmp_108_fu_160_p1 = a_reg_96.read().range(1-1, 0);
+void bitrp::thread_tmp_109_fu_160_p1() {
+    tmp_109_fu_160_p1 = a_reg_96.read().range(1-1, 0);
 }
 
 void bitrp::thread_tmp_24_fu_191_p1() {

@@ -79,8 +79,8 @@ architecture behav of bitrp is
     signal b_reg_116 : STD_LOGIC_VECTOR (31 downto 0);
     signal tmp_24_fu_191_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal tmp_25_fu_197_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_107_fu_156_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_108_fu_160_p1 : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_108_fu_156_p1 : STD_LOGIC_VECTOR (30 downto 0);
+    signal tmp_109_fu_160_p1 : STD_LOGIC_VECTOR (0 downto 0);
     signal tmp_s_fu_172_p4 : STD_LOGIC_VECTOR (30 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (2 downto 0);
 
@@ -266,13 +266,13 @@ begin
         end if; 
     end process;
 
-    b_1_fu_164_p3 <= (tmp_107_fu_156_p1 & tmp_108_fu_160_p1);
+    b_1_fu_164_p3 <= (tmp_108_fu_156_p1 & tmp_109_fu_160_p1);
     exitcond2_fu_144_p2 <= "1" when (j_reg_105 = ap_const_lv4_A) else "0";
     exitcond_fu_132_p2 <= "1" when (a_3_reg_82 = ap_const_lv11_400) else "0";
     i_1_fu_138_p2 <= std_logic_vector(unsigned(a_3_reg_82) + unsigned(ap_const_lv11_1));
     j_2_fu_150_p2 <= std_logic_vector(unsigned(j_reg_105) + unsigned(ap_const_lv4_1));
-    tmp_107_fu_156_p1 <= b_reg_116(31 - 1 downto 0);
-    tmp_108_fu_160_p1 <= a_reg_96(1 - 1 downto 0);
+    tmp_108_fu_156_p1 <= b_reg_116(31 - 1 downto 0);
+    tmp_109_fu_160_p1 <= a_reg_96(1 - 1 downto 0);
     tmp_24_fu_191_p1 <= std_logic_vector(resize(unsigned(b_reg_116),64));
     tmp_25_fu_197_p1 <= std_logic_vector(resize(unsigned(a_3_reg_82),64));
     tmp_fu_186_p2 <= "1" when (signed(b_reg_116) > signed(a_3_cast_reg_203)) else "0";

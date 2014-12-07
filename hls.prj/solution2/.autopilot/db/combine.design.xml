@@ -5,9 +5,9 @@
 <ModuleName>combine</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_pitchshifting_fu_127</InstName>
+<InstName>grp_pitchshifting_fu_182</InstName>
 <ModuleName>pitchshifting</ModuleName>
-<ID>127</ID>
+<ID>182</ID>
 <InstancesList>
 <Instance>
 <InstName>grp_cordic_fu_377</InstName>
@@ -34,9 +34,9 @@
 </InstancesList>
 </Instance>
 <Instance>
-<InstName>grp_cal_mag_phase_fu_137</InstName>
+<InstName>grp_cal_mag_phase_fu_192</InstName>
 <ModuleName>cal_mag_phase</ModuleName>
-<ID>137</ID>
+<ID>192</ID>
 <InstancesList>
 <Instance>
 <InstName>grp_cordic_sqrt_fu_139</InstName>
@@ -51,9 +51,9 @@
 </InstancesList>
 </Instance>
 <Instance>
-<InstName>grp_FFT_fu_147</InstName>
+<InstName>grp_FFT_fu_202</InstName>
 <ModuleName>FFT</ModuleName>
-<ID>147</ID>
+<ID>202</ID>
 <InstancesList>
 <Instance>
 <InstName>grp_bitrp_fu_240</InstName>
@@ -1853,18 +1853,32 @@
 <Loop1>
 <Name>Loop 1</Name>
 <TripCount>1024</TripCount>
+<Latency>1024</Latency>
+<IterationLatency>1</IterationLatency>
+<PipelineDepth>1</PipelineDepth>
+</Loop1>
+<Loop2>
+<Name>Loop 2</Name>
+<TripCount>1024</TripCount>
+<Latency>2048</Latency>
+<IterationLatency>2</IterationLatency>
+<PipelineDepth>2</PipelineDepth>
+</Loop2>
+<Loop3>
+<Name>Loop 3</Name>
+<TripCount>1024</TripCount>
 <Latency>1029</Latency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>7</PipelineDepth>
-</Loop1>
+</Loop3>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>24</BRAM_18K>
+<BRAM_18K>25</BRAM_18K>
 <DSP48E>99</DSP48E>
-<FF>14949</FF>
-<LUT>35254</LUT>
+<FF>14997</FF>
+<LUT>35353</LUT>
 <SLICE>0</SLICE>
 </Resources>
 </AreaEstimates>

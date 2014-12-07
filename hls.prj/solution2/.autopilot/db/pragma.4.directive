@@ -70,5 +70,20 @@
 <option name="self" positionalBoolean="type" value=""/>
 </pragma>
 </directive>
+<directive functionLabel="" functionName="pitchshifting" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pitchshifting" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pitchshifting" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
 </sourceFile>
 </AutoPilot:ProjectResources>

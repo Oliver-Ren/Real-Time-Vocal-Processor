@@ -115,10 +115,10 @@ bb9:1  %a_3_cast = zext i11 %a_3 to i32                ; <i32> [#uses=2]
 
 <node id="7" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-bb9:2  %empty_153 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+bb9:2  %empty_155 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
 ]]></node>
-<StgValue><ssdm name="empty_153"/></StgValue>
+<StgValue><ssdm name="empty_155"/></StgValue>
 </operation>
 
 <operation id="10" st_id="2" stage="1" lat="1">
@@ -300,10 +300,10 @@ bb5:6  br i1 %exitcond2, label %bb6, label %bb4
 
 <node id="20" bw="31" op_0_bw="32">
 <![CDATA[
-bb4:0  %tmp_107 = trunc i32 %b to i31                  ; <i31> [#uses=1]
+bb4:0  %tmp_108 = trunc i32 %b to i31                  ; <i31> [#uses=1]
 
 ]]></node>
-<StgValue><ssdm name="tmp_107"/></StgValue>
+<StgValue><ssdm name="tmp_108"/></StgValue>
 </operation>
 
 <operation id="22" st_id="3" stage="1" lat="1">
@@ -316,10 +316,10 @@ bb4:0  %tmp_107 = trunc i32 %b to i31                  ; <i31> [#uses=1]
 
 <node id="21" bw="1" op_0_bw="32">
 <![CDATA[
-bb4:1  %tmp_108 = trunc i32 %a to i1                   ; <i1> [#uses=1]
+bb4:1  %tmp_109 = trunc i32 %a to i1                   ; <i1> [#uses=1]
 
 ]]></node>
-<StgValue><ssdm name="tmp_108"/></StgValue>
+<StgValue><ssdm name="tmp_109"/></StgValue>
 </operation>
 
 <operation id="23" st_id="3" stage="1" lat="1">
@@ -332,7 +332,7 @@ bb4:1  %tmp_108 = trunc i32 %a to i1                   ; <i1> [#uses=1]
 
 <node id="22" bw="32" op_0_bw="32" op_1_bw="31" op_2_bw="1">
 <![CDATA[
-bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_107, i1 %tmp_108) ; <i32> [#uses=1]
+bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_108, i1 %tmp_109) ; <i32> [#uses=1]
 
 ]]></node>
 <StgValue><ssdm name="b_1"/></StgValue>
@@ -774,13 +774,13 @@ bb7:14  br label %bb9
 </dataflow>
 <dataflow id="65" from="a_3" to="a_3_cast" fromId="7" toId="8">
 </dataflow>
-<dataflow id="67" from="_ssdm_op_SpecLoopTripCount" to="empty_153" fromId="66" toId="9">
+<dataflow id="67" from="_ssdm_op_SpecLoopTripCount" to="empty_155" fromId="66" toId="9">
 </dataflow>
-<dataflow id="69" from="stg_68" to="empty_153" fromId="68" toId="9">
+<dataflow id="69" from="stg_68" to="empty_155" fromId="68" toId="9">
 </dataflow>
-<dataflow id="70" from="stg_68" to="empty_153" fromId="68" toId="9">
+<dataflow id="70" from="stg_68" to="empty_155" fromId="68" toId="9">
 </dataflow>
-<dataflow id="71" from="stg_68" to="empty_153" fromId="68" toId="9">
+<dataflow id="71" from="stg_68" to="empty_155" fromId="68" toId="9">
 </dataflow>
 <dataflow id="72" from="a_3" to="exitcond" fromId="7" toId="10">
 </dataflow>
@@ -864,15 +864,15 @@ bb7:14  br label %bb9
 </dataflow>
 <dataflow id="104" from="exitcond2" to="stg_20" fromId="18" toId="20">
 </dataflow>
-<dataflow id="105" from="b" to="tmp_107" fromId="16" toId="21">
+<dataflow id="105" from="b" to="tmp_108" fromId="16" toId="21">
 </dataflow>
-<dataflow id="106" from="a" to="tmp_108" fromId="14" toId="22">
+<dataflow id="106" from="a" to="tmp_109" fromId="14" toId="22">
 </dataflow>
 <dataflow id="108" from="_ssdm_op_BitConcatenate.i32.i31.i1" to="b_1" fromId="107" toId="23">
 </dataflow>
-<dataflow id="109" from="tmp_107" to="b_1" fromId="21" toId="23">
+<dataflow id="109" from="tmp_108" to="b_1" fromId="21" toId="23">
 </dataflow>
-<dataflow id="110" from="tmp_108" to="b_1" fromId="22" toId="23">
+<dataflow id="110" from="tmp_109" to="b_1" fromId="22" toId="23">
 </dataflow>
 <dataflow id="112" from="_ssdm_op_PartSelect.i31.i32.i32.i32" to="tmp_s" fromId="111" toId="24">
 </dataflow>

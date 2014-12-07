@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cordic_atan'" level="0">
-<item name = "Date">Tue Dec  2 14:36:12 2014
+<item name = "Date">Sun Dec  7 14:25:21 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -73,22 +73,22 @@
 </item>
 <item name = "Shift register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="tmp_109_reg_1874">0, 1, 1, 0</column>
-<column name="tmp_110_reg_1892">0, 1, 1, 0</column>
-<column name="tmp_111_reg_1910">0, 1, 1, 0</column>
-<column name="tmp_112_reg_1927">0, 1, 1, 0</column>
-<column name="tmp_113_reg_1945">0, 1, 1, 0</column>
-<column name="tmp_114_reg_1962">0, 1, 1, 0</column>
-<column name="tmp_115_reg_1980">0, 1, 1, 0</column>
-<column name="tmp_116_reg_1997">0, 1, 1, 0</column>
-<column name="tmp_117_reg_2015">0, 1, 1, 0</column>
-<column name="tmp_118_reg_2032">0, 1, 1, 0</column>
-<column name="tmp_119_reg_2050">0, 1, 1, 0</column>
-<column name="tmp_120_reg_2067">0, 1, 1, 0</column>
-<column name="tmp_121_reg_2085">0, 1, 1, 0</column>
-<column name="tmp_122_reg_2102">0, 1, 1, 0</column>
-<column name="tmp_123_reg_2120">0, 1, 1, 0</column>
-<column name="tmp_124_reg_2137">0, 1, 1, 0</column>
+<column name="tmp_110_reg_1874">0, 1, 1, 0</column>
+<column name="tmp_111_reg_1892">0, 1, 1, 0</column>
+<column name="tmp_112_reg_1910">0, 1, 1, 0</column>
+<column name="tmp_113_reg_1927">0, 1, 1, 0</column>
+<column name="tmp_114_reg_1945">0, 1, 1, 0</column>
+<column name="tmp_115_reg_1962">0, 1, 1, 0</column>
+<column name="tmp_116_reg_1980">0, 1, 1, 0</column>
+<column name="tmp_117_reg_1997">0, 1, 1, 0</column>
+<column name="tmp_118_reg_2015">0, 1, 1, 0</column>
+<column name="tmp_119_reg_2032">0, 1, 1, 0</column>
+<column name="tmp_120_reg_2050">0, 1, 1, 0</column>
+<column name="tmp_121_reg_2067">0, 1, 1, 0</column>
+<column name="tmp_122_reg_2085">0, 1, 1, 0</column>
+<column name="tmp_123_reg_2102">0, 1, 1, 0</column>
+<column name="tmp_124_reg_2120">0, 1, 1, 0</column>
+<column name="tmp_125_reg_2137">0, 1, 1, 0</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
@@ -255,48 +255,48 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="4">Name, FF, Bits, Const Bits</keys>
-<column name="ap_reg_ppstg_tmp_125_reg_2155_pp0_it9">1, 1, 0</column>
-<column name="ap_reg_ppstg_tmp_126_reg_2172_pp0_it9">1, 1, 0</column>
+<column name="ap_reg_ppstg_tmp_126_reg_2155_pp0_it9">1, 1, 0</column>
+<column name="ap_reg_ppstg_tmp_127_reg_2172_pp0_it9">1, 1, 0</column>
 <column name="tmp2_reg_2200">21, 22, 1</column>
 <column name="tmp5_reg_2205">16, 17, 1</column>
 <column name="tmp9_reg_2210">11, 12, 1</column>
-<column name="tmp_109_reg_1874">1, 1, 0</column>
-<column name="tmp_110_reg_1892">1, 1, 0</column>
-<column name="tmp_111_reg_1910">1, 1, 0</column>
-<column name="tmp_112_reg_1927">1, 1, 0</column>
-<column name="tmp_113_reg_1945">1, 1, 0</column>
-<column name="tmp_114_reg_1962">1, 1, 0</column>
-<column name="tmp_115_reg_1980">1, 1, 0</column>
-<column name="tmp_116_reg_1997">1, 1, 0</column>
-<column name="tmp_117_reg_2015">1, 1, 0</column>
-<column name="tmp_118_reg_2032">1, 1, 0</column>
-<column name="tmp_119_reg_2050">1, 1, 0</column>
-<column name="tmp_120_reg_2067">1, 1, 0</column>
-<column name="tmp_121_reg_2085">1, 1, 0</column>
-<column name="tmp_122_reg_2102">1, 1, 0</column>
-<column name="tmp_123_reg_2120">1, 1, 0</column>
-<column name="tmp_124_reg_2137">1, 1, 0</column>
-<column name="tmp_125_reg_2155">1, 1, 0</column>
-<column name="tmp_126_reg_2172">1, 1, 0</column>
-<column name="tmp_127_reg_2190">1, 1, 0</column>
-<column name="tmp_128_reg_2195">1, 1, 0</column>
-<column name="tmp_52_reg_1905">31, 31, 0</column>
-<column name="tmp_55_reg_1934">29, 29, 0</column>
-<column name="tmp_56_reg_1940">29, 29, 0</column>
-<column name="tmp_59_reg_1969">27, 27, 0</column>
-<column name="tmp_60_reg_1975">27, 27, 0</column>
-<column name="tmp_63_reg_2004">25, 25, 0</column>
-<column name="tmp_64_reg_2010">25, 25, 0</column>
-<column name="tmp_67_reg_2039">23, 23, 0</column>
-<column name="tmp_68_reg_2045">23, 23, 0</column>
-<column name="tmp_71_reg_2074">21, 21, 0</column>
-<column name="tmp_72_reg_2080">21, 21, 0</column>
-<column name="tmp_75_reg_2109">19, 19, 0</column>
-<column name="tmp_76_reg_2115">19, 19, 0</column>
-<column name="tmp_79_reg_2144">17, 17, 0</column>
-<column name="tmp_80_reg_2150">17, 17, 0</column>
-<column name="tmp_83_reg_2179">15, 15, 0</column>
-<column name="tmp_84_reg_2185">15, 15, 0</column>
+<column name="tmp_110_reg_1874">1, 1, 0</column>
+<column name="tmp_111_reg_1892">1, 1, 0</column>
+<column name="tmp_112_reg_1910">1, 1, 0</column>
+<column name="tmp_113_reg_1927">1, 1, 0</column>
+<column name="tmp_114_reg_1945">1, 1, 0</column>
+<column name="tmp_115_reg_1962">1, 1, 0</column>
+<column name="tmp_116_reg_1980">1, 1, 0</column>
+<column name="tmp_117_reg_1997">1, 1, 0</column>
+<column name="tmp_118_reg_2015">1, 1, 0</column>
+<column name="tmp_119_reg_2032">1, 1, 0</column>
+<column name="tmp_120_reg_2050">1, 1, 0</column>
+<column name="tmp_121_reg_2067">1, 1, 0</column>
+<column name="tmp_122_reg_2085">1, 1, 0</column>
+<column name="tmp_123_reg_2102">1, 1, 0</column>
+<column name="tmp_124_reg_2120">1, 1, 0</column>
+<column name="tmp_125_reg_2137">1, 1, 0</column>
+<column name="tmp_126_reg_2155">1, 1, 0</column>
+<column name="tmp_127_reg_2172">1, 1, 0</column>
+<column name="tmp_128_reg_2190">1, 1, 0</column>
+<column name="tmp_129_reg_2195">1, 1, 0</column>
+<column name="tmp_51_reg_1905">31, 31, 0</column>
+<column name="tmp_54_reg_1934">29, 29, 0</column>
+<column name="tmp_55_reg_1940">29, 29, 0</column>
+<column name="tmp_58_reg_1969">27, 27, 0</column>
+<column name="tmp_59_reg_1975">27, 27, 0</column>
+<column name="tmp_62_reg_2004">25, 25, 0</column>
+<column name="tmp_63_reg_2010">25, 25, 0</column>
+<column name="tmp_66_reg_2039">23, 23, 0</column>
+<column name="tmp_67_reg_2045">23, 23, 0</column>
+<column name="tmp_70_reg_2074">21, 21, 0</column>
+<column name="tmp_71_reg_2080">21, 21, 0</column>
+<column name="tmp_74_reg_2109">19, 19, 0</column>
+<column name="tmp_75_reg_2115">19, 19, 0</column>
+<column name="tmp_78_reg_2144">17, 17, 0</column>
+<column name="tmp_79_reg_2150">17, 17, 0</column>
+<column name="tmp_82_reg_2179">15, 15, 0</column>
+<column name="tmp_83_reg_2185">15, 15, 0</column>
 <column name="tmp_s_reg_1899">31, 31, 0</column>
 <column name="x_iteration_V_68_reg_1886">32, 32, 0</column>
 <column name="x_iteration_V_70_reg_1921">32, 32, 0</column>

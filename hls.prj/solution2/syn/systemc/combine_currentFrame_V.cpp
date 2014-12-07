@@ -36,3 +36,27 @@ void combine_currentFrame_V::proc_mem_ce()
 }
 
 
+void combine_currentFrame_V::proc_mem_wa()
+{
+    sc_lv<1 * AddressWidth> tmp;
+    tmp = (address0.read());
+    mem_wa.write(tmp);
+}
+
+
+void combine_currentFrame_V::proc_mem_we()
+{
+    sc_lv<1> tmp;
+    tmp[0] = we0.read();
+    mem_we.write(tmp);
+}
+
+
+void combine_currentFrame_V::proc_mem_d()
+{
+    sc_lv<1 * DataWidth> tmp;
+    tmp = (d0.read());
+    mem_d.write(tmp);
+}
+
+

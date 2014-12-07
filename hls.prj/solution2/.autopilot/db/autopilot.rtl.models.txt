@@ -13,7 +13,8 @@ pitchshifting_wn_V_1
 pitchshifting_deltaPhiPrimeMod_V
 pitchshifting_phaseCumulative_V
 pitchshifting_real_V
-combine_mul_37ns_20ns_56_4
+combine_mul_40ns_20ns_60_4
+combine_input_V
 combine_currentFrame_V
 combine_magFrame_V
 combine_phaseFrame_V

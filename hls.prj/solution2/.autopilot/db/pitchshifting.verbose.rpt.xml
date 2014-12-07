@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'pitchshifting'" level="0">
-<item name = "Date">Tue Dec  2 14:36:16 2014
+<item name = "Date">Sun Dec  7 14:25:25 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -102,13 +102,13 @@
 <column name="phaseCumulative_V_addr_1_reg_1203">0, 10, 10, 0</column>
 <column name="t_V_64_reg_1245">0, 32, 52, 20</column>
 <column name="t_V_reg_1157">0, 32, 52, 20</column>
-<column name="tmp_132_reg_1151">0, 1, 1, 0</column>
-<column name="tmp_138_reg_1255">0, 1, 1, 0</column>
+<column name="tmp_133_reg_1151">0, 1, 1, 0</column>
+<column name="tmp_139_reg_1255">0, 1, 1, 0</column>
 <column name="tmp_14_reg_1364">0, 11, 64, 53</column>
 <column name="tmp_1_reg_1142">0, 1, 1, 0</column>
 <column name="tmp_69_i_reg_1305">0, 1, 1, 0</column>
 <column name="tmp_6_reg_1233">0, 22, 64, 53</column>
-<column name="tmp_i_315_reg_1301">0, 1, 1, 0</column>
+<column name="tmp_i_316_reg_1301">0, 1, 1, 0</column>
 <column name="tmp_i_reg_1297">0, 1, 1, 0</column>
 </table>
 </item>
@@ -163,7 +163,7 @@
 <column name="tmp_1_i1_fu_862_p2">icmp, 0, 0, 25, 20, 1</column>
 <column name="tmp_1_i_fu_625_p2">icmp, 0, 0, 25, 20, 1</column>
 <column name="tmp_69_i_fu_953_p2">icmp, 0, 0, 64, 51, 43</column>
-<column name="tmp_i_315_fu_939_p2">icmp, 0, 0, 40, 32, 22</column>
+<column name="tmp_i_316_fu_939_p2">icmp, 0, 0, 40, 32, 22</column>
 <column name="tmp_i_fu_933_p2">icmp, 0, 0, 40, 32, 21</column>
 </table>
 </item>
@@ -304,17 +304,17 @@
 <column name="rhs_V3_i_cast_reg_1193">52, 52, 0</column>
 <column name="t_V_64_reg_1245">32, 52, 20</column>
 <column name="t_V_reg_1157">32, 52, 20</column>
-<column name="tmp_131_reg_1146">32, 32, 0</column>
-<column name="tmp_132_reg_1151">1, 1, 0</column>
-<column name="tmp_138_reg_1255">1, 1, 0</column>
+<column name="tmp_132_reg_1146">32, 32, 0</column>
+<column name="tmp_133_reg_1151">1, 1, 0</column>
+<column name="tmp_139_reg_1255">1, 1, 0</column>
 <column name="tmp_13_reg_1219">32, 32, 0</column>
-<column name="tmp_144_reg_1214">25, 25, 0</column>
-<column name="tmp_145_reg_1309">31, 31, 0</column>
+<column name="tmp_145_reg_1214">25, 25, 0</column>
+<column name="tmp_146_reg_1309">31, 31, 0</column>
 <column name="tmp_14_reg_1364">11, 64, 53</column>
 <column name="tmp_1_reg_1142">1, 1, 0</column>
 <column name="tmp_69_i_reg_1305">1, 1, 0</column>
 <column name="tmp_6_reg_1233">11, 64, 53</column>
-<column name="tmp_i_315_reg_1301">1, 1, 0</column>
+<column name="tmp_i_316_reg_1301">1, 1, 0</column>
 <column name="tmp_i_reg_1297">1, 1, 0</column>
 <column name="trunc_i1_cast_reg_1267">31, 31, 0</column>
 <column name="trunc_i_cast_reg_1173">31, 31, 0</column>

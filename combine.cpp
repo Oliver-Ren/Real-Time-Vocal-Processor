@@ -2,21 +2,21 @@
 #include "combine.h"
 #include <math.h>
 
-void combine(fixed_type currentFrameWindowed[WIN_SIZE], fixed_type imag[WIN_SIZE]){
+void combine(fixed_type input_buffer[WIN_SIZE], fixed_type output_buffer[WIN_SIZE]){
+  
+  fixed_type currentFrameWindowed[WIN_SIZE] = 0;
+  fixed_type imag[WIN_SIZE] = 0;
+
   for (int i = 0; i < WIN_SIZE; i++){
     #pragma HLS PIPELINE II=1
-    currentFrameWindowed[i] = currentFrame[i] * wn[i] * sqrt_result_reverse;
+    currentFrameWindowed[i] = input_buffer[i] * wn[i] * sqrt_result_reverse;
   }
+
   FFT(currentFrameWindowed, imag);
   fixed_type magFrame[WIN_SIZE], phaseFrame[WIN_SIZE];
   cal_mag_phase(magFrame, phaseFrame, currentFrameWindowed, imag);
   fixed_type previousPhase[WIN_SIZE] = {0};
-  fixed_type time_domain[WIN_SIZE];
-  pitchshifting(magFrame, phaseFrame, previousPhase, time_domain);
-  printf("time_domain[714] = %f\n",(double)time_domain[714]);
-  // for (int ii=0; ii <WIN_SIZE; ii++){
-  //   printf("time_domain[%d] = %f\n", ii, (double)time_domain[ii]);
-  // }
+  pitchshifting(magFrame, phaseFrame, previousPhase, output_buffer);
   
 }
 
@@ -42,3 +42,5 @@ void cal_mag_phase(fixed_type magFrame[WIN_SIZE], fixed_type phaseFrame[WIN_SIZE
       phaseFrame[i] = -PI>>1;
   }
 }
+
+

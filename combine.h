@@ -24,14 +24,10 @@ const fixed_type PI                  = 3.14159265358979323846;
 #include "fft.h"
 #include "pitchshifting.h"
 
-const fixed_type currentFrame[WIN_SIZE] = {
-    #include "currentFrame.dat"
-};
-
 const fixed_type wn[WN_DATA_SIZE] = {
     #include "wn.dat"
 };
 
-void combine(fixed_type currentFrameWindowed[WIN_SIZE], fixed_type imag[WIN_SIZE]);
+void combine(fixed_type input_buffer[WIN_SIZE], fixed_type output_buffer[WIN_SIZE]);
 void cal_mag_phase(fixed_type magFrame[WIN_SIZE], fixed_type phaseFrame[WIN_SIZE], fixed_type real[WIN_SIZE], fixed_type imag[WIN_SIZE]);
 #endif

@@ -71,8 +71,8 @@ struct bitrp : public sc_module {
     sc_signal< sc_lv<32> > b_reg_116;
     sc_signal< sc_lv<64> > tmp_24_fu_191_p1;
     sc_signal< sc_lv<64> > tmp_25_fu_197_p1;
-    sc_signal< sc_lv<31> > tmp_107_fu_156_p1;
-    sc_signal< sc_lv<1> > tmp_108_fu_160_p1;
+    sc_signal< sc_lv<31> > tmp_108_fu_156_p1;
+    sc_signal< sc_lv<1> > tmp_109_fu_160_p1;
     sc_signal< sc_lv<31> > tmp_s_fu_172_p4;
     sc_signal< sc_lv<3> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
@@ -104,8 +104,8 @@ struct bitrp : public sc_module {
     void thread_exitcond_fu_132_p2();
     void thread_i_1_fu_138_p2();
     void thread_j_2_fu_150_p2();
-    void thread_tmp_107_fu_156_p1();
-    void thread_tmp_108_fu_160_p1();
+    void thread_tmp_108_fu_156_p1();
+    void thread_tmp_109_fu_160_p1();
     void thread_tmp_24_fu_191_p1();
     void thread_tmp_25_fu_197_p1();
     void thread_tmp_fu_186_p2();

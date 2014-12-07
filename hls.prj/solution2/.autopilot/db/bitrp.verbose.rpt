@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bitrp'
 ================================================================
-* Date:           Tue Dec  2 14:36:10 2014
+* Date:           Sun Dec  7 14:25:18 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -222,8 +222,8 @@ bb9:0  %a_3 = phi i11 [ 0, %entry ], [ %i_1, %bb7 ], [ %i_1, %bb6 ] ; <i11> [#us
 ST_2: a_3_cast [1/1] 0.00ns
 bb9:1  %a_3_cast = zext i11 %a_3 to i32                ; <i32> [#uses=2]
 
-ST_2: empty_153 [1/1] 0.00ns
-bb9:2  %empty_153 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+ST_2: empty_155 [1/1] 0.00ns
+bb9:2  %empty_155 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
 ST_2: exitcond [1/1] 2.11ns
 bb9:3  %exitcond = icmp eq i11 %a_3, -1024             ; <i1> [#uses=1]
@@ -260,14 +260,14 @@ bb5:5  %j_2 = add i4 %j, 1                             ; <i4> [#uses=1]
 ST_3: stg_20 [1/1] 0.00ns
 bb5:6  br i1 %exitcond2, label %bb6, label %bb4
 
-ST_3: tmp_107 [1/1] 0.00ns
-bb4:0  %tmp_107 = trunc i32 %b to i31                  ; <i31> [#uses=1]
-
 ST_3: tmp_108 [1/1] 0.00ns
-bb4:1  %tmp_108 = trunc i32 %a to i1                   ; <i1> [#uses=1]
+bb4:0  %tmp_108 = trunc i32 %b to i31                  ; <i31> [#uses=1]
+
+ST_3: tmp_109 [1/1] 0.00ns
+bb4:1  %tmp_109 = trunc i32 %a to i1                   ; <i1> [#uses=1]
 
 ST_3: b_1 [1/1] 0.00ns
-bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_107, i1 %tmp_108) ; <i32> [#uses=1]
+bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_108, i1 %tmp_109) ; <i32> [#uses=1]
 
 ST_3: tmp_s [1/1] 0.00ns
 bb4:3  %tmp_s = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %a, i32 1, i32 31) ; <i31> [#uses=1]
@@ -359,8 +359,8 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=<null>
-Port [ xreal_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x1d6b4e40; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x1a325c30; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ xreal_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x1470a950; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=2; mode=0x1459a920; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -370,7 +370,7 @@ Port [ ximag_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; ex
 stg_6          (br               ) [ 011111]
 a_3            (phi              ) [ 001100]
 a_3_cast       (zext             ) [ 001111]
-empty_153      (speclooptripcount) [ 000000]
+empty_155      (speclooptripcount) [ 000000]
 exitcond       (icmp             ) [ 001111]
 i_1            (add              ) [ 011111]
 stg_12         (br               ) [ 001111]
@@ -382,8 +382,8 @@ empty          (speclooptripcount) [ 000000]
 exitcond2      (icmp             ) [ 001111]
 j_2            (add              ) [ 001111]
 stg_20         (br               ) [ 000000]
-tmp_107        (trunc            ) [ 000000]
 tmp_108        (trunc            ) [ 000000]
+tmp_109        (trunc            ) [ 000000]
 b_1            (bitconcatenate   ) [ 001111]
 tmp_s          (partselect       ) [ 000000]
 a_1            (sext             ) [ 001111]
@@ -804,25 +804,25 @@ stg_47         (br               ) [ 011111]
 </bind>
 </comp>
 
-<comp id="156" class="1004" name="tmp_107_fu_156">
+<comp id="156" class="1004" name="tmp_108_fu_156">
 <pin_list>
 <pin id="157" dir="0" index="0" bw="32" slack="0"/>
 <pin id="158" dir="1" index="1" bw="31" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(30) " fcode="trunc"/>
-<opset="tmp_107/3 "/>
+<opset="tmp_108/3 "/>
 </bind>
 </comp>
 
-<comp id="160" class="1004" name="tmp_108_fu_160">
+<comp id="160" class="1004" name="tmp_109_fu_160">
 <pin_list>
 <pin id="161" dir="0" index="0" bw="32" slack="0"/>
 <pin id="162" dir="1" index="1" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(30) " fcode="trunc"/>
-<opset="tmp_108/3 "/>
+<opset="tmp_109/3 "/>
 </bind>
 </comp>
 
@@ -1177,8 +1177,8 @@ stg_47         (br               ) [ 011111]
 		exitcond2 : 1
 		j_2 : 1
 		stg_20 : 2
-		tmp_107 : 1
 		tmp_108 : 1
+		tmp_109 : 1
 		b_1 : 2
 		tmp_s : 1
 		a_1 : 2
@@ -1218,8 +1218,8 @@ stg_47         (br               ) [ 011111]
 |   zext   |   tmp_24_fu_191  |    0    |    0    |
 |          |   tmp_25_fu_197  |    0    |    0    |
 |----------|------------------|---------|---------|
-|   trunc  |  tmp_107_fu_156  |    0    |    0    |
-|          |  tmp_108_fu_160  |    0    |    0    |
+|   trunc  |  tmp_108_fu_156  |    0    |    0    |
+|          |  tmp_109_fu_160  |    0    |    0    |
 |----------|------------------|---------|---------|
 |bitconcatenate|    b_1_fu_164    |    0    |    0    |
 |----------|------------------|---------|---------|

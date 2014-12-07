@@ -115,10 +115,10 @@ bb9:1  %a_3_cast = zext i11 %a_3 to i32                ; <i32> [#uses=2]
 
 <node id="7" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-bb9:2  %empty_153 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+bb9:2  %empty_155 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
 ]]></node>
-<StgValue><ssdm name="empty_153"/></StgValue>
+<StgValue><ssdm name="empty_155"/></StgValue>
 </operation>
 
 <operation id="10" st_id="2" stage="1" lat="1">
@@ -300,10 +300,10 @@ bb5:6  br i1 %exitcond2, label %bb6, label %bb4
 
 <node id="20" bw="31" op_0_bw="32">
 <![CDATA[
-bb4:0  %tmp_107 = trunc i32 %b to i31                  ; <i31> [#uses=1]
+bb4:0  %tmp_108 = trunc i32 %b to i31                  ; <i31> [#uses=1]
 
 ]]></node>
-<StgValue><ssdm name="tmp_107"/></StgValue>
+<StgValue><ssdm name="tmp_108"/></StgValue>
 </operation>
 
 <operation id="22" st_id="3" stage="1" lat="1">
@@ -316,10 +316,10 @@ bb4:0  %tmp_107 = trunc i32 %b to i31                  ; <i31> [#uses=1]
 
 <node id="21" bw="1" op_0_bw="32">
 <![CDATA[
-bb4:1  %tmp_108 = trunc i32 %a to i1                   ; <i1> [#uses=1]
+bb4:1  %tmp_109 = trunc i32 %a to i1                   ; <i1> [#uses=1]
 
 ]]></node>
-<StgValue><ssdm name="tmp_108"/></StgValue>
+<StgValue><ssdm name="tmp_109"/></StgValue>
 </operation>
 
 <operation id="23" st_id="3" stage="1" lat="1">
@@ -332,7 +332,7 @@ bb4:1  %tmp_108 = trunc i32 %a to i1                   ; <i1> [#uses=1]
 
 <node id="22" bw="32" op_0_bw="32" op_1_bw="31" op_2_bw="1">
 <![CDATA[
-bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_107, i1 %tmp_108) ; <i32> [#uses=1]
+bb4:2  %b_1 = call i32 @_ssdm_op_BitConcatenate.i32.i31.i1(i31 %tmp_108, i1 %tmp_109) ; <i32> [#uses=1]
 
 ]]></node>
 <StgValue><ssdm name="b_1"/></StgValue>

@@ -166,7 +166,7 @@ set gportInitilizer14 ""
 set gextern14 0
 set gport14 [list $gportName14 $gportInterface14 $gportData14 $gportPointer14 $gportArrayDim14 $gportConst14 $gportVolatile14 $gportInitilizer14 $gextern14]
 lappend globalVariable $gport14
-set gportName15 "currentFrame"
+set gportName15 "input"
 set gportInterface15 "memory"
 set gportData15 "[list ap_fixed "32" "12" "SC_TRN" "SC_WRAP" "0" ]"
 set gportPointer15 "0"

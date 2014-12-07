@@ -134,7 +134,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>31</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -149,7 +149,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>28</second>
+                      <second>31</second>
                     </item>
                   </second>
                 </item>
@@ -205,7 +205,7 @@
               <name>exitcond1</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>31</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -220,7 +220,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>28</second>
+                      <second>31</second>
                     </item>
                   </second>
                 </item>
@@ -247,7 +247,7 @@
               <name>i_2</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>31</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -262,7 +262,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>28</second>
+                      <second>31</second>
                     </item>
                   </second>
                 </item>
@@ -289,7 +289,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>31</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -304,7 +304,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>28</second>
+                      <second>31</second>
                     </item>
                   </second>
                 </item>
@@ -332,7 +332,7 @@
               <name>tmp</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -347,7 +347,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -373,7 +373,7 @@
               <name>magFrame_V_addr</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -388,7 +388,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -416,7 +416,7 @@
               <name>real_V_addr</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -431,7 +431,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -459,7 +459,7 @@
               <name>imag_V_addr</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -474,7 +474,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -502,7 +502,7 @@
               <name>real_V_load</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -517,7 +517,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -543,7 +543,7 @@
               <name>imag_V_load</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -558,7 +558,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -584,7 +584,7 @@
               <name>call_ret</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -599,7 +599,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -627,7 +627,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>30</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -642,7 +642,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>30</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -669,7 +669,7 @@
               <name>arctan_V</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>31</lineNumber>
+              <lineNumber>34</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -684,7 +684,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>31</second>
+                      <second>34</second>
                     </item>
                   </second>
                 </item>
@@ -712,7 +712,7 @@
               <name>arctan_V_2_cast</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>31</lineNumber>
+              <lineNumber>34</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -727,7 +727,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>31</second>
+                      <second>34</second>
                     </item>
                   </second>
                 </item>
@@ -753,7 +753,7 @@
               <name>tmp_s</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>33</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -768,7 +768,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>33</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
@@ -795,7 +795,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>33</lineNumber>
+              <lineNumber>36</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -810,7 +810,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>33</second>
+                      <second>36</second>
                     </item>
                   </second>
                 </item>
@@ -835,10 +835,10 @@
             <Obj>
               <type>0</type>
               <id>28</id>
-              <name>tmp_129</name>
+              <name>tmp_130</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>38</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -853,13 +853,13 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>35</second>
+                      <second>38</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_129_reg_288</rtlName>
+              <rtlName>tmp_130_reg_288</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -881,7 +881,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>38</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -896,7 +896,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>35</second>
+                      <second>38</second>
                     </item>
                   </second>
                 </item>
@@ -921,10 +921,10 @@
             <Obj>
               <type>0</type>
               <id>31</id>
-              <name>tmp_130</name>
+              <name>tmp_131</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>38</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -939,13 +939,13 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>35</second>
+                      <second>38</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_130_reg_292</rtlName>
+              <rtlName>tmp_131_reg_292</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -967,7 +967,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>35</lineNumber>
+              <lineNumber>38</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -982,7 +982,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>35</second>
+                      <second>38</second>
                     </item>
                   </second>
                 </item>
@@ -1010,7 +1010,7 @@
               <name>r_V</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>36</lineNumber>
+              <lineNumber>39</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1025,7 +1025,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>36</second>
+                      <second>39</second>
                     </item>
                   </second>
                 </item>
@@ -1052,7 +1052,7 @@
               <name>phaseFrame_V_addr_1</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>36</lineNumber>
+              <lineNumber>39</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1067,7 +1067,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>36</second>
+                      <second>39</second>
                     </item>
                   </second>
                 </item>
@@ -1095,7 +1095,7 @@
               <name>r_V_cast_cast</name>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>36</lineNumber>
+              <lineNumber>39</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1110,7 +1110,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>36</second>
+                      <second>39</second>
                     </item>
                   </second>
                 </item>
@@ -1136,7 +1136,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>36</lineNumber>
+              <lineNumber>39</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1151,7 +1151,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>36</second>
+                      <second>39</second>
                     </item>
                   </second>
                 </item>
@@ -1178,7 +1178,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>36</lineNumber>
+              <lineNumber>39</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1193,7 +1193,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>36</second>
+                      <second>39</second>
                     </item>
                   </second>
                 </item>
@@ -1216,6 +1216,761 @@
             <Obj>
               <type>0</type>
               <id>40</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>40</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>40</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>123</item>
+            <item>124</item>
+            <item>125</item>
+          </oprand_edges>
+          <opcode>br</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_32">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>42</id>
+              <name>not2</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>42</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>42</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>not2_fu_194_p2</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>1</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>147</item>
+            <item>148</item>
+          </oprand_edges>
+          <opcode>icmp</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_33">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>43</id>
+              <name>not3</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>42</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>42</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>not3_fu_200_p2</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>1</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>149</item>
+            <item>150</item>
+          </oprand_edges>
+          <opcode>icmp</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_34">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>44</id>
+              <name>or_cond</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>42</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>42</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>or_cond_fu_206_p2</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>1</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>151</item>
+            <item>152</item>
+          </oprand_edges>
+          <opcode>and</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_35">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>45</id>
+              <name>phaseFrame_V_addr_3</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>43</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>43</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>10</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>153</item>
+            <item>154</item>
+            <item>155</item>
+          </oprand_edges>
+          <opcode>getelementptr</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_36">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>46</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>42</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>42</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>156</item>
+            <item>157</item>
+            <item>158</item>
+          </oprand_edges>
+          <opcode>br</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_37">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>48</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>45</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>45</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>160</item>
+            <item>161</item>
+          </oprand_edges>
+          <opcode>store</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_38">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>49</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>45</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>45</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>162</item>
+          </oprand_edges>
+          <opcode>br</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_39">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>51</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>43</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>43</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>164</item>
+            <item>165</item>
+          </oprand_edges>
+          <opcode>store</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_40">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>52</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>43</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>43</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>166</item>
+          </oprand_edges>
+          <opcode>br</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_41">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>54</id>
+              <name>r_V_trunc_ext_cast</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>41</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>41</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>r_V_s_fu_229_p0</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>24</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>136</item>
+          </oprand_edges>
+          <opcode>sext</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_42">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>55</id>
+              <name>r_V_s</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>41</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>41</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>r_V_s_fu_229_p2</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>24</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>137</item>
+            <item>139</item>
+          </oprand_edges>
+          <opcode>add</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_43">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>56</id>
+              <name>phaseFrame_V_addr_2</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>41</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>41</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>10</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>140</item>
+            <item>141</item>
+            <item>142</item>
+          </oprand_edges>
+          <opcode>getelementptr</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_44">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>57</id>
+              <name>r_V_cast_cast_311</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>41</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>41</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>r_V_cast_cast_311_fu_235_p1</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>26</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>143</item>
+          </oprand_edges>
+          <opcode>sext</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_45">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>58</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>41</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>41</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>144</item>
+            <item>145</item>
+          </oprand_edges>
+          <opcode>store</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_46">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>59</id>
+              <name/>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>41</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>41</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>146</item>
+          </oprand_edges>
+          <opcode>br</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_47">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>61</id>
+              <name>phaseFrame_V_addr</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>37</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>37</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <coreName/>
+            </Obj>
+            <bitwidth>10</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>102</item>
+            <item>103</item>
+            <item>104</item>
+          </oprand_edges>
+          <opcode>getelementptr</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_48">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>62</id>
+              <name>arctan_V_2_cast8</name>
+              <fileName>combine.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>37</lineNumber>
+              <contextFuncName>cal_mag_phase</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>combine.cpp</first>
+                        <second>cal_mag_phase</second>
+                      </first>
+                      <second>37</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>arctan_V_2_cast8_fu_240_p1</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>26</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>105</item>
+          </oprand_edges>
+          <opcode>sext</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_49">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>63</id>
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
@@ -1246,761 +2001,6 @@
             <bitwidth>0</bitwidth>
           </Value>
           <oprand_edges>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>123</item>
-            <item>124</item>
-            <item>125</item>
-          </oprand_edges>
-          <opcode>br</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_32">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>42</id>
-              <name>not2</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>39</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>39</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>not2_fu_194_p2</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>1</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>2</count>
-            <item_version>0</item_version>
-            <item>147</item>
-            <item>148</item>
-          </oprand_edges>
-          <opcode>icmp</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_33">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>43</id>
-              <name>not3</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>39</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>39</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>not3_fu_200_p2</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>1</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>2</count>
-            <item_version>0</item_version>
-            <item>149</item>
-            <item>150</item>
-          </oprand_edges>
-          <opcode>icmp</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_34">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>44</id>
-              <name>or_cond</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>39</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>39</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>or_cond_fu_206_p2</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>1</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>2</count>
-            <item_version>0</item_version>
-            <item>151</item>
-            <item>152</item>
-          </oprand_edges>
-          <opcode>and</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_35">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>45</id>
-              <name>phaseFrame_V_addr_3</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>40</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>40</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>10</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>153</item>
-            <item>154</item>
-            <item>155</item>
-          </oprand_edges>
-          <opcode>getelementptr</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_36">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>46</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>39</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>39</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>156</item>
-            <item>157</item>
-            <item>158</item>
-          </oprand_edges>
-          <opcode>br</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_37">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>48</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>42</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>42</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>2</count>
-            <item_version>0</item_version>
-            <item>160</item>
-            <item>161</item>
-          </oprand_edges>
-          <opcode>store</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_38">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>49</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>42</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>42</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>162</item>
-          </oprand_edges>
-          <opcode>br</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_39">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>51</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>40</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>40</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>2</count>
-            <item_version>0</item_version>
-            <item>164</item>
-            <item>165</item>
-          </oprand_edges>
-          <opcode>store</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_40">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>52</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>40</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>40</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>166</item>
-          </oprand_edges>
-          <opcode>br</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_41">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>54</id>
-              <name>r_V_trunc_ext_cast</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>38</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>38</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>r_V_s_fu_229_p0</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>24</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>136</item>
-          </oprand_edges>
-          <opcode>sext</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_42">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>55</id>
-              <name>r_V_s</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>38</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>38</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>r_V_s_fu_229_p2</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>24</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>2</count>
-            <item_version>0</item_version>
-            <item>137</item>
-            <item>139</item>
-          </oprand_edges>
-          <opcode>add</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_43">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>56</id>
-              <name>phaseFrame_V_addr_2</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>38</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>38</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>10</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>140</item>
-            <item>141</item>
-            <item>142</item>
-          </oprand_edges>
-          <opcode>getelementptr</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_44">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>57</id>
-              <name>r_V_cast_cast_310</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>38</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>38</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>r_V_cast_cast_310_fu_235_p1</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>26</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>143</item>
-          </oprand_edges>
-          <opcode>sext</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_45">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>58</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>38</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>38</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>2</count>
-            <item_version>0</item_version>
-            <item>144</item>
-            <item>145</item>
-          </oprand_edges>
-          <opcode>store</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_46">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>59</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>38</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>38</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>146</item>
-          </oprand_edges>
-          <opcode>br</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_47">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>61</id>
-              <name>phaseFrame_V_addr</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>34</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>34</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>10</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>102</item>
-            <item>103</item>
-            <item>104</item>
-          </oprand_edges>
-          <opcode>getelementptr</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_48">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>62</id>
-              <name>arctan_V_2_cast8</name>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>34</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>34</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>arctan_V_2_cast8_fu_240_p1</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>26</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>105</item>
-          </oprand_edges>
-          <opcode>sext</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_49">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>63</id>
-              <name/>
-              <fileName>combine.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>34</lineNumber>
-              <contextFuncName>cal_mag_phase</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>combine.cpp</first>
-                        <second>cal_mag_phase</second>
-                      </first>
-                      <second>34</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <coreName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
             <count>2</count>
             <item_version>0</item_version>
             <item>106</item>
@@ -2016,7 +2016,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>34</lineNumber>
+              <lineNumber>37</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -2031,7 +2031,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>34</second>
+                      <second>37</second>
                     </item>
                   </second>
                 </item>
@@ -2057,7 +2057,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>31</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -2072,7 +2072,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>28</second>
+                      <second>31</second>
                     </item>
                   </second>
                 </item>
@@ -2098,7 +2098,7 @@
               <name/>
               <fileName>combine.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>44</lineNumber>
+              <lineNumber>47</lineNumber>
               <contextFuncName>cal_mag_phase</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -2113,7 +2113,7 @@
                         <first>combine.cpp</first>
                         <second>cal_mag_phase</second>
                       </first>
-                      <second>44</second>
+                      <second>47</second>
                     </item>
                   </second>
                 </item>
@@ -6197,7 +6197,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_129_reg_288</first>
+          <first>tmp_130_reg_288</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -6216,7 +6216,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_130_reg_292</first>
+          <first>tmp_131_reg_292</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7255,7 +7255,7 @@
         </second>
       </item>
       <item>
-        <first>r_V_cast_cast_310_fu_235</first>
+        <first>r_V_cast_cast_311_fu_235</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -7303,7 +7303,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_129_fu_178</first>
+        <first>tmp_130_fu_178</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -7311,7 +7311,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_130_fu_186</first>
+        <first>tmp_131_fu_186</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -7657,7 +7657,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_129_reg_288</first>
+        <first>tmp_130_reg_288</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -7665,7 +7665,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_130_reg_292</first>
+        <first>tmp_131_reg_292</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

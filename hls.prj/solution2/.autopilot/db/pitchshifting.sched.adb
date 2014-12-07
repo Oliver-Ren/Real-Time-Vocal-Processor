@@ -1265,7 +1265,7 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>tmp_131</name>
+						<name>tmp_132</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>21</lineNumber>
@@ -1502,7 +1502,7 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>tmp_132</name>
+						<name>tmp_133</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -1602,7 +1602,7 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>tmp_133</name>
+						<name>tmp_134</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -1800,7 +1800,7 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>tmp_134</name>
+						<name>tmp_135</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -1899,7 +1899,7 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>tmp_135</name>
+						<name>tmp_136</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -1949,7 +1949,7 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>tmp_136</name>
+						<name>tmp_137</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -2195,7 +2195,7 @@
 					<Obj>
 						<type>0</type>
 						<id>59</id>
-						<name>tmp_137</name>
+						<name>tmp_138</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>67</lineNumber>
@@ -2244,7 +2244,7 @@
 					<Obj>
 						<type>0</type>
 						<id>60</id>
-						<name>tmp_86</name>
+						<name>tmp_85</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>67</lineNumber>
@@ -3144,7 +3144,7 @@
 					<Obj>
 						<type>0</type>
 						<id>84</id>
-						<name>tmp_144</name>
+						<name>tmp_145</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>26</lineNumber>
@@ -3959,7 +3959,7 @@
 					<Obj>
 						<type>0</type>
 						<id>109</id>
-						<name>tmp_138</name>
+						<name>tmp_139</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -4059,7 +4059,7 @@
 					<Obj>
 						<type>0</type>
 						<id>111</id>
-						<name>tmp_139</name>
+						<name>tmp_140</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -4257,7 +4257,7 @@
 					<Obj>
 						<type>0</type>
 						<id>115</id>
-						<name>tmp_140</name>
+						<name>tmp_141</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -4308,7 +4308,7 @@
 					<Obj>
 						<type>0</type>
 						<id>116</id>
-						<name>tmp_i1_314</name>
+						<name>tmp_i1_315</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -4356,7 +4356,7 @@
 					<Obj>
 						<type>0</type>
 						<id>117</id>
-						<name>tmp_141</name>
+						<name>tmp_142</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -4406,7 +4406,7 @@
 					<Obj>
 						<type>0</type>
 						<id>118</id>
-						<name>tmp_142</name>
+						<name>tmp_143</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>66</lineNumber>
@@ -4652,7 +4652,7 @@
 					<Obj>
 						<type>0</type>
 						<id>123</id>
-						<name>tmp_143</name>
+						<name>tmp_144</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>67</lineNumber>
@@ -4701,7 +4701,7 @@
 					<Obj>
 						<type>0</type>
 						<id>124</id>
-						<name>tmp_88</name>
+						<name>tmp_87</name>
 						<fileName>pitchshifting.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>67</lineNumber>
@@ -5085,7 +5085,7 @@
 					<Obj>
 						<type>0</type>
 						<id>133</id>
-						<name>tmp_i_315</name>
+						<name>tmp_i_316</name>
 						<fileName>cordic.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>12</lineNumber>
@@ -5382,7 +5382,7 @@
 					<Obj>
 						<type>0</type>
 						<id>141</id>
-						<name>tmp_145</name>
+						<name>tmp_146</name>
 						<fileName>cordic.cpp</fileName>
 						<fileDirectory>/home/student/kl694/ece5775/final/</fileDirectory>
 						<lineNumber>23</lineNumber>
@@ -13566,6 +13566,23 @@
 		<count>3</count>
 		<item_version>0</item_version>
 		<item class_id="35" tracking_level="1" version="0" object_id="_643">
+			<region_name>Loop 3</region_name>
+			<basic_blocks>
+				<count>2</count>
+				<item_version>0</item_version>
+				<item>196</item>
+				<item>215</item>
+			</basic_blocks>
+			<nodes>
+				<count>0</count>
+				<item_version>0</item_version>
+			</nodes>
+			<anchor_node>-1</anchor_node>
+			<region_type>8</region_type>
+			<interval>1</interval>
+			<pipe_depth>10</pipe_depth>
+		</item>
+		<item class_id_reference="35" object_id="_644">
 			<region_name>Loop 2</region_name>
 			<basic_blocks>
 				<count>9</count>
@@ -13588,23 +13605,6 @@
 			<region_type>8</region_type>
 			<interval>1</interval>
 			<pipe_depth>46</pipe_depth>
-		</item>
-		<item class_id_reference="35" object_id="_644">
-			<region_name>Loop 3</region_name>
-			<basic_blocks>
-				<count>2</count>
-				<item_version>0</item_version>
-				<item>196</item>
-				<item>215</item>
-			</basic_blocks>
-			<nodes>
-				<count>0</count>
-				<item_version>0</item_version>
-			</nodes>
-			<anchor_node>-1</anchor_node>
-			<region_type>8</region_type>
-			<interval>1</interval>
-			<pipe_depth>10</pipe_depth>
 		</item>
 		<item class_id_reference="35" object_id="_645">
 			<region_name>Loop 1</region_name>

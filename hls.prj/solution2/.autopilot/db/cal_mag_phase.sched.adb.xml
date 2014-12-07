@@ -498,10 +498,10 @@ bb:14  br i1 %tmp_s, label %bb1, label %bb2
 
 <node id="28" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-bb2:0  %tmp_129 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %real_V_load, i32 31) ; <i1> [#uses=2]
+bb2:0  %tmp_130 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %real_V_load, i32 31) ; <i1> [#uses=2]
 
 ]]></node>
-<StgValue><ssdm name="tmp_129"/></StgValue>
+<StgValue><ssdm name="tmp_130"/></StgValue>
 </operation>
 
 <operation id="56" st_id="3" stage="1" lat="1">
@@ -515,7 +515,7 @@ bb2:0  %tmp_129 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %real_V_load, i32 3
 
 <node id="29" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-bb2:1  br i1 %tmp_129, label %bb5, label %bb22
+bb2:1  br i1 %tmp_130, label %bb5, label %bb22
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -527,16 +527,16 @@ bb2:1  br i1 %tmp_129, label %bb5, label %bb22
 <condition id="56">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
+<literal name="tmp_130" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="31" bw="1" op_0_bw="1" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-bb5:0  %tmp_130 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %imag_V_load, i32 31) ; <i1> [#uses=1]
+bb5:0  %tmp_131 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %imag_V_load, i32 31) ; <i1> [#uses=1]
 
 ]]></node>
-<StgValue><ssdm name="tmp_130"/></StgValue>
+<StgValue><ssdm name="tmp_131"/></StgValue>
 </operation>
 
 <operation id="58" st_id="3" stage="1" lat="1">
@@ -545,13 +545,13 @@ bb5:0  %tmp_130 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %imag_V_load, i32 3
 <condition id="56">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
+<literal name="tmp_130" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="32" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-bb5:1  br i1 %tmp_130, label %bb10, label %bb12
+bb5:1  br i1 %tmp_131, label %bb10, label %bb12
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -563,14 +563,14 @@ bb5:1  br i1 %tmp_130, label %bb10, label %bb12
 <condition id="57">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
 <literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="40" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-bb10:0  br i1 %tmp_129, label %bb17, label %bb22
+bb10:0  br i1 %tmp_130, label %bb17, label %bb22
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -582,7 +582,7 @@ bb10:0  br i1 %tmp_129, label %bb17, label %bb22
 <condition id="58">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -600,7 +600,7 @@ bb22:0  %not2 = icmp eq i32 %real_V_load, 0             ; <i1> [#uses=1]
 <condition id="58">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -618,7 +618,7 @@ bb22:1  %not3 = icmp sgt i32 %imag_V_load, 0            ; <i1> [#uses=1]
 <condition id="58">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -636,7 +636,7 @@ bb22:2  %or_cond = and i1 %not2, %not3                  ; <i1> [#uses=1]
 <condition id="58">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -654,7 +654,7 @@ bb22:3  %phaseFrame_V_addr_3 = getelementptr [1024 x i26]* %phaseFrame_V, i64 0,
 <condition id="58">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -672,7 +672,7 @@ bb22:4  br i1 %or_cond, label %bb37, label %bb35
 <condition id="59">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 <literal name="or_cond" val="0"/>
 </and_exp></or_exp>
 </condition>
@@ -691,7 +691,7 @@ bb35:0  store i26 -1647099, i26* %phaseFrame_V_addr_3
 <condition id="60">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 <literal name="or_cond" val="1"/>
 </and_exp></or_exp>
 </condition>
@@ -1165,8 +1165,8 @@ bb:12  %arctan_V_2_cast = sext i22 %arctan_V to i23    ; <i23> [#uses=1]
 <condition id="61">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
-<literal name="tmp_130" val="0"/>
+<literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1184,8 +1184,8 @@ bb12:0  %r_V = add i23 %arctan_V_2_cast, 3294198        ; <i23> [#uses=1]
 <condition id="61">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
-<literal name="tmp_130" val="0"/>
+<literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1203,8 +1203,8 @@ bb12:1  %phaseFrame_V_addr_1 = getelementptr [1024 x i26]* %phaseFrame_V, i64 0,
 <condition id="61">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
-<literal name="tmp_130" val="0"/>
+<literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1222,8 +1222,8 @@ bb12:2  %r_V_cast_cast = zext i23 %r_V to i26           ; <i26> [#uses=1]
 <condition id="61">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
-<literal name="tmp_130" val="0"/>
+<literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1241,8 +1241,8 @@ bb12:3  store i26 %r_V_cast_cast, i26* %phaseFrame_V_addr_1
 <condition id="62">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
 <literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1260,8 +1260,8 @@ bb17:0  %r_V_trunc_ext_cast = sext i22 %arctan_V to i24 ; <i24> [#uses=1]
 <condition id="62">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
 <literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1279,8 +1279,8 @@ bb17:1  %r_V_s = add i24 %r_V_trunc_ext_cast, -3294198  ; <i24> [#uses=1]
 <condition id="62">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
 <literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1298,17 +1298,17 @@ bb17:2  %phaseFrame_V_addr_2 = getelementptr [1024 x i26]* %phaseFrame_V, i64 0,
 <condition id="62">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
 <literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="57" bw="26" op_0_bw="24">
 <![CDATA[
-bb17:3  %r_V_cast_cast_310 = sext i24 %r_V_s to i26     ; <i26> [#uses=1]
+bb17:3  %r_V_cast_cast_311 = sext i24 %r_V_s to i26     ; <i26> [#uses=1]
 
 ]]></node>
-<StgValue><ssdm name="r_V_cast_cast_310"/></StgValue>
+<StgValue><ssdm name="r_V_cast_cast_311"/></StgValue>
 </operation>
 
 <operation id="101" st_id="16" stage="1" lat="1">
@@ -1317,14 +1317,14 @@ bb17:3  %r_V_cast_cast_310 = sext i24 %r_V_s to i26     ; <i26> [#uses=1]
 <condition id="62">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
 <literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="58" bw="0" op_0_bw="26" op_1_bw="10">
 <![CDATA[
-bb17:4  store i26 %r_V_cast_cast_310, i26* %phaseFrame_V_addr_2
+bb17:4  store i26 %r_V_cast_cast_311, i26* %phaseFrame_V_addr_2
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -1809,10 +1809,10 @@ bb:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i
 
 <node id="13" bw="32" op_0_bw="32" op_1_bw="8">
 <![CDATA[
-bb:1  %tmp_68 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str170) nounwind ; <i32> [#uses=1]
+bb:1  %tmp_67 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str170) nounwind ; <i32> [#uses=1]
 
 ]]></node>
-<StgValue><ssdm name="tmp_68"/></StgValue>
+<StgValue><ssdm name="tmp_67"/></StgValue>
 </operation>
 
 <operation id="128" st_id="38" stage="1" lat="1">
@@ -1885,8 +1885,8 @@ bb:10  store i32 %call_ret, i32* %magFrame_V_addr
 <condition id="61">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
-<literal name="tmp_130" val="0"/>
+<literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="0"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1904,7 +1904,7 @@ bb12:4  br label %bb42
 <condition id="59">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 <literal name="or_cond" val="0"/>
 </and_exp></or_exp>
 </condition>
@@ -1923,7 +1923,7 @@ bb35:1  br label %bb42
 <condition id="60">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="0"/>
+<literal name="tmp_130" val="0"/>
 <literal name="or_cond" val="1"/>
 </and_exp></or_exp>
 </condition>
@@ -1942,8 +1942,8 @@ bb37:1  br label %bb42
 <condition id="62">
 <or_exp><and_exp><literal name="exitcond1" val="0"/>
 <literal name="tmp_s" val="0"/>
-<literal name="tmp_129" val="1"/>
 <literal name="tmp_130" val="1"/>
+<literal name="tmp_131" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1982,10 +1982,10 @@ bb1:3  br label %bb42
 
 <node id="66" bw="32" op_0_bw="32" op_1_bw="8" op_2_bw="32">
 <![CDATA[
-bb42:0  %empty_311 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str170, i32 %tmp_68) nounwind ; <i32> [#uses=0]
+bb42:0  %empty_312 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str170, i32 %tmp_67) nounwind ; <i32> [#uses=0]
 
 ]]></node>
-<StgValue><ssdm name="empty_311"/></StgValue>
+<StgValue><ssdm name="empty_312"/></StgValue>
 </operation>
 
 <operation id="138" st_id="38" stage="1" lat="1">

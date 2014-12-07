@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cal_mag_phase'" level="0">
-<item name = "Date">Tue Dec  2 14:36:13 2014
+<item name = "Date">Sun Dec  7 14:25:22 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -79,8 +79,8 @@
 <item name = "Shift register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="exitcond1_reg_244">0, 2, 1, 0</column>
-<column name="tmp_129_reg_288">0, 2, 1, 0</column>
-<column name="tmp_130_reg_292">0, 2, 1, 0</column>
+<column name="tmp_130_reg_288">0, 2, 1, 0</column>
+<column name="tmp_131_reg_292">0, 2, 1, 0</column>
 <column name="tmp_reg_253">0, 22, 64, 53</column>
 <column name="tmp_s_reg_284">0, 2, 1, 0</column>
 </table>
@@ -154,8 +154,8 @@
 <column name="i_reg_127">11, 11, 0</column>
 <column name="imag_V_load_reg_278">32, 32, 0</column>
 <column name="real_V_load_reg_272">32, 32, 0</column>
-<column name="tmp_129_reg_288">1, 1, 0</column>
-<column name="tmp_130_reg_292">1, 1, 0</column>
+<column name="tmp_130_reg_288">1, 1, 0</column>
+<column name="tmp_131_reg_292">1, 1, 0</column>
 <column name="tmp_reg_253">11, 64, 53</column>
 <column name="tmp_s_reg_284">1, 1, 0</column>
 </table>

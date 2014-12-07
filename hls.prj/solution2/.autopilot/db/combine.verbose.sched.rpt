@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'combine'
 ================================================================
-* Date:           Tue Dec  2 14:36:08 2014
+* Date:           Sun Dec  7 14:25:16 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -41,7 +41,9 @@
         |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
         | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
         +----------+------+------+----------+-----------+-----------+------+----------+
-        |- Loop 1  |  1029|  1029|         7|          1|          1|  1024|    yes   |
+        |- Loop 1  |  1024|  1024|         1|          -|          -|  1024|    no    |
+        |- Loop 2  |  2048|  2048|         2|          -|          -|  1024|    no    |
+        |- Loop 3  |  1029|  1029|         7|          1|          1|  1024|    yes   |
         +----------+------+------+----------+-----------+-----------+------+----------+
 
 
@@ -127,194 +129,274 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 14
+* Number of FSM states: 17
 * Pipeline: 1
-  Pipeline-0: II = 1, D = 7, States = { 2 3 4 5 6 7 8 }
+  Pipeline-0: II = 1, D = 7, States = { 5 6 7 8 9 10 11 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 
 	2  / true
 2 --> 
-	9  / (exitcond)
-	3  / (!exitcond)
+	3  / (exitcond7)
+	2  / (!exitcond7)
 3 --> 
-	4  / true
+	4  / (!exitcond6)
+	5  / (exitcond6)
 4 --> 
-	5  / true
+	3  / true
 5 --> 
-	6  / true
+	12  / (exitcond)
+	6  / (!exitcond)
 6 --> 
 	7  / true
 7 --> 
 	8  / true
 8 --> 
-	2  / true
+	9  / true
 9 --> 
 	10  / true
 10 --> 
 	11  / true
 11 --> 
-	12  / true
+	5  / true
 12 --> 
 	13  / true
 13 --> 
 	14  / true
 14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
 * FSM state operations: 
 
  <State 1>: 1.39ns
+ST_1: currentFrame_V [1/1] 0.00ns
+entry:0  %currentFrame_V = alloca [1024 x i17], align 4  ; <[1024 x i17]*> [#uses=3]
+
 ST_1: magFrame_V [1/1] 0.00ns
-entry:0  %magFrame_V = alloca [1024 x i32], align 4      ; <[1024 x i32]*> [#uses=2]
+entry:1  %magFrame_V = alloca [1024 x i32], align 4      ; <[1024 x i32]*> [#uses=2]
 
 ST_1: phaseFrame_V [1/1] 0.00ns
-entry:1  %phaseFrame_V = alloca [1024 x i26], align 4    ; <[1024 x i26]*> [#uses=2]
+entry:2  %phaseFrame_V = alloca [1024 x i26], align 4    ; <[1024 x i26]*> [#uses=2]
 
 ST_1: previousPhase_V [1/1] 0.00ns
-entry:2  %previousPhase_V = alloca [1024 x i1], align 1  ; <[1024 x i1]*> [#uses=2]
+entry:3  %previousPhase_V = alloca [1024 x i1], align 1  ; <[1024 x i1]*> [#uses=2]
 
 ST_1: time_domain_V [1/1] 0.00ns
-entry:3  %time_domain_V = alloca [1024 x i32], align 4   ; <[1024 x i32]*> [#uses=1]
+entry:4  %time_domain_V = alloca [1024 x i32], align 4   ; <[1024 x i32]*> [#uses=1]
 
-ST_1: stg_19 [1/1] 1.39ns
-entry:4  br label %bb2
+ST_1: stg_23 [1/1] 1.39ns
+entry:5  br label %bb1
 
 
- <State 2>: 2.39ns
-ST_2: i [1/1] 0.00ns
-bb2:0  %i = phi i11 [ 0, %entry ], [ %i_1, %bb ]       ; <i11> [#uses=3]
+ <State 2>: 3.50ns
+ST_2: p_049_rec [1/1] 0.00ns
+bb1:0  %p_049_rec = phi i11 [ 0, %entry ], [ %p_rec, %bb ] ; <i11> [#uses=3]
 
-ST_2: exitcond [1/1] 2.11ns
-bb2:1  %exitcond = icmp eq i11 %i, -1024               ; <i1> [#uses=1]
+ST_2: p_049_rec_cast [1/1] 0.00ns
+bb1:1  %p_049_rec_cast = zext i11 %p_049_rec to i64    ; <i64> [#uses=1]
 
-ST_2: i_1 [1/1] 1.84ns
-bb2:2  %i_1 = add i11 %i, 1                            ; <i11> [#uses=1]
+ST_2: empty [1/1] 0.00ns
+bb1:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
-ST_2: stg_23 [1/1] 0.00ns
-bb2:3  br i1 %exitcond, label %bb3, label %bb
+ST_2: exitcond7 [1/1] 2.11ns
+bb1:3  %exitcond7 = icmp eq i11 %p_049_rec, -1024      ; <i1> [#uses=1]
 
-ST_2: tmp_s [1/1] 0.00ns
-bb:3  %tmp_s = zext i11 %i to i64                     ; <i64> [#uses=3]
+ST_2: p_rec [1/1] 1.84ns
+bb1:4  %p_rec = add i11 %p_049_rec, 1                  ; <i11> [#uses=1]
+
+ST_2: stg_29 [1/1] 1.39ns
+bb1:5  br i1 %exitcond7, label %bb4, label %bb
 
 ST_2: currentFrame_V_addr [1/1] 0.00ns
-bb:4  %currentFrame_V_addr = getelementptr [1024 x i17]* @currentFrame_V, i64 0, i64 %tmp_s ; <i17*> [#uses=1]
+bb:0  %currentFrame_V_addr = getelementptr [1024 x i17]* %currentFrame_V, i64 0, i64 %p_049_rec_cast ; <i17*> [#uses=1]
 
-ST_2: currentFrame_V_load [2/2] 2.39ns
-bb:5  %currentFrame_V_load = load i17* %currentFrame_V_addr ; <i17> [#uses=1]
+ST_2: stg_31 [1/1] 2.39ns
+bb:1  store i17 0, i17* %currentFrame_V_addr
 
-ST_2: wn_V_addr [1/1] 0.00ns
-bb:7  %wn_V_addr = getelementptr [1024 x i20]* @wn_V, i64 0, i64 %tmp_s ; <i20*> [#uses=1]
-
-ST_2: wn_V_load [2/2] 2.39ns
-bb:8  %wn_V_load = load i20* %wn_V_addr               ; <i20> [#uses=1]
+ST_2: stg_32 [1/1] 0.00ns
+bb:2  br label %bb1
 
 
- <State 3>: 2.39ns
-ST_3: currentFrame_V_load [1/2] 2.39ns
-bb:5  %currentFrame_V_load = load i17* %currentFrame_V_addr ; <i17> [#uses=1]
+ <State 3>: 3.50ns
+ST_3: counter_input [1/1] 0.00ns
+bb4:0  %counter_input = phi i11 [ %counter_input_1, %bb3 ], [ 0, %bb1 ] ; <i11> [#uses=3]
 
-ST_3: wn_V_load [1/2] 2.39ns
-bb:8  %wn_V_load = load i20* %wn_V_addr               ; <i20> [#uses=1]
+ST_3: empty_147 [1/1] 0.00ns
+bb4:1  %empty_147 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
+ST_3: exitcond6 [1/1] 2.11ns
+bb4:2  %exitcond6 = icmp eq i11 %counter_input, -1024  ; <i1> [#uses=1]
 
- <State 4>: 6.66ns
-ST_4: OP1_V_cast [1/1] 0.00ns
-bb:6  %OP1_V_cast = zext i17 %currentFrame_V_load to i37 ; <i37> [#uses=1]
+ST_3: counter_input_1 [1/1] 1.84ns
+bb4:3  %counter_input_1 = add i11 %counter_input, 1    ; <i11> [#uses=1]
 
-ST_4: OP2_V_cast [1/1] 0.00ns
-bb:9  %OP2_V_cast = zext i20 %wn_V_load to i37        ; <i37> [#uses=1]
+ST_3: stg_37 [1/1] 1.39ns
+bb4:4  br i1 %exitcond6, label %bb8, label %bb3
 
-ST_4: r_V [1/1] 6.66ns
-bb:10  %r_V = mul i37 %OP2_V_cast, %OP1_V_cast         ; <i37> [#uses=1]
+ST_3: tmp [1/1] 0.00ns
+bb3:0  %tmp = zext i11 %counter_input to i64           ; <i64> [#uses=2]
 
+ST_3: input_V_addr [1/1] 0.00ns
+bb3:1  %input_V_addr = getelementptr [1024 x i17]* @input_V, i64 0, i64 %tmp ; <i17*> [#uses=1]
 
- <State 5>: 6.36ns
-ST_5: OP1_V_64_cast [1/1] 0.00ns
-bb:11  %OP1_V_64_cast = zext i37 %r_V to i56           ; <i56> [#uses=1]
-
-ST_5: r_V_129 [4/4] 6.36ns
-bb:12  %r_V_129 = mul i56 %OP1_V_64_cast, 741455       ; <i56> [#uses=1]
-
-
- <State 6>: 6.36ns
-ST_6: r_V_129 [3/4] 6.36ns
-bb:12  %r_V_129 = mul i56 %OP1_V_64_cast, 741455       ; <i56> [#uses=1]
+ST_3: input_V_load [2/2] 2.39ns
+bb3:2  %input_V_load = load i17* %input_V_addr         ; <i17> [#uses=1]
 
 
- <State 7>: 6.36ns
-ST_7: r_V_129 [2/4] 6.36ns
-bb:12  %r_V_129 = mul i56 %OP1_V_64_cast, 741455       ; <i56> [#uses=1]
+ <State 4>: 4.78ns
+ST_4: input_V_load [1/2] 2.39ns
+bb3:2  %input_V_load = load i17* %input_V_addr         ; <i17> [#uses=1]
+
+ST_4: currentFrame_V_addr_1 [1/1] 0.00ns
+bb3:3  %currentFrame_V_addr_1 = getelementptr [1024 x i17]* %currentFrame_V, i64 0, i64 %tmp ; <i17*> [#uses=1]
+
+ST_4: stg_43 [1/1] 2.39ns
+bb3:4  store i17 %input_V_load, i17* %currentFrame_V_addr_1
+
+ST_4: stg_44 [1/1] 0.00ns
+bb3:5  br label %bb4
 
 
- <State 8>: 8.75ns
-ST_8: empty [1/1] 0.00ns
-bb:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+ <State 5>: 2.39ns
+ST_5: i [1/1] 0.00ns
+bb8:0  %i = phi i11 [ %i_1, %bb6 ], [ 0, %bb4 ]        ; <i11> [#uses=3]
 
-ST_8: tmp_41 [1/1] 0.00ns
-bb:1  %tmp_41 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str15) nounwind ; <i32> [#uses=1]
+ST_5: exitcond [1/1] 2.11ns
+bb8:1  %exitcond = icmp eq i11 %i, -1024               ; <i1> [#uses=1]
 
-ST_8: stg_40 [1/1] 0.00ns
-bb:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str50) nounwind
+ST_5: i_1 [1/1] 1.84ns
+bb8:2  %i_1 = add i11 %i, 1                            ; <i11> [#uses=1]
 
-ST_8: r_V_129 [1/4] 6.36ns
-bb:12  %r_V_129 = mul i56 %OP1_V_64_cast, 741455       ; <i56> [#uses=1]
+ST_5: stg_48 [1/1] 0.00ns
+bb8:3  br i1 %exitcond, label %bb9, label %bb6
 
-ST_8: tmp [1/1] 0.00ns
-bb:13  %tmp = call i16 @_ssdm_op_PartSelect.i16.i56.i32.i32(i56 %r_V_129, i32 40, i32 55) ; <i16> [#uses=1]
+ST_5: tmp_8 [1/1] 0.00ns
+bb6:3  %tmp_8 = zext i11 %i to i64                     ; <i64> [#uses=3]
 
-ST_8: tmp_9 [1/1] 0.00ns
-bb:14  %tmp_9 = zext i16 %tmp to i32                   ; <i32> [#uses=1]
+ST_5: currentFrame_V_addr_2 [1/1] 0.00ns
+bb6:4  %currentFrame_V_addr_2 = getelementptr [1024 x i17]* %currentFrame_V, i64 0, i64 %tmp_8 ; <i17*> [#uses=1]
 
-ST_8: currentFrameWindowed_V_addr [1/1] 0.00ns
-bb:15  %currentFrameWindowed_V_addr = getelementptr [1024 x i32]* %currentFrameWindowed_V, i64 0, i64 %tmp_s ; <i32*> [#uses=1]
+ST_5: currentFrame_V_load [2/2] 2.39ns
+bb6:5  %currentFrame_V_load = load i17* %currentFrame_V_addr_2 ; <i17> [#uses=1]
 
-ST_8: stg_45 [1/1] 2.39ns
-bb:16  store i32 %tmp_9, i32* %currentFrameWindowed_V_addr, align 4
+ST_5: wn_V_addr [1/1] 0.00ns
+bb6:7  %wn_V_addr = getelementptr [1024 x i20]* @wn_V, i64 0, i64 %tmp_8 ; <i20*> [#uses=1]
 
-ST_8: empty_147 [1/1] 0.00ns
-bb:17  %empty_147 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str15, i32 %tmp_41) nounwind ; <i32> [#uses=0]
-
-ST_8: stg_47 [1/1] 0.00ns
-bb:18  br label %bb2
+ST_5: wn_V_load [2/2] 2.39ns
+bb6:8  %wn_V_load = load i20* %wn_V_addr               ; <i20> [#uses=1]
 
 
- <State 9>: 0.00ns
-ST_9: stg_48 [2/2] 0.00ns
-bb3:0  call fastcc void @FFT([1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V)
+ <State 6>: 2.39ns
+ST_6: currentFrame_V_load [1/2] 2.39ns
+bb6:5  %currentFrame_V_load = load i17* %currentFrame_V_addr_2 ; <i17> [#uses=1]
+
+ST_6: wn_V_load [1/2] 2.39ns
+bb6:8  %wn_V_load = load i20* %wn_V_addr               ; <i20> [#uses=1]
 
 
- <State 10>: 0.00ns
-ST_10: stg_49 [1/2] 0.00ns
-bb3:0  call fastcc void @FFT([1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V)
+ <State 7>: 6.66ns
+ST_7: OP1_V_cast_cast [1/1] 0.00ns
+bb6:6  %OP1_V_cast_cast = zext i17 %currentFrame_V_load to i40 ; <i40> [#uses=1]
+
+ST_7: OP2_V_cast_cast [1/1] 0.00ns
+bb6:9  %OP2_V_cast_cast = zext i20 %wn_V_load to i40   ; <i40> [#uses=1]
+
+ST_7: r_V [1/1] 6.66ns
+bb6:10  %r_V = mul i40 %OP2_V_cast_cast, %OP1_V_cast_cast ; <i40> [#uses=1]
 
 
- <State 11>: 0.00ns
-ST_11: stg_50 [2/2] 0.00ns
-bb3:1  call fastcc void @cal_mag_phase([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V) nounwind
+ <State 8>: 6.36ns
+ST_8: OP1_V_64_cast_cast [1/1] 0.00ns
+bb6:11  %OP1_V_64_cast_cast = zext i40 %r_V to i60      ; <i60> [#uses=1]
+
+ST_8: r_V_129 [4/4] 6.36ns
+bb6:12  %r_V_129 = mul i60 %OP1_V_64_cast_cast, 741455  ; <i60> [#uses=1]
 
 
- <State 12>: 2.39ns
-ST_12: stg_51 [1/2] 0.00ns
-bb3:1  call fastcc void @cal_mag_phase([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V) nounwind
+ <State 9>: 6.36ns
+ST_9: r_V_129 [3/4] 6.36ns
+bb6:12  %r_V_129 = mul i60 %OP1_V_64_cast_cast, 741455  ; <i60> [#uses=1]
 
-ST_12: previousPhase_V_addr [1/1] 0.00ns
-bb3:2  %previousPhase_V_addr = getelementptr [1024 x i1]* %previousPhase_V, i64 0, i64 0 ; <i1*> [#uses=1]
 
-ST_12: stg_53 [1/1] 2.39ns
-bb3:3  store i1 false, i1* %previousPhase_V_addr
+ <State 10>: 6.36ns
+ST_10: r_V_129 [2/4] 6.36ns
+bb6:12  %r_V_129 = mul i60 %OP1_V_64_cast_cast, 741455  ; <i60> [#uses=1]
+
+
+ <State 11>: 8.75ns
+ST_11: empty_148 [1/1] 0.00ns
+bb6:0  %empty_148 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+
+ST_11: tmp_s [1/1] 0.00ns
+bb6:1  %tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str15) nounwind ; <i32> [#uses=1]
+
+ST_11: stg_65 [1/1] 0.00ns
+bb6:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str50) nounwind
+
+ST_11: r_V_129 [1/4] 6.36ns
+bb6:12  %r_V_129 = mul i60 %OP1_V_64_cast_cast, 741455  ; <i60> [#uses=1]
+
+ST_11: tmp_103 [1/1] 0.00ns
+bb6:13  %tmp_103 = call i20 @_ssdm_op_PartSelect.i20.i60.i32.i32(i60 %r_V_129, i32 40, i32 59) ; <i20> [#uses=1]
+
+ST_11: tmp_10 [1/1] 0.00ns
+bb6:14  %tmp_10 = zext i20 %tmp_103 to i32              ; <i32> [#uses=1]
+
+ST_11: currentFrameWindowed_V_addr [1/1] 0.00ns
+bb6:15  %currentFrameWindowed_V_addr = getelementptr [1024 x i32]* %currentFrameWindowed_V, i64 0, i64 %tmp_8 ; <i32*> [#uses=1]
+
+ST_11: stg_70 [1/1] 2.39ns
+bb6:16  store i32 %tmp_10, i32* %currentFrameWindowed_V_addr, align 4
+
+ST_11: empty_149 [1/1] 0.00ns
+bb6:17  %empty_149 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str15, i32 %tmp_s) nounwind ; <i32> [#uses=0]
+
+ST_11: stg_72 [1/1] 0.00ns
+bb6:18  br label %bb8
+
+
+ <State 12>: 0.00ns
+ST_12: stg_73 [2/2] 0.00ns
+bb9:0  call fastcc void @FFT([1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V)
 
 
  <State 13>: 0.00ns
-ST_13: stg_54 [2/2] 0.00ns
-bb3:4  call fastcc void @pitchshifting([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i1]* %previousPhase_V, [1024 x i32]* %time_domain_V) nounwind
+ST_13: stg_74 [1/2] 0.00ns
+bb9:0  call fastcc void @FFT([1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V)
 
 
  <State 14>: 0.00ns
-ST_14: stg_55 [1/2] 0.00ns
-bb3:4  call fastcc void @pitchshifting([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i1]* %previousPhase_V, [1024 x i32]* %time_domain_V) nounwind
+ST_14: stg_75 [2/2] 0.00ns
+bb9:1  call fastcc void @cal_mag_phase([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V) nounwind
 
-ST_14: stg_56 [1/1] 0.00ns
-bb3:5  ret void
+
+ <State 15>: 2.39ns
+ST_15: stg_76 [1/2] 0.00ns
+bb9:1  call fastcc void @cal_mag_phase([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i32]* %currentFrameWindowed_V, [1024 x i32]* %imag_V) nounwind
+
+ST_15: previousPhase_V_addr [1/1] 0.00ns
+bb9:2  %previousPhase_V_addr = getelementptr [1024 x i1]* %previousPhase_V, i64 0, i64 0 ; <i1*> [#uses=1]
+
+ST_15: stg_78 [1/1] 2.39ns
+bb9:3  store i1 false, i1* %previousPhase_V_addr
+
+
+ <State 16>: 0.00ns
+ST_16: stg_79 [2/2] 0.00ns
+bb9:4  call fastcc void @pitchshifting([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i1]* %previousPhase_V, [1024 x i32]* %time_domain_V) nounwind
+
+
+ <State 17>: 0.00ns
+ST_17: stg_80 [1/2] 0.00ns
+bb9:4  call fastcc void @pitchshifting([1024 x i32]* %magFrame_V, [1024 x i26]* %phaseFrame_V, [1024 x i1]* %previousPhase_V, [1024 x i32]* %time_domain_V) nounwind
+
+ST_17: stg_81 [1/1] 0.00ns
+bb9:5  ret void
 
 
 
@@ -339,6 +421,9 @@ N/A
 	State 12
 	State 13
 	State 14
+	State 15
+	State 16
+	State 17
 
 
 ============================================================

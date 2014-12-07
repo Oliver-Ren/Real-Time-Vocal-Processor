@@ -2651,7 +2651,7 @@
             <Obj>
               <type>0</type>
               <id>77</id>
-              <name>tmp_104</name>
+              <name>tmp_105</name>
               <fileName>fft.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>83</lineNumber>
@@ -2675,7 +2675,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_104_fu_497_p1</rtlName>
+              <rtlName>tmp_105_fu_497_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>22</bitwidth>
@@ -3027,6 +3027,47 @@
             <Obj>
               <type>0</type>
               <id>86</id>
+              <name>tmp_43</name>
+              <fileName>fft.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>87</lineNumber>
+              <contextFuncName>IFFT</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>fft.cpp</first>
+                        <second>IFFT</second>
+                      </first>
+                      <second>87</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>tmp_43_fu_533_p1</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>52</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>246</item>
+          </oprand_edges>
+          <opcode>sext</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_76">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>87</id>
               <name>tmp_44</name>
               <fileName>fft.cpp</fileName>
               <fileDirectory>..</fileDirectory>
@@ -3051,48 +3092,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_44_fu_533_p1</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>52</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>246</item>
-          </oprand_edges>
-          <opcode>sext</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_76">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>87</id>
-              <name>tmp_45</name>
-              <fileName>fft.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>87</lineNumber>
-              <contextFuncName>IFFT</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>fft.cpp</first>
-                        <second>IFFT</second>
-                      </first>
-                      <second>87</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>tmp_45_fu_537_p1</rtlName>
+              <rtlName>tmp_44_fu_537_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>52</bitwidth>
@@ -3277,6 +3277,47 @@
             <Obj>
               <type>0</type>
               <id>92</id>
+              <name>tmp_45</name>
+              <fileName>fft.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>87</lineNumber>
+              <contextFuncName>IFFT</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/student/kl694/ece5775/final/</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>fft.cpp</first>
+                        <second>IFFT</second>
+                      </first>
+                      <second>87</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>tmp_45_fu_541_p1</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>52</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>256</item>
+          </oprand_edges>
+          <opcode>sext</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_82">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>93</id>
               <name>tmp_46</name>
               <fileName>fft.cpp</fileName>
               <fileDirectory>..</fileDirectory>
@@ -3301,48 +3342,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_46_fu_541_p1</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>52</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>256</item>
-          </oprand_edges>
-          <opcode>sext</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_82">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>93</id>
-              <name>tmp_47</name>
-              <fileName>fft.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>87</lineNumber>
-              <contextFuncName>IFFT</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/student/kl694/ece5775/final/</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>fft.cpp</first>
-                        <second>IFFT</second>
-                      </first>
-                      <second>87</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>tmp_47_fu_545_p1</rtlName>
+              <rtlName>tmp_46_fu_545_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>52</bitwidth>
@@ -4656,7 +4656,7 @@
             <Obj>
               <type>0</type>
               <id>129</id>
-              <name>tmp_42</name>
+              <name>tmp_41</name>
               <fileName/>
               <fileDirectory/>
               <lineNumber>0</lineNumber>
@@ -4666,7 +4666,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_42_fu_645_p4</rtlName>
+              <rtlName>tmp_41_fu_645_p4</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>22</bitwidth>
@@ -4854,7 +4854,7 @@
             <Obj>
               <type>0</type>
               <id>134</id>
-              <name>tmp_43</name>
+              <name>tmp_42</name>
               <fileName/>
               <fileDirectory/>
               <lineNumber>0</lineNumber>
@@ -4864,7 +4864,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_43_fu_660_p4</rtlName>
+              <rtlName>tmp_42_fu_660_p4</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>22</bitwidth>
@@ -14589,7 +14589,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_104_fu_497</first>
+        <first>tmp_105_fu_497</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14693,7 +14693,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_42_fu_645</first>
+        <first>tmp_41_fu_645</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14701,7 +14701,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_43_fu_660</first>
+        <first>tmp_42_fu_660</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14709,7 +14709,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_44_fu_533</first>
+        <first>tmp_43_fu_533</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14717,7 +14717,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_45_fu_537</first>
+        <first>tmp_44_fu_537</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14725,7 +14725,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_46_fu_541</first>
+        <first>tmp_45_fu_541</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -14733,7 +14733,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_47_fu_545</first>
+        <first>tmp_46_fu_545</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -15781,7 +15781,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_44_reg_819</first>
+        <first>tmp_43_reg_819</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -15789,7 +15789,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_45_reg_825</first>
+        <first>tmp_44_reg_825</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -15797,7 +15797,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_46_reg_831</first>
+        <first>tmp_45_reg_831</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -15805,7 +15805,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_47_reg_837</first>
+        <first>tmp_46_reg_837</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

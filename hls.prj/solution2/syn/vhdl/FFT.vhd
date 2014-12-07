@@ -157,13 +157,13 @@ architecture behav of FFT is
     signal xreal_V_addr_reg_711 : STD_LOGIC_VECTOR (9 downto 0);
     signal xreal_V_addr_3_reg_716 : STD_LOGIC_VECTOR (9 downto 0);
     signal ximag_V_addr_3_reg_721 : STD_LOGIC_VECTOR (9 downto 0);
-    signal tmp_48_fu_498_p1 : STD_LOGIC_VECTOR (51 downto 0);
+    signal tmp_47_fu_498_p1 : STD_LOGIC_VECTOR (51 downto 0);
     signal ximag_V_q0_temp: signed (32-1 downto 0);
-    signal tmp_49_fu_502_p1 : STD_LOGIC_VECTOR (51 downto 0);
+    signal tmp_48_fu_502_p1 : STD_LOGIC_VECTOR (51 downto 0);
     signal wimag_V_q0_temp: signed (32-1 downto 0);
-    signal tmp_50_fu_506_p1 : STD_LOGIC_VECTOR (51 downto 0);
+    signal tmp_49_fu_506_p1 : STD_LOGIC_VECTOR (51 downto 0);
     signal xreal_V_q0_temp: signed (32-1 downto 0);
-    signal tmp_51_fu_510_p1 : STD_LOGIC_VECTOR (51 downto 0);
+    signal tmp_50_fu_510_p1 : STD_LOGIC_VECTOR (51 downto 0);
     signal wreal_V_q0_temp: signed (32-1 downto 0);
     signal grp_fu_514_p2 : STD_LOGIC_VECTOR (51 downto 0);
     signal lhs_V_3_cast_reg_760 : STD_LOGIC_VECTOR (51 downto 0);
@@ -244,7 +244,7 @@ architecture behav of FFT is
     signal grp_fu_399_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal tr_fu_411_p4 : STD_LOGIC_VECTOR (21 downto 0);
     signal j_1_cast_fu_437_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_106_fu_462_p1 : STD_LOGIC_VECTOR (21 downto 0);
+    signal tmp_107_fu_462_p1 : STD_LOGIC_VECTOR (21 downto 0);
     signal grp_fu_474_p0 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_fu_474_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal index2_fu_441_p2 : STD_LOGIC_VECTOR (31 downto 0);
@@ -1097,20 +1097,20 @@ begin
         end if; 
     end process;
 
-    grp_fu_474_p0 <= (tmp_106_fu_462_p1 & ap_const_lv10_0);
+    grp_fu_474_p0 <= (tmp_107_fu_462_p1 & ap_const_lv10_0);
     grp_fu_474_p1 <= m_reg_204;
     grp_fu_514_ce <= ap_const_logic_1;
-    grp_fu_514_p0 <= tmp_50_fu_506_p1(32 - 1 downto 0);
-    grp_fu_514_p1 <= tmp_51_fu_510_p1(32 - 1 downto 0);
+    grp_fu_514_p0 <= tmp_49_fu_506_p1(32 - 1 downto 0);
+    grp_fu_514_p1 <= tmp_50_fu_510_p1(32 - 1 downto 0);
     grp_fu_520_ce <= ap_const_logic_1;
-    grp_fu_520_p0 <= tmp_48_fu_498_p1(32 - 1 downto 0);
-    grp_fu_520_p1 <= tmp_49_fu_502_p1(32 - 1 downto 0);
+    grp_fu_520_p0 <= tmp_47_fu_498_p1(32 - 1 downto 0);
+    grp_fu_520_p1 <= tmp_48_fu_502_p1(32 - 1 downto 0);
     grp_fu_526_ce <= ap_const_logic_1;
-    grp_fu_526_p0 <= tmp_48_fu_498_p1(32 - 1 downto 0);
-    grp_fu_526_p1 <= tmp_51_fu_510_p1(32 - 1 downto 0);
+    grp_fu_526_p0 <= tmp_47_fu_498_p1(32 - 1 downto 0);
+    grp_fu_526_p1 <= tmp_50_fu_510_p1(32 - 1 downto 0);
     grp_fu_532_ce <= ap_const_logic_1;
-    grp_fu_532_p0 <= tmp_50_fu_506_p1(32 - 1 downto 0);
-    grp_fu_532_p1 <= tmp_49_fu_502_p1(32 - 1 downto 0);
+    grp_fu_532_p0 <= tmp_49_fu_506_p1(32 - 1 downto 0);
+    grp_fu_532_p1 <= tmp_48_fu_502_p1(32 - 1 downto 0);
     icmp_fu_421_p2 <= "1" when (signed(tr_fu_411_p4) < signed(ap_const_lv22_1)) else "0";
     index1_fu_446_p2 <= std_logic_vector(unsigned(k_reg_674) + unsigned(j_1_cast_fu_437_p1));
     index2_fu_441_p2 <= std_logic_vector(unsigned(tmp8_reg_688) + unsigned(j_1_cast_fu_437_p1));
@@ -1142,7 +1142,7 @@ begin
     timag_V_fu_556_p4 <= r_V_144_fu_552_p2(51 downto 20);
     tmp3_fu_385_p2 <= "1" when (signed(tmp_s_fu_361_p4) > signed(ap_const_lv31_0)) else "0";
     tmp8_fu_433_p2 <= std_logic_vector(unsigned(k_reg_674) + unsigned(tmp_36_reg_659));
-    tmp_106_fu_462_p1 <= j_1_reg_228(22 - 1 downto 0);
+    tmp_107_fu_462_p1 <= j_1_reg_228(22 - 1 downto 0);
     tmp_33_fu_325_p1 <= std_logic_vector(resize(unsigned(j_reg_592),64));
     tmp_36_cast_fu_375_p4 <= m_reg_204(30 downto 1);
     
@@ -1163,19 +1163,19 @@ begin
 
     
     ximag_V_q0_temp <= signed(ximag_V_q0);
-    tmp_48_fu_498_p1 <= std_logic_vector(resize(ximag_V_q0_temp,52));
+    tmp_47_fu_498_p1 <= std_logic_vector(resize(ximag_V_q0_temp,52));
 
     
     wimag_V_q0_temp <= signed(wimag_V_q0);
-    tmp_49_fu_502_p1 <= std_logic_vector(resize(wimag_V_q0_temp,52));
+    tmp_48_fu_502_p1 <= std_logic_vector(resize(wimag_V_q0_temp,52));
 
     
     xreal_V_q0_temp <= signed(xreal_V_q0);
-    tmp_50_fu_506_p1 <= std_logic_vector(resize(xreal_V_q0_temp,52));
+    tmp_49_fu_506_p1 <= std_logic_vector(resize(xreal_V_q0_temp,52));
 
     
     wreal_V_q0_temp <= signed(wreal_V_q0);
-    tmp_51_fu_510_p1 <= std_logic_vector(resize(wreal_V_q0_temp,52));
+    tmp_50_fu_510_p1 <= std_logic_vector(resize(wreal_V_q0_temp,52));
 
     tmp_fu_260_p1 <= std_logic_vector(resize(unsigned(indvar3_reg_182),64));
     tmp_s_fu_361_p4 <= m_reg_204(31 downto 1);

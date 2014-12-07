@@ -1,16 +1,16 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 54
-set name combine_mul_37ns_20ns_56_4
+set name combine_mul_40ns_20ns_60_4
 set corename simcore_mul
 set op mul
 set stage_num 4
 set registered_input 1
-set in0_width 37
+set in0_width 40
 set in0_signed 0
 set in1_width 20
 set in1_signed 0
-set out_width 56
+set out_width 60
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
 eval "ap_gen_simcore_mul { \
@@ -66,7 +66,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 
 # Memory (RAM/ROM)  definition:
 set ID 55
-set MemName combine_currentFrame_V
+set MemName combine_input_V
 set CoreName ap_simcore_mem
 set PortList { 1 3 }
 set DataWd 17
@@ -145,6 +145,87 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 # Memory (RAM/ROM)  definition:
 set ID 56
+set MemName combine_currentFrame_V
+set CoreName ap_simcore_mem
+set PortList { 2 3 }
+set DataWd 17
+set AddrRange 1024
+set AddrWd 10
+set impl_style block
+set TrueReset 0
+set HasInitializer 0
+set IsROM 0
+set ROMData {}
+set NumOfStage 2
+set DelayBudget 2.39
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    reset_level 1 \
+    sync_rst true \
+    stage_num 2 \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName RAM
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    reset_level 1 \
+    sync_rst true \
+    stage_num 2 \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 57
 set MemName combine_magFrame_V
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
@@ -225,7 +306,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 57
+set ID 58
 set MemName combine_phaseFrame_V
 set CoreName ap_simcore_mem
 set PortList { 2 0 }
@@ -306,7 +387,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 58
+set ID 59
 set MemName combine_previousPhase_V
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
@@ -387,7 +468,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 59
+set ID 60
 set MemName combine_time_domain_V
 set CoreName ap_simcore_mem
 set PortList { 0 3 }
@@ -477,7 +558,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 60 \
+    id 61 \
     name currentFrameWindowed_V \
     reset_level 1 \
     sync_rst true \
@@ -495,7 +576,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 61 \
+    id 62 \
     name imag_V \
     reset_level 1 \
     sync_rst true \

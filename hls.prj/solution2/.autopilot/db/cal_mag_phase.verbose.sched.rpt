@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'cal_mag_phase'
 ================================================================
-* Date:           Tue Dec  2 14:36:01 2014
+* Date:           Sun Dec  7 14:25:08 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -263,20 +263,20 @@ bb:13  %tmp_s = icmp sgt i32 %real_V_load, 0           ; <i1> [#uses=1]
 ST_3: stg_54 [1/1] 0.00ns
 bb:14  br i1 %tmp_s, label %bb1, label %bb2
 
-ST_3: tmp_129 [1/1] 0.00ns
-bb2:0  %tmp_129 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %real_V_load, i32 31) ; <i1> [#uses=2]
+ST_3: tmp_130 [1/1] 0.00ns
+bb2:0  %tmp_130 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %real_V_load, i32 31) ; <i1> [#uses=2]
 
 ST_3: stg_56 [1/1] 0.00ns
-bb2:1  br i1 %tmp_129, label %bb5, label %bb22
+bb2:1  br i1 %tmp_130, label %bb5, label %bb22
 
-ST_3: tmp_130 [1/1] 0.00ns
-bb5:0  %tmp_130 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %imag_V_load, i32 31) ; <i1> [#uses=1]
+ST_3: tmp_131 [1/1] 0.00ns
+bb5:0  %tmp_131 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %imag_V_load, i32 31) ; <i1> [#uses=1]
 
 ST_3: stg_58 [1/1] 0.00ns
-bb5:1  br i1 %tmp_130, label %bb10, label %bb12
+bb5:1  br i1 %tmp_131, label %bb10, label %bb12
 
 ST_3: stg_59 [1/1] 0.00ns
-bb10:0  br i1 %tmp_129, label %bb17, label %bb22
+bb10:0  br i1 %tmp_130, label %bb17, label %bb22
 
 ST_3: not2 [1/1] 2.52ns
 bb22:0  %not2 = icmp eq i32 %real_V_load, 0             ; <i1> [#uses=1]
@@ -424,11 +424,11 @@ bb17:1  %r_V_s = add i24 %r_V_trunc_ext_cast, -3294198  ; <i24> [#uses=1]
 ST_16: phaseFrame_V_addr_2 [1/1] 0.00ns
 bb17:2  %phaseFrame_V_addr_2 = getelementptr [1024 x i26]* %phaseFrame_V, i64 0, i64 %tmp ; <i26*> [#uses=1]
 
-ST_16: r_V_cast_cast_310 [1/1] 0.00ns
-bb17:3  %r_V_cast_cast_310 = sext i24 %r_V_s to i26     ; <i26> [#uses=1]
+ST_16: r_V_cast_cast_311 [1/1] 0.00ns
+bb17:3  %r_V_cast_cast_311 = sext i24 %r_V_s to i26     ; <i26> [#uses=1]
 
 ST_16: stg_101 [1/1] 2.39ns
-bb17:4  store i26 %r_V_cast_cast_310, i26* %phaseFrame_V_addr_2
+bb17:4  store i26 %r_V_cast_cast_311, i26* %phaseFrame_V_addr_2
 
 ST_16: phaseFrame_V_addr [1/1] 0.00ns
 bb1:0  %phaseFrame_V_addr = getelementptr [1024 x i26]* %phaseFrame_V, i64 0, i64 %tmp ; <i26*> [#uses=1]
@@ -549,8 +549,8 @@ bb:9  %call_ret = call fastcc i32 @cordic_sqrt(i32 %real_V_load, i32 %imag_V_loa
 ST_38: empty [1/1] 0.00ns
 bb:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
-ST_38: tmp_68 [1/1] 0.00ns
-bb:1  %tmp_68 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str170) nounwind ; <i32> [#uses=1]
+ST_38: tmp_67 [1/1] 0.00ns
+bb:1  %tmp_67 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str170) nounwind ; <i32> [#uses=1]
 
 ST_38: stg_128 [1/1] 0.00ns
 bb:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str50) nounwind
@@ -579,8 +579,8 @@ bb17:5  br label %bb42
 ST_38: stg_136 [1/1] 0.00ns
 bb1:3  br label %bb42
 
-ST_38: empty_311 [1/1] 0.00ns
-bb42:0  %empty_311 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str170, i32 %tmp_68) nounwind ; <i32> [#uses=0]
+ST_38: empty_312 [1/1] 0.00ns
+bb42:0  %empty_312 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str170, i32 %tmp_67) nounwind ; <i32> [#uses=0]
 
 ST_38: stg_138 [1/1] 0.00ns
 bb42:1  br label %bb43

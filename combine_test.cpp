@@ -3,15 +3,14 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
-  
-  fixed_type currentFrameWindowed[1024];
-  fixed_type imag[1024] = {0};
-  combine(currentFrameWindowed, imag);
-  int i;
-  for (i = 0; i < WIN_SIZE; i++){
-    //printf("currentFrameWindowed[%d] = %f, imag[%d] = %f\n", i, (double)currentFrameWindowed[i], i, (double)imag[i]);
-  }
 
+  fixed_type input[WIN_SIZE] = {
+    #include "currentFrame.dat"
+  };
+
+  fixed_type output[1024];
+  combine(input, output);
+  printf("output[714] = %f\n",(double)output[714]);
   return 0;
 }
 

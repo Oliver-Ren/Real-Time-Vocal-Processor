@@ -91,8 +91,8 @@ reg   [3:0] j_reg_105;
 reg   [31:0] b_reg_116;
 wire   [63:0] tmp_24_fu_191_p1;
 wire   [63:0] tmp_25_fu_197_p1;
-wire   [30:0] tmp_107_fu_156_p1;
-wire   [0:0] tmp_108_fu_160_p1;
+wire   [30:0] tmp_108_fu_156_p1;
+wire   [0:0] tmp_109_fu_160_p1;
 wire   [30:0] tmp_s_fu_172_p4;
 reg   [2:0] ap_NS_fsm;
 parameter    ap_const_logic_1 = 1'b1;
@@ -380,13 +380,13 @@ begin
 end
 assign a_1_fu_182_p1 = $signed(tmp_s_fu_172_p4);
 assign a_3_cast_fu_128_p1 = $unsigned(a_3_reg_82);
-assign b_1_fu_164_p3 = {{tmp_107_fu_156_p1}, {tmp_108_fu_160_p1}};
+assign b_1_fu_164_p3 = {{tmp_108_fu_156_p1}, {tmp_109_fu_160_p1}};
 assign exitcond2_fu_144_p2 = (j_reg_105 == ap_const_lv4_A? 1'b1: 1'b0);
 assign exitcond_fu_132_p2 = (a_3_reg_82 == ap_const_lv11_400? 1'b1: 1'b0);
 assign i_1_fu_138_p2 = (a_3_reg_82 + ap_const_lv11_1);
 assign j_2_fu_150_p2 = (j_reg_105 + ap_const_lv4_1);
-assign tmp_107_fu_156_p1 = b_reg_116[30:0];
-assign tmp_108_fu_160_p1 = a_reg_96[0:0];
+assign tmp_108_fu_156_p1 = b_reg_116[30:0];
+assign tmp_109_fu_160_p1 = a_reg_96[0:0];
 assign tmp_24_fu_191_p1 = $unsigned(b_reg_116);
 assign tmp_25_fu_197_p1 = $unsigned(a_3_reg_82);
 assign tmp_fu_186_p2 = ($signed(b_reg_116) > $signed(a_3_cast_reg_203)? 1'b1: 1'b0);

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'cal_mag_phase'
 ================================================================
-* Date:           Tue Dec  2 14:36:01 2014
+* Date:           Sun Dec  7 14:25:08 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -263,20 +263,20 @@ bb:13  %tmp_s = icmp sgt i32 %real_V_load, 0           ; <i1> [#uses=1]
 ST_3: stg_54 [1/1] 0.00ns
 bb:14  br i1 %tmp_s, label %bb1, label %bb2
 
-ST_3: tmp_129 [1/1] 0.00ns
-bb2:0  %tmp_129 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %real_V_load, i32 31) ; <i1> [#uses=2]
+ST_3: tmp_130 [1/1] 0.00ns
+bb2:0  %tmp_130 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %real_V_load, i32 31) ; <i1> [#uses=2]
 
 ST_3: stg_56 [1/1] 0.00ns
-bb2:1  br i1 %tmp_129, label %bb5, label %bb22
+bb2:1  br i1 %tmp_130, label %bb5, label %bb22
 
-ST_3: tmp_130 [1/1] 0.00ns
-bb5:0  %tmp_130 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %imag_V_load, i32 31) ; <i1> [#uses=1]
+ST_3: tmp_131 [1/1] 0.00ns
+bb5:0  %tmp_131 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %imag_V_load, i32 31) ; <i1> [#uses=1]
 
 ST_3: stg_58 [1/1] 0.00ns
-bb5:1  br i1 %tmp_130, label %bb10, label %bb12
+bb5:1  br i1 %tmp_131, label %bb10, label %bb12
 
 ST_3: stg_59 [1/1] 0.00ns
-bb10:0  br i1 %tmp_129, label %bb17, label %bb22
+bb10:0  br i1 %tmp_130, label %bb17, label %bb22
 
 ST_3: not2 [1/1] 2.52ns
 bb22:0  %not2 = icmp eq i32 %real_V_load, 0             ; <i1> [#uses=1]
@@ -424,11 +424,11 @@ bb17:1  %r_V_s = add i24 %r_V_trunc_ext_cast, -3294198  ; <i24> [#uses=1]
 ST_16: phaseFrame_V_addr_2 [1/1] 0.00ns
 bb17:2  %phaseFrame_V_addr_2 = getelementptr [1024 x i26]* %phaseFrame_V, i64 0, i64 %tmp ; <i26*> [#uses=1]
 
-ST_16: r_V_cast_cast_310 [1/1] 0.00ns
-bb17:3  %r_V_cast_cast_310 = sext i24 %r_V_s to i26     ; <i26> [#uses=1]
+ST_16: r_V_cast_cast_311 [1/1] 0.00ns
+bb17:3  %r_V_cast_cast_311 = sext i24 %r_V_s to i26     ; <i26> [#uses=1]
 
 ST_16: stg_101 [1/1] 2.39ns
-bb17:4  store i26 %r_V_cast_cast_310, i26* %phaseFrame_V_addr_2
+bb17:4  store i26 %r_V_cast_cast_311, i26* %phaseFrame_V_addr_2
 
 ST_16: phaseFrame_V_addr [1/1] 0.00ns
 bb1:0  %phaseFrame_V_addr = getelementptr [1024 x i26]* %phaseFrame_V, i64 0, i64 %tmp ; <i26*> [#uses=1]
@@ -549,8 +549,8 @@ bb:9  %call_ret = call fastcc i32 @cordic_sqrt(i32 %real_V_load, i32 %imag_V_loa
 ST_38: empty [1/1] 0.00ns
 bb:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
-ST_38: tmp_68 [1/1] 0.00ns
-bb:1  %tmp_68 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str170) nounwind ; <i32> [#uses=1]
+ST_38: tmp_67 [1/1] 0.00ns
+bb:1  %tmp_67 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str170) nounwind ; <i32> [#uses=1]
 
 ST_38: stg_128 [1/1] 0.00ns
 bb:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str50) nounwind
@@ -579,8 +579,8 @@ bb17:5  br label %bb42
 ST_38: stg_136 [1/1] 0.00ns
 bb1:3  br label %bb42
 
-ST_38: empty_311 [1/1] 0.00ns
-bb42:0  %empty_311 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str170, i32 %tmp_68) nounwind ; <i32> [#uses=0]
+ST_38: empty_312 [1/1] 0.00ns
+bb42:0  %empty_312 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str170, i32 %tmp_67) nounwind ; <i32> [#uses=0]
 
 ST_38: stg_138 [1/1] 0.00ns
 bb42:1  br label %bb43
@@ -604,10 +604,10 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=<null>
-Port [ magFrame_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=2; mode=0x1c355f70; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ phaseFrame_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=2; mode=0x1c49b6c0; pingpong=0; private_global=0; MemPort=[00]; IO mode=ap_memory:ce=0
-Port [ real_V]:  wired=0; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=2; mode=0x1c5a0780; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
-Port [ imag_V]:  wired=0; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=2; mode=0x1b5f1b70; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ magFrame_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=2; mode=0x13ca0660; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ phaseFrame_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=2; mode=0x13ec1a30; pingpong=0; private_global=0; MemPort=[00]; IO mode=ap_memory:ce=0
+Port [ real_V]:  wired=0; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=2; mode=0x14836880; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ imag_V]:  wired=0; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=2; mode=0x141fdcd0; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -626,9 +626,9 @@ real_V_load         (load             ) [ 00101000000000000000000000000000000000
 imag_V_load         (load             ) [ 0010100000000000000000000000000000000000]
 tmp_s               (icmp             ) [ 0011111111111111111111111111111111111110]
 stg_54              (br               ) [ 0000000000000000000000000000000000000000]
-tmp_129             (bitselect        ) [ 0011111111111111111111111111111111111110]
-stg_56              (br               ) [ 0000000000000000000000000000000000000000]
 tmp_130             (bitselect        ) [ 0011111111111111111111111111111111111110]
+stg_56              (br               ) [ 0000000000000000000000000000000000000000]
+tmp_131             (bitselect        ) [ 0011111111111111111111111111111111111110]
 stg_58              (br               ) [ 0000000000000000000000000000000000000000]
 stg_59              (br               ) [ 0000000000000000000000000000000000000000]
 not2                (icmp             ) [ 0000000000000000000000000000000000000000]
@@ -647,13 +647,13 @@ stg_96              (store            ) [ 00000000000000000000000000000000000000
 r_V_trunc_ext_cast  (sext             ) [ 0000000000000000000000000000000000000000]
 r_V_s               (add              ) [ 0000000000000000000000000000000000000000]
 phaseFrame_V_addr_2 (getelementptr    ) [ 0000000000000000000000000000000000000000]
-r_V_cast_cast_310   (sext             ) [ 0000000000000000000000000000000000000000]
+r_V_cast_cast_311   (sext             ) [ 0000000000000000000000000000000000000000]
 stg_101             (store            ) [ 0000000000000000000000000000000000000000]
 phaseFrame_V_addr   (getelementptr    ) [ 0000000000000000000000000000000000000000]
 arctan_V_2_cast8    (sext             ) [ 0000000000000000000000000000000000000000]
 stg_104             (store            ) [ 0000000000000000000000000000000000000000]
 empty               (speclooptripcount) [ 0000000000000000000000000000000000000000]
-tmp_68              (specregionbegin  ) [ 0000000000000000000000000000000000000000]
+tmp_67              (specregionbegin  ) [ 0000000000000000000000000000000000000000]
 stg_128             (specpipeline     ) [ 0000000000000000000000000000000000000000]
 magFrame_V_addr     (getelementptr    ) [ 0000000000000000000000000000000000000000]
 call_ret            (call             ) [ 0000000000000000000000000000000000000000]
@@ -663,7 +663,7 @@ stg_133             (br               ) [ 00000000000000000000000000000000000000
 stg_134             (br               ) [ 0000000000000000000000000000000000000000]
 stg_135             (br               ) [ 0000000000000000000000000000000000000000]
 stg_136             (br               ) [ 0000000000000000000000000000000000000000]
-empty_311           (specregionend    ) [ 0000000000000000000000000000000000000000]
+empty_312           (specregionend    ) [ 0000000000000000000000000000000000000000]
 stg_138             (br               ) [ 0111111111111111111111111111111111111110]
 stg_139             (ret              ) [ 0000000000000000000000000000000000000000]
 </LifeTime>
@@ -1139,7 +1139,7 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="178" class="1004" name="tmp_129_fu_178">
+<comp id="178" class="1004" name="tmp_130_fu_178">
 <pin_list>
 <pin id="179" dir="0" index="0" bw="1" slack="0"/>
 <pin id="180" dir="0" index="1" bw="32" slack="0"/>
@@ -1148,11 +1148,11 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="bitselect(1000) " fcode="bitselect"/>
-<opset="tmp_129/3 "/>
+<opset="tmp_130/3 "/>
 </bind>
 </comp>
 
-<comp id="186" class="1004" name="tmp_130_fu_186">
+<comp id="186" class="1004" name="tmp_131_fu_186">
 <pin_list>
 <pin id="187" dir="0" index="0" bw="1" slack="0"/>
 <pin id="188" dir="0" index="1" bw="32" slack="0"/>
@@ -1161,7 +1161,7 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="bitselect(1000) " fcode="bitselect"/>
-<opset="tmp_130/3 "/>
+<opset="tmp_131/3 "/>
 </bind>
 </comp>
 
@@ -1258,14 +1258,14 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="235" class="1004" name="r_V_cast_cast_310_fu_235">
+<comp id="235" class="1004" name="r_V_cast_cast_311_fu_235">
 <pin_list>
 <pin id="236" dir="0" index="0" bw="24" slack="0"/>
 <pin id="237" dir="1" index="1" bw="26" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(32) " fcode="sext"/>
-<opset="r_V_cast_cast_310/16 "/>
+<opset="r_V_cast_cast_311/16 "/>
 </bind>
 </comp>
 
@@ -1360,23 +1360,23 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="288" class="1005" name="tmp_129_reg_288">
+<comp id="288" class="1005" name="tmp_130_reg_288">
 <pin_list>
 <pin id="289" dir="0" index="0" bw="1" slack="13"/>
 <pin id="290" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="tmp_129 "/>
+<opset="tmp_130 "/>
 </bind>
 </comp>
 
-<comp id="292" class="1005" name="tmp_130_reg_292">
+<comp id="292" class="1005" name="tmp_131_reg_292">
 <pin_list>
 <pin id="293" dir="0" index="0" bw="1" slack="13"/>
 <pin id="294" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="tmp_130 "/>
+<opset="tmp_131 "/>
 </bind>
 </comp>
 
@@ -1599,9 +1599,9 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 		call_ret : 1
 		tmp_s : 1
 		stg_54 : 2
-		tmp_129 : 1
-		stg_56 : 2
 		tmp_130 : 1
+		stg_56 : 2
+		tmp_131 : 1
 		stg_58 : 2
 		stg_59 : 2
 		not2 : 1
@@ -1627,7 +1627,7 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 		r_V_cast_cast : 2
 		stg_96 : 3
 		r_V_s : 1
-		r_V_cast_cast_310 : 2
+		r_V_cast_cast_311 : 2
 		stg_101 : 3
 		stg_104 : 1
 	State 17
@@ -1653,7 +1653,7 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 	State 37
 	State 38
 		stg_131 : 1
-		empty_311 : 1
+		empty_312 : 1
 	State 39
 
 
@@ -1682,12 +1682,12 @@ stg_139             (ret              ) [ 00000000000000000000000000000000000000
 |   zext   |         tmp_fu_166        |    0    |    0    |    0    |    0    |
 |          |    r_V_cast_cast_fu_221   |    0    |    0    |    0    |    0    |
 |----------|---------------------------|---------|---------|---------|---------|
-| bitselect|       tmp_129_fu_178      |    0    |    0    |    0    |    0    |
-|          |       tmp_130_fu_186      |    0    |    0    |    0    |    0    |
+| bitselect|       tmp_130_fu_178      |    0    |    0    |    0    |    0    |
+|          |       tmp_131_fu_186      |    0    |    0    |    0    |    0    |
 |----------|---------------------------|---------|---------|---------|---------|
 |          |   arctan_V_2_cast_fu_212  |    0    |    0    |    0    |    0    |
 |   sext   | r_V_trunc_ext_cast_fu_226 |    0    |    0    |    0    |    0    |
-|          |  r_V_cast_cast_310_fu_235 |    0    |    0    |    0    |    0    |
+|          |  r_V_cast_cast_311_fu_235 |    0    |    0    |    0    |    0    |
 |          |  arctan_V_2_cast8_fu_240  |    0    |    0    |    0    |    0    |
 |----------|---------------------------|---------|---------|---------|---------|
 |   Total  |                           |    2    |  1.575  |   3225  |  12802  |
@@ -1709,8 +1709,8 @@ N/A
 |  or_cond_reg_296  |    1   |
 |real_V_addr_reg_262|   10   |
 |real_V_load_reg_272|   32   |
-|  tmp_129_reg_288  |    1   |
-|  tmp_130_reg_292  |    1   |
+|  tmp_130_reg_288  |    1   |
+|  tmp_131_reg_292  |    1   |
 |    tmp_reg_253    |   64   |
 |   tmp_s_reg_284   |    1   |
 +-------------------+--------+
