@@ -5,12 +5,13 @@
 
 int main(int argc, char **argv) {
 
-    fixed_type previousPhase[WIN_SIZE] = {0}; 
+    fixed_type previousPhase[WIN_SIZE] = {0};
+    fixed_type phaseCumulative[WIN_SIZE] = {0};  
     fixed_type amplitude[WIN_SIZE] = {0};
     fixed_type angle[WIN_SIZE] = {0};  
     fixed_type time_domain[WIN_SIZE] = {0};
   
-    pitchshifting(amplitude, angle, previousPhase, time_domain);
+    pitchshifting(amplitude, angle, previousPhase, phaseCumulative, time_domain);
 
     float tttt[WIN_SIZE] = {0};
     int j;

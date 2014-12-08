@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "pitchshifting.h"
 
-void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], fixed_type previousPhase[WIN_SIZE], fixed_type time_domain[WIN_SIZE]){
+void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], fixed_type previousPhase[WIN_SIZE], fixed_type phaseCumulative[WIN_SIZE], fixed_type output[WIN_SIZE]){
   
   // internal variables
   fixed_type deltaPhi[WIN_SIZE];
@@ -10,7 +10,6 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   fixed_type trueFreq[WIN_SIZE];
   fixed_type phi_2u[WIN_SIZE];
   fixed_type f_real[WIN_SIZE];
-  fixed_type phaseCumulative[WIN_SIZE];
   fixed_type outputMag[WIN_SIZE];
 
   for (int i = 0; i < WIN_SIZE; i++){
@@ -32,10 +31,10 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     f_real[i] = (phi_2u[i] - previousPhase[i]) * hop_reverse;
     
     // Update previoius phase
-    //previousPhase[i] = phaseFrame[i];
+    previousPhase[i] = angle[i];
     
     // Get the final phase
-    phaseCumulative[i] = phaseCumulative[i] + hopOut * trueFreq[i];
+    phaseCumulative[i] = ap_fixed_fmod(phaseCumulative[i] + hopOut * trueFreq[i], 2 * PI);
     
     // Get the magnitude
     outputMag[i] = amplitude[i];
@@ -58,10 +57,12 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   
   for (int m = 0 ; m < WIN_SIZE; m++){
     #pragma HLS PIPELINE II=1
-    time_domain[m] = real[m] * wn[m] * sqrt_result_reverse;
+    output[m] = real[m] * wn[m] * sqrt_result_reverse;
   }
 }
 
+
+// Calculate the mod in ap_fixed version
 fixed_type ap_fixed_fmod(fixed_type a, fixed_type b){
   int result = (int)(a/b);
   return a - b * (fixed_type) result;

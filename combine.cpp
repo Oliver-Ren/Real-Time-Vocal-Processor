@@ -1,24 +1,25 @@
 #include <stdio.h>
 #include "combine.h"
-#include <math.h>
+// #include <math.h>
 
-void combine(fixed_type input_buffer[WIN_SIZE], fixed_type output_buffer[WIN_SIZE]){
+void combine(fixed_type input_array[WIN_SIZE], fixed_type previousPhase[WIN_SIZE], fixed_type phaseCumulative[WIN_SIZE], fixed_type output_buffer[WIN_SIZE]){
   
   fixed_type currentFrameWindowed[WIN_SIZE] = 0;
   fixed_type imag[WIN_SIZE] = 0;
 
   for (int i = 0; i < WIN_SIZE; i++){
     #pragma HLS PIPELINE II=1
-    currentFrameWindowed[i] = input_buffer[i] * wn[i] * sqrt_result_reverse;
+    currentFrameWindowed[i] = input_array[i] * wn[i] * sqrt_result_reverse;
   }
 
   FFT(currentFrameWindowed, imag);
   fixed_type magFrame[WIN_SIZE], phaseFrame[WIN_SIZE];
   cal_mag_phase(magFrame, phaseFrame, currentFrameWindowed, imag);
-  fixed_type previousPhase[WIN_SIZE] = {0};
-  pitchshifting(magFrame, phaseFrame, previousPhase, output_buffer);
+  pitchshifting(magFrame, phaseFrame, previousPhase, phaseCumulative, output_buffer);
   
 }
+
+
 
 // Calculate the magnitude and phase of a given complex mumber
 void cal_mag_phase(fixed_type magFrame[WIN_SIZE], fixed_type phaseFrame[WIN_SIZE], fixed_type real[WIN_SIZE], fixed_type imag[WIN_SIZE]){
