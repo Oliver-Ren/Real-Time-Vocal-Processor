@@ -4,7 +4,8 @@
 #include "ap_fixed.h"
 #include "ap_int.h"
 
-typedef ap_fixed <32,12> fixed_type;
+// typedef ap_fixed <32,12> fixed_type;
+typedef float fixed_type;
 
-void input_transfer(fixed_type input_buffer[1280], fixed_type input, int input_buffer_pointer, int input_counter, fixed_type input_array[1024]);
+void input_transfer(fixed_type input, int& initialize, int& base, int& input_buffer_pointer, fixed_type input_buffer[1280], fixed_type input_array[1024]);
 #endif
