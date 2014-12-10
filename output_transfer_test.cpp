@@ -7,9 +7,9 @@ int main (int argc, char **argv){
   for (int i=0; i<1024; i++) {
   	parsed_array[i] = i;
   }
-  printf("base0 = %d", base);
+  // printf("base0 = %d  ", base);
   output_transfer( parsed_array,  output_buffer,  base,  output_array);
-  printf("base1 = %d \n", base);
+  // printf("base1 = %d \n", base);
   output_transfer( parsed_array,  output_buffer,  base,  output_array);
   for (int j = 0; j<323; j++) {
   	printf("output_array[%d] = %d\n", j, (int)output_array[j] );

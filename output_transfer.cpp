@@ -13,6 +13,7 @@ void output_transfer(fixed_type parsed_array[1024], fixed_type output_buffer[199
   if (base == 3) {
   	for (int j = 0; j < 701; j++){
   		output_buffer[j] = output_buffer[1292 + j];
+  		output_buffer[1292 + j] = 0;
   	}
   }
   base = (base + 1) % 4;
