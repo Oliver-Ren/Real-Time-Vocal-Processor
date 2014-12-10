@@ -2,16 +2,14 @@ fixed_type input_buffer[1280];
 fixed_type previousPhase[WIN_SIZE] = {0};
 fixed_type phaseCumulative[WIN_SIZE] = {0}; 
 fixed_type input_array[WIN_SIZE] = {0};
-int input_buffer_pointer, input_counter;
+int input_buffer_pointer, initialize, base_input;
 
 
 void top (fixed_type input, fixed_type * output) {	   
   
-  input_transfer(input_buffer, input, input_buffer_pointer, input_counter, input_array);
-
-  if (input_counter == 1023)
-    combine(input_array, previousPhase, phaseCumulative, output_array);
-
-  input_buffer_pointer = (input_buffer_pointer + 1) % 1280;
-  input_counter = (input_counter + 1) % 1024;
+  input_transfer(input, initialize, base_input, input_buffer_pointer, input_buffer, input_array)
+  if ((initialize == 0 && input_buffer_pointer == 1023) || (initialize == 1 && input_buffer_pointer % 256 = 255)){
+  	combine(input_array, previousPhase, phaseCumulative, output_array);
+  }
+    
 }
