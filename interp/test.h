@@ -1,0 +1,1 @@
+std::vector< float > interp1( std::vector< float > &x, std::vector< float > &y, std::vector< float > &x_new );
