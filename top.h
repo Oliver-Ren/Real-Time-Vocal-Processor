@@ -3,7 +3,8 @@
 
 #include "combine.h"
 #include "input_transfer.h"
+#include "output_transfer.h"
 
-void top(fixed_type input, fixed_type* output);
+void top(short input, short* output);
 
 #endif

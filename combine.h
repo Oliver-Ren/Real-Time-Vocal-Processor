@@ -4,7 +4,8 @@
 #include "ap_fixed.h"
 #include "ap_int.h"
 
-typedef ap_fixed <32,12> fixed_type;
+// typedef ap_fixed <32,12> fixed_type;
+typedef float fixed_type;
 
 const int WIN_SIZE                   = 1024;
 const fixed_type WINSIZE_REVERSE     = 0.0009765625;
