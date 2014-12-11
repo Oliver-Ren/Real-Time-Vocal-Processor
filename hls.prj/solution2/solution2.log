@@ -10,8 +10,8 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [HLS-10] Analyzing design file 'pitchshifting.cpp' ... 
 @I [HLS-10] Analyzing design file 'fft.cpp' ... 
 @I [HLS-10] Analyzing design file 'cordic.cpp' ... 
-@I [HLS-10] Importing test bench file 'combine_test.cpp' ... 
 @I [HLS-10] Analyzing design file 'combine.cpp' ... 
+@I [HLS-10] Analyzing design file 'top.cpp' ... 
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Checking synthesizability ...
 @I [HLS-10] Starting code transformations ...
@@ -24,21 +24,47 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [XFORM-501] Unrolling loop 'Loop-1' (cordic.cpp:100) in function 'cordic_sqrt' completely.
 @I [XFORM-501] Unrolling loop 'Loop-1' (cordic.cpp:67) in function 'cordic_atan' completely.
 @I [XFORM-602] Inlining function 'swap' into 'bitrp' (fft.cpp:25) automatically.
-@I [XFORM-602] Inlining function 'cordic_sin_cos' into 'pitchshifting' (pitchshifting.cpp:51) automatically.
-@I [XFORM-401] Performing if-conversion on hyperblock from (pitchshifting.cpp:65) to (pitchshifting.cpp:67) in function 'ap_fixed_fmod'... converting 3 basic blocks.
+@I [XFORM-602] Inlining function 'cordic_sin_cos' into 'pitchshifting' (pitchshifting.cpp:54) automatically.
+@I [XFORM-401] Performing if-conversion on hyperblock from (pitchshifting.cpp:70) to (pitchshifting.cpp:72) in function 'ap_fixed_fmod'... converting 3 basic blocks.
 @I [XFORM-401] Performing if-conversion on hyperblock from (cordic.cpp:29) to (cordic.cpp:55) in function 'cordic'... converting 95 basic blocks.
 @I [XFORM-401] Performing if-conversion on hyperblock from (cordic.cpp:57) to (cordic.cpp:80) in function 'cordic_atan'... converting 76 basic blocks.
-@I [XFORM-602] Inlining function 'ap_fixed_fmod' into 'pitchshifting' (pitchshifting.cpp:22) automatically.
-@I [XFORM-11] Balancing expressions in function 'cordic_atan' (cordic.cpp:57)...18 expression(s) balanced.
-@I [HLS-111] Elapsed time: 38.83 seconds; current memory usage: 170 MB.
+@I [XFORM-401] Performing if-conversion on hyperblock from (top.cpp:176) to (top.cpp:175) in function 'interp1'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (top.cpp:88) to (top.cpp:99) in function 'output_transfer'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (top.cpp:52) to (top.cpp:54) in function 'top'... converting 3 basic blocks.
+@I [XFORM-602] Inlining function 'cordic_atan' into 'cal_mag_phase' (combine.cpp:32) automatically.
+@I [XFORM-602] Inlining function 'ap_fixed_fmod' into 'pitchshifting' (pitchshifting.cpp:21) automatically.
+@I [XFORM-11] Balancing expressions in function 'cordic_atan' (cordic.cpp:57)...4 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'cal_mag_phase' (combine.cpp:25)...7 expression(s) balanced.
+@I [HLS-111] Elapsed time: 35.98 seconds; current memory usage: 199 MB.
 @I [HLS-10] Starting hardware synthesis ...
-@I [HLS-10] Synthesizing 'combine' ...
+@I [HLS-10] Synthesizing 'top' ...
+@W [RTGEN-101] Legalizing port name 'top/input' to 'top/input_r'.
+@W [RTGEN-101] Legalizing port name 'top/output' to 'top/output_r'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'input_transfer' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 36.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.18 seconds; current memory usage: 200 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'input_transfer' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 200 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'bitrp' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 170 MB.
+@I [HLS-111] Elapsed time: 0.18 seconds; current memory usage: 200 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'bitrp' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -47,13 +73,13 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 171 MB.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 201 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'FFT' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.61 seconds; current memory usage: 171 MB.
+@I [HLS-111] Elapsed time: 0.43 seconds; current memory usage: 201 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'FFT' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -62,7 +88,7 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.36 seconds; current memory usage: 172 MB.
+@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 202 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'cordic_sqrt' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -70,7 +96,7 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [SCHED-61] Pipelining function 'cordic_sqrt'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 36.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.64 seconds; current memory usage: 174 MB.
+@I [HLS-111] Elapsed time: 1.53 seconds; current memory usage: 203 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'cordic_sqrt' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -79,24 +105,7 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.83 seconds; current memory usage: 175 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Scheduling module 'cordic_atan' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [SCHED-11] Starting scheduling ...
-@I [SCHED-61] Pipelining function 'cordic_atan'.
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
-@I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.79 seconds; current memory usage: 177 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Exploring micro-architecture for module 'cordic_atan' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [BIND-100] Starting micro-architecture binding ...
-@I [BIND-101] Performing variable lifetime analysis.
-@I [BIND-101] Exploring resource sharing.
-@I [BIND-101] Binding resource limited operations ...
-@I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.46 seconds; current memory usage: 178 MB.
+@I [HLS-111] Elapsed time: 0.33 seconds; current memory usage: 205 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'cal_mag_phase' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -104,7 +113,7 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [SCHED-61] Pipelining loop 'Loop 1'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 37.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.59 seconds; current memory usage: 178 MB.
+@I [HLS-111] Elapsed time: 0.58 seconds; current memory usage: 206 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'cal_mag_phase' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -113,15 +122,15 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.28 seconds; current memory usage: 179 MB.
+@I [HLS-111] Elapsed time: 0.13 seconds; current memory usage: 207 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'cordic' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-61] Pipelining function 'cordic'.
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 21.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 18.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.73 seconds; current memory usage: 181 MB.
+@I [HLS-111] Elapsed time: 1.19 seconds; current memory usage: 208 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'cordic' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -130,13 +139,13 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.7 seconds; current memory usage: 183 MB.
+@I [HLS-111] Elapsed time: 0.25 seconds; current memory usage: 210 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'IFFT' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.32 seconds; current memory usage: 183 MB.
+@I [HLS-111] Elapsed time: 0.67 seconds; current memory usage: 210 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'IFFT' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -145,19 +154,19 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.4 seconds; current memory usage: 184 MB.
+@I [HLS-111] Elapsed time: 0.13 seconds; current memory usage: 211 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'pitchshifting' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-61] Pipelining loop 'Loop 1'.
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 24.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
 @I [SCHED-61] Pipelining loop 'Loop 2'.
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 46.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 36.
 @I [SCHED-61] Pipelining loop 'Loop 3'.
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 10.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 7.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.26 seconds; current memory usage: 185 MB.
+@I [HLS-111] Elapsed time: 0.71 seconds; current memory usage: 212 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'pitchshifting' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -166,7 +175,7 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 0.83 seconds; current memory usage: 187 MB.
+@I [HLS-111] Elapsed time: 0.31 seconds; current memory usage: 213 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'combine' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -174,7 +183,7 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [SCHED-61] Pipelining loop 'Loop 3'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 7.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.25 seconds; current memory usage: 188 MB.
+@I [HLS-111] Elapsed time: 0.6 seconds; current memory usage: 213 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'combine' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -183,109 +192,210 @@ Copyright (C) 2013 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding resource limited operations ...
 @I [BIND-100] Finished micro-architecture binding.
-@I [HLS-111] Elapsed time: 1.07 seconds; current memory usage: 189 MB.
+@I [HLS-111] Elapsed time: 0.54 seconds; current memory usage: 214 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'output_transfer' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
+   between 'store' operation (top.cpp:101) of variable 'r_V' on array 'output_buffer_V' and 'load' operation ('__Val2__', top.cpp:101) on array 'output_buffer_V'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 2'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
+   between 'store' operation (top.cpp:111) of constant 0 on array 'output_buffer_V' and 'load' operation ('output_buffer_V_load', top.cpp:110) on array 'output_buffer_V'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 3'.
+@W [SCHED-69] Unable to schedule 'store' operation (top.cpp:119) of constant 0 on array 'output_buffer_V' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.71 seconds; current memory usage: 215 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'output_transfer' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 216 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'interp1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 50.
+@I [SCHED-61] Pipelining loop 'Loop 2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 10.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.28 seconds; current memory usage: 216 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'interp1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 217 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'top' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-61] Pipelining loop 'Loop 2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.24 seconds; current memory usage: 217 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'top' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.67 seconds; current memory usage: 218 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'input_transfer' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Module generated: top_srem_32ns_32ns_32_35|top_srem_32ns_32ns_32_35_U1.
+@I [RTGEN-100] Module generated: top_srem_32ns_32ns_32_35|top_srem_32ns_32ns_32_35_U2.
+@I [RTGEN-100] Module generated: top_srem_32ns_32ns_32_35|top_srem_32ns_32ns_32_35_U3.
+@I [RTGEN-100] Finished creating RTL model for 'input_transfer'.
+@I [HLS-111] Elapsed time: 0.73 seconds; current memory usage: 220 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bitrp' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'bitrp'.
-@I [HLS-111] Elapsed time: 1.11 seconds; current memory usage: 191 MB.
+@I [HLS-111] Elapsed time: 0.22 seconds; current memory usage: 222 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'FFT' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-100] Module generated: combine_mul_32s_14s_45_3|combine_mul_32s_14s_45_3_U3.
-@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U4.
-@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U5.
-@I [RTGEN-100] Module generated: combine_mul_32s_14s_45_3|combine_mul_32s_14s_45_3_U6.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_32_6|combine_mul_32s_32s_32_6_U7.
-@I [RTGEN-100] Module generated: combine_sdiv_32ns_32s_32_35|combine_sdiv_32ns_32s_32_35_U8.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U9.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U10.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U11.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U12.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_32_6|top_mul_32s_32s_32_6_U11.
+@I [RTGEN-100] Module generated: top_sdiv_32ns_32s_32_35|top_sdiv_32ns_32s_32_35_U12.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U13.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U14.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U15.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U16.
 @I [RTGEN-100] Finished creating RTL model for 'FFT'.
-@I [HLS-111] Elapsed time: 0.17 seconds; current memory usage: 192 MB.
+@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 223 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'cordic_sqrt' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U16.
+@I [RTGEN-100] Module generated: top_mul_32s_6ns_38_3|top_mul_32s_6ns_38_3_U20.
 @I [RTGEN-100] Finished creating RTL model for 'cordic_sqrt'.
-@I [HLS-111] Elapsed time: 1.15 seconds; current memory usage: 197 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Generating RTL for module 'cordic_atan' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-100] Finished creating RTL model for 'cordic_atan'.
-@I [HLS-111] Elapsed time: 1.46 seconds; current memory usage: 205 MB.
+@I [HLS-111] Elapsed time: 0.49 seconds; current memory usage: 228 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'cal_mag_phase' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'cal_mag_phase'.
-@I [HLS-111] Elapsed time: 0.84 seconds; current memory usage: 210 MB.
+@I [HLS-111] Elapsed time: 0.79 seconds; current memory usage: 235 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'cordic' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'cordic'.
-@I [HLS-111] Elapsed time: 0.69 seconds; current memory usage: 214 MB.
+@I [HLS-111] Elapsed time: 0.48 seconds; current memory usage: 239 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'IFFT' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-100] Module generated: combine_mul_32s_13ns_45_3|combine_mul_32s_13ns_45_3_U26.
-@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U27.
-@I [RTGEN-100] Module generated: combine_mul_32s_20ns_52_3|combine_mul_32s_20ns_52_3_U28.
-@I [RTGEN-100] Module generated: combine_mul_32s_13ns_45_3|combine_mul_32s_13ns_45_3_U29.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_32_6|combine_mul_32s_32s_32_6_U30.
-@I [RTGEN-100] Module generated: combine_sdiv_32ns_32s_32_35|combine_sdiv_32ns_32s_32_35_U31.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U32.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U33.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U34.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U35.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_32_6|top_mul_32s_32s_32_6_U28.
+@I [RTGEN-100] Module generated: top_sdiv_32ns_32s_32_35|top_sdiv_32ns_32s_32_35_U29.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U30.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U31.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U32.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U33.
 @I [RTGEN-100] Finished creating RTL model for 'IFFT'.
-@I [HLS-111] Elapsed time: 1.23 seconds; current memory usage: 222 MB.
+@I [HLS-111] Elapsed time: 0.62 seconds; current memory usage: 246 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'pitchshifting' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-100] Module generated: combine_mul_52s_53ns_105_11|combine_mul_52s_53ns_105_11_U38.
-@I [RTGEN-100] Module generated: combine_mul_32s_23ns_52_3|combine_mul_32s_23ns_52_3_U39.
-@I [RTGEN-100] Module generated: combine_mul_52s_53ns_105_11|combine_mul_52s_53ns_105_11_U40.
-@I [RTGEN-100] Module generated: combine_mul_32s_23ns_52_3|combine_mul_32s_23ns_52_3_U41.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U42.
-@I [RTGEN-100] Module generated: combine_mul_32s_32s_52_6|combine_mul_32s_32s_52_6_U43.
-@I [RTGEN-100] Module generated: combine_mul_20ns_32s_52_3|combine_mul_20ns_32s_52_3_U44.
-@I [RTGEN-100] Module generated: combine_mul_52s_20ns_72_6|combine_mul_52s_20ns_72_6_U45.
+@I [RTGEN-100] Module generated: top_mul_38s_39ns_77_5|top_mul_38s_39ns_77_5_U36.
+@I [RTGEN-100] Module generated: top_mul_32s_9ns_38_3|top_mul_32s_9ns_38_3_U37.
+@I [RTGEN-100] Module generated: top_mul_38s_39ns_77_5|top_mul_38s_39ns_77_5_U38.
+@I [RTGEN-100] Module generated: top_mul_32s_9ns_38_3|top_mul_32s_9ns_38_3_U39.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U40.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U41.
+@I [RTGEN-100] Module generated: top_mul_6ns_32s_38_3|top_mul_6ns_32s_38_3_U42.
+@I [RTGEN-100] Module generated: top_mul_38s_6ns_44_3|top_mul_38s_6ns_44_3_U43.
 @I [RTGEN-100] Finished creating RTL model for 'pitchshifting'.
-@I [HLS-111] Elapsed time: 1.09 seconds; current memory usage: 226 MB.
+@I [HLS-111] Elapsed time: 0.44 seconds; current memory usage: 249 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'combine' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-500] Setting interface mode on port 'combine/currentFrameWindowed_V' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'combine/imag_V' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on function 'combine' to 'ap_ctrl_hs'.
-@I [RTGEN-100] Module generated: combine_mul_40ns_20ns_60_4|combine_mul_40ns_20ns_60_4_U54.
+@I [RTGEN-100] Module generated: top_mul_6ns_32s_38_3|top_mul_6ns_32s_38_3_U51.
+@I [RTGEN-100] Module generated: top_mul_38s_6ns_44_3|top_mul_38s_6ns_44_3_U52.
 @I [RTGEN-100] Finished creating RTL model for 'combine'.
-@I [HLS-111] Elapsed time: 1.6 seconds; current memory usage: 231 MB.
-@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_14s_45_3_Mul3S_0'
-@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_20ns_52_3_Mul3S_1'
-@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_32s_32_6_MulnS_0'
-@I [RTMG-282] Generating pipelined core: 'combine_sdiv_32ns_32s_32_35_div'
-@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_32s_52_6_MulnS_1'
+@I [HLS-111] Elapsed time: 0.92 seconds; current memory usage: 253 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'output_transfer' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'output_transfer'.
+@I [HLS-111] Elapsed time: 0.71 seconds; current memory usage: 255 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'interp1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Module generated: top_sdiv_38ns_38s_38_41|top_sdiv_38ns_38s_38_41_U60.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U61.
+@I [RTGEN-100] Module generated: top_mul_32s_32s_38_6|top_mul_32s_32s_38_6_U62.
+@I [RTGEN-100] Finished creating RTL model for 'interp1'.
+@I [HLS-111] Elapsed time: 0.2 seconds; current memory usage: 257 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'top' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'top/input_r' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'top/output_r' to 'ap_vld'.
+@I [RTGEN-500] Setting interface mode on function 'top' to 'ap_ctrl_hs'.
+@W [RTGEN-101] Global scalar 'input_buffer_pointer' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'input_buffer_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'initialize' will not be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'base_input' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'input_array_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'previousPhase_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'phaseCumulative_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'output_array_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'base_output' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'output_buffer_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'transfer_array_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'index_input_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'index_output_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'output_realtime_V' will not be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'output_count' will not be exposed as RTL port.
+@I [RTGEN-100] Finished creating RTL model for 'top'.
+@I [HLS-111] Elapsed time: 0.31 seconds; current memory usage: 260 MB.
+@I [RTMG-282] Generating pipelined core: 'top_srem_32ns_32ns_32_35_div'
+@W [RTMG-276] Only power-on reset is supported for RAM 'input_transfer_input_buffer_V'.
+@I [RTMG-278] Implementing memory 'input_transfer_input_buffer_V_ram' using block RAMs.
+@I [RTMG-282] Generating pipelined core: 'top_mul_32s_32s_32_6_MulnS_0'
+@I [RTMG-282] Generating pipelined core: 'top_sdiv_32ns_32s_32_35_div'
+@I [RTMG-282] Generating pipelined core: 'top_mul_32s_32s_38_6_MulnS_1'
 @I [RTMG-278] Implementing memory 'FFT_wreal_V_ram' using block RAMs.
-@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_13ns_45_3_Mul3S_2'
-@I [RTMG-282] Generating pipelined core: 'combine_mul_52s_53ns_105_11_MulnS_2'
-@I [RTMG-282] Generating pipelined core: 'combine_mul_32s_23ns_52_3_Mul3S_3'
-@I [RTMG-282] Generating pipelined core: 'combine_mul_20ns_32s_52_3_Mul3S_4'
-@I [RTMG-282] Generating pipelined core: 'combine_mul_52s_20ns_72_6_MulnS_3'
-@I [RTMG-279] Implementing memory 'pitchshifting_wn_V_1_rom' using auto ROMs.
-@I [RTMG-278] Implementing memory 'pitchshifting_deltaPhiPrimeMod_V_ram' using block RAMs.
+@I [RTMG-282] Generating pipelined core: 'top_mul_32s_6ns_38_3_Mul3S_0'
+@I [RTMG-282] Generating pipelined core: 'top_mul_38s_39ns_77_5_Mul5S_0'
+@I [RTMG-282] Generating pipelined core: 'top_mul_32s_9ns_38_3_Mul3S_1'
+@I [RTMG-282] Generating pipelined core: 'top_mul_6ns_32s_38_3_Mul3S_2'
+@I [RTMG-282] Generating pipelined core: 'top_mul_38s_6ns_44_3_Mul3S_3'
+@W [RTMG-276] Only power-on reset is supported for RAM 'pitchshifting_previousPhase_V'.
+@I [RTMG-278] Implementing memory 'pitchshifting_previousPhase_V_ram' using block RAMs.
+@W [RTMG-276] Only power-on reset is supported for RAM 'pitchshifting_phaseCumulative_V'.
 @I [RTMG-278] Implementing memory 'pitchshifting_phaseCumulative_V_ram' using block RAMs.
+@I [RTMG-279] Implementing memory 'pitchshifting_wn_V_rom' using auto ROMs.
 @I [RTMG-278] Implementing memory 'pitchshifting_real_V_ram' using block RAMs.
-@I [RTMG-282] Generating pipelined core: 'combine_mul_40ns_20ns_60_4_Mul4S_0'
-@I [RTMG-279] Implementing memory 'combine_input_V_rom' using auto ROMs.
-@I [RTMG-278] Implementing memory 'combine_currentFrame_V_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'combine_magFrame_V_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'combine_phaseFrame_V_ram' using block RAMs.
-@I [RTMG-278] Implementing memory 'combine_previousPhase_V_ram' using block RAMs.
-@I [RTMG-278] Implementing memory 'combine_time_domain_V_ram' using block RAMs.
+@W [RTMG-276] Only power-on reset is supported for RAM 'output_transfer_output_buffer_V'.
+@I [RTMG-278] Implementing memory 'output_transfer_output_buffer_V_ram' using block RAMs.
+@I [RTMG-282] Generating pipelined core: 'top_sdiv_38ns_38s_38_41_div'
+@I [RTMG-278] Implementing memory 'interp1_dx_V_ram' using block RAMs.
+@W [RTMG-276] Only power-on reset is supported for RAM 'top_input_array_V'.
+@I [RTMG-278] Implementing memory 'top_input_array_V_ram' using block RAMs.
+@W [RTMG-276] Only power-on reset is supported for RAM 'top_transfer_array_V'.
+@I [RTMG-278] Implementing memory 'top_transfer_array_V_ram' using block RAMs.
+@W [RTMG-276] Only power-on reset is supported for RAM 'top_index_output_V'.
+@I [RTMG-278] Implementing memory 'top_index_output_V_ram' using block RAMs.
 @I [HLS-10] Finished generating all RTL models.
-@I [WSYSC-301] Generating RTL SystemC for 'combine'.
-@I [WVHDL-304] Generating RTL VHDL for 'combine'.
-@I [WVLOG-307] Generating RTL Verilog for 'combine'.
-@I [HLS-112] Total elapsed time: 192.732 seconds; peak memory usage: 231 MB.
+@I [WSYSC-301] Generating RTL SystemC for 'top'.
+@I [WVHDL-304] Generating RTL VHDL for 'top'.
+@I [WVLOG-307] Generating RTL Verilog for 'top'.
+@I [HLS-112] Total elapsed time: 171.929 seconds; peak memory usage: 260 MB.

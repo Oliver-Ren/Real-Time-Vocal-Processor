@@ -34,7 +34,7 @@ architecture rtl of pitchshifting_phaseCumulative_V_ram is
 
 signal addr0_tmp : std_logic_vector(awidth-1 downto 0); 
 type mem_array is array (0 to mem_size-1) of std_logic_vector (dwidth-1 downto 0); 
-shared variable ram : mem_array;
+shared variable ram : mem_array := (others=>(others=>'0'));
 
 attribute syn_ramstyle : string; 
 attribute syn_ramstyle of ram : variable is "block_ram";

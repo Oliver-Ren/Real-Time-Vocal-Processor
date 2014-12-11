@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cordic_sqrt'" level="0">
-<item name = "Date">Sun Dec  7 14:25:05 2014
+<item name = "Date">Wed Dec 10 22:44:32 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="default">10.00, 7.45, 1.25</column>
+<column name="default">10.00, 6.73, 1.25</column>
 </table>
 </item>
 </section>

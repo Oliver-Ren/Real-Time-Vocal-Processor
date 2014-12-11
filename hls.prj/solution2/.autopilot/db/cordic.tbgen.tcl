@@ -5,7 +5,7 @@ set isPipelined 1
 set pipeline_type function
 set isOneStateSeq 0
 set pipeII 1
-set pipeLatency 20
+set pipeLatency 17
 set C_modelName cordic
 set C_modelType { int 64 }
 set C_modelArgList { 

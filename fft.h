@@ -2,6 +2,7 @@
 #ifndef _FFT_H_
 #define _FFT_H_
 #include "combine.h"
+//#include "top.h"
 
 void swap (fixed_type &a, fixed_type &b);
 void bitrp (fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]);

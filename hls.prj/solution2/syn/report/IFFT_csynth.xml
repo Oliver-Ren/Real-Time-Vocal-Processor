@@ -27,8 +27,8 @@
 <SummaryOfLoopLatency>
 <Loop1>
 <TripCount>511</TripCount>
-<Latency>2555</Latency>
-<IterationLatency>5</IterationLatency>
+<Latency>1022</Latency>
+<IterationLatency>2</IterationLatency>
 </Loop1>
 <Loop2>
 <TripCount>10</TripCount>
@@ -62,8 +62,8 @@
 </Loop2>
 <Loop3>
 <TripCount>1024</TripCount>
-<Latency>2048</Latency>
-<IterationLatency>2</IterationLatency>
+<Latency>1024</Latency>
+<IterationLatency>1</IterationLatency>
 </Loop3>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
@@ -71,9 +71,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>2</BRAM_18K>
-<DSP48E>28</DSP48E>
-<FF>3007</FF>
-<LUT>3041</LUT>
+<DSP48E>20</DSP48E>
+<FF>2726</FF>
+<LUT>2985</LUT>
 <SLICE>0</SLICE>
 </Resources>
 <AvailableResources>

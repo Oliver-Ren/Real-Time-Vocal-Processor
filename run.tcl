@@ -1,9 +1,9 @@
 ############################################################
 open_project hls.prj
-set_top combine
+set_top top
 
+add_files top.cpp -cflags "-DBIT_ACCURATE"
 add_files combine.cpp -cflags "-DBIT_ACCURATE"
-add_files -tb combine_test.cpp -cflags "-DBIT_ACCURATE"
 add_files cordic.cpp -cflags "-DBIT_ACCURATE"
 add_files fft.cpp -cflags "-DBIT_ACCURATE"
 add_files pitchshifting.cpp -cflags "-DBIT_ACCURATE"

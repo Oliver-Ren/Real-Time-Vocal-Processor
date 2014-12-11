@@ -18,11 +18,14 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     deltaPhiPrime[i] = deltaPhi[i] - (hop << 1) * PI * i * WINSIZE_REVERSE;
 
     if (deltaPhiPrime[i] + PI > 0)
-      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI << 1) - PI;    
+      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI << 1) - PI; 
+      // deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI * 2) - PI;   
     else
       deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI << 1) + PI;
+      // deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI * 2) + PI;
       
     trueFreq[i] = (PI << 1) * i * WINSIZE_REVERSE + deltaPhiPrimeMod[i] * hop_reverse;
+    // trueFreq[i] = (PI * 2) * i * WINSIZE_REVERSE + deltaPhiPrimeMod[i] * hop_reverse;
     
     // Get the phi_2u
     phi_2u[i] = hop * trueFreq[i];
@@ -45,7 +48,8 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
 
   for (int j = 0; j < WIN_SIZE; j++){
     #pragma HLS PIPELINE II=1
-    real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI<<1));
+    // real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI<<1));
+    real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI*2));
     
     cordic_sin_cos(real_angle[j], sin_value[j], cos_value[j]);
       

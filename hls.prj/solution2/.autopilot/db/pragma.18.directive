@@ -70,12 +70,12 @@
 <option name="self" positionalBoolean="type" value=""/>
 </pragma>
 </directive>
-<directive functionLabel="" functionName="cordic_atan" label="">
+<directive functionLabel="" functionName="combine" label="">
 <pragma name="PIPELINE">
 <option name="II" value="1"/>
 </pragma>
 </directive>
-<directive functionLabel="" functionName="cordic_sqrt" label="">
+<directive functionLabel="" functionName="cal_mag_phase" label="">
 <pragma name="PIPELINE">
 <option name="II" value="1"/>
 </pragma>

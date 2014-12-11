@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'combine'" level="0">
-<item name = "Date">Sun Dec  7 14:25:27 2014
+<item name = "Date">Wed Dec 10 22:44:44 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -31,15 +31,15 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_pitchshifting_fu_182">pitchshifting, ?, ?, ?, ?, none</column>
-<column name="grp_cal_mag_phase_fu_192">cal_mag_phase, 1061, 1061, 1061, 1061, none</column>
-<column name="grp_FFT_fu_202">FFT, ?, ?, ?, ?, none</column>
+<column name="grp_pitchshifting_fu_157">pitchshifting, ?, ?, ?, ?, none</column>
+<column name="grp_cal_mag_phase_fu_171">cal_mag_phase, 1061, 1061, 1061, 1061, none</column>
+<column name="grp_FFT_fu_179">FFT, ?, ?, ?, ?, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">1024, 1024, 1, -, -, 1024, no</column>
-<column name="- Loop 2">2048, 2048, 2, -, -, 1024, no</column>
+<column name="- Loop 2">1024, 1024, 1, -, -, 1024, no</column>
 <column name="- Loop 3">1029, 1029, 7, 1, 1, 1024, yes</column>
 </table>
 </item>
@@ -52,36 +52,35 @@
 <section name = "Utilization Estimates" level="0">
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="Expression">-, 1, 0, 76</column>
+<column name="Expression">-, -, 0, 75</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">14, 98, 14839, 35123</column>
-<column name="Memory">11, -, 0, 0</column>
-<column name="Multiplexer">-, -, -, 142</column>
-<column name="Register">-, -, 158, -</column>
+<column name="Instance">13, 72, 10245, 21082</column>
+<column name="Memory">8, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 137</column>
+<column name="Register">-, -, 97, -</column>
 <column name="ShiftMemory">-, -, 0, 12</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">8, 45, 14, 66</specialColumn>
+<specialColumn name="Utilization (%)">7, 32, 9, 40</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="grp_FFT_fu_202">FFT, 2, 28, 2965, 3005</column>
-<column name="grp_cal_mag_phase_fu_192">cal_mag_phase, 0, 2, 3323, 12928</column>
-<column name="combine_mul_40ns_20ns_60_4_U54">combine_mul_40ns_20ns_60_4, 0, 3, 36, 16</column>
-<column name="grp_pitchshifting_fu_182">pitchshifting, 12, 65, 8515, 19174</column>
+<column name="grp_FFT_fu_179">FFT, 2, 20, 2779, 3091</column>
+<column name="grp_cal_mag_phase_fu_171">cal_mag_phase, 0, 2, 2443, 7995</column>
+<column name="grp_pitchshifting_fu_157">pitchshifting, 11, 46, 5023, 9996</column>
+<column name="top_mul_38s_6ns_44_3_U52">top_mul_38s_6ns_44_3, 0, 2, 0, 0</column>
+<column name="top_mul_6ns_32s_38_3_U51">top_mul_6ns_32s_38_3, 0, 2, 0, 0</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="7">Memory, Module, BRAM_18K, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="currentFrame_V_U">combine_currentFrame_V, 1, 1024, 17, 1, 17408</column>
-<column name="input_V_U">combine_input_V, 1, 1024, 17, 1, 17408</column>
 <column name="magFrame_V_U">combine_magFrame_V, 2, 1024, 32, 1, 32768</column>
-<column name="phaseFrame_V_U">combine_phaseFrame_V, 2, 1024, 26, 1, 26624</column>
-<column name="previousPhase_V_U">combine_previousPhase_V, 1, 1024, 1, 1, 1024</column>
-<column name="time_domain_V_U">combine_time_domain_V, 2, 1024, 32, 1, 32768</column>
-<column name="wn_V_U">pitchshifting_wn_V_1, 2, 1024, 20, 1, 20480</column>
+<column name="phaseFrame_V_U">combine_phaseFrame_V, 1, 1024, 11, 1, 11264</column>
+<column name="currentFrameWindowed_V_U">pitchshifting_real_V, 2, 1024, 32, 1, 32768</column>
+<column name="imag_V_U">pitchshifting_real_V, 2, 1024, 32, 1, 32768</column>
+<column name="wn_V_1_U">pitchshifting_wn_V, 1, 1024, 6, 1, 6144</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -90,34 +89,31 @@
 </item>
 <item name = "Shift register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="exitcond_reg_324">0, 1, 1, 0</column>
-<column name="tmp_8_reg_333">0, 11, 64, 53</column>
+<column name="exitcond_reg_287">0, 1, 1, 0</column>
+<column name="tmp_reg_296">0, 11, 64, 53</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="r_V_fu_268_p2">*, 1, 0, 1, 20, 17</column>
-<column name="counter_input_1_fu_233_p2">+, 0, 0, 11, 11, 1</column>
-<column name="i_1_fu_250_p2">+, 0, 0, 11, 11, 1</column>
-<column name="p_rec_fu_221_p2">+, 0, 0, 11, 11, 1</column>
-<column name="exitcond6_fu_227_p2">icmp, 0, 0, 14, 11, 12</column>
-<column name="exitcond7_fu_215_p2">icmp, 0, 0, 14, 11, 12</column>
-<column name="exitcond_fu_244_p2">icmp, 0, 0, 14, 11, 12</column>
+<column name="i_1_fu_225_p2">+, 0, 0, 11, 11, 1</column>
+<column name="p_rec1_fu_196_p2">+, 0, 0, 11, 11, 1</column>
+<column name="p_rec_fu_213_p2">+, 0, 0, 11, 11, 1</column>
+<column name="exitcond6_fu_207_p2">icmp, 0, 0, 14, 11, 12</column>
+<column name="exitcond7_fu_190_p2">icmp, 0, 0, 14, 11, 12</column>
+<column name="exitcond_fu_219_p2">icmp, 0, 0, 14, 11, 12</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="counter_input_reg_159">11, 2, 11, 22</column>
-<column name="currentFrameWindowed_V_address0">10, 3, 10, 30</column>
-<column name="currentFrameWindowed_V_d0">32, 2, 32, 64</column>
-<column name="currentFrame_V_address0">10, 3, 10, 30</column>
-<column name="currentFrame_V_d0">17, 2, 17, 34</column>
-<column name="i_reg_170">11, 2, 11, 22</column>
-<column name="imag_V_address0">10, 2, 10, 20</column>
+<column name="currentFrameWindowed_V_address0">10, 4, 10, 40</column>
+<column name="currentFrameWindowed_V_d0">32, 3, 32, 96</column>
+<column name="i_reg_145">11, 2, 11, 22</column>
+<column name="imag_V_address0">10, 3, 10, 30</column>
+<column name="imag_V_d0">32, 2, 32, 64</column>
 <column name="magFrame_V_address0">10, 2, 10, 20</column>
-<column name="p_049_rec_reg_148">11, 2, 11, 22</column>
+<column name="p_036_rec_reg_123">11, 2, 11, 22</column>
+<column name="p_039_rec_reg_134">11, 2, 11, 22</column>
 <column name="phaseFrame_V_address0">10, 2, 10, 20</column>
-<column name="previousPhase_V_address0">10, 2, 10, 20</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -130,19 +126,15 @@
 <column name="ap_reg_ppiten_pp0_it4">1, 1, 0</column>
 <column name="ap_reg_ppiten_pp0_it5">1, 1, 0</column>
 <column name="ap_reg_ppiten_pp0_it6">1, 1, 0</column>
-<column name="counter_input_1_reg_309">11, 11, 0</column>
-<column name="counter_input_reg_159">11, 11, 0</column>
-<column name="currentFrame_V_load_reg_348">17, 17, 0</column>
-<column name="exitcond_reg_324">1, 1, 0</column>
-<column name="grp_FFT_fu_202_ap_start_ap_start_reg">1, 1, 0</column>
-<column name="grp_cal_mag_phase_fu_192_ap_start_ap_start_reg">1, 1, 0</column>
-<column name="grp_pitchshifting_fu_182_ap_start_ap_start_reg">1, 1, 0</column>
-<column name="i_reg_170">11, 11, 0</column>
-<column name="p_049_rec_reg_148">11, 11, 0</column>
-<column name="r_V_reg_358">40, 40, 0</column>
-<column name="tmp_8_reg_333">11, 64, 53</column>
-<column name="tmp_reg_314">11, 64, 53</column>
-<column name="wn_V_load_reg_353">20, 20, 0</column>
+<column name="exitcond_reg_287">1, 1, 0</column>
+<column name="grp_FFT_fu_179_ap_start_ap_start_reg">1, 1, 0</column>
+<column name="grp_cal_mag_phase_fu_171_ap_start_ap_start_reg">1, 1, 0</column>
+<column name="grp_pitchshifting_fu_157_ap_start_ap_start_reg">1, 1, 0</column>
+<column name="i_reg_145">11, 11, 0</column>
+<column name="p_036_rec_reg_123">11, 11, 0</column>
+<column name="p_039_rec_reg_134">11, 11, 0</column>
+<column name="r_V_reg_321">38, 38, 0</column>
+<column name="tmp_reg_296">11, 64, 53</column>
 </table>
 </item>
 </section>
@@ -152,28 +144,19 @@
 <section name = "Interface" level="0">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
-<column name="ap_clk">in, 1, ap_ctrl_hs, combine, return value</column>
-<column name="ap_rst">in, 1, ap_ctrl_hs, combine, return value</column>
-<column name="ap_start">in, 1, ap_ctrl_hs, combine, return value</column>
-<column name="ap_done">out, 1, ap_ctrl_hs, combine, return value</column>
-<column name="ap_idle">out, 1, ap_ctrl_hs, combine, return value</column>
-<column name="ap_ready">out, 1, ap_ctrl_hs, combine, return value</column>
-<column name="currentFrameWindowed_V_address0">out, 10, ap_memory, currentFrameWindowed_V, array</column>
-<column name="currentFrameWindowed_V_ce0">out, 1, ap_memory, currentFrameWindowed_V, array</column>
-<column name="currentFrameWindowed_V_we0">out, 1, ap_memory, currentFrameWindowed_V, array</column>
-<column name="currentFrameWindowed_V_d0">out, 32, ap_memory, currentFrameWindowed_V, array</column>
-<column name="currentFrameWindowed_V_q0">in, 32, ap_memory, currentFrameWindowed_V, array</column>
-<column name="currentFrameWindowed_V_address1">out, 10, ap_memory, currentFrameWindowed_V, array</column>
-<column name="currentFrameWindowed_V_ce1">out, 1, ap_memory, currentFrameWindowed_V, array</column>
-<column name="currentFrameWindowed_V_q1">in, 32, ap_memory, currentFrameWindowed_V, array</column>
-<column name="imag_V_address0">out, 10, ap_memory, imag_V, array</column>
-<column name="imag_V_ce0">out, 1, ap_memory, imag_V, array</column>
-<column name="imag_V_we0">out, 1, ap_memory, imag_V, array</column>
-<column name="imag_V_d0">out, 32, ap_memory, imag_V, array</column>
-<column name="imag_V_q0">in, 32, ap_memory, imag_V, array</column>
-<column name="imag_V_address1">out, 10, ap_memory, imag_V, array</column>
-<column name="imag_V_ce1">out, 1, ap_memory, imag_V, array</column>
-<column name="imag_V_q1">in, 32, ap_memory, imag_V, array</column>
+<column name="ap_clk">in, 1, , combine, return value</column>
+<column name="ap_rst">in, 1, , combine, return value</column>
+<column name="ap_start">in, 1, , combine, return value</column>
+<column name="ap_done">out, 1, , combine, return value</column>
+<column name="ap_idle">out, 1, , combine, return value</column>
+<column name="ap_ready">out, 1, , combine, return value</column>
+<column name="input_array_V_address0">out, 10, ap_memory, input_array_V, array</column>
+<column name="input_array_V_ce0">out, 1, ap_memory, input_array_V, array</column>
+<column name="input_array_V_q0">in, 32, ap_memory, input_array_V, array</column>
+<column name="output_array_V_address0">out, 10, ap_memory, output_array_V, array</column>
+<column name="output_array_V_ce0">out, 1, ap_memory, output_array_V, array</column>
+<column name="output_array_V_we0">out, 1, ap_memory, output_array_V, array</column>
+<column name="output_array_V_d0">out, 32, ap_memory, output_array_V, array</column>
 </table>
 </item>
 </section>

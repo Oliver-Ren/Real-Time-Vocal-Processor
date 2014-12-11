@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'combine'
 ================================================================
-* Date:           Sun Dec  7 14:25:27 2014
+* Date:           Wed Dec 10 22:44:44 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -38,9 +38,9 @@
         |                          |               |   Latency   |   Interval  | Pipeline|
         |         Instance         |     Module    |  min |  max |  min |  max |   Type  |
         +--------------------------+---------------+------+------+------+------+---------+
-        |grp_pitchshifting_fu_182  |pitchshifting  |     ?|     ?|     ?|     ?|   none  |
-        |grp_cal_mag_phase_fu_192  |cal_mag_phase  |  1061|  1061|  1061|  1061|   none  |
-        |grp_FFT_fu_202            |FFT            |     ?|     ?|     ?|     ?|   none  |
+        |grp_pitchshifting_fu_157  |pitchshifting  |     ?|     ?|     ?|     ?|   none  |
+        |grp_cal_mag_phase_fu_171  |cal_mag_phase  |  1061|  1061|  1061|  1061|   none  |
+        |grp_FFT_fu_179            |FFT            |     ?|     ?|     ?|     ?|   none  |
         +--------------------------+---------------+------+------+------+------+---------+
 
         * Loop: 
@@ -49,7 +49,7 @@
         | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
         +----------+------+------+----------+-----------+-----------+------+----------+
         |- Loop 1  |  1024|  1024|         1|          -|          -|  1024|    no    |
-        |- Loop 2  |  2048|  2048|         2|          -|          -|  1024|    no    |
+        |- Loop 2  |  1024|  1024|         1|          -|          -|  1024|    no    |
         |- Loop 3  |  1029|  1029|         7|          1|          1|  1024|    yes   |
         +----------+------+------+----------+-----------+-----------+------+----------+
 
@@ -62,48 +62,47 @@
 +-----------------+---------+-------+--------+-------+
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
 +-----------------+---------+-------+--------+-------+
-|Expression       |        -|      1|       0|     76|
+|Expression       |        -|      -|       0|     75|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |       14|     98|   14839|  35123|
-|Memory           |       11|      -|       0|      0|
-|Multiplexer      |        -|      -|       -|    142|
-|Register         |        -|      -|     158|      -|
+|Instance         |       13|     72|   10245|  21082|
+|Memory           |        8|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    137|
+|Register         |        -|      -|      97|      -|
 |ShiftMemory      |        -|      -|       0|     12|
 +-----------------+---------+-------+--------+-------+
-|Total            |       25|     99|   14997|  35353|
+|Total            |       21|     72|   10342|  21306|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |        8|     45|      14|     66|
+|Utilization (%)  |        7|     32|       9|     40|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
     * Instance: 
-    +--------------------------------+----------------------------+---------+-------+------+-------+
-    |            Instance            |           Module           | BRAM_18K| DSP48E|  FF  |  LUT  |
-    +--------------------------------+----------------------------+---------+-------+------+-------+
-    |grp_FFT_fu_202                  |FFT                         |        2|     28|  2965|   3005|
-    |grp_cal_mag_phase_fu_192        |cal_mag_phase               |        0|      2|  3323|  12928|
-    |combine_mul_40ns_20ns_60_4_U54  |combine_mul_40ns_20ns_60_4  |        0|      3|    36|     16|
-    |grp_pitchshifting_fu_182        |pitchshifting               |       12|     65|  8515|  19174|
-    +--------------------------------+----------------------------+---------+-------+------+-------+
-    |Total                           |                            |       14|     98| 14839|  35123|
-    +--------------------------------+----------------------------+---------+-------+------+-------+
+    +--------------------------+----------------------+---------+-------+------+------+
+    |         Instance         |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +--------------------------+----------------------+---------+-------+------+------+
+    |grp_FFT_fu_179            |FFT                   |        2|     20|  2779|  3091|
+    |grp_cal_mag_phase_fu_171  |cal_mag_phase         |        0|      2|  2443|  7995|
+    |grp_pitchshifting_fu_157  |pitchshifting         |       11|     46|  5023|  9996|
+    |top_mul_38s_6ns_44_3_U52  |top_mul_38s_6ns_44_3  |        0|      2|     0|     0|
+    |top_mul_6ns_32s_38_3_U51  |top_mul_6ns_32s_38_3  |        0|      2|     0|     0|
+    +--------------------------+----------------------+---------+-------+------+------+
+    |Total                     |                      |       13|     72| 10245| 21082|
+    +--------------------------+----------------------+---------+-------+------+------+
 
     * Memory: 
-    +-------------------+-------------------------+---------+------+-----+------+-------------+
-    |       Memory      |          Module         | BRAM_18K| Words| Bits| Banks| W*Bits*Banks|
-    +-------------------+-------------------------+---------+------+-----+------+-------------+
-    |currentFrame_V_U   |combine_currentFrame_V   |        1|  1024|   17|     1|        17408|
-    |input_V_U          |combine_input_V          |        1|  1024|   17|     1|        17408|
-    |magFrame_V_U       |combine_magFrame_V       |        2|  1024|   32|     1|        32768|
-    |phaseFrame_V_U     |combine_phaseFrame_V     |        2|  1024|   26|     1|        26624|
-    |previousPhase_V_U  |combine_previousPhase_V  |        1|  1024|    1|     1|         1024|
-    |time_domain_V_U    |combine_time_domain_V    |        2|  1024|   32|     1|        32768|
-    |wn_V_U             |pitchshifting_wn_V_1     |        2|  1024|   20|     1|        20480|
-    +-------------------+-------------------------+---------+------+-----+------+-------------+
-    |Total              |                         |       11|  7168|  145|     7|       148480|
-    +-------------------+-------------------------+---------+------+-----+------+-------------+
+    +--------------------------+----------------------+---------+------+-----+------+-------------+
+    |          Memory          |        Module        | BRAM_18K| Words| Bits| Banks| W*Bits*Banks|
+    +--------------------------+----------------------+---------+------+-----+------+-------------+
+    |magFrame_V_U              |combine_magFrame_V    |        2|  1024|   32|     1|        32768|
+    |phaseFrame_V_U            |combine_phaseFrame_V  |        1|  1024|   11|     1|        11264|
+    |currentFrameWindowed_V_U  |pitchshifting_real_V  |        2|  1024|   32|     1|        32768|
+    |imag_V_U                  |pitchshifting_real_V  |        2|  1024|   32|     1|        32768|
+    |wn_V_1_U                  |pitchshifting_wn_V    |        1|  1024|    6|     1|         6144|
+    +--------------------------+----------------------+---------+------+-----+------+-------------+
+    |Total                     |                      |        8|  5120|  113|     5|       115712|
+    +--------------------------+----------------------+---------+------+-----+------+-------------+
 
     * FIFO: 
     N/A
@@ -112,44 +111,41 @@
     +------------------+---+----+-----+-----------+
     |       Name       | FF| LUT| Bits| Const Bits|
     +------------------+---+----+-----+-----------+
-    |exitcond_reg_324  |  0|   1|    1|          0|
-    |tmp_8_reg_333     |  0|  11|   64|         53|
+    |exitcond_reg_287  |  0|   1|    1|          0|
+    |tmp_reg_296       |  0|  11|   64|         53|
     +------------------+---+----+-----+-----------+
     |Total             |  0|  12|   65|         53|
     +------------------+---+----+-----+-----------+
 
     * Expression: 
-    +---------------------------+----------+-------+---+----+------------+------------+
-    |       Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +---------------------------+----------+-------+---+----+------------+------------+
-    |r_V_fu_268_p2              |     *    |      1|  0|   1|          20|          17|
-    |counter_input_1_fu_233_p2  |     +    |      0|  0|  11|          11|           1|
-    |i_1_fu_250_p2              |     +    |      0|  0|  11|          11|           1|
-    |p_rec_fu_221_p2            |     +    |      0|  0|  11|          11|           1|
-    |exitcond6_fu_227_p2        |   icmp   |      0|  0|  14|          11|          12|
-    |exitcond7_fu_215_p2        |   icmp   |      0|  0|  14|          11|          12|
-    |exitcond_fu_244_p2         |   icmp   |      0|  0|  14|          11|          12|
-    +---------------------------+----------+-------+---+----+------------+------------+
-    |Total                      |          |      1|  0|  76|          86|          56|
-    +---------------------------+----------+-------+---+----+------------+------------+
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |i_1_fu_225_p2        |     +    |      0|  0|  11|          11|           1|
+    |p_rec1_fu_196_p2     |     +    |      0|  0|  11|          11|           1|
+    |p_rec_fu_213_p2      |     +    |      0|  0|  11|          11|           1|
+    |exitcond6_fu_207_p2  |   icmp   |      0|  0|  14|          11|          12|
+    |exitcond7_fu_190_p2  |   icmp   |      0|  0|  14|          11|          12|
+    |exitcond_fu_219_p2   |   icmp   |      0|  0|  14|          11|          12|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0|  75|          66|          39|
+    +---------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
     +---------------------------------+----+-----------+-----+-----------+
     |               Name              | LUT| Input Size| Bits| Total Bits|
     +---------------------------------+----+-----------+-----+-----------+
-    |counter_input_reg_159            |  11|          2|   11|         22|
-    |currentFrameWindowed_V_address0  |  10|          3|   10|         30|
-    |currentFrameWindowed_V_d0        |  32|          2|   32|         64|
-    |currentFrame_V_address0          |  10|          3|   10|         30|
-    |currentFrame_V_d0                |  17|          2|   17|         34|
-    |i_reg_170                        |  11|          2|   11|         22|
-    |imag_V_address0                  |  10|          2|   10|         20|
+    |currentFrameWindowed_V_address0  |  10|          4|   10|         40|
+    |currentFrameWindowed_V_d0        |  32|          3|   32|         96|
+    |i_reg_145                        |  11|          2|   11|         22|
+    |imag_V_address0                  |  10|          3|   10|         30|
+    |imag_V_d0                        |  32|          2|   32|         64|
     |magFrame_V_address0              |  10|          2|   10|         20|
-    |p_049_rec_reg_148                |  11|          2|   11|         22|
+    |p_036_rec_reg_123                |  11|          2|   11|         22|
+    |p_039_rec_reg_134                |  11|          2|   11|         22|
     |phaseFrame_V_address0            |  10|          2|   10|         20|
-    |previousPhase_V_address0         |  10|          2|   10|         20|
     +---------------------------------+----+-----------+-----+-----------+
-    |Total                            | 142|         24|  142|        304|
+    |Total                            | 137|         22|  137|        336|
     +---------------------------------+----+-----------+-----+-----------+
 
     * Register: 
@@ -164,21 +160,17 @@
     |ap_reg_ppiten_pp0_it4                           |   1|    1|          0|
     |ap_reg_ppiten_pp0_it5                           |   1|    1|          0|
     |ap_reg_ppiten_pp0_it6                           |   1|    1|          0|
-    |counter_input_1_reg_309                         |  11|   11|          0|
-    |counter_input_reg_159                           |  11|   11|          0|
-    |currentFrame_V_load_reg_348                     |  17|   17|          0|
-    |exitcond_reg_324                                |   1|    1|          0|
-    |grp_FFT_fu_202_ap_start_ap_start_reg            |   1|    1|          0|
-    |grp_cal_mag_phase_fu_192_ap_start_ap_start_reg  |   1|    1|          0|
-    |grp_pitchshifting_fu_182_ap_start_ap_start_reg  |   1|    1|          0|
-    |i_reg_170                                       |  11|   11|          0|
-    |p_049_rec_reg_148                               |  11|   11|          0|
-    |r_V_reg_358                                     |  40|   40|          0|
-    |tmp_8_reg_333                                   |  11|   64|         53|
-    |tmp_reg_314                                     |  11|   64|         53|
-    |wn_V_load_reg_353                               |  20|   20|          0|
+    |exitcond_reg_287                                |   1|    1|          0|
+    |grp_FFT_fu_179_ap_start_ap_start_reg            |   1|    1|          0|
+    |grp_cal_mag_phase_fu_171_ap_start_ap_start_reg  |   1|    1|          0|
+    |grp_pitchshifting_fu_157_ap_start_ap_start_reg  |   1|    1|          0|
+    |i_reg_145                                       |  11|   11|          0|
+    |p_036_rec_reg_123                               |  11|   11|          0|
+    |p_039_rec_reg_134                               |  11|   11|          0|
+    |r_V_reg_321                                     |  38|   38|          0|
+    |tmp_reg_296                                     |  11|   64|         53|
     +------------------------------------------------+----+-----+-----------+
-    |Total                                           | 158|  264|        106|
+    |Total                                           |  97|  150|         53|
     +------------------------------------------------+----+-----+-----------+
 
 
@@ -187,30 +179,21 @@
 == Interface
 ================================================================
 * Summary: 
-+---------------------------------+-----+-----+------------+------------------------+--------------+
-|            RTL Ports            | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
-+---------------------------------+-----+-----+------------+------------------------+--------------+
-|ap_clk                           |  in |    1| ap_ctrl_hs |         combine        | return value |
-|ap_rst                           |  in |    1| ap_ctrl_hs |         combine        | return value |
-|ap_start                         |  in |    1| ap_ctrl_hs |         combine        | return value |
-|ap_done                          | out |    1| ap_ctrl_hs |         combine        | return value |
-|ap_idle                          | out |    1| ap_ctrl_hs |         combine        | return value |
-|ap_ready                         | out |    1| ap_ctrl_hs |         combine        | return value |
-|currentFrameWindowed_V_address0  | out |   10|  ap_memory | currentFrameWindowed_V |     array    |
-|currentFrameWindowed_V_ce0       | out |    1|  ap_memory | currentFrameWindowed_V |     array    |
-|currentFrameWindowed_V_we0       | out |    1|  ap_memory | currentFrameWindowed_V |     array    |
-|currentFrameWindowed_V_d0        | out |   32|  ap_memory | currentFrameWindowed_V |     array    |
-|currentFrameWindowed_V_q0        |  in |   32|  ap_memory | currentFrameWindowed_V |     array    |
-|currentFrameWindowed_V_address1  | out |   10|  ap_memory | currentFrameWindowed_V |     array    |
-|currentFrameWindowed_V_ce1       | out |    1|  ap_memory | currentFrameWindowed_V |     array    |
-|currentFrameWindowed_V_q1        |  in |   32|  ap_memory | currentFrameWindowed_V |     array    |
-|imag_V_address0                  | out |   10|  ap_memory |         imag_V         |     array    |
-|imag_V_ce0                       | out |    1|  ap_memory |         imag_V         |     array    |
-|imag_V_we0                       | out |    1|  ap_memory |         imag_V         |     array    |
-|imag_V_d0                        | out |   32|  ap_memory |         imag_V         |     array    |
-|imag_V_q0                        |  in |   32|  ap_memory |         imag_V         |     array    |
-|imag_V_address1                  | out |   10|  ap_memory |         imag_V         |     array    |
-|imag_V_ce1                       | out |    1|  ap_memory |         imag_V         |     array    |
-|imag_V_q1                        |  in |   32|  ap_memory |         imag_V         |     array    |
-+---------------------------------+-----+-----+------------+------------------------+--------------+
++-------------------------+-----+-----+-----------+----------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol |  Source Object |    C Type    |
++-------------------------+-----+-----+-----------+----------------+--------------+
+|ap_clk                   |  in |    1|          -|     combine    | return value |
+|ap_rst                   |  in |    1|          -|     combine    | return value |
+|ap_start                 |  in |    1|          -|     combine    | return value |
+|ap_done                  | out |    1|          -|     combine    | return value |
+|ap_idle                  | out |    1|          -|     combine    | return value |
+|ap_ready                 | out |    1|          -|     combine    | return value |
+|input_array_V_address0   | out |   10| ap_memory |  input_array_V |     array    |
+|input_array_V_ce0        | out |    1| ap_memory |  input_array_V |     array    |
+|input_array_V_q0         |  in |   32| ap_memory |  input_array_V |     array    |
+|output_array_V_address0  | out |   10| ap_memory | output_array_V |     array    |
+|output_array_V_ce0       | out |    1| ap_memory | output_array_V |     array    |
+|output_array_V_we0       | out |    1| ap_memory | output_array_V |     array    |
+|output_array_V_d0        | out |   32| ap_memory | output_array_V |     array    |
++-------------------------+-----+-----+-----------+----------------+--------------+
 

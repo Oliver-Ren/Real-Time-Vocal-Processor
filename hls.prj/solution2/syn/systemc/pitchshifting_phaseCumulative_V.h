@@ -63,6 +63,9 @@ public:
         SC_METHOD(proc_q);
         sensitive << qi;
 
+        for (unsigned i = 0; i < 1024; i = i + 1) {
+            mem[i] = 0;
+        }
     }
 
 

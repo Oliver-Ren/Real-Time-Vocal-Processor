@@ -1,6 +1,7 @@
 #ifndef CORDIC_H
 #define CORDIC_H
-#include "combine.h"
+ #include "combine.h"
+//#include "top.h"
 
 const fixed_type K_CONST  = 0.6072529350088812561694;
 

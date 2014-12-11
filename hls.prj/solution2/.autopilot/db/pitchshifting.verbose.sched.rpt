@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'pitchshifting'
 ================================================================
-* Date:           Sun Dec  7 14:25:13 2014
+* Date:           Wed Dec 10 22:44:35 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -41,9 +41,9 @@
         |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
         | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
         +----------+------+------+----------+-----------+-----------+------+----------+
-        |- Loop 1  |  1046|  1046|        24|          1|          1|  1024|    yes   |
-        |- Loop 2  |  1068|  1068|        46|          1|          1|  1024|    yes   |
-        |- Loop 3  |  1032|  1032|        10|          1|          1|  1024|    yes   |
+        |- Loop 1  |  1034|  1034|        12|          1|          1|  1024|    yes   |
+        |- Loop 2  |  1058|  1058|        36|          1|          1|  1024|    yes   |
+        |- Loop 3  |  1029|  1029|         7|          1|          1|  1024|    yes   |
         +----------+------+------+----------+-----------+-----------+------+----------+
 
 
@@ -123,27 +123,27 @@ HasImplIP: 0
 IsGatedGlobalClock: 0
 
 + Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 1, depth = 24
-  * Pipeline-1: initiation interval (II) = 1, depth = 46
-  * Pipeline-2: initiation interval (II) = 1, depth = 10
+  * Pipeline-0: initiation interval (II) = 1, depth = 12
+  * Pipeline-1: initiation interval (II) = 1, depth = 36
+  * Pipeline-2: initiation interval (II) = 1, depth = 7
 
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 84
+* Number of FSM states: 59
 * Pipeline: 3
-  Pipeline-0: II = 1, D = 24, States = { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 }
-  Pipeline-1: II = 1, D = 46, States = { 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 }
-  Pipeline-2: II = 1, D = 10, States = { 74 75 76 77 78 79 80 81 82 83 }
+  Pipeline-0: II = 1, D = 12, States = { 2 3 4 5 6 7 8 9 10 11 12 13 }
+  Pipeline-1: II = 1, D = 36, States = { 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 }
+  Pipeline-2: II = 1, D = 7, States = { 52 53 54 55 56 57 58 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 
 	2  / true
 2 --> 
-	26  / (exitcond5)
-	3  / (!exitcond5)
+	14  / (exitcond7)
+	3  / (!exitcond7)
 3 --> 
 	4  / true
 4 --> 
@@ -165,9 +165,10 @@ IsGatedGlobalClock: 0
 12 --> 
 	13  / true
 13 --> 
-	14  / true
+	2  / true
 14 --> 
-	15  / true
+	50  / (exitcond6)
+	15  / (!exitcond6)
 15 --> 
 	16  / true
 16 --> 
@@ -189,10 +190,9 @@ IsGatedGlobalClock: 0
 24 --> 
 	25  / true
 25 --> 
-	2  / true
+	26  / true
 26 --> 
-	72  / (exitcond4)
-	27  / (!exitcond4)
+	27  / true
 27 --> 
 	28  / true
 28 --> 
@@ -238,13 +238,14 @@ IsGatedGlobalClock: 0
 48 --> 
 	49  / true
 49 --> 
-	50  / true
+	14  / true
 50 --> 
 	51  / true
 51 --> 
 	52  / true
 52 --> 
-	53  / true
+	59  / (exitcond5)
+	53  / (!exitcond5)
 53 --> 
 	54  / true
 54 --> 
@@ -256,1195 +257,893 @@ IsGatedGlobalClock: 0
 57 --> 
 	58  / true
 58 --> 
-	59  / true
+	52  / true
 59 --> 
-	60  / true
-60 --> 
-	61  / true
-61 --> 
-	62  / true
-62 --> 
-	63  / true
-63 --> 
-	64  / true
-64 --> 
-	65  / true
-65 --> 
-	66  / true
-66 --> 
-	67  / true
-67 --> 
-	68  / true
-68 --> 
-	69  / true
-69 --> 
-	70  / true
-70 --> 
-	71  / true
-71 --> 
-	26  / true
-72 --> 
-	73  / true
-73 --> 
-	74  / true
-74 --> 
-	84  / (exitcond3)
-	75  / (!exitcond3)
-75 --> 
-	76  / true
-76 --> 
-	77  / true
-77 --> 
-	78  / true
-78 --> 
-	79  / true
-79 --> 
-	80  / true
-80 --> 
-	81  / true
-81 --> 
-	82  / true
-82 --> 
-	83  / true
-83 --> 
-	74  / true
-84 --> 
 * FSM state operations: 
 
- <State 1>: 1.57ns
-ST_1: deltaPhiPrimeMod_V [1/1] 0.00ns
-entry:0  %deltaPhiPrimeMod_V = alloca [1024 x i32], align 4 ; <[1024 x i32]*> [#uses=3]
-
-ST_1: phaseCumulative_V [1/1] 0.00ns
-entry:1  %phaseCumulative_V = alloca [1024 x i32], align 4 ; <[1024 x i32]*> [#uses=2]
-
+ <State 1>: 1.39ns
 ST_1: real_V [1/1] 0.00ns
-entry:2  %real_V = alloca [1024 x i32], align 4          ; <[1024 x i32]*> [#uses=3]
+entry:0  %real_V = alloca [1024 x i32], align 4          ; <[1024 x i32]*> [#uses=3]
 
 ST_1: imag_V [1/1] 0.00ns
-entry:3  %imag_V = alloca [1024 x i32], align 4          ; <[1024 x i32]*> [#uses=2]
+entry:1  %imag_V = alloca [1024 x i32], align 4          ; <[1024 x i32]*> [#uses=2]
 
-ST_1: stg_89 [1/1] 1.57ns
-entry:4  br label %bb52
+ST_1: stg_62 [1/1] 1.39ns
+entry:2  br label %bb52
 
 
  <State 2>: 3.50ns
-ST_2: i_3 [1/1] 0.00ns
-bb52:0  %i_3 = phi i11 [ %i, %bb40 ], [ 0, %entry ]     ; <i11> [#uses=3]
+ST_2: i_6 [1/1] 0.00ns
+bb52:0  %i_6 = phi i11 [ %i, %bb21 ], [ 0, %entry ]     ; <i11> [#uses=3]
 
-ST_2: phi_mul [1/1] 0.00ns
-bb52:1  %phi_mul = phi i33 [ %next_mul, %bb40 ], [ 0, %entry ] ; <i33> [#uses=2]
-
-ST_2: phi_mul6 [1/1] 0.00ns
-bb52:2  %phi_mul6 = phi i41 [ %next_mul7, %bb40 ], [ 0, %entry ] ; <i41> [#uses=2]
-
-ST_2: exitcond5 [1/1] 2.11ns
-bb52:3  %exitcond5 = icmp eq i11 %i_3, -1024            ; <i1> [#uses=1]
+ST_2: exitcond7 [1/1] 2.11ns
+bb52:1  %exitcond7 = icmp eq i11 %i_6, -1024            ; <i1> [#uses=1]
 
 ST_2: i [1/1] 1.84ns
-bb52:4  %i = add i11 %i_3, 1                            ; <i11> [#uses=1]
+bb52:2  %i = add i11 %i_6, 1                            ; <i11> [#uses=1]
 
-ST_2: stg_95 [1/1] 1.39ns
-bb52:5  br i1 %exitcond5, label %bb77, label %bb24
+ST_2: stg_66 [1/1] 1.39ns
+bb52:3  br i1 %exitcond7, label %bb77, label %bb21
 
 ST_2: OP2_V [1/1] 0.00ns
-bb24:3  %OP2_V = zext i11 %i_3 to i64                   ; <i64> [#uses=6]
+bb21:3  %OP2_V = zext i11 %i_6 to i64                   ; <i64> [#uses=3]
 
 ST_2: angle_V_addr [1/1] 0.00ns
-bb24:4  %angle_V_addr = getelementptr [1024 x i26]* %angle_V, i64 0, i64 %OP2_V ; <i26*> [#uses=1]
+bb21:4  %angle_V_addr = getelementptr [1024 x i11]* %angle_V, i64 0, i64 %OP2_V ; <i11*> [#uses=1]
 
 ST_2: angle_V_load [2/2] 2.39ns
-bb24:5  %angle_V_load = load i26* %angle_V_addr         ; <i26> [#uses=1]
+bb21:5  %angle_V_load = load i11* %angle_V_addr         ; <i11> [#uses=1]
 
-ST_2: previousPhase_V_addr [1/1] 0.00ns
-bb24:7  %previousPhase_V_addr = getelementptr [1024 x i1]* %previousPhase_V, i64 0, i64 %OP2_V ; <i1*> [#uses=1]
+ST_2: phaseCumulative_V_addr_1 [1/1] 0.00ns
+bb21:9  %phaseCumulative_V_addr_1 = getelementptr [1024 x i32]* @phaseCumulative_V, i64 0, i64 %OP2_V ; <i32*> [#uses=2]
 
-ST_2: previousPhase_V_load [2/2] 2.39ns
-bb24:8  %previousPhase_V_load = load i1* %previousPhase_V_addr ; <i1> [#uses=1]
+ST_2: p_Val2_299 [2/2] 2.39ns
+bb21:10  %p_Val2_299 = load i32* %phaseCumulative_V_addr_1, align 4 ; <i32> [#uses=2]
 
 
- <State 3>: 7.75ns
+ <State 3>: 8.75ns
 ST_3: angle_V_load [1/2] 2.39ns
-bb24:5  %angle_V_load = load i26* %angle_V_addr         ; <i26> [#uses=1]
+bb21:5  %angle_V_load = load i11* %angle_V_addr         ; <i11> [#uses=1]
 
-ST_3: extLd_cast [1/1] 0.00ns
-bb24:6  %extLd_cast = sext i26 %angle_V_load to i28     ; <i28> [#uses=1]
+ST_3: p_Val2_s [1/1] 0.00ns
+bb21:6  %p_Val2_s = sext i11 %angle_V_load to i32       ; <i32> [#uses=1]
 
-ST_3: previousPhase_V_load [1/2] 2.39ns
-bb24:8  %previousPhase_V_load = load i1* %previousPhase_V_addr ; <i1> [#uses=1]
+ST_3: previousPhase_V_addr [1/1] 0.00ns
+bb21:7  %previousPhase_V_addr = getelementptr [1024 x i32]* @previousPhase_V, i64 0, i64 %OP2_V ; <i32*> [#uses=1]
 
-ST_3: p_Val2_434_cast [1/1] 0.00ns
-bb24:9  %p_Val2_434_cast = zext i1 %previousPhase_V_load to i28 ; <i28> [#uses=1]
+ST_3: stg_75 [1/1] 2.39ns
+bb21:8  store i32 %p_Val2_s, i32* %previousPhase_V_addr, align 4
 
-ST_3: deltaPhi [1/1] 2.32ns
-bb24:10  %deltaPhi = sub i28 %extLd_cast, %p_Val2_434_cast ; <i28> [#uses=1]
+ST_3: p_Val2_299 [1/2] 2.39ns
+bb21:10  %p_Val2_299 = load i32* %phaseCumulative_V_addr_1, align 4 ; <i32> [#uses=2]
 
-ST_3: next_mul7 [1/1] 2.80ns
-bb24:11  %next_mul7 = add i41 %phi_mul6, 1686629376      ; <i41> [#uses=1]
+ST_3: t_V [1/1] 0.00ns
+bb21:11  %t_V = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %p_Val2_299, i6 0) ; <i38> [#uses=2]
 
-ST_3: r_V [1/1] 0.00ns
-bb24:12  %r_V = call i51 @_ssdm_op_BitConcatenate.i51.i41.i10(i41 %phi_mul6, i10 0) ; <i51> [#uses=1]
+ST_3: sext_i35_cast [1/1] 0.00ns
+bb21:12  %sext_i35_cast = sext i38 %t_V to i77           ; <i77> [#uses=1]
 
-ST_3: tmp [1/1] 0.00ns
-bb24:13  %tmp = call i48 @_ssdm_op_BitConcatenate.i48.i28.i20(i28 %deltaPhi, i20 0) ; <i48> [#uses=1]
+ST_3: mul_i [5/5] 6.36ns
+bb21:13  %mul_i = mul i77 %sext_i35_cast, 350093254616   ; <i77> [#uses=2]
 
-ST_3: lhs_V_1 [1/1] 0.00ns
-bb24:14  %lhs_V_1 = sext i48 %tmp to i52                 ; <i52> [#uses=1]
-
-ST_3: rhs_V_cast [1/1] 0.00ns
-bb24:15  %rhs_V_cast = zext i51 %r_V to i52              ; <i52> [#uses=1]
-
-ST_3: p_Val2_5 [1/1] 3.04ns
-bb24:16  %p_Val2_5 = sub i52 %lhs_V_1, %rhs_V_cast       ; <i52> [#uses=1]
-
-ST_3: deltaPhiPrime [1/1] 0.00ns
-bb24:17  %deltaPhiPrime = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %p_Val2_5, i32 20, i32 51) ; <i32> [#uses=1]
+ST_3: tmp_125 [1/1] 0.00ns
+bb21:15  %tmp_125 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_299, i32 31) ; <i1> [#uses=2]
 
 
- <State 4>: 4.96ns
-ST_4: lhs_V_2 [1/1] 0.00ns
-bb24:18  %lhs_V_2 = sext i32 %deltaPhiPrime to i33       ; <i33> [#uses=1]
-
-ST_4: r_V_200 [1/1] 2.44ns
-bb24:19  %r_V_200 = add nsw i33 %lhs_V_2, 3294198        ; <i33> [#uses=3]
-
-ST_4: tmp_1 [1/1] 2.52ns
-bb24:20  %tmp_1 = icmp sgt i33 %r_V_200, 0               ; <i1> [#uses=1]
-
-ST_4: tmp_132 [1/1] 0.00ns
-bb24:21  %tmp_132 = trunc i33 %r_V_200 to i32            ; <i32> [#uses=1]
-
-ST_4: tmp_133 [1/1] 0.00ns
-bb24:26  %tmp_133 = call i1 @_ssdm_op_BitSelect.i1.i33.i32(i33 %r_V_200, i32 31) ; <i1> [#uses=2]
-
-ST_4: stg_118 [1/1] 0.00ns
-bb24:45  br i1 %tmp_1, label %bb30, label %bb35
+ <State 4>: 6.36ns
+ST_4: mul_i [4/5] 6.36ns
+bb21:13  %mul_i = mul i77 %sext_i35_cast, 350093254616   ; <i77> [#uses=2]
 
 
  <State 5>: 6.36ns
-ST_5: t_V [1/1] 0.00ns
-bb24:22  %t_V = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_132, i20 0) ; <i52> [#uses=2]
-
-ST_5: sext_i_cast [1/1] 0.00ns
-bb24:23  %sext_i_cast = sext i52 %t_V to i105            ; <i105> [#uses=1]
-
-ST_5: mul_i [11/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ST_5: mul_i [3/5] 6.36ns
+bb21:13  %mul_i = mul i77 %sext_i35_cast, 350093254616   ; <i77> [#uses=2]
 
 
  <State 6>: 6.36ns
-ST_6: mul_i [10/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ST_6: mul_i [2/5] 6.36ns
+bb21:13  %mul_i = mul i77 %sext_i35_cast, 350093254616   ; <i77> [#uses=2]
 
 
  <State 7>: 6.36ns
-ST_7: mul_i [9/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ST_7: mul_i [1/5] 6.36ns
+bb21:13  %mul_i = mul i77 %sext_i35_cast, 350093254616   ; <i77> [#uses=2]
 
 
- <State 8>: 6.36ns
-ST_8: mul_i [8/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ <State 8>: 7.69ns
+ST_8: neg_mul_i [1/1] 3.88ns
+bb21:14  %neg_mul_i = sub i77 0, %mul_i                  ; <i77> [#uses=1]
+
+ST_8: sel_i [1/1] 1.37ns
+bb21:16  %sel_i = select i1 %tmp_125, i77 %neg_mul_i, i77 %mul_i ; <i77> [#uses=1]
+
+ST_8: tmp_126 [1/1] 0.00ns
+bb21:17  %tmp_126 = call i30 @_ssdm_op_PartSelect.i30.i77.i32.i32(i77 %sel_i, i32 47, i32 76) ; <i30> [#uses=1]
+
+ST_8: trunc_i_cast [1/1] 0.00ns
+bb21:18  %trunc_i_cast = sext i30 %tmp_126 to i31        ; <i31> [#uses=2]
+
+ST_8: neg_ti_i [1/1] 2.44ns
+bb21:19  %neg_ti_i = sub i31 0, %trunc_i_cast            ; <i31> [#uses=1]
 
 
- <State 9>: 6.36ns
-ST_9: mul_i [7/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ <State 9>: 6.43ns
+ST_9: tmp_i1 [1/1] 1.37ns
+bb21:20  %tmp_i1 = select i1 %tmp_125, i31 %neg_ti_i, i31 %trunc_i_cast ; <i31> [#uses=3]
+
+ST_9: tmp_127 [1/1] 0.00ns
+bb21:21  %tmp_127 = call i25 @_ssdm_op_PartSelect.i25.i31.i32.i32(i31 %tmp_i1, i32 6, i32 30) ; <i25> [#uses=1]
+
+ST_9: tmp_i1_108 [1/1] 0.00ns
+bb21:22  %tmp_i1_108 = sext i25 %tmp_127 to i32          ; <i32> [#uses=3]
+
+ST_9: tmp_128 [1/1] 0.00ns
+bb21:23  %tmp_128 = call i1 @_ssdm_op_BitSelect.i1.i31.i32(i31 %tmp_i1, i32 30) ; <i1> [#uses=1]
+
+ST_9: tmp_129 [1/1] 0.00ns
+bb21:24  %tmp_129 = trunc i31 %tmp_i1 to i6              ; <i6> [#uses=1]
+
+ST_9: ret_V_1_i [1/1] 2.32ns
+bb21:25  %ret_V_1_i = add i32 %tmp_i1_108, 1             ; <i32> [#uses=1]
+
+ST_9: tmp_1_i [1/1] 1.94ns
+bb21:26  %tmp_1_i = icmp eq i6 %tmp_129, 0               ; <i1> [#uses=1]
+
+ST_9: p_i [1/1] 1.37ns
+bb21:27  %p_i = select i1 %tmp_1_i, i32 %tmp_i1_108, i32 %ret_V_1_i ; <i32> [#uses=1]
+
+ST_9: result [1/1] 1.37ns
+bb21:28  %result = select i1 %tmp_128, i32 %p_i, i32 %tmp_i1_108 ; <i32> [#uses=1]
 
 
  <State 10>: 6.36ns
-ST_10: mul_i [6/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ST_10: tmp_130 [1/1] 0.00ns
+bb21:29  %tmp_130 = shl i32 %result, 6                   ; <i32> [#uses=1]
+
+ST_10: tmp_65 [1/1] 0.00ns
+bb21:30  %tmp_65 = sext i32 %tmp_130 to i38              ; <i38> [#uses=1]
+
+ST_10: rhs_V3_i56_cast [3/3] 6.36ns
+bb21:31  %rhs_V3_i56_cast = mul i38 %tmp_65, 402         ; <i38> [#uses=1]
 
 
  <State 11>: 6.36ns
-ST_11: mul_i [5/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ST_11: rhs_V3_i56_cast [2/3] 6.36ns
+bb21:31  %rhs_V3_i56_cast = mul i38 %tmp_65, 402         ; <i38> [#uses=1]
 
 
  <State 12>: 6.36ns
-ST_12: mul_i [4/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ST_12: rhs_V3_i56_cast [1/3] 6.36ns
+bb21:31  %rhs_V3_i56_cast = mul i38 %tmp_65, 402         ; <i38> [#uses=1]
 
 
- <State 13>: 6.36ns
-ST_13: mul_i [3/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ <State 13>: 5.07ns
+ST_13: empty [1/1] 0.00ns
+bb21:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+
+ST_13: tmp_s [1/1] 0.00ns
+bb21:1  %tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind ; <i32> [#uses=1]
+
+ST_13: stg_106 [1/1] 0.00ns
+bb21:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str) nounwind
+
+ST_13: r_V_146 [1/1] 2.68ns
+bb21:32  %r_V_146 = sub i38 %t_V, %rhs_V3_i56_cast       ; <i38> [#uses=1]
+
+ST_13: agg_result_V_i [1/1] 0.00ns
+bb21:33  %agg_result_V_i = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_146, i32 6, i32 37) ; <i32> [#uses=1]
+
+ST_13: stg_109 [1/1] 2.39ns
+bb21:34  store i32 %agg_result_V_i, i32* %phaseCumulative_V_addr_1, align 4
+
+ST_13: empty_109 [1/1] 0.00ns
+bb21:35  %empty_109 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_s) nounwind ; <i32> [#uses=0]
+
+ST_13: stg_111 [1/1] 0.00ns
+bb21:36  br label %bb52
 
 
- <State 14>: 6.36ns
-ST_14: mul_i [2/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ <State 14>: 2.39ns
+ST_14: j [1/1] 0.00ns
+bb77:0  %j = phi i11 [ %j_1, %cordic_sin_cos.exit ], [ 0, %bb52 ] ; <i11> [#uses=3]
+
+ST_14: exitcond6 [1/1] 2.11ns
+bb77:1  %exitcond6 = icmp eq i11 %j, -1024              ; <i1> [#uses=1]
+
+ST_14: j_1 [1/1] 1.84ns
+bb77:2  %j_1 = add i11 %j, 1                            ; <i11> [#uses=1]
+
+ST_14: stg_115 [1/1] 0.00ns
+bb77:3  br i1 %exitcond6, label %bb78, label %bb70
+
+ST_14: tmp_4 [1/1] 0.00ns
+bb70:3  %tmp_4 = zext i11 %j to i64                     ; <i64> [#uses=4]
+
+ST_14: phaseCumulative_V_addr [1/1] 0.00ns
+bb70:4  %phaseCumulative_V_addr = getelementptr [1024 x i32]* @phaseCumulative_V, i64 0, i64 %tmp_4 ; <i32*> [#uses=1]
+
+ST_14: p_Val2_302 [2/2] 2.39ns
+bb70:5  %p_Val2_302 = load i32* %phaseCumulative_V_addr ; <i32> [#uses=2]
 
 
- <State 15>: 6.36ns
-ST_15: mul_i [1/11] 6.36ns
-bb24:24  %mul_i = mul i105 %sext_i_cast, 5734162285168828 ; <i105> [#uses=2]
+ <State 15>: 8.75ns
+ST_15: p_Val2_302 [1/2] 2.39ns
+bb70:5  %p_Val2_302 = load i32* %phaseCumulative_V_addr ; <i32> [#uses=2]
+
+ST_15: t_V_63 [1/1] 0.00ns
+bb70:6  %t_V_63 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %p_Val2_302, i6 0) ; <i38> [#uses=2]
+
+ST_15: sext_i62_cast [1/1] 0.00ns
+bb70:7  %sext_i62_cast = sext i38 %t_V_63 to i77        ; <i77> [#uses=1]
+
+ST_15: mul_i1 [5/5] 6.36ns
+bb70:8  %mul_i1 = mul i77 %sext_i62_cast, 350093254616  ; <i77> [#uses=2]
+
+ST_15: tmp_131 [1/1] 0.00ns
+bb70:10  %tmp_131 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_302, i32 31) ; <i1> [#uses=2]
 
 
- <State 16>: 8.53ns
-ST_16: neg_mul_i [1/1] 4.72ns
-bb24:25  %neg_mul_i = sub i105 0, %mul_i                 ; <i105> [#uses=1]
-
-ST_16: sel_i [1/1] 1.37ns
-bb24:27  %sel_i = select i1 %tmp_133, i105 %neg_mul_i, i105 %mul_i ; <i105> [#uses=1]
-
-ST_16: tmp_134 [1/1] 0.00ns
-bb24:28  %tmp_134 = call i30 @_ssdm_op_PartSelect.i30.i105.i32.i32(i105 %sel_i, i32 75, i32 104) ; <i30> [#uses=1]
-
-ST_16: trunc_i_cast [1/1] 0.00ns
-bb24:29  %trunc_i_cast = sext i30 %tmp_134 to i31        ; <i31> [#uses=2]
-
-ST_16: neg_ti_i [1/1] 2.44ns
-bb24:30  %neg_ti_i = sub i31 0, %trunc_i_cast            ; <i31> [#uses=1]
+ <State 16>: 6.36ns
+ST_16: mul_i1 [4/5] 6.36ns
+bb70:8  %mul_i1 = mul i77 %sext_i62_cast, 350093254616  ; <i77> [#uses=2]
 
 
- <State 17>: 6.45ns
-ST_17: tmp_i5 [1/1] 1.37ns
-bb24:31  %tmp_i5 = select i1 %tmp_133, i31 %neg_ti_i, i31 %trunc_i_cast ; <i31> [#uses=3]
-
-ST_17: tmp_135 [1/1] 0.00ns
-bb24:32  %tmp_135 = call i11 @_ssdm_op_PartSelect.i11.i31.i32.i32(i31 %tmp_i5, i32 20, i32 30) ; <i11> [#uses=1]
-
-ST_17: tmp_i6 [1/1] 0.00ns
-bb24:33  %tmp_i6 = sext i11 %tmp_135 to i32              ; <i32> [#uses=3]
-
-ST_17: tmp_136 [1/1] 0.00ns
-bb24:34  %tmp_136 = call i1 @_ssdm_op_BitSelect.i1.i31.i32(i31 %tmp_i5, i32 30) ; <i1> [#uses=1]
-
-ST_17: tmp_137 [1/1] 0.00ns
-bb24:35  %tmp_137 = trunc i31 %tmp_i5 to i20             ; <i20> [#uses=1]
-
-ST_17: ret_V_1_i [1/1] 1.84ns
-bb24:36  %ret_V_1_i = add i32 %tmp_i6, 1                 ; <i32> [#uses=1]
-
-ST_17: tmp_1_i [1/1] 2.34ns
-bb24:37  %tmp_1_i = icmp eq i20 %tmp_137, 0              ; <i1> [#uses=1]
-
-ST_17: p_i [1/1] 1.37ns
-bb24:38  %p_i = select i1 %tmp_1_i, i32 %tmp_i6, i32 %ret_V_1_i ; <i32> [#uses=1]
-
-ST_17: result [1/1] 1.37ns
-bb24:39  %result = select i1 %tmp_136, i32 %p_i, i32 %tmp_i6 ; <i32> [#uses=1]
+ <State 17>: 6.36ns
+ST_17: mul_i1 [3/5] 6.36ns
+bb70:8  %mul_i1 = mul i77 %sext_i62_cast, 350093254616  ; <i77> [#uses=2]
 
 
  <State 18>: 6.36ns
-ST_18: tmp_138 [1/1] 0.00ns
-bb24:40  %tmp_138 = shl i32 %result, 20                  ; <i32> [#uses=1]
-
-ST_18: tmp_85 [1/1] 0.00ns
-bb24:41  %tmp_85 = sext i32 %tmp_138 to i52              ; <i52> [#uses=1]
-
-ST_18: rhs_V3_i_cast [3/3] 6.36ns
-bb24:42  %rhs_V3_i_cast = mul i52 %tmp_85, 6588396       ; <i52> [#uses=1]
+ST_18: mul_i1 [2/5] 6.36ns
+bb70:8  %mul_i1 = mul i77 %sext_i62_cast, 350093254616  ; <i77> [#uses=2]
 
 
  <State 19>: 6.36ns
-ST_19: rhs_V3_i_cast [2/3] 6.36ns
-bb24:42  %rhs_V3_i_cast = mul i52 %tmp_85, 6588396       ; <i52> [#uses=1]
+ST_19: mul_i1 [1/5] 6.36ns
+bb70:8  %mul_i1 = mul i77 %sext_i62_cast, 350093254616  ; <i77> [#uses=2]
 
 
- <State 20>: 6.36ns
-ST_20: rhs_V3_i_cast [1/3] 6.36ns
-bb24:42  %rhs_V3_i_cast = mul i52 %tmp_85, 6588396       ; <i52> [#uses=1]
+ <State 20>: 7.69ns
+ST_20: neg_mul_i1 [1/1] 3.88ns
+bb70:9  %neg_mul_i1 = sub i77 0, %mul_i1                ; <i77> [#uses=1]
 
+ST_20: sel_i1 [1/1] 1.37ns
+bb70:11  %sel_i1 = select i1 %tmp_131, i77 %neg_mul_i1, i77 %mul_i1 ; <i77> [#uses=1]
 
- <State 21>: 7.87ns
-ST_21: empty [1/1] 0.00ns
-bb24:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+ST_20: tmp_132 [1/1] 0.00ns
+bb70:12  %tmp_132 = call i30 @_ssdm_op_PartSelect.i30.i77.i32.i32(i77 %sel_i1, i32 47, i32 76) ; <i30> [#uses=1]
 
-ST_21: tmp_s [1/1] 0.00ns
-bb24:1  %tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind ; <i32> [#uses=1]
+ST_20: trunc_i1_cast [1/1] 0.00ns
+bb70:13  %trunc_i1_cast = sext i30 %tmp_132 to i31       ; <i31> [#uses=2]
 
-ST_21: stg_153 [1/1] 0.00ns
-bb24:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str) nounwind
-
-ST_21: r_V_201 [1/1] 3.04ns
-bb24:43  %r_V_201 = sub i52 %t_V, %rhs_V3_i_cast         ; <i52> [#uses=1]
-
-ST_21: p_Val2_402 [1/1] 0.00ns
-bb24:44  %p_Val2_402 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_201, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_21: r_V_1 [1/1] 2.44ns
-bb35:0  %r_V_1 = add i32 %p_Val2_402, 3294198           ; <i32> [#uses=1]
-
-ST_21: deltaPhiPrimeMod_V_addr_1 [1/1] 0.00ns
-bb35:1  %deltaPhiPrimeMod_V_addr_1 = getelementptr [1024 x i32]* %deltaPhiPrimeMod_V, i64 0, i64 %OP2_V ; <i32*> [#uses=1]
-
-ST_21: stg_158 [1/1] 2.39ns
-bb35:2  store i32 %r_V_1, i32* %deltaPhiPrimeMod_V_addr_1, align 4
-
-ST_21: stg_159 [1/1] 0.00ns
-bb35:3  br label %bb40
-
-ST_21: r_V_s [1/1] 2.44ns
-bb30:0  %r_V_s = add i32 %p_Val2_402, -3294198          ; <i32> [#uses=1]
-
-ST_21: deltaPhiPrimeMod_V_addr [1/1] 0.00ns
-bb30:1  %deltaPhiPrimeMod_V_addr = getelementptr [1024 x i32]* %deltaPhiPrimeMod_V, i64 0, i64 %OP2_V ; <i32*> [#uses=1]
-
-ST_21: stg_162 [1/1] 2.39ns
-bb30:2  store i32 %r_V_s, i32* %deltaPhiPrimeMod_V_addr, align 4
-
-ST_21: stg_163 [1/1] 0.00ns
-bb30:3  br label %bb40
-
-
- <State 22>: 2.39ns
-ST_22: deltaPhiPrimeMod_V_addr_2 [1/1] 0.00ns
-bb40:0  %deltaPhiPrimeMod_V_addr_2 = getelementptr [1024 x i32]* %deltaPhiPrimeMod_V, i64 0, i64 %OP2_V ; <i32*> [#uses=1]
-
-ST_22: deltaPhiPrimeMod_V_load [2/2] 2.39ns
-bb40:1  %deltaPhiPrimeMod_V_load = load i32* %deltaPhiPrimeMod_V_addr_2, align 4 ; <i32> [#uses=1]
-
-ST_22: phaseCumulative_V_addr_1 [1/1] 0.00ns
-bb40:11  %phaseCumulative_V_addr_1 = getelementptr [1024 x i32]* %phaseCumulative_V, i64 0, i64 %OP2_V ; <i32*> [#uses=2]
-
-
- <State 23>: 5.19ns
-ST_23: deltaPhiPrimeMod_V_load [1/2] 2.39ns
-bb40:1  %deltaPhiPrimeMod_V_load = load i32* %deltaPhiPrimeMod_V_addr_2, align 4 ; <i32> [#uses=1]
-
-ST_23: r_V_202 [1/1] 0.00ns
-bb40:2  %r_V_202 = call i44 @_ssdm_op_BitConcatenate.i44.i32.i12(i32 %deltaPhiPrimeMod_V_load, i12 0) ; <i44> [#uses=1]
-
-ST_23: next_mul [1/1] 2.56ns
-bb40:3  %next_mul = add i33 %phi_mul, 6588396           ; <i33> [#uses=1]
-
-ST_23: r_V_203 [1/1] 0.00ns
-bb40:4  %r_V_203 = call i43 @_ssdm_op_BitConcatenate.i43.i33.i10(i33 %phi_mul, i10 0) ; <i43> [#uses=1]
-
-ST_23: lhs_V_cast_cast [1/1] 0.00ns
-bb40:5  %lhs_V_cast_cast = zext i43 %r_V_203 to i45     ; <i45> [#uses=1]
-
-ST_23: rhs_V_1_cast_cast [1/1] 0.00ns
-bb40:6  %rhs_V_1_cast_cast = sext i44 %r_V_202 to i45   ; <i45> [#uses=1]
-
-ST_23: r_V_204 [1/1] 2.80ns
-bb40:7  %r_V_204 = add i45 %lhs_V_cast_cast, %rhs_V_1_cast_cast ; <i45> [#uses=1]
-
-ST_23: tmp_145 [1/1] 0.00ns
-bb40:8  %tmp_145 = call i25 @_ssdm_op_PartSelect.i25.i45.i32.i32(i45 %r_V_204, i32 20, i32 44) ; <i25> [#uses=1]
-
-ST_23: p_Val2_409 [2/2] 2.39ns
-bb40:12  %p_Val2_409 = load i32* %phaseCumulative_V_addr_1, align 4 ; <i32> [#uses=1]
-
-
- <State 24>: 6.66ns
-ST_24: trueFreq [1/1] 0.00ns
-bb40:9  %trueFreq = sext i25 %tmp_145 to i32            ; <i32> [#uses=1]
-
-ST_24: r_V_5 [1/1] 3.57ns
-bb40:10  %r_V_5 = mul i32 %trueFreq, 323                 ; <i32> [#uses=1]
-
-ST_24: p_Val2_409 [1/2] 2.39ns
-bb40:12  %p_Val2_409 = load i32* %phaseCumulative_V_addr_1, align 4 ; <i32> [#uses=1]
-
-ST_24: tmp_13 [1/1] 3.09ns
-bb40:13  %tmp_13 = add i32 %r_V_5, %p_Val2_409           ; <i32> [#uses=1]
-
-
- <State 25>: 2.39ns
-ST_25: stg_180 [1/1] 2.39ns
-bb40:14  store i32 %tmp_13, i32* %phaseCumulative_V_addr_1, align 4
-
-ST_25: empty_313 [1/1] 0.00ns
-bb40:15  %empty_313 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_s) nounwind ; <i32> [#uses=0]
-
-ST_25: stg_182 [1/1] 0.00ns
-bb40:16  br label %bb52
-
-
- <State 26>: 2.39ns
-ST_26: j [1/1] 0.00ns
-bb77:0  %j = phi i11 [ %j_1, %cordic_sin_cos.exit ], [ 0, %bb52 ] ; <i11> [#uses=3]
-
-ST_26: exitcond4 [1/1] 2.11ns
-bb77:1  %exitcond4 = icmp eq i11 %j, -1024              ; <i1> [#uses=1]
-
-ST_26: j_1 [1/1] 1.84ns
-bb77:2  %j_1 = add i11 %j, 1                            ; <i11> [#uses=1]
-
-ST_26: stg_186 [1/1] 0.00ns
-bb77:3  br i1 %exitcond4, label %bb78, label %bb70
-
-ST_26: tmp_6 [1/1] 0.00ns
-bb70:3  %tmp_6 = zext i11 %j to i64                     ; <i64> [#uses=4]
-
-ST_26: phaseCumulative_V_addr [1/1] 0.00ns
-bb70:4  %phaseCumulative_V_addr = getelementptr [1024 x i32]* %phaseCumulative_V, i64 0, i64 %tmp_6 ; <i32*> [#uses=1]
-
-ST_26: p_Val2_396 [2/2] 2.39ns
-bb70:5  %p_Val2_396 = load i32* %phaseCumulative_V_addr ; <i32> [#uses=2]
-
-
- <State 27>: 8.75ns
-ST_27: p_Val2_396 [1/2] 2.39ns
-bb70:5  %p_Val2_396 = load i32* %phaseCumulative_V_addr ; <i32> [#uses=2]
-
-ST_27: t_V_64 [1/1] 0.00ns
-bb70:6  %t_V_64 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %p_Val2_396, i20 0) ; <i52> [#uses=2]
-
-ST_27: sext_i37_cast [1/1] 0.00ns
-bb70:7  %sext_i37_cast = sext i52 %t_V_64 to i105       ; <i105> [#uses=1]
-
-ST_27: mul_i1 [11/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-ST_27: tmp_139 [1/1] 0.00ns
-bb70:10  %tmp_139 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_396, i32 31) ; <i1> [#uses=2]
-
-
- <State 28>: 6.36ns
-ST_28: mul_i1 [10/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 29>: 6.36ns
-ST_29: mul_i1 [9/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 30>: 6.36ns
-ST_30: mul_i1 [8/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 31>: 6.36ns
-ST_31: mul_i1 [7/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 32>: 6.36ns
-ST_32: mul_i1 [6/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 33>: 6.36ns
-ST_33: mul_i1 [5/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 34>: 6.36ns
-ST_34: mul_i1 [4/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 35>: 6.36ns
-ST_35: mul_i1 [3/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 36>: 6.36ns
-ST_36: mul_i1 [2/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 37>: 6.36ns
-ST_37: mul_i1 [1/11] 6.36ns
-bb70:8  %mul_i1 = mul i105 %sext_i37_cast, 5734162285168828 ; <i105> [#uses=2]
-
-
- <State 38>: 8.53ns
-ST_38: neg_mul_i1 [1/1] 4.72ns
-bb70:9  %neg_mul_i1 = sub i105 0, %mul_i1               ; <i105> [#uses=1]
-
-ST_38: sel_i1 [1/1] 1.37ns
-bb70:11  %sel_i1 = select i1 %tmp_139, i105 %neg_mul_i1, i105 %mul_i1 ; <i105> [#uses=1]
-
-ST_38: tmp_140 [1/1] 0.00ns
-bb70:12  %tmp_140 = call i30 @_ssdm_op_PartSelect.i30.i105.i32.i32(i105 %sel_i1, i32 75, i32 104) ; <i30> [#uses=1]
-
-ST_38: trunc_i1_cast [1/1] 0.00ns
-bb70:13  %trunc_i1_cast = sext i30 %tmp_140 to i31       ; <i31> [#uses=2]
-
-ST_38: neg_ti_i1 [1/1] 2.44ns
+ST_20: neg_ti_i1 [1/1] 2.44ns
 bb70:14  %neg_ti_i1 = sub i31 0, %trunc_i1_cast          ; <i31> [#uses=1]
 
 
- <State 39>: 6.45ns
-ST_39: tmp_i1 [1/1] 1.37ns
-bb70:15  %tmp_i1 = select i1 %tmp_139, i31 %neg_ti_i1, i31 %trunc_i1_cast ; <i31> [#uses=3]
+ <State 21>: 6.43ns
+ST_21: tmp_i2 [1/1] 1.37ns
+bb70:15  %tmp_i2 = select i1 %tmp_131, i31 %neg_ti_i1, i31 %trunc_i1_cast ; <i31> [#uses=3]
 
-ST_39: tmp_141 [1/1] 0.00ns
-bb70:16  %tmp_141 = call i11 @_ssdm_op_PartSelect.i11.i31.i32.i32(i31 %tmp_i1, i32 20, i32 30) ; <i11> [#uses=1]
+ST_21: tmp_133 [1/1] 0.00ns
+bb70:16  %tmp_133 = call i25 @_ssdm_op_PartSelect.i25.i31.i32.i32(i31 %tmp_i2, i32 6, i32 30) ; <i25> [#uses=1]
 
-ST_39: tmp_i1_315 [1/1] 0.00ns
-bb70:17  %tmp_i1_315 = sext i11 %tmp_141 to i32          ; <i32> [#uses=3]
+ST_21: tmp_i2_111 [1/1] 0.00ns
+bb70:17  %tmp_i2_111 = sext i25 %tmp_133 to i32          ; <i32> [#uses=3]
 
-ST_39: tmp_142 [1/1] 0.00ns
-bb70:18  %tmp_142 = call i1 @_ssdm_op_BitSelect.i1.i31.i32(i31 %tmp_i1, i32 30) ; <i1> [#uses=1]
+ST_21: tmp_134 [1/1] 0.00ns
+bb70:18  %tmp_134 = call i1 @_ssdm_op_BitSelect.i1.i31.i32(i31 %tmp_i2, i32 30) ; <i1> [#uses=1]
 
-ST_39: tmp_143 [1/1] 0.00ns
-bb70:19  %tmp_143 = trunc i31 %tmp_i1 to i20             ; <i20> [#uses=1]
+ST_21: tmp_135 [1/1] 0.00ns
+bb70:19  %tmp_135 = trunc i31 %tmp_i2 to i6              ; <i6> [#uses=1]
 
-ST_39: ret_V_1_i1 [1/1] 1.84ns
-bb70:20  %ret_V_1_i1 = add i32 %tmp_i1_315, 1            ; <i32> [#uses=1]
+ST_21: ret_V_1_i1 [1/1] 2.32ns
+bb70:20  %ret_V_1_i1 = add i32 %tmp_i2_111, 1            ; <i32> [#uses=1]
 
-ST_39: tmp_1_i1 [1/1] 2.34ns
-bb70:21  %tmp_1_i1 = icmp eq i20 %tmp_143, 0             ; <i1> [#uses=1]
+ST_21: tmp_1_i1 [1/1] 1.94ns
+bb70:21  %tmp_1_i1 = icmp eq i6 %tmp_135, 0              ; <i1> [#uses=1]
 
-ST_39: p_i1 [1/1] 1.37ns
-bb70:22  %p_i1 = select i1 %tmp_1_i1, i32 %tmp_i1_315, i32 %ret_V_1_i1 ; <i32> [#uses=1]
+ST_21: p_i1 [1/1] 1.37ns
+bb70:22  %p_i1 = select i1 %tmp_1_i1, i32 %tmp_i2_111, i32 %ret_V_1_i1 ; <i32> [#uses=1]
 
-ST_39: result_2 [1/1] 1.37ns
-bb70:23  %result_2 = select i1 %tmp_142, i32 %p_i1, i32 %tmp_i1_315 ; <i32> [#uses=1]
-
-
- <State 40>: 6.36ns
-ST_40: tmp_144 [1/1] 0.00ns
-bb70:24  %tmp_144 = shl i32 %result_2, 20                ; <i32> [#uses=1]
-
-ST_40: tmp_87 [1/1] 0.00ns
-bb70:25  %tmp_87 = sext i32 %tmp_144 to i52              ; <i52> [#uses=1]
-
-ST_40: rhs_V3_i58_cast [3/3] 6.36ns
-bb70:26  %rhs_V3_i58_cast = mul i52 %tmp_87, 6588396     ; <i52> [#uses=1]
+ST_21: result_1 [1/1] 1.37ns
+bb70:23  %result_1 = select i1 %tmp_134, i32 %p_i1, i32 %tmp_i2_111 ; <i32> [#uses=1]
 
 
- <State 41>: 6.36ns
-ST_41: rhs_V3_i58_cast [2/3] 6.36ns
-bb70:26  %rhs_V3_i58_cast = mul i52 %tmp_87, 6588396     ; <i52> [#uses=1]
+ <State 22>: 6.36ns
+ST_22: tmp_136 [1/1] 0.00ns
+bb70:24  %tmp_136 = shl i32 %result_1, 6                 ; <i32> [#uses=1]
+
+ST_22: tmp_67 [1/1] 0.00ns
+bb70:25  %tmp_67 = sext i32 %tmp_136 to i38              ; <i38> [#uses=1]
+
+ST_22: rhs_V3_i83_cast [3/3] 6.36ns
+bb70:26  %rhs_V3_i83_cast = mul i38 %tmp_67, 402         ; <i38> [#uses=1]
 
 
- <State 42>: 6.36ns
-ST_42: rhs_V3_i58_cast [1/3] 6.36ns
-bb70:26  %rhs_V3_i58_cast = mul i52 %tmp_87, 6588396     ; <i52> [#uses=1]
+ <State 23>: 6.36ns
+ST_23: rhs_V3_i83_cast [2/3] 6.36ns
+bb70:26  %rhs_V3_i83_cast = mul i38 %tmp_67, 402         ; <i38> [#uses=1]
 
 
- <State 43>: 6.08ns
-ST_43: empty_314 [1/1] 0.00ns
-bb70:0  %empty_314 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
+ <State 24>: 6.36ns
+ST_24: rhs_V3_i83_cast [1/3] 6.36ns
+bb70:26  %rhs_V3_i83_cast = mul i38 %tmp_67, 402         ; <i38> [#uses=1]
 
-ST_43: tmp_86 [1/1] 0.00ns
-bb70:1  %tmp_86 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str2) nounwind ; <i32> [#uses=1]
 
-ST_43: stg_226 [1/1] 0.00ns
-bb70:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str) nounwind
+ <State 25>: 2.68ns
+ST_25: r_V_147 [1/1] 2.68ns
+bb70:27  %r_V_147 = sub i38 %t_V_63, %rhs_V3_i83_cast    ; <i38> [#uses=3]
 
-ST_43: r_V_205 [1/1] 3.04ns
-bb70:27  %r_V_205 = sub i52 %t_V_64, %rhs_V3_i58_cast    ; <i52> [#uses=3]
+ST_25: real_angle_V [1/1] 0.00ns
+bb70:28  %real_angle_V = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_147, i32 6, i32 37) ; <i32> [#uses=3]
 
-ST_43: real_angle_V [1/1] 0.00ns
-bb70:28  %real_angle_V = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_205, i32 20, i32 51) ; <i32> [#uses=3]
+ST_25: agg_result_V_i86_cast1 [1/1] 0.00ns
+bb70:29  %agg_result_V_i86_cast1 = call i31 @_ssdm_op_PartSelect.i31.i38.i32.i32(i38 %r_V_147, i32 6, i32 36) ; <i31> [#uses=2]
 
-ST_43: agg_result_V_i61_cast1 [1/1] 0.00ns
-bb70:29  %agg_result_V_i61_cast1 = call i31 @_ssdm_op_PartSelect.i31.i52.i32.i32(i52 %r_V_205, i32 20, i32 50) ; <i31> [#uses=2]
+ST_25: agg_result_V_i86_cast [1/1] 0.00ns
+bb70:30  %agg_result_V_i86_cast = call i7 @_ssdm_op_PartSelect.i7.i38.i32.i32(i38 %r_V_147, i32 6, i32 12) ; <i7> [#uses=1]
 
-ST_43: agg_result_V_i61_cast [1/1] 0.00ns
-bb70:30  %agg_result_V_i61_cast = call i21 @_ssdm_op_PartSelect.i21.i52.i32.i32(i52 %r_V_205, i32 20, i32 40) ; <i21> [#uses=1]
 
-ST_43: tmp_i [1/1] 2.52ns
-bb70:31  %tmp_i = icmp slt i32 %real_angle_V, 1647099    ; <i1> [#uses=1]
+ <State 26>: 6.20ns
+ST_26: tmp_i [1/1] 2.52ns
+bb70:31  %tmp_i = icmp slt i32 %real_angle_V, 100        ; <i1> [#uses=1]
 
-ST_43: stg_232 [1/1] 0.00ns
+ST_26: stg_152 [1/1] 0.00ns
 bb70:32  br i1 %tmp_i, label %bb.i, label %bb1.i
 
-ST_43: tmp_i_316 [1/1] 2.52ns
-bb1.i:0  %tmp_i_316 = icmp slt i32 %real_angle_V, 3294198 ; <i1> [#uses=1]
+ST_26: tmp_i_112 [1/1] 2.52ns
+bb1.i:0  %tmp_i_112 = icmp slt i32 %real_angle_V, 201    ; <i1> [#uses=1]
 
-ST_43: stg_234 [1/1] 0.00ns
-bb1.i:1  br i1 %tmp_i_316, label %bb2.i, label %ap_fixed_base.exit.i
+ST_26: stg_154 [1/1] 0.00ns
+bb1.i:1  br i1 %tmp_i_112, label %bb2.i, label %ap_fixed_base.exit.i
 
-ST_43: lhs_V_66 [1/1] 0.00ns
-ap_fixed_base.exit.i:0  %lhs_V_66 = call i51 @_ssdm_op_BitConcatenate.i51.i31.i20(i31 %agg_result_V_i61_cast1, i20 0) ; <i51> [#uses=2]
+ST_26: lhs_V_64 [1/1] 0.00ns
+ap_fixed_base.exit.i:0  %lhs_V_64 = call i37 @_ssdm_op_BitConcatenate.i37.i31.i6(i31 %agg_result_V_i86_cast1, i6 0) ; <i37> [#uses=2]
 
-ST_43: tmp_69_i [1/1] 2.63ns
-ap_fixed_base.exit.i:1  %tmp_69_i = icmp ult i51 %lhs_V_66, 5181325443072 ; <i1> [#uses=1]
+ST_26: tmp_61_i [1/1] 2.55ns
+ap_fixed_base.exit.i:1  %tmp_61_i = icmp ult i37 %lhs_V_64, 19296       ; <i1> [#uses=1]
 
-ST_43: stg_237 [1/1] 0.00ns
-ap_fixed_base.exit.i:2  br i1 %tmp_69_i, label %bb8.i, label %ap_fixed_base.exit179.i
+ST_26: stg_157 [1/1] 0.00ns
+ap_fixed_base.exit.i:2  br i1 %tmp_61_i, label %bb8.i, label %ap_fixed_base.exit179.i
 
-ST_43: r_V_206 [1/1] 3.04ns
-ap_fixed_base.exit179.i:0  %r_V_206 = add i51 %lhs_V_66, -5181325443072    ; <i51> [#uses=1]
+ST_26: r_V_148 [1/1] 2.68ns
+ap_fixed_base.exit179.i:0  %r_V_148 = add i37 %lhs_V_64, -19296            ; <i37> [#uses=1]
 
-ST_43: tmp_146 [1/1] 0.00ns
-ap_fixed_base.exit179.i:1  %tmp_146 = call i31 @_ssdm_op_PartSelect.i31.i51.i32.i32(i51 %r_V_206, i32 20, i32 50) ; <i31> [#uses=1]
+ST_26: tmp_137 [1/1] 0.00ns
+ap_fixed_base.exit179.i:1  %tmp_137 = call i31 @_ssdm_op_PartSelect.i31.i37.i32.i32(i37 %r_V_148, i32 6, i32 36) ; <i31> [#uses=1]
 
-ST_43: r_V_79_i [1/1] 2.44ns
-bb8.i:0  %r_V_79_i = add i31 %agg_result_V_i61_cast1, -3294198 ; <i31> [#uses=1]
+ST_26: this_addr_i12_0_0_i [1/1] 0.00ns
+ap_fixed_base.exit179.i:2  %this_addr_i12_0_0_i = zext i31 %tmp_137 to i32 ; <i32> [#uses=1]
 
-ST_43: r_V_i [1/1] 2.20ns
-bb2.i:0  %r_V_i = add i21 %agg_result_V_i61_cast, 450053 ; <i21> [#uses=1]
-
-
- <State 44>: 7.41ns
-ST_44: this_addr_i12_0_0_i [1/1] 0.00ns
-ap_fixed_base.exit179.i:2  %this_addr_i12_0_0_i = zext i31 %tmp_146 to i32 ; <i32> [#uses=1]
-
-ST_44: cordic_ret14_i [21/21] 7.41ns
+ST_26: cordic_ret14_i [18/18] 3.52ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_44: r_V_79_i_cast [1/1] 0.00ns
-bb8.i:1  %r_V_79_i_cast = zext i31 %r_V_79_i to i32      ; <i32> [#uses=1]
+ST_26: r_V_68_i [1/1] 2.44ns
+bb8.i:0  %r_V_68_i = add i31 %agg_result_V_i86_cast1, -201 ; <i31> [#uses=1]
 
-ST_44: cordic_ret17_i [21/21] 7.41ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_26: r_V_68_i_cast [1/1] 0.00ns
+bb8.i:1  %r_V_68_i_cast = zext i31 %r_V_68_i to i32      ; <i32> [#uses=1]
 
-ST_44: r_V_i_cast [1/1] 0.00ns
-bb2.i:1  %r_V_i_cast = zext i21 %r_V_i to i32            ; <i32> [#uses=1]
+ST_26: cordic_ret17_i [18/18] 3.52ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_44: cordic_ret20_i [21/21] 7.41ns
+ST_26: r_V_i [1/1] 1.72ns
+bb2.i:0  %r_V_i = add i7 %agg_result_V_i86_cast, 28      ; <i7> [#uses=1]
+
+ST_26: r_V_i_cast [1/1] 0.00ns
+bb2.i:1  %r_V_i_cast = zext i7 %r_V_i to i32             ; <i32> [#uses=1]
+
+ST_26: cordic_ret20_i [18/18] 3.52ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-
- <State 45>: 8.61ns
-ST_45: cordic_ret14_i [20/21] 8.61ns
-ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
-
-ST_45: cordic_ret17_i [20/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_45: cordic_ret20_i [20/21] 8.61ns
-bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_45: cordic_ret_i [21/21] 7.41ns
+ST_26: cordic_ret_i [18/18] 3.52ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 46>: 8.61ns
-ST_46: cordic_ret14_i [19/21] 8.61ns
+ <State 27>: 8.70ns
+ST_27: cordic_ret14_i [17/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_46: cordic_ret17_i [19/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_27: cordic_ret17_i [17/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_46: cordic_ret20_i [19/21] 8.61ns
+ST_27: cordic_ret20_i [17/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_46: cordic_ret_i [20/21] 8.61ns
+ST_27: cordic_ret_i [17/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 47>: 8.61ns
-ST_47: cordic_ret14_i [18/21] 8.61ns
+ <State 28>: 8.70ns
+ST_28: cordic_ret14_i [16/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_47: cordic_ret17_i [18/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_28: cordic_ret17_i [16/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_47: cordic_ret20_i [18/21] 8.61ns
+ST_28: cordic_ret20_i [16/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_47: cordic_ret_i [19/21] 8.61ns
+ST_28: cordic_ret_i [16/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 48>: 8.61ns
-ST_48: cordic_ret14_i [17/21] 8.61ns
+ <State 29>: 8.70ns
+ST_29: cordic_ret14_i [15/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_48: cordic_ret17_i [17/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_29: cordic_ret17_i [15/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_48: cordic_ret20_i [17/21] 8.61ns
+ST_29: cordic_ret20_i [15/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_48: cordic_ret_i [18/21] 8.61ns
+ST_29: cordic_ret_i [15/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 49>: 8.61ns
-ST_49: cordic_ret14_i [16/21] 8.61ns
+ <State 30>: 8.70ns
+ST_30: cordic_ret14_i [14/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_49: cordic_ret17_i [16/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_30: cordic_ret17_i [14/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_49: cordic_ret20_i [16/21] 8.61ns
+ST_30: cordic_ret20_i [14/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_49: cordic_ret_i [17/21] 8.61ns
+ST_30: cordic_ret_i [14/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 50>: 8.61ns
-ST_50: cordic_ret14_i [15/21] 8.61ns
+ <State 31>: 8.70ns
+ST_31: cordic_ret14_i [13/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_50: cordic_ret17_i [15/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_31: cordic_ret17_i [13/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_50: cordic_ret20_i [15/21] 8.61ns
+ST_31: cordic_ret20_i [13/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_50: cordic_ret_i [16/21] 8.61ns
+ST_31: cordic_ret_i [13/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 51>: 8.61ns
-ST_51: cordic_ret14_i [14/21] 8.61ns
+ <State 32>: 8.70ns
+ST_32: cordic_ret14_i [12/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_51: cordic_ret17_i [14/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_32: cordic_ret17_i [12/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_51: cordic_ret20_i [14/21] 8.61ns
+ST_32: cordic_ret20_i [12/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_51: cordic_ret_i [15/21] 8.61ns
+ST_32: cordic_ret_i [12/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 52>: 8.61ns
-ST_52: cordic_ret14_i [13/21] 8.61ns
+ <State 33>: 8.70ns
+ST_33: cordic_ret14_i [11/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_52: cordic_ret17_i [13/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_33: cordic_ret17_i [11/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_52: cordic_ret20_i [13/21] 8.61ns
+ST_33: cordic_ret20_i [11/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_52: cordic_ret_i [14/21] 8.61ns
+ST_33: cordic_ret_i [11/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 53>: 8.61ns
-ST_53: cordic_ret14_i [12/21] 8.61ns
+ <State 34>: 8.70ns
+ST_34: cordic_ret14_i [10/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_53: cordic_ret17_i [12/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_34: cordic_ret17_i [10/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_53: cordic_ret20_i [12/21] 8.61ns
+ST_34: cordic_ret20_i [10/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_53: cordic_ret_i [13/21] 8.61ns
+ST_34: cordic_ret_i [10/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 54>: 8.61ns
-ST_54: cordic_ret14_i [11/21] 8.61ns
+ <State 35>: 8.70ns
+ST_35: cordic_ret14_i [9/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_54: cordic_ret17_i [11/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_35: cordic_ret17_i [9/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_54: cordic_ret20_i [11/21] 8.61ns
+ST_35: cordic_ret20_i [9/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_54: cordic_ret_i [12/21] 8.61ns
+ST_35: cordic_ret_i [9/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 55>: 8.61ns
-ST_55: cordic_ret14_i [10/21] 8.61ns
+ <State 36>: 8.70ns
+ST_36: cordic_ret14_i [8/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_55: cordic_ret17_i [10/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_36: cordic_ret17_i [8/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_55: cordic_ret20_i [10/21] 8.61ns
+ST_36: cordic_ret20_i [8/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_55: cordic_ret_i [11/21] 8.61ns
+ST_36: cordic_ret_i [8/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 56>: 8.61ns
-ST_56: cordic_ret14_i [9/21] 8.61ns
+ <State 37>: 8.70ns
+ST_37: cordic_ret14_i [7/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_56: cordic_ret17_i [9/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_37: cordic_ret17_i [7/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_56: cordic_ret20_i [9/21] 8.61ns
+ST_37: cordic_ret20_i [7/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_56: cordic_ret_i [10/21] 8.61ns
+ST_37: cordic_ret_i [7/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 57>: 8.61ns
-ST_57: cordic_ret14_i [8/21] 8.61ns
+ <State 38>: 8.70ns
+ST_38: cordic_ret14_i [6/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_57: cordic_ret17_i [8/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_38: cordic_ret17_i [6/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_57: cordic_ret20_i [8/21] 8.61ns
+ST_38: cordic_ret20_i [6/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_57: cordic_ret_i [9/21] 8.61ns
+ST_38: cordic_ret_i [6/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 58>: 8.61ns
-ST_58: cordic_ret14_i [7/21] 8.61ns
+ <State 39>: 8.70ns
+ST_39: cordic_ret14_i [5/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_58: cordic_ret17_i [7/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_39: cordic_ret17_i [5/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_58: cordic_ret20_i [7/21] 8.61ns
+ST_39: cordic_ret20_i [5/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_58: cordic_ret_i [8/21] 8.61ns
+ST_39: cordic_ret_i [5/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 59>: 8.61ns
-ST_59: cordic_ret14_i [6/21] 8.61ns
+ <State 40>: 8.70ns
+ST_40: cordic_ret14_i [4/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_59: cordic_ret17_i [6/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_40: cordic_ret17_i [4/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_59: cordic_ret20_i [6/21] 8.61ns
+ST_40: cordic_ret20_i [4/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_59: cordic_ret_i [7/21] 8.61ns
+ST_40: cordic_ret_i [4/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 60>: 8.61ns
-ST_60: cordic_ret14_i [5/21] 8.61ns
+ <State 41>: 8.70ns
+ST_41: cordic_ret14_i [3/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_60: cordic_ret17_i [5/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_41: cordic_ret17_i [3/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_60: cordic_ret20_i [5/21] 8.61ns
+ST_41: cordic_ret20_i [3/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_60: cordic_ret_i [6/21] 8.61ns
+ST_41: cordic_ret_i [3/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 61>: 8.61ns
-ST_61: cordic_ret14_i [4/21] 8.61ns
+ <State 42>: 8.70ns
+ST_42: cordic_ret14_i [2/18] 8.70ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_61: cordic_ret17_i [4/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
+ST_42: cordic_ret17_i [2/18] 8.70ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_61: cordic_ret20_i [4/21] 8.61ns
+ST_42: cordic_ret20_i [2/18] 8.70ns
 bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_61: cordic_ret_i [5/21] 8.61ns
+ST_42: cordic_ret_i [2/18] 8.70ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
 
- <State 62>: 8.61ns
-ST_62: cordic_ret14_i [3/21] 8.61ns
+ <State 43>: 7.62ns
+ST_43: cordic_ret14_i [1/18] 5.18ns
 ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
 
-ST_62: cordic_ret17_i [3/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_62: cordic_ret20_i [3/21] 8.61ns
-bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_62: cordic_ret_i [4/21] 8.61ns
-bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
-
-
- <State 63>: 8.61ns
-ST_63: cordic_ret14_i [2/21] 8.61ns
-ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
-
-ST_63: cordic_ret17_i [2/21] 8.61ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_63: cordic_ret20_i [2/21] 8.61ns
-bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_63: cordic_ret_i [3/21] 8.61ns
-bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
-
-
- <State 64>: 8.61ns
-ST_64: cordic_ret14_i [1/21] 6.55ns
-ap_fixed_base.exit179.i:3  %cordic_ret14_i = call fastcc %cordic_ret @cordic(i32 %this_addr_i12_0_0_i) ; <%cordic_ret> [#uses=2]
-
-ST_64: sin_value_V_3 [1/1] 0.00ns
+ST_43: sin_value_V_3 [1/1] 0.00ns
 ap_fixed_base.exit179.i:4  %sin_value_V_3 = extractvalue %cordic_ret %cordic_ret14_i, 0 ; <i32> [#uses=1]
 
-ST_64: cos_value_V_5 [1/1] 0.00ns
+ST_43: cos_value_V_5 [1/1] 0.00ns
 ap_fixed_base.exit179.i:5  %cos_value_V_5 = extractvalue %cordic_ret %cordic_ret14_i, 1 ; <i32> [#uses=1]
 
-ST_64: cordic_ret17_i [1/21] 6.55ns
-bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_79_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_64: sin_value_V_5 [1/1] 0.00ns
-bb8.i:3  %sin_value_V_5 = extractvalue %cordic_ret %cordic_ret17_i, 0 ; <i32> [#uses=1]
-
-ST_64: cos_value_V_4 [1/1] 0.00ns
-bb8.i:4  %cos_value_V_4 = extractvalue %cordic_ret %cordic_ret17_i, 1 ; <i32> [#uses=1]
-
-ST_64: cordic_ret20_i [1/21] 6.55ns
-bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
-
-ST_64: sin_value_V_4 [1/1] 0.00ns
-bb2.i:3  %sin_value_V_4 = extractvalue %cordic_ret %cordic_ret20_i, 0 ; <i32> [#uses=1]
-
-ST_64: cos_value_V_1 [1/1] 0.00ns
-bb2.i:4  %cos_value_V_1 = extractvalue %cordic_ret %cordic_ret20_i, 1 ; <i32> [#uses=1]
-
-ST_64: cordic_ret_i [2/21] 8.61ns
-bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
-
-
- <State 65>: 8.29ns
-ST_65: ssdm_int_32_true_V_write_assign_6 [1/1] 2.44ns
+ST_43: ssdm_int_32_true_V_write_assign_6 [1/1] 2.44ns
 ap_fixed_base.exit179.i:6  %ssdm_int_32_true_V_write_assign_6 = sub i32 0, %cos_value_V_5 ; <i32> [#uses=1]
 
-ST_65: stg_335 [1/1] 1.74ns
-ap_fixed_base.exit179.i:7  br label %cordic_sin_cos.exit
+ST_43: cordic_ret17_i [1/18] 5.18ns
+bb8.i:2  %cordic_ret17_i = call fastcc %cordic_ret @cordic(i32 %r_V_68_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_65: ssdm_int_32_true_V_write_assign_5 [1/1] 2.44ns
+ST_43: sin_value_V_5 [1/1] 0.00ns
+bb8.i:3  %sin_value_V_5 = extractvalue %cordic_ret %cordic_ret17_i, 0 ; <i32> [#uses=1]
+
+ST_43: cos_value_V_4 [1/1] 0.00ns
+bb8.i:4  %cos_value_V_4 = extractvalue %cordic_ret %cordic_ret17_i, 1 ; <i32> [#uses=1]
+
+ST_43: ssdm_int_32_true_V_write_assign_5 [1/1] 2.44ns
 bb8.i:5  %ssdm_int_32_true_V_write_assign_5 = sub i32 0, %cos_value_V_4 ; <i32> [#uses=1]
 
-ST_65: ssdm_int_32_true_V_write_assign_4 [1/1] 2.44ns
+ST_43: ssdm_int_32_true_V_write_assign_4 [1/1] 2.44ns
 bb8.i:6  %ssdm_int_32_true_V_write_assign_4 = sub i32 0, %sin_value_V_5 ; <i32> [#uses=1]
 
-ST_65: stg_338 [1/1] 1.74ns
-bb8.i:7  br label %cordic_sin_cos.exit
+ST_43: cordic_ret20_i [1/18] 5.18ns
+bb2.i:2  %cordic_ret20_i = call fastcc %cordic_ret @cordic(i32 %r_V_i_cast) ; <%cordic_ret> [#uses=2]
 
-ST_65: ssdm_int_32_true_V_write_assign_3 [1/1] 2.44ns
+ST_43: sin_value_V_4 [1/1] 0.00ns
+bb2.i:3  %sin_value_V_4 = extractvalue %cordic_ret %cordic_ret20_i, 0 ; <i32> [#uses=1]
+
+ST_43: cos_value_V_1 [1/1] 0.00ns
+bb2.i:4  %cos_value_V_1 = extractvalue %cordic_ret %cordic_ret20_i, 1 ; <i32> [#uses=1]
+
+ST_43: ssdm_int_32_true_V_write_assign_3 [1/1] 2.44ns
 bb2.i:5  %ssdm_int_32_true_V_write_assign_3 = sub i32 0, %sin_value_V_4 ; <i32> [#uses=1]
 
-ST_65: stg_340 [1/1] 1.74ns
-bb2.i:6  br label %cordic_sin_cos.exit
-
-ST_65: cordic_ret_i [1/21] 6.55ns
+ST_43: cordic_ret_i [1/18] 5.18ns
 bb.i:0  %cordic_ret_i = call fastcc %cordic_ret @cordic(i32 %real_angle_V) ; <%cordic_ret> [#uses=2]
 
-ST_65: ssdm_int_32_true_V_write_assign [1/1] 0.00ns
+ST_43: ssdm_int_32_true_V_write_assign [1/1] 0.00ns
 bb.i:1  %ssdm_int_32_true_V_write_assign = extractvalue %cordic_ret %cordic_ret_i, 0 ; <i32> [#uses=1]
 
-ST_65: ssdm_int_32_true_V_write_assign_1 [1/1] 0.00ns
+ST_43: ssdm_int_32_true_V_write_assign_1 [1/1] 0.00ns
 bb.i:2  %ssdm_int_32_true_V_write_assign_1 = extractvalue %cordic_ret %cordic_ret_i, 1 ; <i32> [#uses=1]
 
-ST_65: stg_344 [1/1] 1.74ns
+ST_43: stg_249 [1/1] 1.74ns
 bb.i:3  br label %cordic_sin_cos.exit
 
-ST_65: amplitude_V_addr [1/1] 0.00ns
-cordic_sin_cos.exit:2  %amplitude_V_addr = getelementptr [1024 x i32]* %amplitude_V, i64 0, i64 %tmp_6 ; <i32*> [#uses=1]
+ST_43: amplitude_V_addr [1/1] 0.00ns
+cordic_sin_cos.exit:2  %amplitude_V_addr = getelementptr [1024 x i32]* %amplitude_V, i64 0, i64 %tmp_4 ; <i32*> [#uses=1]
 
-ST_65: amplitude_V_load [2/2] 2.39ns
+ST_43: amplitude_V_load [2/2] 2.39ns
 cordic_sin_cos.exit:3  %amplitude_V_load = load i32* %amplitude_V_addr, align 4 ; <i32> [#uses=1]
 
 
- <State 66>: 8.75ns
-ST_66: sin_value_V [1/1] 0.00ns
+ <State 44>: 8.75ns
+ST_44: stg_252 [1/1] 1.74ns
+ap_fixed_base.exit179.i:7  br label %cordic_sin_cos.exit
+
+ST_44: stg_253 [1/1] 1.74ns
+bb8.i:7  br label %cordic_sin_cos.exit
+
+ST_44: stg_254 [1/1] 1.74ns
+bb2.i:6  br label %cordic_sin_cos.exit
+
+ST_44: sin_value_V [1/1] 0.00ns
 cordic_sin_cos.exit:0  %sin_value_V = phi i32 [ %ssdm_int_32_true_V_write_assign_6, %ap_fixed_base.exit179.i ], [ %ssdm_int_32_true_V_write_assign_4, %bb8.i ], [ %cos_value_V_1, %bb2.i ], [ %ssdm_int_32_true_V_write_assign, %bb.i ] ; <i32> [#uses=1]
 
-ST_66: cos_value_V [1/1] 0.00ns
+ST_44: cos_value_V [1/1] 0.00ns
 cordic_sin_cos.exit:1  %cos_value_V = phi i32 [ %sin_value_V_3, %ap_fixed_base.exit179.i ], [ %ssdm_int_32_true_V_write_assign_5, %bb8.i ], [ %ssdm_int_32_true_V_write_assign_3, %bb2.i ], [ %ssdm_int_32_true_V_write_assign_1, %bb.i ] ; <i32> [#uses=1]
 
-ST_66: amplitude_V_load [1/2] 2.39ns
+ST_44: amplitude_V_load [1/2] 2.39ns
 cordic_sin_cos.exit:3  %amplitude_V_load = load i32* %amplitude_V_addr, align 4 ; <i32> [#uses=1]
 
-ST_66: OP1_V_1_cast [1/1] 0.00ns
-cordic_sin_cos.exit:4  %OP1_V_1_cast = sext i32 %amplitude_V_load to i52 ; <i52> [#uses=2]
+ST_44: OP1_V_cast [1/1] 0.00ns
+cordic_sin_cos.exit:4  %OP1_V_cast = sext i32 %amplitude_V_load to i38 ; <i38> [#uses=2]
 
-ST_66: OP2_V_1_cast [1/1] 0.00ns
-cordic_sin_cos.exit:5  %OP2_V_1_cast = sext i32 %cos_value_V to i52    ; <i52> [#uses=1]
+ST_44: OP2_V_cast [1/1] 0.00ns
+cordic_sin_cos.exit:5  %OP2_V_cast = sext i32 %cos_value_V to i38      ; <i38> [#uses=1]
 
-ST_66: r_V_207 [6/6] 6.36ns
-cordic_sin_cos.exit:6  %r_V_207 = mul i52 %OP2_V_1_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ST_44: r_V_149 [6/6] 6.36ns
+cordic_sin_cos.exit:6  %r_V_149 = mul i38 %OP2_V_cast, %OP1_V_cast     ; <i38> [#uses=1]
 
-ST_66: OP2_V_2_cast [1/1] 0.00ns
-cordic_sin_cos.exit:10  %OP2_V_2_cast = sext i32 %sin_value_V to i52    ; <i52> [#uses=1]
+ST_44: OP2_V_1_cast [1/1] 0.00ns
+cordic_sin_cos.exit:10  %OP2_V_1_cast = sext i32 %sin_value_V to i38    ; <i38> [#uses=1]
 
-ST_66: r_V_208 [6/6] 6.36ns
-cordic_sin_cos.exit:11  %r_V_208 = mul i52 %OP2_V_2_cast, %OP1_V_1_cast ; <i52> [#uses=1]
-
-
- <State 67>: 6.36ns
-ST_67: r_V_207 [5/6] 6.36ns
-cordic_sin_cos.exit:6  %r_V_207 = mul i52 %OP2_V_1_cast, %OP1_V_1_cast ; <i52> [#uses=1]
-
-ST_67: r_V_208 [5/6] 6.36ns
-cordic_sin_cos.exit:11  %r_V_208 = mul i52 %OP2_V_2_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ST_44: r_V_150 [6/6] 6.36ns
+cordic_sin_cos.exit:11  %r_V_150 = mul i38 %OP2_V_1_cast, %OP1_V_cast   ; <i38> [#uses=1]
 
 
- <State 68>: 6.36ns
-ST_68: r_V_207 [4/6] 6.36ns
-cordic_sin_cos.exit:6  %r_V_207 = mul i52 %OP2_V_1_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ <State 45>: 6.36ns
+ST_45: r_V_149 [5/6] 6.36ns
+cordic_sin_cos.exit:6  %r_V_149 = mul i38 %OP2_V_cast, %OP1_V_cast     ; <i38> [#uses=1]
 
-ST_68: r_V_208 [4/6] 6.36ns
-cordic_sin_cos.exit:11  %r_V_208 = mul i52 %OP2_V_2_cast, %OP1_V_1_cast ; <i52> [#uses=1]
-
-
- <State 69>: 6.36ns
-ST_69: r_V_207 [3/6] 6.36ns
-cordic_sin_cos.exit:6  %r_V_207 = mul i52 %OP2_V_1_cast, %OP1_V_1_cast ; <i52> [#uses=1]
-
-ST_69: r_V_208 [3/6] 6.36ns
-cordic_sin_cos.exit:11  %r_V_208 = mul i52 %OP2_V_2_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ST_45: r_V_150 [5/6] 6.36ns
+cordic_sin_cos.exit:11  %r_V_150 = mul i38 %OP2_V_1_cast, %OP1_V_cast   ; <i38> [#uses=1]
 
 
- <State 70>: 6.36ns
-ST_70: r_V_207 [2/6] 6.36ns
-cordic_sin_cos.exit:6  %r_V_207 = mul i52 %OP2_V_1_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ <State 46>: 6.36ns
+ST_46: r_V_149 [4/6] 6.36ns
+cordic_sin_cos.exit:6  %r_V_149 = mul i38 %OP2_V_cast, %OP1_V_cast     ; <i38> [#uses=1]
 
-ST_70: r_V_208 [2/6] 6.36ns
-cordic_sin_cos.exit:11  %r_V_208 = mul i52 %OP2_V_2_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ST_46: r_V_150 [4/6] 6.36ns
+cordic_sin_cos.exit:11  %r_V_150 = mul i38 %OP2_V_1_cast, %OP1_V_cast   ; <i38> [#uses=1]
 
 
- <State 71>: 8.75ns
-ST_71: r_V_207 [1/6] 6.36ns
-cordic_sin_cos.exit:6  %r_V_207 = mul i52 %OP2_V_1_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ <State 47>: 6.36ns
+ST_47: r_V_149 [3/6] 6.36ns
+cordic_sin_cos.exit:6  %r_V_149 = mul i38 %OP2_V_cast, %OP1_V_cast     ; <i38> [#uses=1]
 
-ST_71: tmp_9 [1/1] 0.00ns
-cordic_sin_cos.exit:7  %tmp_9 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_207, i32 20, i32 51) ; <i32> [#uses=1]
+ST_47: r_V_150 [3/6] 6.36ns
+cordic_sin_cos.exit:11  %r_V_150 = mul i38 %OP2_V_1_cast, %OP1_V_cast   ; <i38> [#uses=1]
 
-ST_71: real_V_addr_1 [1/1] 0.00ns
-cordic_sin_cos.exit:8  %real_V_addr_1 = getelementptr [1024 x i32]* %real_V, i64 0, i64 %tmp_6 ; <i32*> [#uses=1]
 
-ST_71: stg_366 [1/1] 2.39ns
-cordic_sin_cos.exit:9  store i32 %tmp_9, i32* %real_V_addr_1, align 4
+ <State 48>: 6.36ns
+ST_48: r_V_149 [2/6] 6.36ns
+cordic_sin_cos.exit:6  %r_V_149 = mul i38 %OP2_V_cast, %OP1_V_cast     ; <i38> [#uses=1]
 
-ST_71: r_V_208 [1/6] 6.36ns
-cordic_sin_cos.exit:11  %r_V_208 = mul i52 %OP2_V_2_cast, %OP1_V_1_cast ; <i52> [#uses=1]
+ST_48: r_V_150 [2/6] 6.36ns
+cordic_sin_cos.exit:11  %r_V_150 = mul i38 %OP2_V_1_cast, %OP1_V_cast   ; <i38> [#uses=1]
 
-ST_71: tmp_11 [1/1] 0.00ns
-cordic_sin_cos.exit:12  %tmp_11 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_208, i32 20, i32 51) ; <i32> [#uses=1]
 
-ST_71: imag_V_addr [1/1] 0.00ns
-cordic_sin_cos.exit:13  %imag_V_addr = getelementptr [1024 x i32]* %imag_V, i64 0, i64 %tmp_6 ; <i32*> [#uses=1]
+ <State 49>: 8.75ns
+ST_49: empty_110 [1/1] 0.00ns
+bb70:0  %empty_110 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
-ST_71: stg_370 [1/1] 2.39ns
-cordic_sin_cos.exit:14  store i32 %tmp_11, i32* %imag_V_addr, align 4
+ST_49: tmp_66 [1/1] 0.00ns
+bb70:1  %tmp_66 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str2) nounwind ; <i32> [#uses=1]
 
-ST_71: empty_317 [1/1] 0.00ns
-cordic_sin_cos.exit:15  %empty_317 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str2, i32 %tmp_86) nounwind ; <i32> [#uses=0]
+ST_49: stg_273 [1/1] 0.00ns
+bb70:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str) nounwind
 
-ST_71: stg_372 [1/1] 0.00ns
+ST_49: r_V_149 [1/6] 6.36ns
+cordic_sin_cos.exit:6  %r_V_149 = mul i38 %OP2_V_cast, %OP1_V_cast     ; <i38> [#uses=1]
+
+ST_49: tmp_7 [1/1] 0.00ns
+cordic_sin_cos.exit:7  %tmp_7 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_149, i32 6, i32 37) ; <i32> [#uses=1]
+
+ST_49: real_V_addr_1 [1/1] 0.00ns
+cordic_sin_cos.exit:8  %real_V_addr_1 = getelementptr [1024 x i32]* %real_V, i64 0, i64 %tmp_4 ; <i32*> [#uses=1]
+
+ST_49: stg_277 [1/1] 2.39ns
+cordic_sin_cos.exit:9  store i32 %tmp_7, i32* %real_V_addr_1, align 4
+
+ST_49: r_V_150 [1/6] 6.36ns
+cordic_sin_cos.exit:11  %r_V_150 = mul i38 %OP2_V_1_cast, %OP1_V_cast   ; <i38> [#uses=1]
+
+ST_49: tmp_10 [1/1] 0.00ns
+cordic_sin_cos.exit:12  %tmp_10 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_150, i32 6, i32 37) ; <i32> [#uses=1]
+
+ST_49: imag_V_addr [1/1] 0.00ns
+cordic_sin_cos.exit:13  %imag_V_addr = getelementptr [1024 x i32]* %imag_V, i64 0, i64 %tmp_4 ; <i32*> [#uses=1]
+
+ST_49: stg_281 [1/1] 2.39ns
+cordic_sin_cos.exit:14  store i32 %tmp_10, i32* %imag_V_addr, align 4
+
+ST_49: empty_113 [1/1] 0.00ns
+cordic_sin_cos.exit:15  %empty_113 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str2, i32 %tmp_66) nounwind ; <i32> [#uses=0]
+
+ST_49: stg_283 [1/1] 0.00ns
 cordic_sin_cos.exit:16  br label %bb77
 
 
- <State 72>: 0.00ns
-ST_72: stg_373 [2/2] 0.00ns
+ <State 50>: 0.00ns
+ST_50: stg_284 [2/2] 0.00ns
 bb78:0  call fastcc void @IFFT([1024 x i32]* %real_V, [1024 x i32]* %imag_V)
 
 
- <State 73>: 1.39ns
-ST_73: stg_374 [1/2] 0.00ns
+ <State 51>: 1.39ns
+ST_51: stg_285 [1/2] 0.00ns
 bb78:0  call fastcc void @IFFT([1024 x i32]* %real_V, [1024 x i32]* %imag_V)
 
-ST_73: stg_375 [1/1] 1.39ns
+ST_51: stg_286 [1/1] 1.39ns
 bb78:1  br label %bb83
 
 
- <State 74>: 2.39ns
-ST_74: m [1/1] 0.00ns
+ <State 52>: 2.39ns
+ST_52: m [1/1] 0.00ns
 bb83:0  %m = phi i11 [ 0, %bb78 ], [ %m_1, %bb80 ]      ; <i11> [#uses=3]
 
-ST_74: exitcond3 [1/1] 2.11ns
-bb83:1  %exitcond3 = icmp eq i11 %m, -1024              ; <i1> [#uses=1]
+ST_52: exitcond5 [1/1] 2.11ns
+bb83:1  %exitcond5 = icmp eq i11 %m, -1024              ; <i1> [#uses=1]
 
-ST_74: m_1 [1/1] 1.84ns
+ST_52: m_1 [1/1] 1.84ns
 bb83:2  %m_1 = add i11 %m, 1                            ; <i11> [#uses=1]
 
-ST_74: stg_379 [1/1] 0.00ns
-bb83:3  br i1 %exitcond3, label %return, label %bb80
+ST_52: stg_290 [1/1] 0.00ns
+bb83:3  br i1 %exitcond5, label %return, label %bb80
 
-ST_74: tmp_14 [1/1] 0.00ns
-bb80:3  %tmp_14 = zext i11 %m to i64                    ; <i64> [#uses=3]
+ST_52: tmp [1/1] 0.00ns
+bb80:3  %tmp = zext i11 %m to i64                       ; <i64> [#uses=3]
 
-ST_74: real_V_addr [1/1] 0.00ns
-bb80:4  %real_V_addr = getelementptr [1024 x i32]* %real_V, i64 0, i64 %tmp_14 ; <i32*> [#uses=1]
+ST_52: real_V_addr [1/1] 0.00ns
+bb80:4  %real_V_addr = getelementptr [1024 x i32]* %real_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
 
-ST_74: real_V_load [2/2] 2.39ns
+ST_52: real_V_load [2/2] 2.39ns
 bb80:5  %real_V_load = load i32* %real_V_addr, align 4  ; <i32> [#uses=1]
 
-ST_74: wn_V_1_addr [1/1] 0.00ns
-bb80:7  %wn_V_1_addr = getelementptr [1024 x i20]* @wn_V_1, i64 0, i64 %tmp_14 ; <i20*> [#uses=1]
+ST_52: wn_V_addr [1/1] 0.00ns
+bb80:7  %wn_V_addr = getelementptr [1024 x i6]* @wn_V, i64 0, i64 %tmp ; <i6*> [#uses=1]
 
-ST_74: wn_V_1_load [2/2] 2.39ns
-bb80:8  %wn_V_1_load = load i20* %wn_V_1_addr           ; <i20> [#uses=1]
+ST_52: wn_V_load [2/2] 2.39ns
+bb80:8  %wn_V_load = load i6* %wn_V_addr                ; <i6> [#uses=1]
 
 
- <State 75>: 8.75ns
-ST_75: real_V_load [1/2] 2.39ns
+ <State 53>: 8.75ns
+ST_53: real_V_load [1/2] 2.39ns
 bb80:5  %real_V_load = load i32* %real_V_addr, align 4  ; <i32> [#uses=1]
 
-ST_75: OP1_V_5_cast [1/1] 0.00ns
-bb80:6  %OP1_V_5_cast = sext i32 %real_V_load to i52    ; <i52> [#uses=1]
+ST_53: OP1_V_1_cast [1/1] 0.00ns
+bb80:6  %OP1_V_1_cast = sext i32 %real_V_load to i38    ; <i38> [#uses=1]
 
-ST_75: wn_V_1_load [1/2] 2.39ns
-bb80:8  %wn_V_1_load = load i20* %wn_V_1_addr           ; <i20> [#uses=1]
+ST_53: wn_V_load [1/2] 2.39ns
+bb80:8  %wn_V_load = load i6* %wn_V_addr                ; <i6> [#uses=1]
 
-ST_75: OP2_V_4_cast [1/1] 0.00ns
-bb80:9  %OP2_V_4_cast = zext i20 %wn_V_1_load to i52    ; <i52> [#uses=1]
+ST_53: OP2_V_3_cast [1/1] 0.00ns
+bb80:9  %OP2_V_3_cast = zext i6 %wn_V_load to i38       ; <i38> [#uses=1]
 
-ST_75: r_V_6 [3/3] 6.36ns
-bb80:10  %r_V_6 = mul i52 %OP2_V_4_cast, %OP1_V_5_cast   ; <i52> [#uses=1]
-
-
- <State 76>: 6.36ns
-ST_76: r_V_6 [2/3] 6.36ns
-bb80:10  %r_V_6 = mul i52 %OP2_V_4_cast, %OP1_V_5_cast   ; <i52> [#uses=1]
+ST_53: r_V [3/3] 6.36ns
+bb80:10  %r_V = mul i38 %OP2_V_3_cast, %OP1_V_1_cast     ; <i38> [#uses=1]
 
 
- <State 77>: 6.36ns
-ST_77: r_V_6 [1/3] 6.36ns
-bb80:10  %r_V_6 = mul i52 %OP2_V_4_cast, %OP1_V_5_cast   ; <i52> [#uses=1]
+ <State 54>: 6.36ns
+ST_54: r_V [2/3] 6.36ns
+bb80:10  %r_V = mul i38 %OP2_V_3_cast, %OP1_V_1_cast     ; <i38> [#uses=1]
 
 
- <State 78>: 6.36ns
-ST_78: OP1_V_6_cast [1/1] 0.00ns
-bb80:11  %OP1_V_6_cast = sext i52 %r_V_6 to i72          ; <i72> [#uses=1]
-
-ST_78: r_V_209 [6/6] 6.36ns
-bb80:12  %r_V_209 = mul i72 %OP1_V_6_cast, 741455        ; <i72> [#uses=1]
+ <State 55>: 6.36ns
+ST_55: r_V [1/3] 6.36ns
+bb80:10  %r_V = mul i38 %OP2_V_3_cast, %OP1_V_1_cast     ; <i38> [#uses=1]
 
 
- <State 79>: 6.36ns
-ST_79: r_V_209 [5/6] 6.36ns
-bb80:12  %r_V_209 = mul i72 %OP1_V_6_cast, 741455        ; <i72> [#uses=1]
+ <State 56>: 6.36ns
+ST_56: OP1_V_2_cast [1/1] 0.00ns
+bb80:11  %OP1_V_2_cast = sext i38 %r_V to i44            ; <i44> [#uses=1]
+
+ST_56: r_V_151 [3/3] 6.36ns
+bb80:12  %r_V_151 = mul i44 %OP1_V_2_cast, 45            ; <i44> [#uses=1]
 
 
- <State 80>: 6.36ns
-ST_80: r_V_209 [4/6] 6.36ns
-bb80:12  %r_V_209 = mul i72 %OP1_V_6_cast, 741455        ; <i72> [#uses=1]
+ <State 57>: 6.36ns
+ST_57: r_V_151 [2/3] 6.36ns
+bb80:12  %r_V_151 = mul i44 %OP1_V_2_cast, 45            ; <i44> [#uses=1]
 
 
- <State 81>: 6.36ns
-ST_81: r_V_209 [3/6] 6.36ns
-bb80:12  %r_V_209 = mul i72 %OP1_V_6_cast, 741455        ; <i72> [#uses=1]
+ <State 58>: 8.75ns
+ST_58: empty_114 [1/1] 0.00ns
+bb80:0  %empty_114 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
 
+ST_58: tmp_68 [1/1] 0.00ns
+bb80:1  %tmp_68 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str3) nounwind ; <i32> [#uses=1]
 
- <State 82>: 6.36ns
-ST_82: r_V_209 [2/6] 6.36ns
-bb80:12  %r_V_209 = mul i72 %OP1_V_6_cast, 741455        ; <i72> [#uses=1]
-
-
- <State 83>: 8.75ns
-ST_83: empty_318 [1/1] 0.00ns
-bb80:0  %empty_318 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind ; <i32> [#uses=0]
-
-ST_83: tmp_88 [1/1] 0.00ns
-bb80:1  %tmp_88 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str3) nounwind ; <i32> [#uses=1]
-
-ST_83: stg_400 [1/1] 0.00ns
+ST_58: stg_308 [1/1] 0.00ns
 bb80:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str) nounwind
 
-ST_83: r_V_209 [1/6] 6.36ns
-bb80:12  %r_V_209 = mul i72 %OP1_V_6_cast, 741455        ; <i72> [#uses=1]
+ST_58: r_V_151 [1/3] 6.36ns
+bb80:12  %r_V_151 = mul i44 %OP1_V_2_cast, 45            ; <i44> [#uses=1]
 
-ST_83: tmp_16 [1/1] 0.00ns
-bb80:13  %tmp_16 = call i32 @_ssdm_op_PartSelect.i32.i72.i32.i32(i72 %r_V_209, i32 40, i32 71) ; <i32> [#uses=1]
+ST_58: tmp_12 [1/1] 0.00ns
+bb80:13  %tmp_12 = call i32 @_ssdm_op_PartSelect.i32.i44.i32.i32(i44 %r_V_151, i32 12, i32 43) ; <i32> [#uses=1]
 
-ST_83: time_domain_V_addr [1/1] 0.00ns
-bb80:14  %time_domain_V_addr = getelementptr [1024 x i32]* %time_domain_V, i64 0, i64 %tmp_14 ; <i32*> [#uses=1]
+ST_58: output_array_V_addr [1/1] 0.00ns
+bb80:14  %output_array_V_addr = getelementptr [1024 x i32]* @output_array_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
 
-ST_83: stg_404 [1/1] 2.39ns
-bb80:15  store i32 %tmp_16, i32* %time_domain_V_addr, align 4
+ST_58: stg_312 [1/1] 2.39ns
+bb80:15  store i32 %tmp_12, i32* %output_array_V_addr, align 4
 
-ST_83: empty_319 [1/1] 0.00ns
-bb80:16  %empty_319 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str3, i32 %tmp_88) nounwind ; <i32> [#uses=0]
+ST_58: empty_115 [1/1] 0.00ns
+bb80:16  %empty_115 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str3, i32 %tmp_68) nounwind ; <i32> [#uses=0]
 
-ST_83: stg_406 [1/1] 0.00ns
+ST_58: stg_314 [1/1] 0.00ns
 bb80:17  br label %bb83
 
 
- <State 84>: 0.00ns
-ST_84: stg_407 [1/1] 0.00ns
+ <State 59>: 0.00ns
+ST_59: stg_315 [1/1] 0.00ns
 return:0  ret void
 
 
@@ -1515,31 +1214,6 @@ N/A
 	State 57
 	State 58
 	State 59
-	State 60
-	State 61
-	State 62
-	State 63
-	State 64
-	State 65
-	State 66
-	State 67
-	State 68
-	State 69
-	State 70
-	State 71
-	State 72
-	State 73
-	State 74
-	State 75
-	State 76
-	State 77
-	State 78
-	State 79
-	State 80
-	State 81
-	State 82
-	State 83
-	State 84
 
 
 ============================================================

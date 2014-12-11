@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'pitchshifting'" level="0">
-<item name = "Date">Sun Dec  7 14:25:13 2014
+<item name = "Date">Wed Dec 10 22:44:35 2014
 </item>
 <item name = "Version">2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)</item>
 <item name = "Project">hls.prj</item>
@@ -35,9 +35,9 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">1046, 1046, 24, 1, 1, 1024, yes</column>
-<column name="- Loop 2">1068, 1068, 46, 1, 1, 1024, yes</column>
-<column name="- Loop 3">1032, 1032, 10, 1, 1, 1024, yes</column>
+<column name="- Loop 1">1034, 1034, 12, 1, 1, 1024, yes</column>
+<column name="- Loop 2">1058, 1058, 36, 1, 1, 1024, yes</column>
+<column name="- Loop 3">1029, 1029, 7, 1, 1, 1024, yes</column>
 </table>
 </item>
 </section>

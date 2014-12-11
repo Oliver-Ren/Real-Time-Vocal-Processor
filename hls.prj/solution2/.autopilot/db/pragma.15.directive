@@ -70,12 +70,17 @@
 <option name="self" positionalBoolean="type" value=""/>
 </pragma>
 </directive>
-<directive functionLabel="" functionName="combine" label="">
+<directive functionLabel="" functionName="pitchshifting" label="">
 <pragma name="PIPELINE">
 <option name="II" value="1"/>
 </pragma>
 </directive>
-<directive functionLabel="" functionName="cal_mag_phase" label="">
+<directive functionLabel="" functionName="pitchshifting" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pitchshifting" label="">
 <pragma name="PIPELINE">
 <option name="II" value="1"/>
 </pragma>

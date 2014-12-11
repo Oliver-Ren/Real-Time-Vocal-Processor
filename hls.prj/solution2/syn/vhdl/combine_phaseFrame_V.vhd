@@ -13,7 +13,7 @@ use ieee.std_logic_unsigned.all;
 entity combine_phaseFrame_V_ram is 
     generic(
             mem_type    : string := "block"; 
-            dwidth     : integer := 26; 
+            dwidth     : integer := 11; 
             awidth     : integer := 10; 
             mem_size    : integer := 1024
     ); 
@@ -92,7 +92,7 @@ use IEEE.std_logic_1164.all;
 
 entity combine_phaseFrame_V is
     generic (
-        DataWidth : INTEGER := 26;
+        DataWidth : INTEGER := 11;
         AddressRange : INTEGER := 1024;
         AddressWidth : INTEGER := 10);
     port (

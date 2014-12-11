@@ -8,7 +8,7 @@
 `timescale 1 ns / 1 ps
 module combine_phaseFrame_V_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1,  clk);
 
-parameter DWIDTH = 26;
+parameter DWIDTH = 11;
 parameter AWIDTH = 10;
 parameter MEM_SIZE = 1024;
 
@@ -72,7 +72,7 @@ module combine_phaseFrame_V(
     we1,
     d1);
 
-parameter DataWidth = 32'd26;
+parameter DataWidth = 32'd11;
 parameter AddressRange = 32'd1024;
 parameter AddressWidth = 32'd10;
 input reset;

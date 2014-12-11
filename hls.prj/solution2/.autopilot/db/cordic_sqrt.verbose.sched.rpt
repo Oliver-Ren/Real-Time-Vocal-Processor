@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'cordic_sqrt'
 ================================================================
-* Date:           Sun Dec  7 14:25:04 2014
+* Date:           Wed Dec 10 22:44:31 2014
 
 * Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
 * Project:        hls.prj
@@ -20,7 +20,7 @@
     +---------+-------+----------+------------+
     |  Clock  | Target| Estimated| Uncertainty|
     +---------+-------+----------+------------+
-    |default  |  10.00|      7.45|        1.25|
+    |default  |  10.00|      6.73|        1.25|
     +---------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -201,7 +201,7 @@ IsGatedGlobalClock: 0
 36 --> 
 * FSM state operations: 
 
- <State 1>: 4.41ns
+ <State 1>: 4.05ns
 ST_1: y_V_read [1/1] 0.00ns
 entry:0  %y_V_read = call i32 @_ssdm_op_WireRead.i32(i32 %y_V) nounwind ; <i32> [#uses=2]
 
@@ -212,1544 +212,1460 @@ ST_1: tmp_61 [1/1] 0.00ns
 entry:2  %tmp_61 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %y_V_read, i32 31) ; <i1> [#uses=2]
 
 ST_1: tmp [1/1] 0.00ns
-entry:3  %tmp = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %y_V_read, i20 0) ; <i52> [#uses=1]
+entry:3  %tmp = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %y_V_read, i6 0) ; <i38> [#uses=1]
 
 ST_1: p_shl [1/1] 0.00ns
-entry:4  %p_shl = zext i52 %tmp to i53                   ; <i53> [#uses=2]
+entry:4  %p_shl = zext i38 %tmp to i39                   ; <i39> [#uses=2]
 
-ST_1: mt1 [1/1] 3.04ns
-entry:5  %mt1 = sub i53 0, %p_shl                        ; <i53> [#uses=1]
+ST_1: mt1 [1/1] 2.68ns
+entry:5  %mt1 = sub i39 0, %p_shl                        ; <i39> [#uses=1]
 
 ST_1: r_V [1/1] 1.37ns
-entry:6  %r_V = select i1 %tmp_61, i53 %mt1, i53 %p_shl  ; <i53> [#uses=1]
+entry:6  %r_V = select i1 %tmp_61, i39 %mt1, i39 %p_shl  ; <i39> [#uses=1]
 
 ST_1: mt [1/1] 0.00ns
-entry:7  %mt = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_V_read, i20 0) ; <i52> [#uses=2]
+entry:7  %mt = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_V_read, i6 0) ; <i38> [#uses=2]
 
-ST_1: mf [1/1] 3.04ns
-entry:8  %mf = sub i52 0, %mt                            ; <i52> [#uses=1]
+ST_1: mf [1/1] 2.68ns
+entry:8  %mf = sub i38 0, %mt                            ; <i38> [#uses=1]
 
 ST_1: r_V_s [1/1] 1.37ns
-entry:9  %r_V_s = select i1 %tmp_61, i52 %mt, i52 %mf    ; <i52> [#uses=2]
+entry:9  %r_V_s = select i1 %tmp_61, i38 %mt, i38 %mf    ; <i38> [#uses=2]
 
 ST_1: tmp_62 [1/1] 0.00ns
-entry:10  %tmp_62 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_s, i32 51) ; <i1> [#uses=2]
+entry:10  %tmp_62 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_s, i32 37) ; <i1> [#uses=2]
 
 ST_1: tmp_1 [1/1] 0.00ns
-entry:11  %tmp_1 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_s, i32 20, i32 51) ; <i32> [#uses=1]
+entry:11  %tmp_1 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_s, i32 6, i32 37) ; <i32> [#uses=1]
 
 ST_1: tmp_2 [1/1] 0.00ns
-entry:15  %tmp_2 = call i32 @_ssdm_op_PartSelect.i32.i53.i32.i32(i53 %r_V, i32 20, i32 51) ; <i32> [#uses=1]
+entry:15  %tmp_2 = call i32 @_ssdm_op_PartSelect.i32.i39.i32.i32(i39 %r_V, i32 6, i32 37) ; <i32> [#uses=1]
 
 
- <State 2>: 7.45ns
+ <State 2>: 6.73ns
 ST_2: lhs_V_10 [1/1] 0.00ns
-entry:12  %lhs_V_10 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_1, i20 0) ; <i52> [#uses=3]
+entry:12  %lhs_V_10 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_1, i6 0) ; <i38> [#uses=3]
 
-ST_2: mf2 [1/1] 3.04ns
-entry:13  %mf2 = sub i52 0, %lhs_V_10                     ; <i52> [#uses=1]
+ST_2: mf2 [1/1] 2.68ns
+entry:13  %mf2 = sub i38 0, %lhs_V_10                     ; <i38> [#uses=1]
 
 ST_2: r_V_1 [1/1] 1.37ns
-entry:14  %r_V_1 = select i1 %tmp_62, i52 %lhs_V_10, i52 %mf2 ; <i52> [#uses=1]
+entry:14  %r_V_1 = select i1 %tmp_62, i38 %lhs_V_10, i38 %mf2 ; <i38> [#uses=1]
 
 ST_2: lhs_V [1/1] 0.00ns
-entry:16  %lhs_V = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_2, i20 0) ; <i52> [#uses=3]
+entry:16  %lhs_V = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_2, i6 0) ; <i38> [#uses=3]
 
-ST_2: r_V_2 [1/1] 3.04ns
-entry:17  %r_V_2 = sub i52 %lhs_V, %r_V_1                 ; <i52> [#uses=1]
+ST_2: r_V_2 [1/1] 2.68ns
+entry:17  %r_V_2 = sub i38 %lhs_V, %r_V_1                 ; <i38> [#uses=1]
 
-ST_2: mf3 [1/1] 3.04ns
-entry:18  %mf3 = sub i52 0, %lhs_V                        ; <i52> [#uses=1]
+ST_2: mf3 [1/1] 2.68ns
+entry:18  %mf3 = sub i38 0, %lhs_V                        ; <i38> [#uses=1]
 
 ST_2: r_V_3 [1/1] 1.37ns
-entry:19  %r_V_3 = select i1 %tmp_62, i52 %lhs_V, i52 %mf3 ; <i52> [#uses=1]
+entry:19  %r_V_3 = select i1 %tmp_62, i38 %lhs_V, i38 %mf3 ; <i38> [#uses=1]
 
-ST_2: r_V_4 [1/1] 3.04ns
-entry:20  %r_V_4 = add i52 %lhs_V_10, %r_V_3              ; <i52> [#uses=2]
+ST_2: r_V_4 [1/1] 2.68ns
+entry:20  %r_V_4 = add i38 %lhs_V_10, %r_V_3              ; <i38> [#uses=2]
 
-ST_2: tmp_65 [1/1] 0.00ns
-entry:21  %tmp_65 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_4, i32 51) ; <i1> [#uses=2]
+ST_2: tmp_63 [1/1] 0.00ns
+entry:21  %tmp_63 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_4, i32 37) ; <i1> [#uses=2]
 
 ST_2: tmp_3 [1/1] 0.00ns
-entry:22  %tmp_3 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_4, i32 20, i32 51) ; <i32> [#uses=2]
+entry:22  %tmp_3 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_4, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_2: tmp_4 [1/1] 0.00ns
-entry:26  %tmp_4 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_2, i32 20, i32 51) ; <i32> [#uses=2]
+entry:26  %tmp_4 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_2, i32 6, i32 37) ; <i32> [#uses=2]
 
 
- <State 3>: 7.45ns
+ <State 3>: 6.73ns
 ST_3: mt4 [1/1] 0.00ns
-entry:23  %mt4 = call i51 @_ssdm_op_BitConcatenate.i51.i32.i19(i32 %tmp_3, i19 0) ; <i51> [#uses=2]
+entry:23  %mt4 = call i37 @_ssdm_op_BitConcatenate.i37.i32.i5(i32 %tmp_3, i5 0) ; <i37> [#uses=2]
 
-ST_3: mf4 [1/1] 3.04ns
-entry:24  %mf4 = sub i51 0, %mt4                          ; <i51> [#uses=1]
+ST_3: mf4 [1/1] 2.68ns
+entry:24  %mf4 = sub i37 0, %mt4                          ; <i37> [#uses=1]
 
 ST_3: r_V_5 [1/1] 1.37ns
-entry:25  %r_V_5 = select i1 %tmp_65, i51 %mt4, i51 %mf4  ; <i51> [#uses=1]
+entry:25  %r_V_5 = select i1 %tmp_63, i37 %mt4, i37 %mf4  ; <i37> [#uses=1]
 
 ST_3: lhs_V_1 [1/1] 0.00ns
-entry:27  %lhs_V_1 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_4, i20 0) ; <i52> [#uses=1]
+entry:27  %lhs_V_1 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_4, i6 0) ; <i38> [#uses=1]
 
 ST_3: rhs_V2_1_cast [1/1] 0.00ns
-entry:28  %rhs_V2_1_cast = sext i51 %r_V_5 to i52         ; <i52> [#uses=1]
+entry:28  %rhs_V2_1_cast = sext i37 %r_V_5 to i38         ; <i38> [#uses=1]
 
-ST_3: r_V_6 [1/1] 3.04ns
-entry:29  %r_V_6 = sub i52 %lhs_V_1, %rhs_V2_1_cast       ; <i52> [#uses=1]
+ST_3: r_V_6 [1/1] 2.68ns
+entry:29  %r_V_6 = sub i38 %lhs_V_1, %rhs_V2_1_cast       ; <i38> [#uses=1]
 
 ST_3: mt5 [1/1] 0.00ns
-entry:30  %mt5 = call i51 @_ssdm_op_BitConcatenate.i51.i32.i19(i32 %tmp_4, i19 0) ; <i51> [#uses=1]
+entry:30  %mt5 = call i37 @_ssdm_op_BitConcatenate.i37.i32.i5(i32 %tmp_4, i5 0) ; <i37> [#uses=1]
 
 ST_3: mt5_cast [1/1] 0.00ns
-entry:31  %mt5_cast = sext i51 %mt5 to i52                ; <i52> [#uses=2]
+entry:31  %mt5_cast = sext i37 %mt5 to i38                ; <i38> [#uses=2]
 
-ST_3: mf5 [1/1] 3.04ns
-entry:32  %mf5 = sub i52 0, %mt5_cast                     ; <i52> [#uses=1]
+ST_3: mf5 [1/1] 2.68ns
+entry:32  %mf5 = sub i38 0, %mt5_cast                     ; <i38> [#uses=1]
 
 ST_3: r_V_7 [1/1] 1.37ns
-entry:33  %r_V_7 = select i1 %tmp_65, i52 %mt5_cast, i52 %mf5 ; <i52> [#uses=1]
+entry:33  %r_V_7 = select i1 %tmp_63, i38 %mt5_cast, i38 %mf5 ; <i38> [#uses=1]
 
 ST_3: lhs_V_11 [1/1] 0.00ns
-entry:34  %lhs_V_11 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_3, i20 0) ; <i52> [#uses=1]
+entry:34  %lhs_V_11 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_3, i6 0) ; <i38> [#uses=1]
 
-ST_3: r_V_8 [1/1] 3.04ns
-entry:35  %r_V_8 = add i52 %lhs_V_11, %r_V_7              ; <i52> [#uses=2]
+ST_3: r_V_8 [1/1] 2.68ns
+entry:35  %r_V_8 = add i38 %lhs_V_11, %r_V_7              ; <i38> [#uses=2]
 
-ST_3: tmp_66 [1/1] 0.00ns
-entry:36  %tmp_66 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_8, i32 51) ; <i1> [#uses=2]
+ST_3: tmp_64 [1/1] 0.00ns
+entry:36  %tmp_64 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_8, i32 37) ; <i1> [#uses=2]
 
 ST_3: tmp_7 [1/1] 0.00ns
-entry:37  %tmp_7 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_8, i32 20, i32 51) ; <i32> [#uses=2]
+entry:37  %tmp_7 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_8, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_3: tmp_8 [1/1] 0.00ns
-entry:41  %tmp_8 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_6, i32 20, i32 51) ; <i32> [#uses=2]
+entry:41  %tmp_8 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_6, i32 6, i32 37) ; <i32> [#uses=2]
 
 
- <State 4>: 7.45ns
+ <State 4>: 6.61ns
 ST_4: mt6 [1/1] 0.00ns
-entry:38  %mt6 = call i50 @_ssdm_op_BitConcatenate.i50.i32.i18(i32 %tmp_7, i18 0) ; <i50> [#uses=2]
+entry:38  %mt6 = call i36 @_ssdm_op_BitConcatenate.i36.i32.i4(i32 %tmp_7, i4 0) ; <i36> [#uses=2]
 
-ST_4: mf6 [1/1] 3.04ns
-entry:39  %mf6 = sub i50 0, %mt6                          ; <i50> [#uses=1]
+ST_4: mf6 [1/1] 2.56ns
+entry:39  %mf6 = sub i36 0, %mt6                          ; <i36> [#uses=1]
 
 ST_4: r_V_9 [1/1] 1.37ns
-entry:40  %r_V_9 = select i1 %tmp_66, i50 %mt6, i50 %mf6  ; <i50> [#uses=1]
+entry:40  %r_V_9 = select i1 %tmp_64, i36 %mt6, i36 %mf6  ; <i36> [#uses=1]
 
 ST_4: lhs_V_2 [1/1] 0.00ns
-entry:42  %lhs_V_2 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_8, i20 0) ; <i52> [#uses=1]
+entry:42  %lhs_V_2 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_8, i6 0) ; <i38> [#uses=1]
 
 ST_4: rhs_V2_2_cast [1/1] 0.00ns
-entry:43  %rhs_V2_2_cast = sext i50 %r_V_9 to i52         ; <i52> [#uses=1]
+entry:43  %rhs_V2_2_cast = sext i36 %r_V_9 to i38         ; <i38> [#uses=1]
 
-ST_4: r_V_10 [1/1] 3.04ns
-entry:44  %r_V_10 = sub i52 %lhs_V_2, %rhs_V2_2_cast      ; <i52> [#uses=1]
+ST_4: r_V_10 [1/1] 2.68ns
+entry:44  %r_V_10 = sub i38 %lhs_V_2, %rhs_V2_2_cast      ; <i38> [#uses=1]
 
 ST_4: mt7 [1/1] 0.00ns
-entry:45  %mt7 = call i50 @_ssdm_op_BitConcatenate.i50.i32.i18(i32 %tmp_8, i18 0) ; <i50> [#uses=1]
+entry:45  %mt7 = call i36 @_ssdm_op_BitConcatenate.i36.i32.i4(i32 %tmp_8, i4 0) ; <i36> [#uses=1]
 
 ST_4: mt7_cast [1/1] 0.00ns
-entry:46  %mt7_cast = sext i50 %mt7 to i51                ; <i51> [#uses=2]
+entry:46  %mt7_cast = sext i36 %mt7 to i37                ; <i37> [#uses=2]
 
-ST_4: mf7 [1/1] 3.04ns
-entry:47  %mf7 = sub i51 0, %mt7_cast                     ; <i51> [#uses=1]
+ST_4: mf7 [1/1] 2.56ns
+entry:47  %mf7 = sub i37 0, %mt7_cast                     ; <i37> [#uses=1]
 
 ST_4: r_V_11 [1/1] 1.37ns
-entry:48  %r_V_11 = select i1 %tmp_66, i51 %mt7_cast, i51 %mf7 ; <i51> [#uses=1]
+entry:48  %r_V_11 = select i1 %tmp_64, i37 %mt7_cast, i37 %mf7 ; <i37> [#uses=1]
 
 ST_4: lhs_V_12 [1/1] 0.00ns
-entry:49  %lhs_V_12 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_7, i20 0) ; <i52> [#uses=1]
+entry:49  %lhs_V_12 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_7, i6 0) ; <i38> [#uses=1]
 
-ST_4: rhs_V_203_2_cast [1/1] 0.00ns
-entry:50  %rhs_V_203_2_cast = sext i51 %r_V_11 to i52     ; <i52> [#uses=1]
+ST_4: rhs_V_173_2_cast [1/1] 0.00ns
+entry:50  %rhs_V_173_2_cast = sext i37 %r_V_11 to i38     ; <i38> [#uses=1]
 
-ST_4: r_V_12 [1/1] 3.04ns
-entry:51  %r_V_12 = add i52 %lhs_V_12, %rhs_V_203_2_cast  ; <i52> [#uses=2]
+ST_4: r_V_12 [1/1] 2.68ns
+entry:51  %r_V_12 = add i38 %lhs_V_12, %rhs_V_173_2_cast  ; <i38> [#uses=2]
 
-ST_4: tmp_69 [1/1] 0.00ns
-entry:52  %tmp_69 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_12, i32 51) ; <i1> [#uses=2]
+ST_4: tmp_65 [1/1] 0.00ns
+entry:52  %tmp_65 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_12, i32 37) ; <i1> [#uses=2]
 
 ST_4: tmp_s [1/1] 0.00ns
-entry:53  %tmp_s = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_12, i32 20, i32 51) ; <i32> [#uses=2]
+entry:53  %tmp_s = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_12, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_4: tmp_5 [1/1] 0.00ns
-entry:57  %tmp_5 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_10, i32 20, i32 51) ; <i32> [#uses=2]
+entry:57  %tmp_5 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_10, i32 6, i32 37) ; <i32> [#uses=2]
 
 
- <State 5>: 7.45ns
+ <State 5>: 6.61ns
 ST_5: mt8 [1/1] 0.00ns
-entry:54  %mt8 = call i49 @_ssdm_op_BitConcatenate.i49.i32.i17(i32 %tmp_s, i17 0) ; <i49> [#uses=2]
+entry:54  %mt8 = call i35 @_ssdm_op_BitConcatenate.i35.i32.i3(i32 %tmp_s, i3 0) ; <i35> [#uses=2]
 
-ST_5: mf8 [1/1] 3.04ns
-entry:55  %mf8 = sub i49 0, %mt8                          ; <i49> [#uses=1]
+ST_5: mf8 [1/1] 2.56ns
+entry:55  %mf8 = sub i35 0, %mt8                          ; <i35> [#uses=1]
 
 ST_5: r_V_13 [1/1] 1.37ns
-entry:56  %r_V_13 = select i1 %tmp_69, i49 %mt8, i49 %mf8 ; <i49> [#uses=1]
+entry:56  %r_V_13 = select i1 %tmp_65, i35 %mt8, i35 %mf8 ; <i35> [#uses=1]
 
 ST_5: lhs_V_3 [1/1] 0.00ns
-entry:58  %lhs_V_3 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_5, i20 0) ; <i52> [#uses=1]
+entry:58  %lhs_V_3 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_5, i6 0) ; <i38> [#uses=1]
 
 ST_5: rhs_V2_3_cast [1/1] 0.00ns
-entry:59  %rhs_V2_3_cast = sext i49 %r_V_13 to i52        ; <i52> [#uses=1]
+entry:59  %rhs_V2_3_cast = sext i35 %r_V_13 to i38        ; <i38> [#uses=1]
 
-ST_5: r_V_14 [1/1] 3.04ns
-entry:60  %r_V_14 = sub i52 %lhs_V_3, %rhs_V2_3_cast      ; <i52> [#uses=1]
+ST_5: r_V_14 [1/1] 2.68ns
+entry:60  %r_V_14 = sub i38 %lhs_V_3, %rhs_V2_3_cast      ; <i38> [#uses=1]
 
 ST_5: mt9 [1/1] 0.00ns
-entry:61  %mt9 = call i49 @_ssdm_op_BitConcatenate.i49.i32.i17(i32 %tmp_5, i17 0) ; <i49> [#uses=1]
+entry:61  %mt9 = call i35 @_ssdm_op_BitConcatenate.i35.i32.i3(i32 %tmp_5, i3 0) ; <i35> [#uses=1]
 
 ST_5: mt9_cast [1/1] 0.00ns
-entry:62  %mt9_cast = sext i49 %mt9 to i50                ; <i50> [#uses=2]
+entry:62  %mt9_cast = sext i35 %mt9 to i36                ; <i36> [#uses=2]
 
-ST_5: mf9 [1/1] 3.04ns
-entry:63  %mf9 = sub i50 0, %mt9_cast                     ; <i50> [#uses=1]
+ST_5: mf9 [1/1] 2.56ns
+entry:63  %mf9 = sub i36 0, %mt9_cast                     ; <i36> [#uses=1]
 
 ST_5: r_V_15 [1/1] 1.37ns
-entry:64  %r_V_15 = select i1 %tmp_69, i50 %mt9_cast, i50 %mf9 ; <i50> [#uses=1]
+entry:64  %r_V_15 = select i1 %tmp_65, i36 %mt9_cast, i36 %mf9 ; <i36> [#uses=1]
 
 ST_5: lhs_V_13 [1/1] 0.00ns
-entry:65  %lhs_V_13 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_s, i20 0) ; <i52> [#uses=1]
+entry:65  %lhs_V_13 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_s, i6 0) ; <i38> [#uses=1]
 
-ST_5: rhs_V_203_3_cast [1/1] 0.00ns
-entry:66  %rhs_V_203_3_cast = sext i50 %r_V_15 to i52     ; <i52> [#uses=1]
+ST_5: rhs_V_173_3_cast [1/1] 0.00ns
+entry:66  %rhs_V_173_3_cast = sext i36 %r_V_15 to i38     ; <i38> [#uses=1]
 
-ST_5: r_V_16 [1/1] 3.04ns
-entry:67  %r_V_16 = add i52 %lhs_V_13, %rhs_V_203_3_cast  ; <i52> [#uses=2]
+ST_5: r_V_16 [1/1] 2.68ns
+entry:67  %r_V_16 = add i38 %lhs_V_13, %rhs_V_173_3_cast  ; <i38> [#uses=2]
 
-ST_5: tmp_70 [1/1] 0.00ns
-entry:68  %tmp_70 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_16, i32 51) ; <i1> [#uses=2]
+ST_5: tmp_66 [1/1] 0.00ns
+entry:68  %tmp_66 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_16, i32 37) ; <i1> [#uses=2]
 
 ST_5: tmp_6 [1/1] 0.00ns
-entry:69  %tmp_6 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_16, i32 20, i32 51) ; <i32> [#uses=2]
+entry:69  %tmp_6 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_16, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_5: tmp_9 [1/1] 0.00ns
-entry:73  %tmp_9 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_14, i32 20, i32 51) ; <i32> [#uses=2]
+entry:73  %tmp_9 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_14, i32 6, i32 37) ; <i32> [#uses=2]
 
 
- <State 6>: 7.33ns
+ <State 6>: 6.61ns
 ST_6: mt2 [1/1] 0.00ns
-entry:70  %mt2 = call i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32 %tmp_6, i16 0) ; <i48> [#uses=2]
+entry:70  %mt2 = call i34 @_ssdm_op_BitConcatenate.i34.i32.i2(i32 %tmp_6, i2 0) ; <i34> [#uses=2]
 
-ST_6: mf1 [1/1] 2.92ns
-entry:71  %mf1 = sub i48 0, %mt2                          ; <i48> [#uses=1]
+ST_6: mf1 [1/1] 2.56ns
+entry:71  %mf1 = sub i34 0, %mt2                          ; <i34> [#uses=1]
 
 ST_6: r_V_17 [1/1] 1.37ns
-entry:72  %r_V_17 = select i1 %tmp_70, i48 %mt2, i48 %mf1 ; <i48> [#uses=1]
+entry:72  %r_V_17 = select i1 %tmp_66, i34 %mt2, i34 %mf1 ; <i34> [#uses=1]
 
 ST_6: lhs_V_4 [1/1] 0.00ns
-entry:74  %lhs_V_4 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_9, i20 0) ; <i52> [#uses=1]
+entry:74  %lhs_V_4 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_9, i6 0) ; <i38> [#uses=1]
 
 ST_6: rhs_V2_4_cast [1/1] 0.00ns
-entry:75  %rhs_V2_4_cast = sext i48 %r_V_17 to i52        ; <i52> [#uses=1]
+entry:75  %rhs_V2_4_cast = sext i34 %r_V_17 to i38        ; <i38> [#uses=1]
 
-ST_6: r_V_18 [1/1] 3.04ns
-entry:76  %r_V_18 = sub i52 %lhs_V_4, %rhs_V2_4_cast      ; <i52> [#uses=1]
+ST_6: r_V_18 [1/1] 2.68ns
+entry:76  %r_V_18 = sub i38 %lhs_V_4, %rhs_V2_4_cast      ; <i38> [#uses=1]
 
 ST_6: mt3 [1/1] 0.00ns
-entry:77  %mt3 = call i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32 %tmp_9, i16 0) ; <i48> [#uses=1]
+entry:77  %mt3 = call i34 @_ssdm_op_BitConcatenate.i34.i32.i2(i32 %tmp_9, i2 0) ; <i34> [#uses=1]
 
 ST_6: mt11_cast [1/1] 0.00ns
-entry:78  %mt11_cast = sext i48 %mt3 to i49               ; <i49> [#uses=2]
+entry:78  %mt11_cast = sext i34 %mt3 to i35               ; <i35> [#uses=2]
 
-ST_6: mf10 [1/1] 2.92ns
-entry:79  %mf10 = sub i49 0, %mt11_cast                   ; <i49> [#uses=1]
+ST_6: mf10 [1/1] 2.56ns
+entry:79  %mf10 = sub i35 0, %mt11_cast                   ; <i35> [#uses=1]
 
 ST_6: r_V_19 [1/1] 1.37ns
-entry:80  %r_V_19 = select i1 %tmp_70, i49 %mt11_cast, i49 %mf10 ; <i49> [#uses=1]
+entry:80  %r_V_19 = select i1 %tmp_66, i35 %mt11_cast, i35 %mf10 ; <i35> [#uses=1]
 
 ST_6: lhs_V_14 [1/1] 0.00ns
-entry:81  %lhs_V_14 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_6, i20 0) ; <i52> [#uses=1]
+entry:81  %lhs_V_14 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_6, i6 0) ; <i38> [#uses=1]
 
-ST_6: rhs_V_203_4_cast [1/1] 0.00ns
-entry:82  %rhs_V_203_4_cast = sext i49 %r_V_19 to i52     ; <i52> [#uses=1]
+ST_6: rhs_V_173_4_cast [1/1] 0.00ns
+entry:82  %rhs_V_173_4_cast = sext i35 %r_V_19 to i38     ; <i38> [#uses=1]
 
-ST_6: r_V_20 [1/1] 3.04ns
-entry:83  %r_V_20 = add i52 %lhs_V_14, %rhs_V_203_4_cast  ; <i52> [#uses=2]
+ST_6: r_V_20 [1/1] 2.68ns
+entry:83  %r_V_20 = add i38 %lhs_V_14, %rhs_V_173_4_cast  ; <i38> [#uses=2]
 
-ST_6: tmp_73 [1/1] 0.00ns
-entry:84  %tmp_73 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_20, i32 51) ; <i1> [#uses=2]
+ST_6: tmp_67 [1/1] 0.00ns
+entry:84  %tmp_67 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_20, i32 37) ; <i1> [#uses=2]
 
 ST_6: tmp_10 [1/1] 0.00ns
-entry:85  %tmp_10 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_20, i32 20, i32 51) ; <i32> [#uses=2]
+entry:85  %tmp_10 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_20, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_6: tmp_11 [1/1] 0.00ns
-entry:89  %tmp_11 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_18, i32 20, i32 51) ; <i32> [#uses=2]
+entry:89  %tmp_11 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_18, i32 6, i32 37) ; <i32> [#uses=2]
 
 
- <State 7>: 7.33ns
+ <State 7>: 6.61ns
 ST_7: mt10 [1/1] 0.00ns
-entry:86  %mt10 = call i47 @_ssdm_op_BitConcatenate.i47.i32.i15(i32 %tmp_10, i15 0) ; <i47> [#uses=2]
+entry:86  %mt10 = call i33 @_ssdm_op_BitConcatenate.i33.i32.i1(i32 %tmp_10, i1 false) ; <i33> [#uses=2]
 
-ST_7: mf11 [1/1] 2.92ns
-entry:87  %mf11 = sub i47 0, %mt10                        ; <i47> [#uses=1]
+ST_7: mf11 [1/1] 2.56ns
+entry:87  %mf11 = sub i33 0, %mt10                        ; <i33> [#uses=1]
 
 ST_7: r_V_21 [1/1] 1.37ns
-entry:88  %r_V_21 = select i1 %tmp_73, i47 %mt10, i47 %mf11 ; <i47> [#uses=1]
+entry:88  %r_V_21 = select i1 %tmp_67, i33 %mt10, i33 %mf11 ; <i33> [#uses=1]
 
 ST_7: lhs_V_5 [1/1] 0.00ns
-entry:90  %lhs_V_5 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_11, i20 0) ; <i52> [#uses=1]
+entry:90  %lhs_V_5 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_11, i6 0) ; <i38> [#uses=1]
 
 ST_7: rhs_V2_5_cast [1/1] 0.00ns
-entry:91  %rhs_V2_5_cast = sext i47 %r_V_21 to i52        ; <i52> [#uses=1]
+entry:91  %rhs_V2_5_cast = sext i33 %r_V_21 to i38        ; <i38> [#uses=1]
 
-ST_7: r_V_22 [1/1] 3.04ns
-entry:92  %r_V_22 = sub i52 %lhs_V_5, %rhs_V2_5_cast      ; <i52> [#uses=1]
+ST_7: r_V_22 [1/1] 2.68ns
+entry:92  %r_V_22 = sub i38 %lhs_V_5, %rhs_V2_5_cast      ; <i38> [#uses=1]
+
+ST_7: x_iteration_V [1/1] 0.00ns
+entry:93  %x_iteration_V = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_22, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_7: mt11 [1/1] 0.00ns
-entry:93  %mt11 = call i47 @_ssdm_op_BitConcatenate.i47.i32.i15(i32 %tmp_11, i15 0) ; <i47> [#uses=1]
+entry:94  %mt11 = call i33 @_ssdm_op_BitConcatenate.i33.i32.i1(i32 %tmp_11, i1 false) ; <i33> [#uses=1]
 
 ST_7: mt13_cast [1/1] 0.00ns
-entry:94  %mt13_cast = sext i47 %mt11 to i48              ; <i48> [#uses=2]
+entry:95  %mt13_cast = sext i33 %mt11 to i34              ; <i34> [#uses=2]
 
-ST_7: mf12 [1/1] 2.92ns
-entry:95  %mf12 = sub i48 0, %mt13_cast                   ; <i48> [#uses=1]
+ST_7: mf12 [1/1] 2.56ns
+entry:96  %mf12 = sub i34 0, %mt13_cast                   ; <i34> [#uses=1]
 
 ST_7: r_V_23 [1/1] 1.37ns
-entry:96  %r_V_23 = select i1 %tmp_73, i48 %mt13_cast, i48 %mf12 ; <i48> [#uses=1]
+entry:97  %r_V_23 = select i1 %tmp_67, i34 %mt13_cast, i34 %mf12 ; <i34> [#uses=1]
 
 ST_7: lhs_V_15 [1/1] 0.00ns
-entry:97  %lhs_V_15 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_10, i20 0) ; <i52> [#uses=1]
+entry:98  %lhs_V_15 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_10, i6 0) ; <i38> [#uses=1]
 
-ST_7: rhs_V_203_5_cast [1/1] 0.00ns
-entry:98  %rhs_V_203_5_cast = sext i48 %r_V_23 to i52     ; <i52> [#uses=1]
+ST_7: rhs_V_173_5_cast [1/1] 0.00ns
+entry:99  %rhs_V_173_5_cast = sext i34 %r_V_23 to i38     ; <i38> [#uses=1]
 
-ST_7: r_V_24 [1/1] 3.04ns
-entry:99  %r_V_24 = add i52 %lhs_V_15, %rhs_V_203_5_cast  ; <i52> [#uses=2]
+ST_7: r_V_24 [1/1] 2.68ns
+entry:100  %r_V_24 = add i38 %lhs_V_15, %rhs_V_173_5_cast  ; <i38> [#uses=2]
 
-ST_7: tmp_74 [1/1] 0.00ns
-entry:100  %tmp_74 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_24, i32 51) ; <i1> [#uses=2]
+ST_7: yo_V [1/1] 0.00ns
+entry:101  %yo_V = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_24, i32 6, i32 37) ; <i32> [#uses=3]
 
-ST_7: tmp_12 [1/1] 0.00ns
-entry:101  %tmp_12 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_24, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_7: tmp_13 [1/1] 0.00ns
-entry:105  %tmp_13 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_22, i32 20, i32 51) ; <i32> [#uses=2]
+ST_7: tmp_68 [1/1] 0.00ns
+entry:102  %tmp_68 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_24, i32 37) ; <i1> [#uses=2]
 
 
- <State 8>: 7.33ns
-ST_8: mt12 [1/1] 0.00ns
-entry:102  %mt12 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %tmp_12, i14 0) ; <i46> [#uses=2]
-
-ST_8: mf13 [1/1] 2.92ns
-entry:103  %mf13 = sub i46 0, %mt12                        ; <i46> [#uses=1]
+ <State 8>: 6.49ns
+ST_8: mf13 [1/1] 2.44ns
+entry:103  %mf13 = sub i32 0, %yo_V                        ; <i32> [#uses=1]
 
 ST_8: r_V_25 [1/1] 1.37ns
-entry:104  %r_V_25 = select i1 %tmp_74, i46 %mt12, i46 %mf13 ; <i46> [#uses=1]
+entry:104  %r_V_25 = select i1 %tmp_68, i32 %yo_V, i32 %mf13 ; <i32> [#uses=1]
 
 ST_8: lhs_V_6 [1/1] 0.00ns
-entry:106  %lhs_V_6 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_13, i20 0) ; <i52> [#uses=1]
+entry:105  %lhs_V_6 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V, i6 0) ; <i38> [#uses=1]
 
 ST_8: rhs_V2_6_cast [1/1] 0.00ns
-entry:107  %rhs_V2_6_cast = sext i46 %r_V_25 to i52        ; <i52> [#uses=1]
+entry:106  %rhs_V2_6_cast = sext i32 %r_V_25 to i38        ; <i38> [#uses=1]
 
-ST_8: r_V_26 [1/1] 3.04ns
-entry:108  %r_V_26 = sub i52 %lhs_V_6, %rhs_V2_6_cast      ; <i52> [#uses=1]
+ST_8: r_V_26 [1/1] 2.68ns
+entry:107  %r_V_26 = sub i38 %lhs_V_6, %rhs_V2_6_cast      ; <i38> [#uses=1]
 
-ST_8: mt13 [1/1] 0.00ns
-entry:109  %mt13 = call i46 @_ssdm_op_BitConcatenate.i46.i32.i14(i32 %tmp_13, i14 0) ; <i46> [#uses=1]
+ST_8: x_iteration_V_1 [1/1] 0.00ns
+entry:108  %x_iteration_V_1 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_26, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_8: mt15_cast [1/1] 0.00ns
-entry:110  %mt15_cast = sext i46 %mt13 to i47              ; <i47> [#uses=2]
+ST_8: OP1_V_13_cast [1/1] 0.00ns
+entry:109  %OP1_V_13_cast = sext i32 %x_iteration_V to i33 ; <i33> [#uses=2]
 
-ST_8: mf14 [1/1] 2.92ns
-entry:111  %mf14 = sub i47 0, %mt15_cast                   ; <i47> [#uses=1]
+ST_8: mf14 [1/1] 2.44ns
+entry:110  %mf14 = sub i33 0, %OP1_V_13_cast               ; <i33> [#uses=1]
 
 ST_8: r_V_27 [1/1] 1.37ns
-entry:112  %r_V_27 = select i1 %tmp_74, i47 %mt15_cast, i47 %mf14 ; <i47> [#uses=1]
+entry:111  %r_V_27 = select i1 %tmp_68, i33 %OP1_V_13_cast, i33 %mf14 ; <i33> [#uses=1]
 
 ST_8: lhs_V_16 [1/1] 0.00ns
-entry:113  %lhs_V_16 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_12, i20 0) ; <i52> [#uses=1]
+entry:112  %lhs_V_16 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V, i6 0) ; <i38> [#uses=1]
 
-ST_8: rhs_V_203_6_cast [1/1] 0.00ns
-entry:114  %rhs_V_203_6_cast = sext i47 %r_V_27 to i52     ; <i52> [#uses=1]
+ST_8: rhs_V_173_6_cast [1/1] 0.00ns
+entry:113  %rhs_V_173_6_cast = sext i33 %r_V_27 to i38     ; <i38> [#uses=1]
 
-ST_8: r_V_28 [1/1] 3.04ns
-entry:115  %r_V_28 = add i52 %lhs_V_16, %rhs_V_203_6_cast  ; <i52> [#uses=2]
+ST_8: r_V_28 [1/1] 2.68ns
+entry:114  %r_V_28 = add i38 %lhs_V_16, %rhs_V_173_6_cast  ; <i38> [#uses=2]
 
-ST_8: tmp_77 [1/1] 0.00ns
-entry:116  %tmp_77 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_28, i32 51) ; <i1> [#uses=2]
+ST_8: yo_V_1 [1/1] 0.00ns
+entry:115  %yo_V_1 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_28, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_8: tmp_14 [1/1] 0.00ns
-entry:117  %tmp_14 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_28, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_8: tmp_15 [1/1] 0.00ns
-entry:121  %tmp_15 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_26, i32 20, i32 51) ; <i32> [#uses=2]
+ST_8: tmp_69 [1/1] 0.00ns
+entry:116  %tmp_69 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_28, i32 37) ; <i1> [#uses=2]
 
 
- <State 9>: 7.33ns
-ST_9: mt14 [1/1] 0.00ns
-entry:118  %mt14 = call i45 @_ssdm_op_BitConcatenate.i45.i32.i13(i32 %tmp_14, i13 0) ; <i45> [#uses=2]
-
-ST_9: mf15 [1/1] 2.92ns
-entry:119  %mf15 = sub i45 0, %mt14                        ; <i45> [#uses=1]
+ <State 9>: 6.49ns
+ST_9: mf15 [1/1] 2.44ns
+entry:117  %mf15 = sub i32 0, %yo_V_1                      ; <i32> [#uses=1]
 
 ST_9: r_V_29 [1/1] 1.37ns
-entry:120  %r_V_29 = select i1 %tmp_77, i45 %mt14, i45 %mf15 ; <i45> [#uses=1]
+entry:118  %r_V_29 = select i1 %tmp_69, i32 0, i32 %mf15   ; <i32> [#uses=1]
 
 ST_9: lhs_V_7 [1/1] 0.00ns
-entry:122  %lhs_V_7 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_15, i20 0) ; <i52> [#uses=1]
+entry:119  %lhs_V_7 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_1, i6 0) ; <i38> [#uses=1]
 
 ST_9: rhs_V2_7_cast [1/1] 0.00ns
-entry:123  %rhs_V2_7_cast = sext i45 %r_V_29 to i52        ; <i52> [#uses=1]
+entry:120  %rhs_V2_7_cast = sext i32 %r_V_29 to i38        ; <i38> [#uses=1]
 
-ST_9: r_V_30 [1/1] 3.04ns
-entry:124  %r_V_30 = sub i52 %lhs_V_7, %rhs_V2_7_cast      ; <i52> [#uses=1]
+ST_9: r_V_30 [1/1] 2.68ns
+entry:121  %r_V_30 = sub i38 %lhs_V_7, %rhs_V2_7_cast      ; <i38> [#uses=1]
 
-ST_9: mt15 [1/1] 0.00ns
-entry:125  %mt15 = call i45 @_ssdm_op_BitConcatenate.i45.i32.i13(i32 %tmp_15, i13 0) ; <i45> [#uses=1]
+ST_9: x_iteration_V_2 [1/1] 0.00ns
+entry:122  %x_iteration_V_2 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_30, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_9: mt17_cast [1/1] 0.00ns
-entry:126  %mt17_cast = sext i45 %mt15 to i46              ; <i46> [#uses=2]
+ST_9: OP1_V_15_cast [1/1] 0.00ns
+entry:123  %OP1_V_15_cast = sext i32 %x_iteration_V_1 to i33 ; <i33> [#uses=1]
 
-ST_9: mf16 [1/1] 2.92ns
-entry:127  %mf16 = sub i46 0, %mt17_cast                   ; <i46> [#uses=1]
+ST_9: mf16 [1/1] 2.44ns
+entry:124  %mf16 = sub i33 0, %OP1_V_15_cast               ; <i33> [#uses=1]
 
 ST_9: r_V_31 [1/1] 1.37ns
-entry:128  %r_V_31 = select i1 %tmp_77, i46 %mt17_cast, i46 %mf16 ; <i46> [#uses=1]
+entry:125  %r_V_31 = select i1 %tmp_69, i33 0, i33 %mf16   ; <i33> [#uses=1]
 
 ST_9: lhs_V_17 [1/1] 0.00ns
-entry:129  %lhs_V_17 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_14, i20 0) ; <i52> [#uses=1]
+entry:126  %lhs_V_17 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_1, i6 0) ; <i38> [#uses=1]
 
-ST_9: rhs_V_203_7_cast [1/1] 0.00ns
-entry:130  %rhs_V_203_7_cast = sext i46 %r_V_31 to i52     ; <i52> [#uses=1]
+ST_9: rhs_V_173_7_cast [1/1] 0.00ns
+entry:127  %rhs_V_173_7_cast = sext i33 %r_V_31 to i38     ; <i38> [#uses=1]
 
-ST_9: r_V_32 [1/1] 3.04ns
-entry:131  %r_V_32 = add i52 %lhs_V_17, %rhs_V_203_7_cast  ; <i52> [#uses=2]
+ST_9: r_V_32 [1/1] 2.68ns
+entry:128  %r_V_32 = add i38 %lhs_V_17, %rhs_V_173_7_cast  ; <i38> [#uses=2]
 
-ST_9: tmp_78 [1/1] 0.00ns
-entry:132  %tmp_78 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_32, i32 51) ; <i1> [#uses=2]
+ST_9: yo_V_2 [1/1] 0.00ns
+entry:129  %yo_V_2 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_32, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_9: tmp_16 [1/1] 0.00ns
-entry:133  %tmp_16 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_32, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_9: tmp_17 [1/1] 0.00ns
-entry:137  %tmp_17 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_30, i32 20, i32 51) ; <i32> [#uses=2]
+ST_9: tmp_70 [1/1] 0.00ns
+entry:130  %tmp_70 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_32, i32 37) ; <i1> [#uses=2]
 
 
- <State 10>: 7.21ns
-ST_10: mt16 [1/1] 0.00ns
-entry:134  %mt16 = call i44 @_ssdm_op_BitConcatenate.i44.i32.i12(i32 %tmp_16, i12 0) ; <i44> [#uses=2]
-
-ST_10: mf17 [1/1] 2.80ns
-entry:135  %mf17 = sub i44 0, %mt16                        ; <i44> [#uses=1]
+ <State 10>: 6.49ns
+ST_10: mf17 [1/1] 2.44ns
+entry:131  %mf17 = sub i32 0, %yo_V_2                      ; <i32> [#uses=1]
 
 ST_10: r_V_33 [1/1] 1.37ns
-entry:136  %r_V_33 = select i1 %tmp_78, i44 %mt16, i44 %mf17 ; <i44> [#uses=1]
+entry:132  %r_V_33 = select i1 %tmp_70, i32 0, i32 %mf17   ; <i32> [#uses=1]
 
 ST_10: lhs_V_8 [1/1] 0.00ns
-entry:138  %lhs_V_8 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_17, i20 0) ; <i52> [#uses=1]
+entry:133  %lhs_V_8 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_2, i6 0) ; <i38> [#uses=1]
 
 ST_10: rhs_V2_8_cast [1/1] 0.00ns
-entry:139  %rhs_V2_8_cast = sext i44 %r_V_33 to i52        ; <i52> [#uses=1]
+entry:134  %rhs_V2_8_cast = sext i32 %r_V_33 to i38        ; <i38> [#uses=1]
 
-ST_10: r_V_34 [1/1] 3.04ns
-entry:140  %r_V_34 = sub i52 %lhs_V_8, %rhs_V2_8_cast      ; <i52> [#uses=1]
+ST_10: r_V_34 [1/1] 2.68ns
+entry:135  %r_V_34 = sub i38 %lhs_V_8, %rhs_V2_8_cast      ; <i38> [#uses=1]
 
-ST_10: mt17 [1/1] 0.00ns
-entry:141  %mt17 = call i44 @_ssdm_op_BitConcatenate.i44.i32.i12(i32 %tmp_17, i12 0) ; <i44> [#uses=1]
+ST_10: x_iteration_V_3 [1/1] 0.00ns
+entry:136  %x_iteration_V_3 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_34, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_10: mt19_cast [1/1] 0.00ns
-entry:142  %mt19_cast = sext i44 %mt17 to i45              ; <i45> [#uses=2]
+ST_10: OP1_V_17_cast [1/1] 0.00ns
+entry:137  %OP1_V_17_cast = sext i32 %x_iteration_V_2 to i33 ; <i33> [#uses=1]
 
-ST_10: mf18 [1/1] 2.80ns
-entry:143  %mf18 = sub i45 0, %mt19_cast                   ; <i45> [#uses=1]
+ST_10: mf18 [1/1] 2.44ns
+entry:138  %mf18 = sub i33 0, %OP1_V_17_cast               ; <i33> [#uses=1]
 
 ST_10: r_V_35 [1/1] 1.37ns
-entry:144  %r_V_35 = select i1 %tmp_78, i45 %mt19_cast, i45 %mf18 ; <i45> [#uses=1]
+entry:139  %r_V_35 = select i1 %tmp_70, i33 0, i33 %mf18   ; <i33> [#uses=1]
 
 ST_10: lhs_V_18 [1/1] 0.00ns
-entry:145  %lhs_V_18 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_16, i20 0) ; <i52> [#uses=1]
+entry:140  %lhs_V_18 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_2, i6 0) ; <i38> [#uses=1]
 
-ST_10: rhs_V_203_8_cast [1/1] 0.00ns
-entry:146  %rhs_V_203_8_cast = sext i45 %r_V_35 to i52     ; <i52> [#uses=1]
+ST_10: rhs_V_173_8_cast [1/1] 0.00ns
+entry:141  %rhs_V_173_8_cast = sext i33 %r_V_35 to i38     ; <i38> [#uses=1]
 
-ST_10: r_V_36 [1/1] 3.04ns
-entry:147  %r_V_36 = add i52 %lhs_V_18, %rhs_V_203_8_cast  ; <i52> [#uses=2]
+ST_10: r_V_36 [1/1] 2.68ns
+entry:142  %r_V_36 = add i38 %lhs_V_18, %rhs_V_173_8_cast  ; <i38> [#uses=2]
 
-ST_10: tmp_79 [1/1] 0.00ns
-entry:148  %tmp_79 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_36, i32 51) ; <i1> [#uses=2]
+ST_10: yo_V_3 [1/1] 0.00ns
+entry:143  %yo_V_3 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_36, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_10: tmp_18 [1/1] 0.00ns
-entry:149  %tmp_18 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_36, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_10: tmp_19 [1/1] 0.00ns
-entry:153  %tmp_19 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_34, i32 20, i32 51) ; <i32> [#uses=2]
+ST_10: tmp_71 [1/1] 0.00ns
+entry:144  %tmp_71 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_36, i32 37) ; <i1> [#uses=2]
 
 
- <State 11>: 7.21ns
-ST_11: mt18 [1/1] 0.00ns
-entry:150  %mt18 = call i43 @_ssdm_op_BitConcatenate.i43.i32.i11(i32 %tmp_18, i11 0) ; <i43> [#uses=2]
-
-ST_11: mf19 [1/1] 2.80ns
-entry:151  %mf19 = sub i43 0, %mt18                        ; <i43> [#uses=1]
+ <State 11>: 6.49ns
+ST_11: mf19 [1/1] 2.44ns
+entry:145  %mf19 = sub i32 0, %yo_V_3                      ; <i32> [#uses=1]
 
 ST_11: r_V_37 [1/1] 1.37ns
-entry:152  %r_V_37 = select i1 %tmp_79, i43 %mt18, i43 %mf19 ; <i43> [#uses=1]
+entry:146  %r_V_37 = select i1 %tmp_71, i32 0, i32 %mf19   ; <i32> [#uses=1]
 
 ST_11: lhs_V_9 [1/1] 0.00ns
-entry:154  %lhs_V_9 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_19, i20 0) ; <i52> [#uses=1]
+entry:147  %lhs_V_9 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_3, i6 0) ; <i38> [#uses=1]
 
 ST_11: rhs_V2_9_cast [1/1] 0.00ns
-entry:155  %rhs_V2_9_cast = sext i43 %r_V_37 to i52        ; <i52> [#uses=1]
+entry:148  %rhs_V2_9_cast = sext i32 %r_V_37 to i38        ; <i38> [#uses=1]
 
-ST_11: r_V_38 [1/1] 3.04ns
-entry:156  %r_V_38 = sub i52 %lhs_V_9, %rhs_V2_9_cast      ; <i52> [#uses=1]
+ST_11: r_V_38 [1/1] 2.68ns
+entry:149  %r_V_38 = sub i38 %lhs_V_9, %rhs_V2_9_cast      ; <i38> [#uses=1]
 
-ST_11: mt19 [1/1] 0.00ns
-entry:157  %mt19 = call i43 @_ssdm_op_BitConcatenate.i43.i32.i11(i32 %tmp_19, i11 0) ; <i43> [#uses=1]
+ST_11: x_iteration_V_4 [1/1] 0.00ns
+entry:150  %x_iteration_V_4 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_38, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_11: mt21_cast [1/1] 0.00ns
-entry:158  %mt21_cast = sext i43 %mt19 to i44              ; <i44> [#uses=2]
+ST_11: OP1_V_19_cast [1/1] 0.00ns
+entry:151  %OP1_V_19_cast = sext i32 %x_iteration_V_3 to i33 ; <i33> [#uses=1]
 
-ST_11: mf20 [1/1] 2.80ns
-entry:159  %mf20 = sub i44 0, %mt21_cast                   ; <i44> [#uses=1]
+ST_11: mf20 [1/1] 2.44ns
+entry:152  %mf20 = sub i33 0, %OP1_V_19_cast               ; <i33> [#uses=1]
 
 ST_11: r_V_39 [1/1] 1.37ns
-entry:160  %r_V_39 = select i1 %tmp_79, i44 %mt21_cast, i44 %mf20 ; <i44> [#uses=1]
+entry:153  %r_V_39 = select i1 %tmp_71, i33 0, i33 %mf20   ; <i33> [#uses=1]
 
 ST_11: lhs_V_19 [1/1] 0.00ns
-entry:161  %lhs_V_19 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_18, i20 0) ; <i52> [#uses=1]
+entry:154  %lhs_V_19 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_3, i6 0) ; <i38> [#uses=1]
 
-ST_11: rhs_V_203_9_cast [1/1] 0.00ns
-entry:162  %rhs_V_203_9_cast = sext i44 %r_V_39 to i52     ; <i52> [#uses=1]
+ST_11: rhs_V_173_9_cast [1/1] 0.00ns
+entry:155  %rhs_V_173_9_cast = sext i33 %r_V_39 to i38     ; <i38> [#uses=1]
 
-ST_11: r_V_40 [1/1] 3.04ns
-entry:163  %r_V_40 = add i52 %lhs_V_19, %rhs_V_203_9_cast  ; <i52> [#uses=2]
+ST_11: r_V_40 [1/1] 2.68ns
+entry:156  %r_V_40 = add i38 %lhs_V_19, %rhs_V_173_9_cast  ; <i38> [#uses=2]
 
-ST_11: tmp_80 [1/1] 0.00ns
-entry:164  %tmp_80 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_40, i32 51) ; <i1> [#uses=2]
+ST_11: yo_V_4 [1/1] 0.00ns
+entry:157  %yo_V_4 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_40, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_11: tmp_20 [1/1] 0.00ns
-entry:165  %tmp_20 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_40, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_11: tmp_21 [1/1] 0.00ns
-entry:169  %tmp_21 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_38, i32 20, i32 51) ; <i32> [#uses=2]
+ST_11: tmp_72 [1/1] 0.00ns
+entry:158  %tmp_72 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_40, i32 37) ; <i1> [#uses=2]
 
 
- <State 12>: 7.21ns
-ST_12: mt20 [1/1] 0.00ns
-entry:166  %mt20 = call i42 @_ssdm_op_BitConcatenate.i42.i32.i10(i32 %tmp_20, i10 0) ; <i42> [#uses=2]
-
-ST_12: mf21 [1/1] 2.80ns
-entry:167  %mf21 = sub i42 0, %mt20                        ; <i42> [#uses=1]
+ <State 12>: 6.49ns
+ST_12: mf21 [1/1] 2.44ns
+entry:159  %mf21 = sub i32 0, %yo_V_4                      ; <i32> [#uses=1]
 
 ST_12: r_V_41 [1/1] 1.37ns
-entry:168  %r_V_41 = select i1 %tmp_80, i42 %mt20, i42 %mf21 ; <i42> [#uses=1]
+entry:160  %r_V_41 = select i1 %tmp_72, i32 0, i32 %mf21   ; <i32> [#uses=1]
 
 ST_12: lhs_V_20 [1/1] 0.00ns
-entry:170  %lhs_V_20 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_21, i20 0) ; <i52> [#uses=1]
+entry:161  %lhs_V_20 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_4, i6 0) ; <i38> [#uses=1]
 
 ST_12: rhs_V2_cast [1/1] 0.00ns
-entry:171  %rhs_V2_cast = sext i42 %r_V_41 to i52          ; <i52> [#uses=1]
+entry:162  %rhs_V2_cast = sext i32 %r_V_41 to i38          ; <i38> [#uses=1]
 
-ST_12: r_V_42 [1/1] 3.04ns
-entry:172  %r_V_42 = sub i52 %lhs_V_20, %rhs_V2_cast       ; <i52> [#uses=1]
+ST_12: r_V_42 [1/1] 2.68ns
+entry:163  %r_V_42 = sub i38 %lhs_V_20, %rhs_V2_cast       ; <i38> [#uses=1]
 
-ST_12: mt21 [1/1] 0.00ns
-entry:173  %mt21 = call i42 @_ssdm_op_BitConcatenate.i42.i32.i10(i32 %tmp_21, i10 0) ; <i42> [#uses=1]
+ST_12: x_iteration_V_5 [1/1] 0.00ns
+entry:164  %x_iteration_V_5 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_42, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_12: mt23_cast [1/1] 0.00ns
-entry:174  %mt23_cast = sext i42 %mt21 to i43              ; <i43> [#uses=2]
+ST_12: OP1_V_21_cast [1/1] 0.00ns
+entry:165  %OP1_V_21_cast = sext i32 %x_iteration_V_4 to i33 ; <i33> [#uses=1]
 
-ST_12: mf22 [1/1] 2.80ns
-entry:175  %mf22 = sub i43 0, %mt23_cast                   ; <i43> [#uses=1]
+ST_12: mf22 [1/1] 2.44ns
+entry:166  %mf22 = sub i33 0, %OP1_V_21_cast               ; <i33> [#uses=1]
 
 ST_12: r_V_43 [1/1] 1.37ns
-entry:176  %r_V_43 = select i1 %tmp_80, i43 %mt23_cast, i43 %mf22 ; <i43> [#uses=1]
+entry:167  %r_V_43 = select i1 %tmp_72, i33 0, i33 %mf22   ; <i33> [#uses=1]
 
 ST_12: lhs_V_21 [1/1] 0.00ns
-entry:177  %lhs_V_21 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_20, i20 0) ; <i52> [#uses=1]
+entry:168  %lhs_V_21 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_4, i6 0) ; <i38> [#uses=1]
 
-ST_12: rhs_V_203_cast [1/1] 0.00ns
-entry:178  %rhs_V_203_cast = sext i43 %r_V_43 to i52       ; <i52> [#uses=1]
+ST_12: rhs_V_173_cast [1/1] 0.00ns
+entry:169  %rhs_V_173_cast = sext i33 %r_V_43 to i38       ; <i38> [#uses=1]
 
-ST_12: r_V_44 [1/1] 3.04ns
-entry:179  %r_V_44 = add i52 %lhs_V_21, %rhs_V_203_cast    ; <i52> [#uses=2]
+ST_12: r_V_44 [1/1] 2.68ns
+entry:170  %r_V_44 = add i38 %lhs_V_21, %rhs_V_173_cast    ; <i38> [#uses=2]
 
-ST_12: tmp_81 [1/1] 0.00ns
-entry:180  %tmp_81 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_44, i32 51) ; <i1> [#uses=2]
+ST_12: yo_V_5 [1/1] 0.00ns
+entry:171  %yo_V_5 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_44, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_12: tmp_22 [1/1] 0.00ns
-entry:181  %tmp_22 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_44, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_12: tmp_23 [1/1] 0.00ns
-entry:185  %tmp_23 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_42, i32 20, i32 51) ; <i32> [#uses=2]
+ST_12: tmp_74 [1/1] 0.00ns
+entry:172  %tmp_74 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_44, i32 37) ; <i1> [#uses=2]
 
 
- <State 13>: 7.21ns
-ST_13: mt22 [1/1] 0.00ns
-entry:182  %mt22 = call i41 @_ssdm_op_BitConcatenate.i41.i32.i9(i32 %tmp_22, i9 0) ; <i41> [#uses=2]
-
-ST_13: mf23 [1/1] 2.80ns
-entry:183  %mf23 = sub i41 0, %mt22                        ; <i41> [#uses=1]
+ <State 13>: 6.49ns
+ST_13: mf23 [1/1] 2.44ns
+entry:173  %mf23 = sub i32 0, %yo_V_5                      ; <i32> [#uses=1]
 
 ST_13: r_V_45 [1/1] 1.37ns
-entry:184  %r_V_45 = select i1 %tmp_81, i41 %mt22, i41 %mf23 ; <i41> [#uses=1]
+entry:174  %r_V_45 = select i1 %tmp_74, i32 0, i32 %mf23   ; <i32> [#uses=1]
 
 ST_13: lhs_V_22 [1/1] 0.00ns
-entry:186  %lhs_V_22 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_23, i20 0) ; <i52> [#uses=1]
+entry:175  %lhs_V_22 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_5, i6 0) ; <i38> [#uses=1]
 
 ST_13: rhs_V2_10_cast [1/1] 0.00ns
-entry:187  %rhs_V2_10_cast = sext i41 %r_V_45 to i52       ; <i52> [#uses=1]
+entry:176  %rhs_V2_10_cast = sext i32 %r_V_45 to i38       ; <i38> [#uses=1]
 
-ST_13: r_V_46 [1/1] 3.04ns
-entry:188  %r_V_46 = sub i52 %lhs_V_22, %rhs_V2_10_cast    ; <i52> [#uses=1]
+ST_13: r_V_46 [1/1] 2.68ns
+entry:177  %r_V_46 = sub i38 %lhs_V_22, %rhs_V2_10_cast    ; <i38> [#uses=1]
 
-ST_13: mt23 [1/1] 0.00ns
-entry:189  %mt23 = call i41 @_ssdm_op_BitConcatenate.i41.i32.i9(i32 %tmp_23, i9 0) ; <i41> [#uses=1]
+ST_13: x_iteration_V_6 [1/1] 0.00ns
+entry:178  %x_iteration_V_6 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_46, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_13: mt25_cast [1/1] 0.00ns
-entry:190  %mt25_cast = sext i41 %mt23 to i42              ; <i42> [#uses=2]
+ST_13: OP1_V_23_cast [1/1] 0.00ns
+entry:179  %OP1_V_23_cast = sext i32 %x_iteration_V_5 to i33 ; <i33> [#uses=1]
 
-ST_13: mf24 [1/1] 2.80ns
-entry:191  %mf24 = sub i42 0, %mt25_cast                   ; <i42> [#uses=1]
+ST_13: mf24 [1/1] 2.44ns
+entry:180  %mf24 = sub i33 0, %OP1_V_23_cast               ; <i33> [#uses=1]
 
 ST_13: r_V_47 [1/1] 1.37ns
-entry:192  %r_V_47 = select i1 %tmp_81, i42 %mt25_cast, i42 %mf24 ; <i42> [#uses=1]
+entry:181  %r_V_47 = select i1 %tmp_74, i33 0, i33 %mf24   ; <i33> [#uses=1]
 
 ST_13: lhs_V_23 [1/1] 0.00ns
-entry:193  %lhs_V_23 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_22, i20 0) ; <i52> [#uses=1]
+entry:182  %lhs_V_23 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_5, i6 0) ; <i38> [#uses=1]
 
-ST_13: rhs_V_203_10_cast [1/1] 0.00ns
-entry:194  %rhs_V_203_10_cast = sext i42 %r_V_47 to i52    ; <i52> [#uses=1]
+ST_13: rhs_V_173_10_cast [1/1] 0.00ns
+entry:183  %rhs_V_173_10_cast = sext i33 %r_V_47 to i38    ; <i38> [#uses=1]
 
-ST_13: r_V_48 [1/1] 3.04ns
-entry:195  %r_V_48 = add i52 %lhs_V_23, %rhs_V_203_10_cast ; <i52> [#uses=2]
+ST_13: r_V_48 [1/1] 2.68ns
+entry:184  %r_V_48 = add i38 %lhs_V_23, %rhs_V_173_10_cast ; <i38> [#uses=2]
 
-ST_13: tmp_82 [1/1] 0.00ns
-entry:196  %tmp_82 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_48, i32 51) ; <i1> [#uses=2]
+ST_13: yo_V_6 [1/1] 0.00ns
+entry:185  %yo_V_6 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_48, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_13: tmp_24 [1/1] 0.00ns
-entry:197  %tmp_24 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_48, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_13: tmp_25 [1/1] 0.00ns
-entry:201  %tmp_25 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_46, i32 20, i32 51) ; <i32> [#uses=2]
+ST_13: tmp_75 [1/1] 0.00ns
+entry:186  %tmp_75 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_48, i32 37) ; <i1> [#uses=2]
 
 
- <State 14>: 7.09ns
-ST_14: mt24 [1/1] 0.00ns
-entry:198  %mt24 = call i40 @_ssdm_op_BitConcatenate.i40.i32.i8(i32 %tmp_24, i8 0) ; <i40> [#uses=2]
-
-ST_14: mf25 [1/1] 2.68ns
-entry:199  %mf25 = sub i40 0, %mt24                        ; <i40> [#uses=1]
+ <State 14>: 6.49ns
+ST_14: mf25 [1/1] 2.44ns
+entry:187  %mf25 = sub i32 0, %yo_V_6                      ; <i32> [#uses=1]
 
 ST_14: r_V_49 [1/1] 1.37ns
-entry:200  %r_V_49 = select i1 %tmp_82, i40 %mt24, i40 %mf25 ; <i40> [#uses=1]
+entry:188  %r_V_49 = select i1 %tmp_75, i32 0, i32 %mf25   ; <i32> [#uses=1]
 
 ST_14: lhs_V_24 [1/1] 0.00ns
-entry:202  %lhs_V_24 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_25, i20 0) ; <i52> [#uses=1]
+entry:189  %lhs_V_24 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_6, i6 0) ; <i38> [#uses=1]
 
 ST_14: rhs_V2_11_cast [1/1] 0.00ns
-entry:203  %rhs_V2_11_cast = sext i40 %r_V_49 to i52       ; <i52> [#uses=1]
+entry:190  %rhs_V2_11_cast = sext i32 %r_V_49 to i38       ; <i38> [#uses=1]
 
-ST_14: r_V_50 [1/1] 3.04ns
-entry:204  %r_V_50 = sub i52 %lhs_V_24, %rhs_V2_11_cast    ; <i52> [#uses=1]
+ST_14: r_V_50 [1/1] 2.68ns
+entry:191  %r_V_50 = sub i38 %lhs_V_24, %rhs_V2_11_cast    ; <i38> [#uses=1]
 
-ST_14: mt25 [1/1] 0.00ns
-entry:205  %mt25 = call i40 @_ssdm_op_BitConcatenate.i40.i32.i8(i32 %tmp_25, i8 0) ; <i40> [#uses=1]
+ST_14: x_iteration_V_7 [1/1] 0.00ns
+entry:192  %x_iteration_V_7 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_50, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_14: mt27_cast [1/1] 0.00ns
-entry:206  %mt27_cast = sext i40 %mt25 to i41              ; <i41> [#uses=2]
+ST_14: OP1_V_25_cast [1/1] 0.00ns
+entry:193  %OP1_V_25_cast = sext i32 %x_iteration_V_6 to i33 ; <i33> [#uses=1]
 
-ST_14: mf26 [1/1] 2.68ns
-entry:207  %mf26 = sub i41 0, %mt27_cast                   ; <i41> [#uses=1]
+ST_14: mf26 [1/1] 2.44ns
+entry:194  %mf26 = sub i33 0, %OP1_V_25_cast               ; <i33> [#uses=1]
 
 ST_14: r_V_51 [1/1] 1.37ns
-entry:208  %r_V_51 = select i1 %tmp_82, i41 %mt27_cast, i41 %mf26 ; <i41> [#uses=1]
+entry:195  %r_V_51 = select i1 %tmp_75, i33 0, i33 %mf26   ; <i33> [#uses=1]
 
 ST_14: lhs_V_25 [1/1] 0.00ns
-entry:209  %lhs_V_25 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_24, i20 0) ; <i52> [#uses=1]
+entry:196  %lhs_V_25 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_6, i6 0) ; <i38> [#uses=1]
 
-ST_14: rhs_V_203_11_cast [1/1] 0.00ns
-entry:210  %rhs_V_203_11_cast = sext i41 %r_V_51 to i52    ; <i52> [#uses=1]
+ST_14: rhs_V_173_11_cast [1/1] 0.00ns
+entry:197  %rhs_V_173_11_cast = sext i33 %r_V_51 to i38    ; <i38> [#uses=1]
 
-ST_14: r_V_52 [1/1] 3.04ns
-entry:211  %r_V_52 = add i52 %lhs_V_25, %rhs_V_203_11_cast ; <i52> [#uses=2]
+ST_14: r_V_52 [1/1] 2.68ns
+entry:198  %r_V_52 = add i38 %lhs_V_25, %rhs_V_173_11_cast ; <i38> [#uses=2]
 
-ST_14: tmp_83 [1/1] 0.00ns
-entry:212  %tmp_83 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_52, i32 51) ; <i1> [#uses=2]
+ST_14: yo_V_7 [1/1] 0.00ns
+entry:199  %yo_V_7 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_52, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_14: tmp_26 [1/1] 0.00ns
-entry:213  %tmp_26 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_52, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_14: tmp_27 [1/1] 0.00ns
-entry:217  %tmp_27 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_50, i32 20, i32 51) ; <i32> [#uses=2]
+ST_14: tmp_76 [1/1] 0.00ns
+entry:200  %tmp_76 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_52, i32 37) ; <i1> [#uses=2]
 
 
- <State 15>: 7.09ns
-ST_15: mt26 [1/1] 0.00ns
-entry:214  %mt26 = call i39 @_ssdm_op_BitConcatenate.i39.i32.i7(i32 %tmp_26, i7 0) ; <i39> [#uses=2]
-
-ST_15: mf27 [1/1] 2.68ns
-entry:215  %mf27 = sub i39 0, %mt26                        ; <i39> [#uses=1]
+ <State 15>: 6.49ns
+ST_15: mf27 [1/1] 2.44ns
+entry:201  %mf27 = sub i32 0, %yo_V_7                      ; <i32> [#uses=1]
 
 ST_15: r_V_53 [1/1] 1.37ns
-entry:216  %r_V_53 = select i1 %tmp_83, i39 %mt26, i39 %mf27 ; <i39> [#uses=1]
+entry:202  %r_V_53 = select i1 %tmp_76, i32 0, i32 %mf27   ; <i32> [#uses=1]
 
 ST_15: lhs_V_26 [1/1] 0.00ns
-entry:218  %lhs_V_26 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_27, i20 0) ; <i52> [#uses=1]
+entry:203  %lhs_V_26 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_7, i6 0) ; <i38> [#uses=1]
 
 ST_15: rhs_V2_12_cast [1/1] 0.00ns
-entry:219  %rhs_V2_12_cast = sext i39 %r_V_53 to i52       ; <i52> [#uses=1]
+entry:204  %rhs_V2_12_cast = sext i32 %r_V_53 to i38       ; <i38> [#uses=1]
 
-ST_15: r_V_54 [1/1] 3.04ns
-entry:220  %r_V_54 = sub i52 %lhs_V_26, %rhs_V2_12_cast    ; <i52> [#uses=1]
+ST_15: r_V_54 [1/1] 2.68ns
+entry:205  %r_V_54 = sub i38 %lhs_V_26, %rhs_V2_12_cast    ; <i38> [#uses=1]
 
-ST_15: mt27 [1/1] 0.00ns
-entry:221  %mt27 = call i39 @_ssdm_op_BitConcatenate.i39.i32.i7(i32 %tmp_27, i7 0) ; <i39> [#uses=1]
+ST_15: x_iteration_V_8 [1/1] 0.00ns
+entry:206  %x_iteration_V_8 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_54, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_15: mt29_cast [1/1] 0.00ns
-entry:222  %mt29_cast = sext i39 %mt27 to i40              ; <i40> [#uses=2]
+ST_15: OP1_V_27_cast [1/1] 0.00ns
+entry:207  %OP1_V_27_cast = sext i32 %x_iteration_V_7 to i33 ; <i33> [#uses=1]
 
-ST_15: mf28 [1/1] 2.68ns
-entry:223  %mf28 = sub i40 0, %mt29_cast                   ; <i40> [#uses=1]
+ST_15: mf28 [1/1] 2.44ns
+entry:208  %mf28 = sub i33 0, %OP1_V_27_cast               ; <i33> [#uses=1]
 
 ST_15: r_V_55 [1/1] 1.37ns
-entry:224  %r_V_55 = select i1 %tmp_83, i40 %mt29_cast, i40 %mf28 ; <i40> [#uses=1]
+entry:209  %r_V_55 = select i1 %tmp_76, i33 0, i33 %mf28   ; <i33> [#uses=1]
 
 ST_15: lhs_V_27 [1/1] 0.00ns
-entry:225  %lhs_V_27 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_26, i20 0) ; <i52> [#uses=1]
+entry:210  %lhs_V_27 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_7, i6 0) ; <i38> [#uses=1]
 
-ST_15: rhs_V_203_12_cast [1/1] 0.00ns
-entry:226  %rhs_V_203_12_cast = sext i40 %r_V_55 to i52    ; <i52> [#uses=1]
+ST_15: rhs_V_173_12_cast [1/1] 0.00ns
+entry:211  %rhs_V_173_12_cast = sext i33 %r_V_55 to i38    ; <i38> [#uses=1]
 
-ST_15: r_V_56 [1/1] 3.04ns
-entry:227  %r_V_56 = add i52 %lhs_V_27, %rhs_V_203_12_cast ; <i52> [#uses=2]
+ST_15: r_V_56 [1/1] 2.68ns
+entry:212  %r_V_56 = add i38 %lhs_V_27, %rhs_V_173_12_cast ; <i38> [#uses=2]
 
-ST_15: tmp_84 [1/1] 0.00ns
-entry:228  %tmp_84 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_56, i32 51) ; <i1> [#uses=2]
+ST_15: yo_V_8 [1/1] 0.00ns
+entry:213  %yo_V_8 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_56, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_15: tmp_28 [1/1] 0.00ns
-entry:229  %tmp_28 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_56, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_15: tmp_29 [1/1] 0.00ns
-entry:233  %tmp_29 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_54, i32 20, i32 51) ; <i32> [#uses=2]
+ST_15: tmp_77 [1/1] 0.00ns
+entry:214  %tmp_77 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_56, i32 37) ; <i1> [#uses=2]
 
 
- <State 16>: 7.09ns
-ST_16: mt28 [1/1] 0.00ns
-entry:230  %mt28 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_28, i6 0) ; <i38> [#uses=2]
-
-ST_16: mf29 [1/1] 2.68ns
-entry:231  %mf29 = sub i38 0, %mt28                        ; <i38> [#uses=1]
+ <State 16>: 6.49ns
+ST_16: mf29 [1/1] 2.44ns
+entry:215  %mf29 = sub i32 0, %yo_V_8                      ; <i32> [#uses=1]
 
 ST_16: r_V_57 [1/1] 1.37ns
-entry:232  %r_V_57 = select i1 %tmp_84, i38 %mt28, i38 %mf29 ; <i38> [#uses=1]
+entry:216  %r_V_57 = select i1 %tmp_77, i32 0, i32 %mf29   ; <i32> [#uses=1]
 
 ST_16: lhs_V_28 [1/1] 0.00ns
-entry:234  %lhs_V_28 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_29, i20 0) ; <i52> [#uses=1]
+entry:217  %lhs_V_28 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_8, i6 0) ; <i38> [#uses=1]
 
 ST_16: rhs_V2_13_cast [1/1] 0.00ns
-entry:235  %rhs_V2_13_cast = sext i38 %r_V_57 to i52       ; <i52> [#uses=1]
+entry:218  %rhs_V2_13_cast = sext i32 %r_V_57 to i38       ; <i38> [#uses=1]
 
-ST_16: r_V_58 [1/1] 3.04ns
-entry:236  %r_V_58 = sub i52 %lhs_V_28, %rhs_V2_13_cast    ; <i52> [#uses=1]
+ST_16: r_V_58 [1/1] 2.68ns
+entry:219  %r_V_58 = sub i38 %lhs_V_28, %rhs_V2_13_cast    ; <i38> [#uses=1]
 
-ST_16: mt29 [1/1] 0.00ns
-entry:237  %mt29 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_29, i6 0) ; <i38> [#uses=1]
+ST_16: x_iteration_V_9 [1/1] 0.00ns
+entry:220  %x_iteration_V_9 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_58, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_16: mt31_cast [1/1] 0.00ns
-entry:238  %mt31_cast = sext i38 %mt29 to i39              ; <i39> [#uses=2]
+ST_16: OP1_V_29_cast [1/1] 0.00ns
+entry:221  %OP1_V_29_cast = sext i32 %x_iteration_V_8 to i33 ; <i33> [#uses=1]
 
-ST_16: mf30 [1/1] 2.68ns
-entry:239  %mf30 = sub i39 0, %mt31_cast                   ; <i39> [#uses=1]
+ST_16: mf30 [1/1] 2.44ns
+entry:222  %mf30 = sub i33 0, %OP1_V_29_cast               ; <i33> [#uses=1]
 
 ST_16: r_V_59 [1/1] 1.37ns
-entry:240  %r_V_59 = select i1 %tmp_84, i39 %mt31_cast, i39 %mf30 ; <i39> [#uses=1]
+entry:223  %r_V_59 = select i1 %tmp_77, i33 0, i33 %mf30   ; <i33> [#uses=1]
 
 ST_16: lhs_V_29 [1/1] 0.00ns
-entry:241  %lhs_V_29 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_28, i20 0) ; <i52> [#uses=1]
+entry:224  %lhs_V_29 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_8, i6 0) ; <i38> [#uses=1]
 
-ST_16: rhs_V_203_13_cast [1/1] 0.00ns
-entry:242  %rhs_V_203_13_cast = sext i39 %r_V_59 to i52    ; <i52> [#uses=1]
+ST_16: rhs_V_173_13_cast [1/1] 0.00ns
+entry:225  %rhs_V_173_13_cast = sext i33 %r_V_59 to i38    ; <i38> [#uses=1]
 
-ST_16: r_V_60 [1/1] 3.04ns
-entry:243  %r_V_60 = add i52 %lhs_V_29, %rhs_V_203_13_cast ; <i52> [#uses=2]
+ST_16: r_V_60 [1/1] 2.68ns
+entry:226  %r_V_60 = add i38 %lhs_V_29, %rhs_V_173_13_cast ; <i38> [#uses=2]
 
-ST_16: tmp_85 [1/1] 0.00ns
-entry:244  %tmp_85 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_60, i32 51) ; <i1> [#uses=2]
+ST_16: yo_V_9 [1/1] 0.00ns
+entry:227  %yo_V_9 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_60, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_16: tmp_30 [1/1] 0.00ns
-entry:245  %tmp_30 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_60, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_16: tmp_31 [1/1] 0.00ns
-entry:249  %tmp_31 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_58, i32 20, i32 51) ; <i32> [#uses=2]
+ST_16: tmp_78 [1/1] 0.00ns
+entry:228  %tmp_78 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_60, i32 37) ; <i1> [#uses=2]
 
 
- <State 17>: 7.09ns
-ST_17: mt30 [1/1] 0.00ns
-entry:246  %mt30 = call i37 @_ssdm_op_BitConcatenate.i37.i32.i5(i32 %tmp_30, i5 0) ; <i37> [#uses=2]
-
-ST_17: mf31 [1/1] 2.68ns
-entry:247  %mf31 = sub i37 0, %mt30                        ; <i37> [#uses=1]
+ <State 17>: 6.49ns
+ST_17: mf31 [1/1] 2.44ns
+entry:229  %mf31 = sub i32 0, %yo_V_9                      ; <i32> [#uses=1]
 
 ST_17: r_V_61 [1/1] 1.37ns
-entry:248  %r_V_61 = select i1 %tmp_85, i37 %mt30, i37 %mf31 ; <i37> [#uses=1]
+entry:230  %r_V_61 = select i1 %tmp_78, i32 0, i32 %mf31   ; <i32> [#uses=1]
 
 ST_17: lhs_V_30 [1/1] 0.00ns
-entry:250  %lhs_V_30 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_31, i20 0) ; <i52> [#uses=1]
+entry:231  %lhs_V_30 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_9, i6 0) ; <i38> [#uses=1]
 
 ST_17: rhs_V2_14_cast [1/1] 0.00ns
-entry:251  %rhs_V2_14_cast = sext i37 %r_V_61 to i52       ; <i52> [#uses=1]
+entry:232  %rhs_V2_14_cast = sext i32 %r_V_61 to i38       ; <i38> [#uses=1]
 
-ST_17: r_V_62 [1/1] 3.04ns
-entry:252  %r_V_62 = sub i52 %lhs_V_30, %rhs_V2_14_cast    ; <i52> [#uses=1]
+ST_17: r_V_62 [1/1] 2.68ns
+entry:233  %r_V_62 = sub i38 %lhs_V_30, %rhs_V2_14_cast    ; <i38> [#uses=1]
 
-ST_17: mt31 [1/1] 0.00ns
-entry:253  %mt31 = call i37 @_ssdm_op_BitConcatenate.i37.i32.i5(i32 %tmp_31, i5 0) ; <i37> [#uses=1]
+ST_17: x_iteration_V_10 [1/1] 0.00ns
+entry:234  %x_iteration_V_10 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_62, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_17: mt33_cast [1/1] 0.00ns
-entry:254  %mt33_cast = sext i37 %mt31 to i38              ; <i38> [#uses=2]
+ST_17: OP1_V_31_cast [1/1] 0.00ns
+entry:235  %OP1_V_31_cast = sext i32 %x_iteration_V_9 to i33 ; <i33> [#uses=1]
 
-ST_17: mf32 [1/1] 2.68ns
-entry:255  %mf32 = sub i38 0, %mt33_cast                   ; <i38> [#uses=1]
+ST_17: mf32 [1/1] 2.44ns
+entry:236  %mf32 = sub i33 0, %OP1_V_31_cast               ; <i33> [#uses=1]
 
 ST_17: r_V_63 [1/1] 1.37ns
-entry:256  %r_V_63 = select i1 %tmp_85, i38 %mt33_cast, i38 %mf32 ; <i38> [#uses=1]
+entry:237  %r_V_63 = select i1 %tmp_78, i33 0, i33 %mf32   ; <i33> [#uses=1]
 
 ST_17: lhs_V_31 [1/1] 0.00ns
-entry:257  %lhs_V_31 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_30, i20 0) ; <i52> [#uses=1]
+entry:238  %lhs_V_31 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_9, i6 0) ; <i38> [#uses=1]
 
-ST_17: rhs_V_203_14_cast [1/1] 0.00ns
-entry:258  %rhs_V_203_14_cast = sext i38 %r_V_63 to i52    ; <i52> [#uses=1]
+ST_17: rhs_V_173_14_cast [1/1] 0.00ns
+entry:239  %rhs_V_173_14_cast = sext i33 %r_V_63 to i38    ; <i38> [#uses=1]
 
-ST_17: r_V_64 [1/1] 3.04ns
-entry:259  %r_V_64 = add i52 %lhs_V_31, %rhs_V_203_14_cast ; <i52> [#uses=2]
+ST_17: r_V_64 [1/1] 2.68ns
+entry:240  %r_V_64 = add i38 %lhs_V_31, %rhs_V_173_14_cast ; <i38> [#uses=2]
 
-ST_17: tmp_86 [1/1] 0.00ns
-entry:260  %tmp_86 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_64, i32 51) ; <i1> [#uses=2]
+ST_17: yo_V_10 [1/1] 0.00ns
+entry:241  %yo_V_10 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_64, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_17: tmp_32 [1/1] 0.00ns
-entry:261  %tmp_32 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_64, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_17: tmp_33 [1/1] 0.00ns
-entry:265  %tmp_33 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_62, i32 20, i32 51) ; <i32> [#uses=2]
+ST_17: tmp_79 [1/1] 0.00ns
+entry:242  %tmp_79 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_64, i32 37) ; <i1> [#uses=2]
 
 
- <State 18>: 6.97ns
-ST_18: mt32 [1/1] 0.00ns
-entry:262  %mt32 = call i36 @_ssdm_op_BitConcatenate.i36.i32.i4(i32 %tmp_32, i4 0) ; <i36> [#uses=2]
-
-ST_18: mf33 [1/1] 2.56ns
-entry:263  %mf33 = sub i36 0, %mt32                        ; <i36> [#uses=1]
+ <State 18>: 6.49ns
+ST_18: mf33 [1/1] 2.44ns
+entry:243  %mf33 = sub i32 0, %yo_V_10                     ; <i32> [#uses=1]
 
 ST_18: r_V_65 [1/1] 1.37ns
-entry:264  %r_V_65 = select i1 %tmp_86, i36 %mt32, i36 %mf33 ; <i36> [#uses=1]
+entry:244  %r_V_65 = select i1 %tmp_79, i32 0, i32 %mf33   ; <i32> [#uses=1]
 
 ST_18: lhs_V_32 [1/1] 0.00ns
-entry:266  %lhs_V_32 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_33, i20 0) ; <i52> [#uses=1]
+entry:245  %lhs_V_32 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_10, i6 0) ; <i38> [#uses=1]
 
 ST_18: rhs_V2_15_cast [1/1] 0.00ns
-entry:267  %rhs_V2_15_cast = sext i36 %r_V_65 to i52       ; <i52> [#uses=1]
+entry:246  %rhs_V2_15_cast = sext i32 %r_V_65 to i38       ; <i38> [#uses=1]
 
-ST_18: r_V_66 [1/1] 3.04ns
-entry:268  %r_V_66 = sub i52 %lhs_V_32, %rhs_V2_15_cast    ; <i52> [#uses=1]
+ST_18: r_V_66 [1/1] 2.68ns
+entry:247  %r_V_66 = sub i38 %lhs_V_32, %rhs_V2_15_cast    ; <i38> [#uses=1]
 
-ST_18: mt33 [1/1] 0.00ns
-entry:269  %mt33 = call i36 @_ssdm_op_BitConcatenate.i36.i32.i4(i32 %tmp_33, i4 0) ; <i36> [#uses=1]
+ST_18: x_iteration_V_11 [1/1] 0.00ns
+entry:248  %x_iteration_V_11 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_66, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_18: mt35_cast [1/1] 0.00ns
-entry:270  %mt35_cast = sext i36 %mt33 to i37              ; <i37> [#uses=2]
+ST_18: OP1_V_33_cast [1/1] 0.00ns
+entry:249  %OP1_V_33_cast = sext i32 %x_iteration_V_10 to i33 ; <i33> [#uses=1]
 
-ST_18: mf34 [1/1] 2.56ns
-entry:271  %mf34 = sub i37 0, %mt35_cast                   ; <i37> [#uses=1]
+ST_18: mf34 [1/1] 2.44ns
+entry:250  %mf34 = sub i33 0, %OP1_V_33_cast               ; <i33> [#uses=1]
 
 ST_18: r_V_67 [1/1] 1.37ns
-entry:272  %r_V_67 = select i1 %tmp_86, i37 %mt35_cast, i37 %mf34 ; <i37> [#uses=1]
+entry:251  %r_V_67 = select i1 %tmp_79, i33 0, i33 %mf34   ; <i33> [#uses=1]
 
 ST_18: lhs_V_33 [1/1] 0.00ns
-entry:273  %lhs_V_33 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_32, i20 0) ; <i52> [#uses=1]
+entry:252  %lhs_V_33 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_10, i6 0) ; <i38> [#uses=1]
 
-ST_18: rhs_V_203_15_cast [1/1] 0.00ns
-entry:274  %rhs_V_203_15_cast = sext i37 %r_V_67 to i52    ; <i52> [#uses=1]
+ST_18: rhs_V_173_15_cast [1/1] 0.00ns
+entry:253  %rhs_V_173_15_cast = sext i33 %r_V_67 to i38    ; <i38> [#uses=1]
 
-ST_18: r_V_68 [1/1] 3.04ns
-entry:275  %r_V_68 = add i52 %lhs_V_33, %rhs_V_203_15_cast ; <i52> [#uses=2]
+ST_18: r_V_68 [1/1] 2.68ns
+entry:254  %r_V_68 = add i38 %lhs_V_33, %rhs_V_173_15_cast ; <i38> [#uses=2]
 
-ST_18: tmp_87 [1/1] 0.00ns
-entry:276  %tmp_87 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_68, i32 51) ; <i1> [#uses=2]
+ST_18: yo_V_11 [1/1] 0.00ns
+entry:255  %yo_V_11 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_68, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_18: tmp_34 [1/1] 0.00ns
-entry:277  %tmp_34 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_68, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_18: tmp_35 [1/1] 0.00ns
-entry:281  %tmp_35 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_66, i32 20, i32 51) ; <i32> [#uses=2]
+ST_18: tmp_80 [1/1] 0.00ns
+entry:256  %tmp_80 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_68, i32 37) ; <i1> [#uses=2]
 
 
- <State 19>: 6.97ns
-ST_19: mt34 [1/1] 0.00ns
-entry:278  %mt34 = call i35 @_ssdm_op_BitConcatenate.i35.i32.i3(i32 %tmp_34, i3 0) ; <i35> [#uses=2]
-
-ST_19: mf35 [1/1] 2.56ns
-entry:279  %mf35 = sub i35 0, %mt34                        ; <i35> [#uses=1]
+ <State 19>: 6.49ns
+ST_19: mf35 [1/1] 2.44ns
+entry:257  %mf35 = sub i32 0, %yo_V_11                     ; <i32> [#uses=1]
 
 ST_19: r_V_69 [1/1] 1.37ns
-entry:280  %r_V_69 = select i1 %tmp_87, i35 %mt34, i35 %mf35 ; <i35> [#uses=1]
+entry:258  %r_V_69 = select i1 %tmp_80, i32 0, i32 %mf35   ; <i32> [#uses=1]
 
 ST_19: lhs_V_34 [1/1] 0.00ns
-entry:282  %lhs_V_34 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_35, i20 0) ; <i52> [#uses=1]
+entry:259  %lhs_V_34 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_11, i6 0) ; <i38> [#uses=1]
 
 ST_19: rhs_V2_16_cast [1/1] 0.00ns
-entry:283  %rhs_V2_16_cast = sext i35 %r_V_69 to i52       ; <i52> [#uses=1]
+entry:260  %rhs_V2_16_cast = sext i32 %r_V_69 to i38       ; <i38> [#uses=1]
 
-ST_19: r_V_70 [1/1] 3.04ns
-entry:284  %r_V_70 = sub i52 %lhs_V_34, %rhs_V2_16_cast    ; <i52> [#uses=1]
+ST_19: r_V_70 [1/1] 2.68ns
+entry:261  %r_V_70 = sub i38 %lhs_V_34, %rhs_V2_16_cast    ; <i38> [#uses=1]
 
-ST_19: mt35 [1/1] 0.00ns
-entry:285  %mt35 = call i35 @_ssdm_op_BitConcatenate.i35.i32.i3(i32 %tmp_35, i3 0) ; <i35> [#uses=1]
+ST_19: x_iteration_V_12 [1/1] 0.00ns
+entry:262  %x_iteration_V_12 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_70, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_19: mt37_cast [1/1] 0.00ns
-entry:286  %mt37_cast = sext i35 %mt35 to i36              ; <i36> [#uses=2]
+ST_19: OP1_V_35_cast [1/1] 0.00ns
+entry:263  %OP1_V_35_cast = sext i32 %x_iteration_V_11 to i33 ; <i33> [#uses=1]
 
-ST_19: mf36 [1/1] 2.56ns
-entry:287  %mf36 = sub i36 0, %mt37_cast                   ; <i36> [#uses=1]
+ST_19: mf36 [1/1] 2.44ns
+entry:264  %mf36 = sub i33 0, %OP1_V_35_cast               ; <i33> [#uses=1]
 
 ST_19: r_V_71 [1/1] 1.37ns
-entry:288  %r_V_71 = select i1 %tmp_87, i36 %mt37_cast, i36 %mf36 ; <i36> [#uses=1]
+entry:265  %r_V_71 = select i1 %tmp_80, i33 0, i33 %mf36   ; <i33> [#uses=1]
 
 ST_19: lhs_V_35 [1/1] 0.00ns
-entry:289  %lhs_V_35 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_34, i20 0) ; <i52> [#uses=1]
+entry:266  %lhs_V_35 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_11, i6 0) ; <i38> [#uses=1]
 
-ST_19: rhs_V_203_16_cast [1/1] 0.00ns
-entry:290  %rhs_V_203_16_cast = sext i36 %r_V_71 to i52    ; <i52> [#uses=1]
+ST_19: rhs_V_173_16_cast [1/1] 0.00ns
+entry:267  %rhs_V_173_16_cast = sext i33 %r_V_71 to i38    ; <i38> [#uses=1]
 
-ST_19: r_V_72 [1/1] 3.04ns
-entry:291  %r_V_72 = add i52 %lhs_V_35, %rhs_V_203_16_cast ; <i52> [#uses=2]
+ST_19: r_V_72 [1/1] 2.68ns
+entry:268  %r_V_72 = add i38 %lhs_V_35, %rhs_V_173_16_cast ; <i38> [#uses=2]
 
-ST_19: tmp_88 [1/1] 0.00ns
-entry:292  %tmp_88 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_72, i32 51) ; <i1> [#uses=2]
+ST_19: yo_V_12 [1/1] 0.00ns
+entry:269  %yo_V_12 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_72, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_19: tmp_36 [1/1] 0.00ns
-entry:293  %tmp_36 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_72, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_19: tmp_37 [1/1] 0.00ns
-entry:297  %tmp_37 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_70, i32 20, i32 51) ; <i32> [#uses=2]
+ST_19: tmp_81 [1/1] 0.00ns
+entry:270  %tmp_81 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_72, i32 37) ; <i1> [#uses=2]
 
 
- <State 20>: 6.97ns
-ST_20: mt36 [1/1] 0.00ns
-entry:294  %mt36 = call i34 @_ssdm_op_BitConcatenate.i34.i32.i2(i32 %tmp_36, i2 0) ; <i34> [#uses=2]
-
-ST_20: mf37 [1/1] 2.56ns
-entry:295  %mf37 = sub i34 0, %mt36                        ; <i34> [#uses=1]
+ <State 20>: 6.49ns
+ST_20: mf37 [1/1] 2.44ns
+entry:271  %mf37 = sub i32 0, %yo_V_12                     ; <i32> [#uses=1]
 
 ST_20: r_V_73 [1/1] 1.37ns
-entry:296  %r_V_73 = select i1 %tmp_88, i34 %mt36, i34 %mf37 ; <i34> [#uses=1]
+entry:272  %r_V_73 = select i1 %tmp_81, i32 0, i32 %mf37   ; <i32> [#uses=1]
 
 ST_20: lhs_V_36 [1/1] 0.00ns
-entry:298  %lhs_V_36 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_37, i20 0) ; <i52> [#uses=1]
+entry:273  %lhs_V_36 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_12, i6 0) ; <i38> [#uses=1]
 
 ST_20: rhs_V2_17_cast [1/1] 0.00ns
-entry:299  %rhs_V2_17_cast = sext i34 %r_V_73 to i52       ; <i52> [#uses=1]
+entry:274  %rhs_V2_17_cast = sext i32 %r_V_73 to i38       ; <i38> [#uses=1]
 
-ST_20: r_V_74 [1/1] 3.04ns
-entry:300  %r_V_74 = sub i52 %lhs_V_36, %rhs_V2_17_cast    ; <i52> [#uses=1]
+ST_20: r_V_74 [1/1] 2.68ns
+entry:275  %r_V_74 = sub i38 %lhs_V_36, %rhs_V2_17_cast    ; <i38> [#uses=1]
 
-ST_20: mt37 [1/1] 0.00ns
-entry:301  %mt37 = call i34 @_ssdm_op_BitConcatenate.i34.i32.i2(i32 %tmp_37, i2 0) ; <i34> [#uses=1]
+ST_20: x_iteration_V_13 [1/1] 0.00ns
+entry:276  %x_iteration_V_13 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_74, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_20: mt39_cast [1/1] 0.00ns
-entry:302  %mt39_cast = sext i34 %mt37 to i35              ; <i35> [#uses=2]
+ST_20: OP1_V_37_cast [1/1] 0.00ns
+entry:277  %OP1_V_37_cast = sext i32 %x_iteration_V_12 to i33 ; <i33> [#uses=1]
 
-ST_20: mf38 [1/1] 2.56ns
-entry:303  %mf38 = sub i35 0, %mt39_cast                   ; <i35> [#uses=1]
+ST_20: mf38 [1/1] 2.44ns
+entry:278  %mf38 = sub i33 0, %OP1_V_37_cast               ; <i33> [#uses=1]
 
 ST_20: r_V_75 [1/1] 1.37ns
-entry:304  %r_V_75 = select i1 %tmp_88, i35 %mt39_cast, i35 %mf38 ; <i35> [#uses=1]
+entry:279  %r_V_75 = select i1 %tmp_81, i33 0, i33 %mf38   ; <i33> [#uses=1]
 
 ST_20: lhs_V_37 [1/1] 0.00ns
-entry:305  %lhs_V_37 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_36, i20 0) ; <i52> [#uses=1]
+entry:280  %lhs_V_37 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_12, i6 0) ; <i38> [#uses=1]
 
-ST_20: rhs_V_203_17_cast [1/1] 0.00ns
-entry:306  %rhs_V_203_17_cast = sext i35 %r_V_75 to i52    ; <i52> [#uses=1]
+ST_20: rhs_V_173_17_cast [1/1] 0.00ns
+entry:281  %rhs_V_173_17_cast = sext i33 %r_V_75 to i38    ; <i38> [#uses=1]
 
-ST_20: r_V_76 [1/1] 3.04ns
-entry:307  %r_V_76 = add i52 %lhs_V_37, %rhs_V_203_17_cast ; <i52> [#uses=2]
+ST_20: r_V_76 [1/1] 2.68ns
+entry:282  %r_V_76 = add i38 %lhs_V_37, %rhs_V_173_17_cast ; <i38> [#uses=2]
 
-ST_20: tmp_89 [1/1] 0.00ns
-entry:308  %tmp_89 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_76, i32 51) ; <i1> [#uses=2]
+ST_20: yo_V_13 [1/1] 0.00ns
+entry:283  %yo_V_13 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_76, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_20: tmp_38 [1/1] 0.00ns
-entry:309  %tmp_38 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_76, i32 20, i32 51) ; <i32> [#uses=2]
-
-ST_20: tmp_39 [1/1] 0.00ns
-entry:313  %tmp_39 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_74, i32 20, i32 51) ; <i32> [#uses=2]
+ST_20: tmp_82 [1/1] 0.00ns
+entry:284  %tmp_82 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_76, i32 37) ; <i1> [#uses=2]
 
 
- <State 21>: 6.97ns
-ST_21: mt38 [1/1] 0.00ns
-entry:310  %mt38 = call i33 @_ssdm_op_BitConcatenate.i33.i32.i1(i32 %tmp_38, i1 false) ; <i33> [#uses=2]
-
-ST_21: mf39 [1/1] 2.56ns
-entry:311  %mf39 = sub i33 0, %mt38                        ; <i33> [#uses=1]
+ <State 21>: 6.49ns
+ST_21: mf39 [1/1] 2.44ns
+entry:285  %mf39 = sub i32 0, %yo_V_13                     ; <i32> [#uses=1]
 
 ST_21: r_V_77 [1/1] 1.37ns
-entry:312  %r_V_77 = select i1 %tmp_89, i33 %mt38, i33 %mf39 ; <i33> [#uses=1]
+entry:286  %r_V_77 = select i1 %tmp_82, i32 0, i32 %mf39   ; <i32> [#uses=1]
 
 ST_21: lhs_V_38 [1/1] 0.00ns
-entry:314  %lhs_V_38 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_39, i20 0) ; <i52> [#uses=1]
+entry:287  %lhs_V_38 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_13, i6 0) ; <i38> [#uses=1]
 
 ST_21: rhs_V2_18_cast [1/1] 0.00ns
-entry:315  %rhs_V2_18_cast = sext i33 %r_V_77 to i52       ; <i52> [#uses=1]
+entry:288  %rhs_V2_18_cast = sext i32 %r_V_77 to i38       ; <i38> [#uses=1]
 
-ST_21: r_V_78 [1/1] 3.04ns
-entry:316  %r_V_78 = sub i52 %lhs_V_38, %rhs_V2_18_cast    ; <i52> [#uses=1]
+ST_21: r_V_78 [1/1] 2.68ns
+entry:289  %r_V_78 = sub i38 %lhs_V_38, %rhs_V2_18_cast    ; <i38> [#uses=1]
 
-ST_21: x_iteration_V [1/1] 0.00ns
-entry:317  %x_iteration_V = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_78, i32 20, i32 51) ; <i32> [#uses=2]
+ST_21: x_iteration_V_14 [1/1] 0.00ns
+entry:290  %x_iteration_V_14 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_78, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_21: mt39 [1/1] 0.00ns
-entry:318  %mt39 = call i33 @_ssdm_op_BitConcatenate.i33.i32.i1(i32 %tmp_39, i1 false) ; <i33> [#uses=1]
+ST_21: OP1_V_39_cast [1/1] 0.00ns
+entry:291  %OP1_V_39_cast = sext i32 %x_iteration_V_13 to i33 ; <i33> [#uses=1]
 
-ST_21: mt41_cast [1/1] 0.00ns
-entry:319  %mt41_cast = sext i33 %mt39 to i34              ; <i34> [#uses=2]
-
-ST_21: mf40 [1/1] 2.56ns
-entry:320  %mf40 = sub i34 0, %mt41_cast                   ; <i34> [#uses=1]
+ST_21: mf40 [1/1] 2.44ns
+entry:292  %mf40 = sub i33 0, %OP1_V_39_cast               ; <i33> [#uses=1]
 
 ST_21: r_V_79 [1/1] 1.37ns
-entry:321  %r_V_79 = select i1 %tmp_89, i34 %mt41_cast, i34 %mf40 ; <i34> [#uses=1]
+entry:293  %r_V_79 = select i1 %tmp_82, i33 0, i33 %mf40   ; <i33> [#uses=1]
 
 ST_21: lhs_V_39 [1/1] 0.00ns
-entry:322  %lhs_V_39 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_38, i20 0) ; <i52> [#uses=1]
+entry:294  %lhs_V_39 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_13, i6 0) ; <i38> [#uses=1]
 
-ST_21: rhs_V_203_18_cast [1/1] 0.00ns
-entry:323  %rhs_V_203_18_cast = sext i34 %r_V_79 to i52    ; <i52> [#uses=1]
+ST_21: rhs_V_173_18_cast [1/1] 0.00ns
+entry:295  %rhs_V_173_18_cast = sext i33 %r_V_79 to i38    ; <i38> [#uses=1]
 
-ST_21: r_V_80 [1/1] 3.04ns
-entry:324  %r_V_80 = add i52 %lhs_V_39, %rhs_V_203_18_cast ; <i52> [#uses=2]
+ST_21: r_V_80 [1/1] 2.68ns
+entry:296  %r_V_80 = add i38 %lhs_V_39, %rhs_V_173_18_cast ; <i38> [#uses=2]
 
-ST_21: yo_V [1/1] 0.00ns
-entry:325  %yo_V = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_80, i32 20, i32 51) ; <i32> [#uses=3]
+ST_21: yo_V_14 [1/1] 0.00ns
+entry:297  %yo_V_14 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_80, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_21: tmp_90 [1/1] 0.00ns
-entry:326  %tmp_90 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_80, i32 51) ; <i1> [#uses=2]
+ST_21: tmp_83 [1/1] 0.00ns
+entry:298  %tmp_83 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_80, i32 37) ; <i1> [#uses=2]
 
 
- <State 22>: 6.85ns
+ <State 22>: 6.49ns
 ST_22: mf41 [1/1] 2.44ns
-entry:327  %mf41 = sub i32 0, %yo_V                        ; <i32> [#uses=1]
+entry:299  %mf41 = sub i32 0, %yo_V_14                     ; <i32> [#uses=1]
 
 ST_22: r_V_81 [1/1] 1.37ns
-entry:328  %r_V_81 = select i1 %tmp_90, i32 %yo_V, i32 %mf41 ; <i32> [#uses=1]
+entry:300  %r_V_81 = select i1 %tmp_83, i32 0, i32 %mf41   ; <i32> [#uses=1]
 
 ST_22: lhs_V_40 [1/1] 0.00ns
-entry:329  %lhs_V_40 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V, i20 0) ; <i52> [#uses=1]
+entry:301  %lhs_V_40 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_14, i6 0) ; <i38> [#uses=1]
 
 ST_22: rhs_V2_19_cast [1/1] 0.00ns
-entry:330  %rhs_V2_19_cast = sext i32 %r_V_81 to i52       ; <i52> [#uses=1]
+entry:302  %rhs_V2_19_cast = sext i32 %r_V_81 to i38       ; <i38> [#uses=1]
 
-ST_22: r_V_82 [1/1] 3.04ns
-entry:331  %r_V_82 = sub i52 %lhs_V_40, %rhs_V2_19_cast    ; <i52> [#uses=1]
+ST_22: r_V_82 [1/1] 2.68ns
+entry:303  %r_V_82 = sub i38 %lhs_V_40, %rhs_V2_19_cast    ; <i38> [#uses=1]
 
-ST_22: x_iteration_V_1 [1/1] 0.00ns
-entry:332  %x_iteration_V_1 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_82, i32 20, i32 51) ; <i32> [#uses=2]
+ST_22: x_iteration_V_15 [1/1] 0.00ns
+entry:304  %x_iteration_V_15 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_82, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_22: OP1_V_41_cast [1/1] 0.00ns
-entry:333  %OP1_V_41_cast = sext i32 %x_iteration_V to i33 ; <i33> [#uses=2]
+entry:305  %OP1_V_41_cast = sext i32 %x_iteration_V_14 to i33 ; <i33> [#uses=1]
 
 ST_22: mf42 [1/1] 2.44ns
-entry:334  %mf42 = sub i33 0, %OP1_V_41_cast               ; <i33> [#uses=1]
+entry:306  %mf42 = sub i33 0, %OP1_V_41_cast               ; <i33> [#uses=1]
 
 ST_22: r_V_83 [1/1] 1.37ns
-entry:335  %r_V_83 = select i1 %tmp_90, i33 %OP1_V_41_cast, i33 %mf42 ; <i33> [#uses=1]
+entry:307  %r_V_83 = select i1 %tmp_83, i33 0, i33 %mf42   ; <i33> [#uses=1]
 
 ST_22: lhs_V_41 [1/1] 0.00ns
-entry:336  %lhs_V_41 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V, i20 0) ; <i52> [#uses=1]
+entry:308  %lhs_V_41 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_14, i6 0) ; <i38> [#uses=1]
 
-ST_22: rhs_V_203_19_cast [1/1] 0.00ns
-entry:337  %rhs_V_203_19_cast = sext i33 %r_V_83 to i52    ; <i52> [#uses=1]
+ST_22: rhs_V_173_19_cast [1/1] 0.00ns
+entry:309  %rhs_V_173_19_cast = sext i33 %r_V_83 to i38    ; <i38> [#uses=1]
 
-ST_22: r_V_84 [1/1] 3.04ns
-entry:338  %r_V_84 = add i52 %lhs_V_41, %rhs_V_203_19_cast ; <i52> [#uses=2]
+ST_22: r_V_84 [1/1] 2.68ns
+entry:310  %r_V_84 = add i38 %lhs_V_41, %rhs_V_173_19_cast ; <i38> [#uses=2]
 
-ST_22: yo_V_1 [1/1] 0.00ns
-entry:339  %yo_V_1 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_84, i32 20, i32 51) ; <i32> [#uses=2]
+ST_22: yo_V_15 [1/1] 0.00ns
+entry:311  %yo_V_15 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_84, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_22: tmp_91 [1/1] 0.00ns
-entry:340  %tmp_91 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_84, i32 51) ; <i1> [#uses=2]
+ST_22: tmp_84 [1/1] 0.00ns
+entry:312  %tmp_84 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_84, i32 37) ; <i1> [#uses=2]
 
 
- <State 23>: 6.85ns
+ <State 23>: 6.49ns
 ST_23: mf43 [1/1] 2.44ns
-entry:341  %mf43 = sub i32 0, %yo_V_1                      ; <i32> [#uses=1]
+entry:313  %mf43 = sub i32 0, %yo_V_15                     ; <i32> [#uses=1]
 
 ST_23: r_V_85 [1/1] 1.37ns
-entry:342  %r_V_85 = select i1 %tmp_91, i32 0, i32 %mf43   ; <i32> [#uses=1]
+entry:314  %r_V_85 = select i1 %tmp_84, i32 0, i32 %mf43   ; <i32> [#uses=1]
 
 ST_23: lhs_V_42 [1/1] 0.00ns
-entry:343  %lhs_V_42 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_1, i20 0) ; <i52> [#uses=1]
+entry:315  %lhs_V_42 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_15, i6 0) ; <i38> [#uses=1]
 
 ST_23: rhs_V2_20_cast [1/1] 0.00ns
-entry:344  %rhs_V2_20_cast = sext i32 %r_V_85 to i52       ; <i52> [#uses=1]
+entry:316  %rhs_V2_20_cast = sext i32 %r_V_85 to i38       ; <i38> [#uses=1]
 
-ST_23: r_V_86 [1/1] 3.04ns
-entry:345  %r_V_86 = sub i52 %lhs_V_42, %rhs_V2_20_cast    ; <i52> [#uses=1]
+ST_23: r_V_86 [1/1] 2.68ns
+entry:317  %r_V_86 = sub i38 %lhs_V_42, %rhs_V2_20_cast    ; <i38> [#uses=1]
 
-ST_23: x_iteration_V_2 [1/1] 0.00ns
-entry:346  %x_iteration_V_2 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_86, i32 20, i32 51) ; <i32> [#uses=2]
+ST_23: x_iteration_V_16 [1/1] 0.00ns
+entry:318  %x_iteration_V_16 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_86, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_23: OP1_V_43_cast [1/1] 0.00ns
-entry:347  %OP1_V_43_cast = sext i32 %x_iteration_V_1 to i33 ; <i33> [#uses=1]
+entry:319  %OP1_V_43_cast = sext i32 %x_iteration_V_15 to i33 ; <i33> [#uses=1]
 
 ST_23: mf44 [1/1] 2.44ns
-entry:348  %mf44 = sub i33 0, %OP1_V_43_cast               ; <i33> [#uses=1]
+entry:320  %mf44 = sub i33 0, %OP1_V_43_cast               ; <i33> [#uses=1]
 
 ST_23: r_V_87 [1/1] 1.37ns
-entry:349  %r_V_87 = select i1 %tmp_91, i33 0, i33 %mf44   ; <i33> [#uses=1]
+entry:321  %r_V_87 = select i1 %tmp_84, i33 0, i33 %mf44   ; <i33> [#uses=1]
 
 ST_23: lhs_V_43 [1/1] 0.00ns
-entry:350  %lhs_V_43 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_1, i20 0) ; <i52> [#uses=1]
+entry:322  %lhs_V_43 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_15, i6 0) ; <i38> [#uses=1]
 
-ST_23: rhs_V_203_20_cast [1/1] 0.00ns
-entry:351  %rhs_V_203_20_cast = sext i33 %r_V_87 to i52    ; <i52> [#uses=1]
+ST_23: rhs_V_173_20_cast [1/1] 0.00ns
+entry:323  %rhs_V_173_20_cast = sext i33 %r_V_87 to i38    ; <i38> [#uses=1]
 
-ST_23: r_V_88 [1/1] 3.04ns
-entry:352  %r_V_88 = add i52 %lhs_V_43, %rhs_V_203_20_cast ; <i52> [#uses=2]
+ST_23: r_V_88 [1/1] 2.68ns
+entry:324  %r_V_88 = add i38 %lhs_V_43, %rhs_V_173_20_cast ; <i38> [#uses=2]
 
-ST_23: yo_V_2 [1/1] 0.00ns
-entry:353  %yo_V_2 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_88, i32 20, i32 51) ; <i32> [#uses=2]
+ST_23: yo_V_16 [1/1] 0.00ns
+entry:325  %yo_V_16 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_88, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_23: tmp_92 [1/1] 0.00ns
-entry:354  %tmp_92 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_88, i32 51) ; <i1> [#uses=2]
+ST_23: tmp_85 [1/1] 0.00ns
+entry:326  %tmp_85 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_88, i32 37) ; <i1> [#uses=2]
 
 
- <State 24>: 6.85ns
+ <State 24>: 6.49ns
 ST_24: mf45 [1/1] 2.44ns
-entry:355  %mf45 = sub i32 0, %yo_V_2                      ; <i32> [#uses=1]
+entry:327  %mf45 = sub i32 0, %yo_V_16                     ; <i32> [#uses=1]
 
 ST_24: r_V_89 [1/1] 1.37ns
-entry:356  %r_V_89 = select i1 %tmp_92, i32 0, i32 %mf45   ; <i32> [#uses=1]
+entry:328  %r_V_89 = select i1 %tmp_85, i32 0, i32 %mf45   ; <i32> [#uses=1]
 
 ST_24: lhs_V_44 [1/1] 0.00ns
-entry:357  %lhs_V_44 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_2, i20 0) ; <i52> [#uses=1]
+entry:329  %lhs_V_44 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_16, i6 0) ; <i38> [#uses=1]
 
 ST_24: rhs_V2_21_cast [1/1] 0.00ns
-entry:358  %rhs_V2_21_cast = sext i32 %r_V_89 to i52       ; <i52> [#uses=1]
+entry:330  %rhs_V2_21_cast = sext i32 %r_V_89 to i38       ; <i38> [#uses=1]
 
-ST_24: r_V_90 [1/1] 3.04ns
-entry:359  %r_V_90 = sub i52 %lhs_V_44, %rhs_V2_21_cast    ; <i52> [#uses=1]
+ST_24: r_V_90 [1/1] 2.68ns
+entry:331  %r_V_90 = sub i38 %lhs_V_44, %rhs_V2_21_cast    ; <i38> [#uses=1]
 
-ST_24: x_iteration_V_3 [1/1] 0.00ns
-entry:360  %x_iteration_V_3 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_90, i32 20, i32 51) ; <i32> [#uses=2]
+ST_24: x_iteration_V_17 [1/1] 0.00ns
+entry:332  %x_iteration_V_17 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_90, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_24: OP1_V_45_cast [1/1] 0.00ns
-entry:361  %OP1_V_45_cast = sext i32 %x_iteration_V_2 to i33 ; <i33> [#uses=1]
+entry:333  %OP1_V_45_cast = sext i32 %x_iteration_V_16 to i33 ; <i33> [#uses=1]
 
 ST_24: mf46 [1/1] 2.44ns
-entry:362  %mf46 = sub i33 0, %OP1_V_45_cast               ; <i33> [#uses=1]
+entry:334  %mf46 = sub i33 0, %OP1_V_45_cast               ; <i33> [#uses=1]
 
 ST_24: r_V_91 [1/1] 1.37ns
-entry:363  %r_V_91 = select i1 %tmp_92, i33 0, i33 %mf46   ; <i33> [#uses=1]
+entry:335  %r_V_91 = select i1 %tmp_85, i33 0, i33 %mf46   ; <i33> [#uses=1]
 
 ST_24: lhs_V_45 [1/1] 0.00ns
-entry:364  %lhs_V_45 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_2, i20 0) ; <i52> [#uses=1]
+entry:336  %lhs_V_45 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_16, i6 0) ; <i38> [#uses=1]
 
-ST_24: rhs_V_203_21_cast [1/1] 0.00ns
-entry:365  %rhs_V_203_21_cast = sext i33 %r_V_91 to i52    ; <i52> [#uses=1]
+ST_24: rhs_V_173_21_cast [1/1] 0.00ns
+entry:337  %rhs_V_173_21_cast = sext i33 %r_V_91 to i38    ; <i38> [#uses=1]
 
-ST_24: r_V_92 [1/1] 3.04ns
-entry:366  %r_V_92 = add i52 %lhs_V_45, %rhs_V_203_21_cast ; <i52> [#uses=2]
+ST_24: r_V_92 [1/1] 2.68ns
+entry:338  %r_V_92 = add i38 %lhs_V_45, %rhs_V_173_21_cast ; <i38> [#uses=2]
 
-ST_24: yo_V_3 [1/1] 0.00ns
-entry:367  %yo_V_3 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_92, i32 20, i32 51) ; <i32> [#uses=2]
+ST_24: yo_V_17 [1/1] 0.00ns
+entry:339  %yo_V_17 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_92, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_24: tmp_93 [1/1] 0.00ns
-entry:368  %tmp_93 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_92, i32 51) ; <i1> [#uses=2]
+ST_24: tmp_86 [1/1] 0.00ns
+entry:340  %tmp_86 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_92, i32 37) ; <i1> [#uses=2]
 
 
- <State 25>: 6.85ns
+ <State 25>: 6.49ns
 ST_25: mf47 [1/1] 2.44ns
-entry:369  %mf47 = sub i32 0, %yo_V_3                      ; <i32> [#uses=1]
+entry:341  %mf47 = sub i32 0, %yo_V_17                     ; <i32> [#uses=1]
 
 ST_25: r_V_93 [1/1] 1.37ns
-entry:370  %r_V_93 = select i1 %tmp_93, i32 0, i32 %mf47   ; <i32> [#uses=1]
+entry:342  %r_V_93 = select i1 %tmp_86, i32 0, i32 %mf47   ; <i32> [#uses=1]
 
 ST_25: lhs_V_46 [1/1] 0.00ns
-entry:371  %lhs_V_46 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_3, i20 0) ; <i52> [#uses=1]
+entry:343  %lhs_V_46 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_17, i6 0) ; <i38> [#uses=1]
 
 ST_25: rhs_V2_22_cast [1/1] 0.00ns
-entry:372  %rhs_V2_22_cast = sext i32 %r_V_93 to i52       ; <i52> [#uses=1]
+entry:344  %rhs_V2_22_cast = sext i32 %r_V_93 to i38       ; <i38> [#uses=1]
 
-ST_25: r_V_94 [1/1] 3.04ns
-entry:373  %r_V_94 = sub i52 %lhs_V_46, %rhs_V2_22_cast    ; <i52> [#uses=1]
+ST_25: r_V_94 [1/1] 2.68ns
+entry:345  %r_V_94 = sub i38 %lhs_V_46, %rhs_V2_22_cast    ; <i38> [#uses=1]
 
-ST_25: x_iteration_V_4 [1/1] 0.00ns
-entry:374  %x_iteration_V_4 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_94, i32 20, i32 51) ; <i32> [#uses=2]
+ST_25: x_iteration_V_18 [1/1] 0.00ns
+entry:346  %x_iteration_V_18 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_94, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_25: OP1_V_47_cast [1/1] 0.00ns
-entry:375  %OP1_V_47_cast = sext i32 %x_iteration_V_3 to i33 ; <i33> [#uses=1]
+entry:347  %OP1_V_47_cast = sext i32 %x_iteration_V_17 to i33 ; <i33> [#uses=1]
 
 ST_25: mf48 [1/1] 2.44ns
-entry:376  %mf48 = sub i33 0, %OP1_V_47_cast               ; <i33> [#uses=1]
+entry:348  %mf48 = sub i33 0, %OP1_V_47_cast               ; <i33> [#uses=1]
 
 ST_25: r_V_95 [1/1] 1.37ns
-entry:377  %r_V_95 = select i1 %tmp_93, i33 0, i33 %mf48   ; <i33> [#uses=1]
+entry:349  %r_V_95 = select i1 %tmp_86, i33 0, i33 %mf48   ; <i33> [#uses=1]
 
 ST_25: lhs_V_47 [1/1] 0.00ns
-entry:378  %lhs_V_47 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_3, i20 0) ; <i52> [#uses=1]
+entry:350  %lhs_V_47 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_17, i6 0) ; <i38> [#uses=1]
 
-ST_25: rhs_V_203_22_cast [1/1] 0.00ns
-entry:379  %rhs_V_203_22_cast = sext i33 %r_V_95 to i52    ; <i52> [#uses=1]
+ST_25: rhs_V_173_22_cast [1/1] 0.00ns
+entry:351  %rhs_V_173_22_cast = sext i33 %r_V_95 to i38    ; <i38> [#uses=1]
 
-ST_25: r_V_96 [1/1] 3.04ns
-entry:380  %r_V_96 = add i52 %lhs_V_47, %rhs_V_203_22_cast ; <i52> [#uses=2]
+ST_25: r_V_96 [1/1] 2.68ns
+entry:352  %r_V_96 = add i38 %lhs_V_47, %rhs_V_173_22_cast ; <i38> [#uses=2]
 
-ST_25: yo_V_4 [1/1] 0.00ns
-entry:381  %yo_V_4 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_96, i32 20, i32 51) ; <i32> [#uses=2]
+ST_25: yo_V_18 [1/1] 0.00ns
+entry:353  %yo_V_18 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_96, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_25: tmp_94 [1/1] 0.00ns
-entry:382  %tmp_94 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_96, i32 51) ; <i1> [#uses=2]
+ST_25: tmp_87 [1/1] 0.00ns
+entry:354  %tmp_87 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_96, i32 37) ; <i1> [#uses=2]
 
 
- <State 26>: 6.85ns
+ <State 26>: 6.49ns
 ST_26: mf49 [1/1] 2.44ns
-entry:383  %mf49 = sub i32 0, %yo_V_4                      ; <i32> [#uses=1]
+entry:355  %mf49 = sub i32 0, %yo_V_18                     ; <i32> [#uses=1]
 
 ST_26: r_V_97 [1/1] 1.37ns
-entry:384  %r_V_97 = select i1 %tmp_94, i32 0, i32 %mf49   ; <i32> [#uses=1]
+entry:356  %r_V_97 = select i1 %tmp_87, i32 0, i32 %mf49   ; <i32> [#uses=1]
 
 ST_26: lhs_V_48 [1/1] 0.00ns
-entry:385  %lhs_V_48 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_4, i20 0) ; <i52> [#uses=1]
+entry:357  %lhs_V_48 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_18, i6 0) ; <i38> [#uses=1]
 
 ST_26: rhs_V2_23_cast [1/1] 0.00ns
-entry:386  %rhs_V2_23_cast = sext i32 %r_V_97 to i52       ; <i52> [#uses=1]
+entry:358  %rhs_V2_23_cast = sext i32 %r_V_97 to i38       ; <i38> [#uses=1]
 
-ST_26: r_V_98 [1/1] 3.04ns
-entry:387  %r_V_98 = sub i52 %lhs_V_48, %rhs_V2_23_cast    ; <i52> [#uses=1]
+ST_26: r_V_98 [1/1] 2.68ns
+entry:359  %r_V_98 = sub i38 %lhs_V_48, %rhs_V2_23_cast    ; <i38> [#uses=1]
 
-ST_26: x_iteration_V_5 [1/1] 0.00ns
-entry:388  %x_iteration_V_5 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_98, i32 20, i32 51) ; <i32> [#uses=2]
+ST_26: x_iteration_V_19 [1/1] 0.00ns
+entry:360  %x_iteration_V_19 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_98, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_26: OP1_V_49_cast [1/1] 0.00ns
-entry:389  %OP1_V_49_cast = sext i32 %x_iteration_V_4 to i33 ; <i33> [#uses=1]
+entry:361  %OP1_V_49_cast = sext i32 %x_iteration_V_18 to i33 ; <i33> [#uses=1]
 
 ST_26: mf50 [1/1] 2.44ns
-entry:390  %mf50 = sub i33 0, %OP1_V_49_cast               ; <i33> [#uses=1]
+entry:362  %mf50 = sub i33 0, %OP1_V_49_cast               ; <i33> [#uses=1]
 
 ST_26: r_V_99 [1/1] 1.37ns
-entry:391  %r_V_99 = select i1 %tmp_94, i33 0, i33 %mf50   ; <i33> [#uses=1]
+entry:363  %r_V_99 = select i1 %tmp_87, i33 0, i33 %mf50   ; <i33> [#uses=1]
 
 ST_26: lhs_V_49 [1/1] 0.00ns
-entry:392  %lhs_V_49 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_4, i20 0) ; <i52> [#uses=1]
+entry:364  %lhs_V_49 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_18, i6 0) ; <i38> [#uses=1]
 
-ST_26: rhs_V_203_23_cast [1/1] 0.00ns
-entry:393  %rhs_V_203_23_cast = sext i33 %r_V_99 to i52    ; <i52> [#uses=1]
+ST_26: rhs_V_173_23_cast [1/1] 0.00ns
+entry:365  %rhs_V_173_23_cast = sext i33 %r_V_99 to i38    ; <i38> [#uses=1]
 
-ST_26: r_V_100 [1/1] 3.04ns
-entry:394  %r_V_100 = add i52 %lhs_V_49, %rhs_V_203_23_cast ; <i52> [#uses=2]
+ST_26: r_V_100 [1/1] 2.68ns
+entry:366  %r_V_100 = add i38 %lhs_V_49, %rhs_V_173_23_cast ; <i38> [#uses=2]
 
-ST_26: yo_V_5 [1/1] 0.00ns
-entry:395  %yo_V_5 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_100, i32 20, i32 51) ; <i32> [#uses=2]
+ST_26: yo_V_19 [1/1] 0.00ns
+entry:367  %yo_V_19 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_100, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_26: tmp_95 [1/1] 0.00ns
-entry:396  %tmp_95 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_100, i32 51) ; <i1> [#uses=2]
+ST_26: tmp_88 [1/1] 0.00ns
+entry:368  %tmp_88 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_100, i32 37) ; <i1> [#uses=2]
 
 
- <State 27>: 6.85ns
+ <State 27>: 6.49ns
 ST_27: mf51 [1/1] 2.44ns
-entry:397  %mf51 = sub i32 0, %yo_V_5                      ; <i32> [#uses=1]
+entry:369  %mf51 = sub i32 0, %yo_V_19                     ; <i32> [#uses=1]
 
 ST_27: r_V_101 [1/1] 1.37ns
-entry:398  %r_V_101 = select i1 %tmp_95, i32 0, i32 %mf51  ; <i32> [#uses=1]
+entry:370  %r_V_101 = select i1 %tmp_88, i32 0, i32 %mf51  ; <i32> [#uses=1]
 
 ST_27: lhs_V_50 [1/1] 0.00ns
-entry:399  %lhs_V_50 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_5, i20 0) ; <i52> [#uses=1]
+entry:371  %lhs_V_50 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_19, i6 0) ; <i38> [#uses=1]
 
 ST_27: rhs_V2_24_cast [1/1] 0.00ns
-entry:400  %rhs_V2_24_cast = sext i32 %r_V_101 to i52      ; <i52> [#uses=1]
+entry:372  %rhs_V2_24_cast = sext i32 %r_V_101 to i38      ; <i38> [#uses=1]
 
-ST_27: r_V_102 [1/1] 3.04ns
-entry:401  %r_V_102 = sub i52 %lhs_V_50, %rhs_V2_24_cast   ; <i52> [#uses=1]
+ST_27: r_V_102 [1/1] 2.68ns
+entry:373  %r_V_102 = sub i38 %lhs_V_50, %rhs_V2_24_cast   ; <i38> [#uses=1]
 
-ST_27: x_iteration_V_6 [1/1] 0.00ns
-entry:402  %x_iteration_V_6 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_102, i32 20, i32 51) ; <i32> [#uses=2]
+ST_27: x_iteration_V_20 [1/1] 0.00ns
+entry:374  %x_iteration_V_20 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_102, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_27: OP1_V_51_cast [1/1] 0.00ns
-entry:403  %OP1_V_51_cast = sext i32 %x_iteration_V_5 to i33 ; <i33> [#uses=1]
+entry:375  %OP1_V_51_cast = sext i32 %x_iteration_V_19 to i33 ; <i33> [#uses=1]
 
 ST_27: mf52 [1/1] 2.44ns
-entry:404  %mf52 = sub i33 0, %OP1_V_51_cast               ; <i33> [#uses=1]
+entry:376  %mf52 = sub i33 0, %OP1_V_51_cast               ; <i33> [#uses=1]
 
 ST_27: r_V_103 [1/1] 1.37ns
-entry:405  %r_V_103 = select i1 %tmp_95, i33 0, i33 %mf52  ; <i33> [#uses=1]
+entry:377  %r_V_103 = select i1 %tmp_88, i33 0, i33 %mf52  ; <i33> [#uses=1]
 
 ST_27: lhs_V_51 [1/1] 0.00ns
-entry:406  %lhs_V_51 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_5, i20 0) ; <i52> [#uses=1]
+entry:378  %lhs_V_51 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_19, i6 0) ; <i38> [#uses=1]
 
-ST_27: rhs_V_203_24_cast [1/1] 0.00ns
-entry:407  %rhs_V_203_24_cast = sext i33 %r_V_103 to i52   ; <i52> [#uses=1]
+ST_27: rhs_V_173_24_cast [1/1] 0.00ns
+entry:379  %rhs_V_173_24_cast = sext i33 %r_V_103 to i38   ; <i38> [#uses=1]
 
-ST_27: r_V_104 [1/1] 3.04ns
-entry:408  %r_V_104 = add i52 %lhs_V_51, %rhs_V_203_24_cast ; <i52> [#uses=2]
+ST_27: r_V_104 [1/1] 2.68ns
+entry:380  %r_V_104 = add i38 %lhs_V_51, %rhs_V_173_24_cast ; <i38> [#uses=2]
 
-ST_27: yo_V_6 [1/1] 0.00ns
-entry:409  %yo_V_6 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_104, i32 20, i32 51) ; <i32> [#uses=2]
+ST_27: yo_V_20 [1/1] 0.00ns
+entry:381  %yo_V_20 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_104, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_27: tmp_96 [1/1] 0.00ns
-entry:410  %tmp_96 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_104, i32 51) ; <i1> [#uses=2]
+ST_27: tmp_89 [1/1] 0.00ns
+entry:382  %tmp_89 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_104, i32 37) ; <i1> [#uses=2]
 
 
- <State 28>: 6.85ns
+ <State 28>: 6.49ns
 ST_28: mf53 [1/1] 2.44ns
-entry:411  %mf53 = sub i32 0, %yo_V_6                      ; <i32> [#uses=1]
+entry:383  %mf53 = sub i32 0, %yo_V_20                     ; <i32> [#uses=1]
 
 ST_28: r_V_105 [1/1] 1.37ns
-entry:412  %r_V_105 = select i1 %tmp_96, i32 0, i32 %mf53  ; <i32> [#uses=1]
+entry:384  %r_V_105 = select i1 %tmp_89, i32 0, i32 %mf53  ; <i32> [#uses=1]
 
 ST_28: lhs_V_52 [1/1] 0.00ns
-entry:413  %lhs_V_52 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_6, i20 0) ; <i52> [#uses=1]
+entry:385  %lhs_V_52 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_20, i6 0) ; <i38> [#uses=1]
 
 ST_28: rhs_V2_25_cast [1/1] 0.00ns
-entry:414  %rhs_V2_25_cast = sext i32 %r_V_105 to i52      ; <i52> [#uses=1]
+entry:386  %rhs_V2_25_cast = sext i32 %r_V_105 to i38      ; <i38> [#uses=1]
 
-ST_28: r_V_106 [1/1] 3.04ns
-entry:415  %r_V_106 = sub i52 %lhs_V_52, %rhs_V2_25_cast   ; <i52> [#uses=1]
+ST_28: r_V_106 [1/1] 2.68ns
+entry:387  %r_V_106 = sub i38 %lhs_V_52, %rhs_V2_25_cast   ; <i38> [#uses=1]
 
-ST_28: x_iteration_V_7 [1/1] 0.00ns
-entry:416  %x_iteration_V_7 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_106, i32 20, i32 51) ; <i32> [#uses=2]
+ST_28: x_iteration_V_21 [1/1] 0.00ns
+entry:388  %x_iteration_V_21 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_106, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_28: OP1_V_53_cast [1/1] 0.00ns
-entry:417  %OP1_V_53_cast = sext i32 %x_iteration_V_6 to i33 ; <i33> [#uses=1]
+entry:389  %OP1_V_53_cast = sext i32 %x_iteration_V_20 to i33 ; <i33> [#uses=1]
 
 ST_28: mf54 [1/1] 2.44ns
-entry:418  %mf54 = sub i33 0, %OP1_V_53_cast               ; <i33> [#uses=1]
+entry:390  %mf54 = sub i33 0, %OP1_V_53_cast               ; <i33> [#uses=1]
 
 ST_28: r_V_107 [1/1] 1.37ns
-entry:419  %r_V_107 = select i1 %tmp_96, i33 0, i33 %mf54  ; <i33> [#uses=1]
+entry:391  %r_V_107 = select i1 %tmp_89, i33 0, i33 %mf54  ; <i33> [#uses=1]
 
 ST_28: lhs_V_53 [1/1] 0.00ns
-entry:420  %lhs_V_53 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_6, i20 0) ; <i52> [#uses=1]
+entry:392  %lhs_V_53 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_20, i6 0) ; <i38> [#uses=1]
 
-ST_28: rhs_V_203_25_cast [1/1] 0.00ns
-entry:421  %rhs_V_203_25_cast = sext i33 %r_V_107 to i52   ; <i52> [#uses=1]
+ST_28: rhs_V_173_25_cast [1/1] 0.00ns
+entry:393  %rhs_V_173_25_cast = sext i33 %r_V_107 to i38   ; <i38> [#uses=1]
 
-ST_28: r_V_108 [1/1] 3.04ns
-entry:422  %r_V_108 = add i52 %lhs_V_53, %rhs_V_203_25_cast ; <i52> [#uses=2]
+ST_28: r_V_108 [1/1] 2.68ns
+entry:394  %r_V_108 = add i38 %lhs_V_53, %rhs_V_173_25_cast ; <i38> [#uses=2]
 
-ST_28: yo_V_7 [1/1] 0.00ns
-entry:423  %yo_V_7 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_108, i32 20, i32 51) ; <i32> [#uses=2]
+ST_28: yo_V_21 [1/1] 0.00ns
+entry:395  %yo_V_21 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_108, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_28: tmp_97 [1/1] 0.00ns
-entry:424  %tmp_97 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_108, i32 51) ; <i1> [#uses=2]
+ST_28: tmp_90 [1/1] 0.00ns
+entry:396  %tmp_90 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_108, i32 37) ; <i1> [#uses=2]
 
 
- <State 29>: 6.85ns
+ <State 29>: 6.49ns
 ST_29: mf55 [1/1] 2.44ns
-entry:425  %mf55 = sub i32 0, %yo_V_7                      ; <i32> [#uses=1]
+entry:397  %mf55 = sub i32 0, %yo_V_21                     ; <i32> [#uses=1]
 
 ST_29: r_V_109 [1/1] 1.37ns
-entry:426  %r_V_109 = select i1 %tmp_97, i32 0, i32 %mf55  ; <i32> [#uses=1]
+entry:398  %r_V_109 = select i1 %tmp_90, i32 0, i32 %mf55  ; <i32> [#uses=1]
 
 ST_29: lhs_V_54 [1/1] 0.00ns
-entry:427  %lhs_V_54 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_7, i20 0) ; <i52> [#uses=1]
+entry:399  %lhs_V_54 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_21, i6 0) ; <i38> [#uses=1]
 
 ST_29: rhs_V2_26_cast [1/1] 0.00ns
-entry:428  %rhs_V2_26_cast = sext i32 %r_V_109 to i52      ; <i52> [#uses=1]
+entry:400  %rhs_V2_26_cast = sext i32 %r_V_109 to i38      ; <i38> [#uses=1]
 
-ST_29: r_V_110 [1/1] 3.04ns
-entry:429  %r_V_110 = sub i52 %lhs_V_54, %rhs_V2_26_cast   ; <i52> [#uses=1]
+ST_29: r_V_110 [1/1] 2.68ns
+entry:401  %r_V_110 = sub i38 %lhs_V_54, %rhs_V2_26_cast   ; <i38> [#uses=1]
 
-ST_29: x_iteration_V_8 [1/1] 0.00ns
-entry:430  %x_iteration_V_8 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_110, i32 20, i32 51) ; <i32> [#uses=2]
+ST_29: x_iteration_V_22 [1/1] 0.00ns
+entry:402  %x_iteration_V_22 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_110, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_29: OP1_V_55_cast [1/1] 0.00ns
-entry:431  %OP1_V_55_cast = sext i32 %x_iteration_V_7 to i33 ; <i33> [#uses=1]
+entry:403  %OP1_V_55_cast = sext i32 %x_iteration_V_21 to i33 ; <i33> [#uses=1]
 
 ST_29: mf56 [1/1] 2.44ns
-entry:432  %mf56 = sub i33 0, %OP1_V_55_cast               ; <i33> [#uses=1]
+entry:404  %mf56 = sub i33 0, %OP1_V_55_cast               ; <i33> [#uses=1]
 
 ST_29: r_V_111 [1/1] 1.37ns
-entry:433  %r_V_111 = select i1 %tmp_97, i33 0, i33 %mf56  ; <i33> [#uses=1]
+entry:405  %r_V_111 = select i1 %tmp_90, i33 0, i33 %mf56  ; <i33> [#uses=1]
 
 ST_29: lhs_V_55 [1/1] 0.00ns
-entry:434  %lhs_V_55 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_7, i20 0) ; <i52> [#uses=1]
+entry:406  %lhs_V_55 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_21, i6 0) ; <i38> [#uses=1]
 
-ST_29: rhs_V_203_26_cast [1/1] 0.00ns
-entry:435  %rhs_V_203_26_cast = sext i33 %r_V_111 to i52   ; <i52> [#uses=1]
+ST_29: rhs_V_173_26_cast [1/1] 0.00ns
+entry:407  %rhs_V_173_26_cast = sext i33 %r_V_111 to i38   ; <i38> [#uses=1]
 
-ST_29: r_V_112 [1/1] 3.04ns
-entry:436  %r_V_112 = add i52 %lhs_V_55, %rhs_V_203_26_cast ; <i52> [#uses=2]
+ST_29: r_V_112 [1/1] 2.68ns
+entry:408  %r_V_112 = add i38 %lhs_V_55, %rhs_V_173_26_cast ; <i38> [#uses=2]
 
-ST_29: yo_V_8 [1/1] 0.00ns
-entry:437  %yo_V_8 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_112, i32 20, i32 51) ; <i32> [#uses=2]
+ST_29: yo_V_22 [1/1] 0.00ns
+entry:409  %yo_V_22 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_112, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_29: tmp_98 [1/1] 0.00ns
-entry:438  %tmp_98 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_112, i32 51) ; <i1> [#uses=2]
+ST_29: tmp_91 [1/1] 0.00ns
+entry:410  %tmp_91 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_112, i32 37) ; <i1> [#uses=2]
 
 
- <State 30>: 6.85ns
+ <State 30>: 6.49ns
 ST_30: mf57 [1/1] 2.44ns
-entry:439  %mf57 = sub i32 0, %yo_V_8                      ; <i32> [#uses=1]
+entry:411  %mf57 = sub i32 0, %yo_V_22                     ; <i32> [#uses=1]
 
 ST_30: r_V_113 [1/1] 1.37ns
-entry:440  %r_V_113 = select i1 %tmp_98, i32 0, i32 %mf57  ; <i32> [#uses=1]
+entry:412  %r_V_113 = select i1 %tmp_91, i32 0, i32 %mf57  ; <i32> [#uses=1]
 
 ST_30: lhs_V_56 [1/1] 0.00ns
-entry:441  %lhs_V_56 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_8, i20 0) ; <i52> [#uses=1]
+entry:413  %lhs_V_56 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_22, i6 0) ; <i38> [#uses=1]
 
 ST_30: rhs_V2_27_cast [1/1] 0.00ns
-entry:442  %rhs_V2_27_cast = sext i32 %r_V_113 to i52      ; <i52> [#uses=1]
+entry:414  %rhs_V2_27_cast = sext i32 %r_V_113 to i38      ; <i38> [#uses=1]
 
-ST_30: r_V_114 [1/1] 3.04ns
-entry:443  %r_V_114 = sub i52 %lhs_V_56, %rhs_V2_27_cast   ; <i52> [#uses=1]
+ST_30: r_V_114 [1/1] 2.68ns
+entry:415  %r_V_114 = sub i38 %lhs_V_56, %rhs_V2_27_cast   ; <i38> [#uses=1]
 
-ST_30: x_iteration_V_9 [1/1] 0.00ns
-entry:444  %x_iteration_V_9 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_114, i32 20, i32 51) ; <i32> [#uses=2]
+ST_30: x_iteration_V_23 [1/1] 0.00ns
+entry:416  %x_iteration_V_23 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_114, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_30: OP1_V_57_cast [1/1] 0.00ns
-entry:445  %OP1_V_57_cast = sext i32 %x_iteration_V_8 to i33 ; <i33> [#uses=1]
+entry:417  %OP1_V_57_cast = sext i32 %x_iteration_V_22 to i33 ; <i33> [#uses=1]
 
 ST_30: mf58 [1/1] 2.44ns
-entry:446  %mf58 = sub i33 0, %OP1_V_57_cast               ; <i33> [#uses=1]
+entry:418  %mf58 = sub i33 0, %OP1_V_57_cast               ; <i33> [#uses=1]
 
 ST_30: r_V_115 [1/1] 1.37ns
-entry:447  %r_V_115 = select i1 %tmp_98, i33 0, i33 %mf58  ; <i33> [#uses=1]
+entry:419  %r_V_115 = select i1 %tmp_91, i33 0, i33 %mf58  ; <i33> [#uses=1]
 
 ST_30: lhs_V_57 [1/1] 0.00ns
-entry:448  %lhs_V_57 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_8, i20 0) ; <i52> [#uses=1]
+entry:420  %lhs_V_57 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_22, i6 0) ; <i38> [#uses=1]
 
-ST_30: rhs_V_203_27_cast [1/1] 0.00ns
-entry:449  %rhs_V_203_27_cast = sext i33 %r_V_115 to i52   ; <i52> [#uses=1]
+ST_30: rhs_V_173_27_cast [1/1] 0.00ns
+entry:421  %rhs_V_173_27_cast = sext i33 %r_V_115 to i38   ; <i38> [#uses=1]
 
-ST_30: r_V_116 [1/1] 3.04ns
-entry:450  %r_V_116 = add i52 %lhs_V_57, %rhs_V_203_27_cast ; <i52> [#uses=2]
+ST_30: r_V_116 [1/1] 2.68ns
+entry:422  %r_V_116 = add i38 %lhs_V_57, %rhs_V_173_27_cast ; <i38> [#uses=2]
 
-ST_30: yo_V_9 [1/1] 0.00ns
-entry:451  %yo_V_9 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_116, i32 20, i32 51) ; <i32> [#uses=2]
+ST_30: yo_V_23 [1/1] 0.00ns
+entry:423  %yo_V_23 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_116, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_30: tmp_99 [1/1] 0.00ns
-entry:452  %tmp_99 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_116, i32 51) ; <i1> [#uses=2]
+ST_30: tmp_92 [1/1] 0.00ns
+entry:424  %tmp_92 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_116, i32 37) ; <i1> [#uses=2]
 
 
- <State 31>: 6.85ns
+ <State 31>: 6.49ns
 ST_31: mf59 [1/1] 2.44ns
-entry:453  %mf59 = sub i32 0, %yo_V_9                      ; <i32> [#uses=1]
+entry:425  %mf59 = sub i32 0, %yo_V_23                     ; <i32> [#uses=1]
 
 ST_31: r_V_117 [1/1] 1.37ns
-entry:454  %r_V_117 = select i1 %tmp_99, i32 0, i32 %mf59  ; <i32> [#uses=1]
+entry:426  %r_V_117 = select i1 %tmp_92, i32 0, i32 %mf59  ; <i32> [#uses=1]
 
 ST_31: lhs_V_58 [1/1] 0.00ns
-entry:455  %lhs_V_58 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_9, i20 0) ; <i52> [#uses=1]
+entry:427  %lhs_V_58 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_23, i6 0) ; <i38> [#uses=1]
 
 ST_31: rhs_V2_28_cast [1/1] 0.00ns
-entry:456  %rhs_V2_28_cast = sext i32 %r_V_117 to i52      ; <i52> [#uses=1]
+entry:428  %rhs_V2_28_cast = sext i32 %r_V_117 to i38      ; <i38> [#uses=1]
 
-ST_31: r_V_118 [1/1] 3.04ns
-entry:457  %r_V_118 = sub i52 %lhs_V_58, %rhs_V2_28_cast   ; <i52> [#uses=1]
+ST_31: r_V_118 [1/1] 2.68ns
+entry:429  %r_V_118 = sub i38 %lhs_V_58, %rhs_V2_28_cast   ; <i38> [#uses=1]
 
-ST_31: x_iteration_V_10 [1/1] 0.00ns
-entry:458  %x_iteration_V_10 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_118, i32 20, i32 51) ; <i32> [#uses=2]
+ST_31: x_iteration_V_24 [1/1] 0.00ns
+entry:430  %x_iteration_V_24 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_118, i32 6, i32 37) ; <i32> [#uses=2]
 
 ST_31: OP1_V_59_cast [1/1] 0.00ns
-entry:459  %OP1_V_59_cast = sext i32 %x_iteration_V_9 to i33 ; <i33> [#uses=1]
+entry:431  %OP1_V_59_cast = sext i32 %x_iteration_V_23 to i33 ; <i33> [#uses=1]
 
 ST_31: mf60 [1/1] 2.44ns
-entry:460  %mf60 = sub i33 0, %OP1_V_59_cast               ; <i33> [#uses=1]
+entry:432  %mf60 = sub i33 0, %OP1_V_59_cast               ; <i33> [#uses=1]
 
 ST_31: r_V_119 [1/1] 1.37ns
-entry:461  %r_V_119 = select i1 %tmp_99, i33 0, i33 %mf60  ; <i33> [#uses=1]
+entry:433  %r_V_119 = select i1 %tmp_92, i33 0, i33 %mf60  ; <i33> [#uses=1]
 
 ST_31: lhs_V_59 [1/1] 0.00ns
-entry:462  %lhs_V_59 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_9, i20 0) ; <i52> [#uses=1]
+entry:434  %lhs_V_59 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_23, i6 0) ; <i38> [#uses=1]
 
-ST_31: rhs_V_203_28_cast [1/1] 0.00ns
-entry:463  %rhs_V_203_28_cast = sext i33 %r_V_119 to i52   ; <i52> [#uses=1]
+ST_31: rhs_V_173_28_cast [1/1] 0.00ns
+entry:435  %rhs_V_173_28_cast = sext i33 %r_V_119 to i38   ; <i38> [#uses=1]
 
-ST_31: r_V_120 [1/1] 3.04ns
-entry:464  %r_V_120 = add i52 %lhs_V_59, %rhs_V_203_28_cast ; <i52> [#uses=2]
+ST_31: r_V_120 [1/1] 2.68ns
+entry:436  %r_V_120 = add i38 %lhs_V_59, %rhs_V_173_28_cast ; <i38> [#uses=2]
 
-ST_31: yo_V_10 [1/1] 0.00ns
-entry:465  %yo_V_10 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_120, i32 20, i32 51) ; <i32> [#uses=2]
+ST_31: yo_V_24 [1/1] 0.00ns
+entry:437  %yo_V_24 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_120, i32 6, i32 37) ; <i32> [#uses=2]
 
-ST_31: tmp_100 [1/1] 0.00ns
-entry:466  %tmp_100 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_120, i32 51) ; <i1> [#uses=2]
+ST_31: tmp_93 [1/1] 0.00ns
+entry:438  %tmp_93 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_120, i32 37) ; <i1> [#uses=2]
 
 
- <State 32>: 6.85ns
+ <State 32>: 6.49ns
 ST_32: mf61 [1/1] 2.44ns
-entry:467  %mf61 = sub i32 0, %yo_V_10                     ; <i32> [#uses=1]
+entry:439  %mf61 = sub i32 0, %yo_V_24                     ; <i32> [#uses=1]
 
 ST_32: r_V_121 [1/1] 1.37ns
-entry:468  %r_V_121 = select i1 %tmp_100, i32 0, i32 %mf61 ; <i32> [#uses=1]
+entry:440  %r_V_121 = select i1 %tmp_93, i32 0, i32 %mf61  ; <i32> [#uses=1]
 
 ST_32: lhs_V_60 [1/1] 0.00ns
-entry:469  %lhs_V_60 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %x_iteration_V_10, i20 0) ; <i52> [#uses=1]
+entry:441  %lhs_V_60 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %x_iteration_V_24, i6 0) ; <i38> [#uses=1]
 
 ST_32: rhs_V2_29_cast [1/1] 0.00ns
-entry:470  %rhs_V2_29_cast = sext i32 %r_V_121 to i52      ; <i52> [#uses=1]
+entry:442  %rhs_V2_29_cast = sext i32 %r_V_121 to i38      ; <i38> [#uses=1]
 
-ST_32: r_V_122 [1/1] 3.04ns
-entry:471  %r_V_122 = sub i52 %lhs_V_60, %rhs_V2_29_cast   ; <i52> [#uses=1]
+ST_32: r_V_122 [1/1] 2.68ns
+entry:443  %r_V_122 = sub i38 %lhs_V_60, %rhs_V2_29_cast   ; <i38> [#uses=1]
 
 ST_32: OP1_V_61_cast [1/1] 0.00ns
-entry:472  %OP1_V_61_cast = sext i32 %x_iteration_V_10 to i33 ; <i33> [#uses=1]
+entry:444  %OP1_V_61_cast = sext i32 %x_iteration_V_24 to i33 ; <i33> [#uses=1]
 
 ST_32: mf62 [1/1] 2.44ns
-entry:473  %mf62 = sub i33 0, %OP1_V_61_cast               ; <i33> [#uses=1]
+entry:445  %mf62 = sub i33 0, %OP1_V_61_cast               ; <i33> [#uses=1]
 
 ST_32: r_V_123 [1/1] 1.37ns
-entry:474  %r_V_123 = select i1 %tmp_100, i33 0, i33 %mf62 ; <i33> [#uses=1]
+entry:446  %r_V_123 = select i1 %tmp_93, i33 0, i33 %mf62  ; <i33> [#uses=1]
 
 ST_32: lhs_V_61 [1/1] 0.00ns
-entry:475  %lhs_V_61 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %yo_V_10, i20 0) ; <i52> [#uses=1]
+entry:447  %lhs_V_61 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %yo_V_24, i6 0) ; <i38> [#uses=1]
 
-ST_32: rhs_V_203_29_cast [1/1] 0.00ns
-entry:476  %rhs_V_203_29_cast = sext i33 %r_V_123 to i52   ; <i52> [#uses=1]
+ST_32: rhs_V_173_29_cast [1/1] 0.00ns
+entry:448  %rhs_V_173_29_cast = sext i33 %r_V_123 to i38   ; <i38> [#uses=1]
 
-ST_32: r_V_124 [1/1] 3.04ns
-entry:477  %r_V_124 = add i52 %lhs_V_61, %rhs_V_203_29_cast ; <i52> [#uses=2]
+ST_32: r_V_124 [1/1] 2.68ns
+entry:449  %r_V_124 = add i38 %lhs_V_61, %rhs_V_173_29_cast ; <i38> [#uses=2]
 
-ST_32: yo_V_11 [1/1] 0.00ns
-entry:478  %yo_V_11 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_124, i32 20, i32 51) ; <i32> [#uses=1]
+ST_32: yo_V_25 [1/1] 0.00ns
+entry:450  %yo_V_25 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_124, i32 6, i32 37) ; <i32> [#uses=1]
 
-ST_32: tmp_102 [1/1] 0.00ns
-entry:479  %tmp_102 = call i1 @_ssdm_op_BitSelect.i1.i52.i32(i52 %r_V_124, i32 51) ; <i1> [#uses=1]
+ST_32: tmp_94 [1/1] 0.00ns
+entry:451  %tmp_94 = call i1 @_ssdm_op_BitSelect.i1.i38.i32(i38 %r_V_124, i32 37) ; <i1> [#uses=1]
 
-ST_32: tmp_40 [1/1] 0.00ns
-entry:482  %tmp_40 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_122, i32 20, i32 51) ; <i32> [#uses=1]
+ST_32: tmp_12 [1/1] 0.00ns
+entry:454  %tmp_12 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_122, i32 6, i32 37) ; <i32> [#uses=1]
 
 
- <State 33>: 6.85ns
+ <State 33>: 6.49ns
 ST_33: mf63 [1/1] 2.44ns
-entry:480  %mf63 = sub i32 0, %yo_V_11                     ; <i32> [#uses=1]
+entry:452  %mf63 = sub i32 0, %yo_V_25                     ; <i32> [#uses=1]
 
 ST_33: r_V_125 [1/1] 1.37ns
-entry:481  %r_V_125 = select i1 %tmp_102, i32 0, i32 %mf63 ; <i32> [#uses=1]
+entry:453  %r_V_125 = select i1 %tmp_94, i32 0, i32 %mf63  ; <i32> [#uses=1]
 
 ST_33: lhs_V_62 [1/1] 0.00ns
-entry:483  %lhs_V_62 = call i52 @_ssdm_op_BitConcatenate.i52.i32.i20(i32 %tmp_40, i20 0) ; <i52> [#uses=1]
+entry:455  %lhs_V_62 = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %tmp_12, i6 0) ; <i38> [#uses=1]
 
 ST_33: rhs_V2_30_cast [1/1] 0.00ns
-entry:484  %rhs_V2_30_cast = sext i32 %r_V_125 to i52      ; <i52> [#uses=1]
+entry:456  %rhs_V2_30_cast = sext i32 %r_V_125 to i38      ; <i38> [#uses=1]
 
-ST_33: r_V_126 [1/1] 3.04ns
-entry:485  %r_V_126 = sub i52 %lhs_V_62, %rhs_V2_30_cast   ; <i52> [#uses=1]
+ST_33: r_V_126 [1/1] 2.68ns
+entry:457  %r_V_126 = sub i38 %lhs_V_62, %rhs_V2_30_cast   ; <i38> [#uses=1]
 
-ST_33: x_iteration_V_11 [1/1] 0.00ns
-entry:486  %x_iteration_V_11 = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_126, i32 20, i32 51) ; <i32> [#uses=1]
+ST_33: x_iteration_V_25 [1/1] 0.00ns
+entry:458  %x_iteration_V_25 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_126, i32 6, i32 37) ; <i32> [#uses=1]
 
 
  <State 34>: 6.36ns
 ST_34: OP1_V_63_cast [1/1] 0.00ns
-entry:487  %OP1_V_63_cast = sext i32 %x_iteration_V_11 to i52 ; <i52> [#uses=1]
+entry:459  %OP1_V_63_cast = sext i32 %x_iteration_V_25 to i38 ; <i38> [#uses=1]
 
 ST_34: r_V_127 [3/3] 6.36ns
-entry:488  %r_V_127 = mul i52 %OP1_V_63_cast, 636750       ; <i52> [#uses=1]
+entry:460  %r_V_127 = mul i38 %OP1_V_63_cast, 38           ; <i38> [#uses=1]
 
 
  <State 35>: 6.36ns
 ST_35: r_V_127 [2/3] 6.36ns
-entry:488  %r_V_127 = mul i52 %OP1_V_63_cast, 636750       ; <i52> [#uses=1]
+entry:460  %r_V_127 = mul i38 %OP1_V_63_cast, 38           ; <i38> [#uses=1]
 
 
  <State 36>: 6.36ns
 ST_36: r_V_127 [1/3] 6.36ns
-entry:488  %r_V_127 = mul i52 %OP1_V_63_cast, 636750       ; <i52> [#uses=1]
+entry:460  %r_V_127 = mul i38 %OP1_V_63_cast, 38           ; <i38> [#uses=1]
 
 ST_36: ssdm_int_32_true_V_write_assign [1/1] 0.00ns
-entry:489  %ssdm_int_32_true_V_write_assign = call i32 @_ssdm_op_PartSelect.i32.i52.i32.i32(i52 %r_V_127, i32 20, i32 51) ; <i32> [#uses=1]
+entry:461  %ssdm_int_32_true_V_write_assign = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_127, i32 6, i32 37) ; <i32> [#uses=1]
 
-ST_36: stg_529 [1/1] 0.00ns
-entry:490  ret i32 %ssdm_int_32_true_V_write_assign
+ST_36: stg_501 [1/1] 0.00ns
+entry:462  ret i32 %ssdm_int_32_true_V_write_assign
 
 
 

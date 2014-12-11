@@ -1,0 +1,940 @@
+
+
+================================================================
+== Vivado HLS Report for 'interp1'
+================================================================
+* Date:           Wed Dec 10 22:44:38 2014
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        hls.prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.75|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  639|  639|  639|  639|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  370|  370|        50|          1|          1|   322|    yes   |
+        |- Loop 2  |  264|  264|        10|          1|          1|   256|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 50
+  * Pipeline-1: initiation interval (II) = 1, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 64
+* Pipeline: 2
+  Pipeline-0: II = 1, D = 50, States = { 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 }
+  Pipeline-1: II = 1, D = 10, States = { 54 55 56 57 58 59 60 61 62 63 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	52  / (exitcond)
+	3  / (!exitcond)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	2  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	64  / (exitcond2)
+	55  / (!exitcond2)
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	54  / true
+64 --> 
+* FSM state operations: 
+
+ <State 1>: 1.39ns
+ST_1: dx_V [1/1] 0.00ns
+entry:0  %dx_V = alloca [323 x i32], align 4             ; <[323 x i32]*> [#uses=3]
+
+ST_1: dy_V [1/1] 0.00ns
+entry:1  %dy_V = alloca [323 x i32], align 4             ; <[323 x i32]*> [#uses=3]
+
+ST_1: slope_V [1/1] 0.00ns
+entry:2  %slope_V = alloca [323 x i32], align 4          ; <[323 x i32]*> [#uses=4]
+
+ST_1: intercept_V [1/1] 0.00ns
+entry:3  %intercept_V = alloca [323 x i32], align 4      ; <[323 x i32]*> [#uses=4]
+
+ST_1: stg_69 [1/1] 1.39ns
+entry:4  br label %bb22
+
+
+ <State 2>: 4.23ns
+ST_2: i [1/1] 0.00ns
+bb22:0  %i = phi i9 [ 0, %entry ], [ %i_2, %bb12 ]      ; <i9> [#uses=3]
+
+ST_2: exitcond [1/1] 2.03ns
+bb22:1  %exitcond = icmp eq i9 %i, -190                 ; <i1> [#uses=1]
+
+ST_2: i_2 [1/1] 1.84ns
+bb22:2  %i_2 = add i9 %i, 1                             ; <i9> [#uses=2]
+
+ST_2: stg_73 [1/1] 0.00ns
+bb22:3  br i1 %exitcond, label %bb23, label %bb12
+
+ST_2: tmp [1/1] 0.00ns
+bb12:3  %tmp = zext i9 %i to i64                        ; <i64> [#uses=6]
+
+ST_2: tmp_s [1/1] 0.00ns
+bb12:4  %tmp_s = zext i9 %i_2 to i64                    ; <i64> [#uses=2]
+
+ST_2: index_input_V_addr [1/1] 0.00ns
+bb12:5  %index_input_V_addr = getelementptr [323 x i32]* @index_input_V, i64 0, i64 %tmp_s ; <i32*> [#uses=1]
+
+ST_2: p_Val2_s [2/2] 2.39ns
+bb12:6  %p_Val2_s = load i32* %index_input_V_addr, align 4 ; <i32> [#uses=1]
+
+ST_2: index_input_V_addr_1 [1/1] 0.00ns
+bb12:7  %index_input_V_addr_1 = getelementptr [323 x i32]* @index_input_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_2: p_Val2_275 [2/2] 2.39ns
+bb12:8  %p_Val2_275 = load i32* %index_input_V_addr_1, align 4 ; <i32> [#uses=2]
+
+ST_2: transfer_array_V_addr [1/1] 0.00ns
+bb12:12  %transfer_array_V_addr = getelementptr [323 x i32]* @transfer_array_V, i64 0, i64 %tmp_s ; <i32*> [#uses=1]
+
+ST_2: p_Val2_276 [2/2] 2.39ns
+bb12:13  %p_Val2_276 = load i32* %transfer_array_V_addr, align 4 ; <i32> [#uses=1]
+
+ST_2: transfer_array_V_addr_1 [1/1] 0.00ns
+bb12:14  %transfer_array_V_addr_1 = getelementptr [323 x i32]* @transfer_array_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_2: p_Val2_277 [2/2] 2.39ns
+bb12:15  %p_Val2_277 = load i32* %transfer_array_V_addr_1, align 4 ; <i32> [#uses=2]
+
+
+ <State 3>: 2.39ns
+ST_3: p_Val2_s [1/2] 2.39ns
+bb12:6  %p_Val2_s = load i32* %index_input_V_addr, align 4 ; <i32> [#uses=1]
+
+ST_3: p_Val2_275 [1/2] 2.39ns
+bb12:8  %p_Val2_275 = load i32* %index_input_V_addr_1, align 4 ; <i32> [#uses=2]
+
+ST_3: p_Val2_276 [1/2] 2.39ns
+bb12:13  %p_Val2_276 = load i32* %transfer_array_V_addr, align 4 ; <i32> [#uses=1]
+
+ST_3: p_Val2_277 [1/2] 2.39ns
+bb12:15  %p_Val2_277 = load i32* %transfer_array_V_addr_1, align 4 ; <i32> [#uses=2]
+
+
+ <State 4>: 7.34ns
+ST_4: r_V [1/1] 2.44ns
+bb12:9  %r_V = sub i32 %p_Val2_s, %p_Val2_275           ; <i32> [#uses=2]
+
+ST_4: dx_V_addr_2 [1/1] 0.00ns
+bb12:10  %dx_V_addr_2 = getelementptr [323 x i32]* %dx_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_4: stg_90 [1/1] 2.39ns
+bb12:11  store i32 %r_V, i32* %dx_V_addr_2, align 4
+
+ST_4: p_Val2_278 [1/1] 2.44ns
+bb12:16  %p_Val2_278 = sub i32 %p_Val2_276, %p_Val2_277  ; <i32> [#uses=2]
+
+ST_4: dy_V_addr_2 [1/1] 0.00ns
+bb12:17  %dy_V_addr_2 = getelementptr [323 x i32]* %dy_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_4: stg_93 [1/1] 2.39ns
+bb12:18  store i32 %p_Val2_278, i32* %dy_V_addr_2, align 4
+
+ST_4: t_V [1/1] 0.00ns
+bb12:19  %t_V = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %p_Val2_278, i6 0) ; <i38> [#uses=1]
+
+ST_4: tmp_10 [1/1] 0.00ns
+bb12:20  %tmp_10 = sext i32 %r_V to i38                  ; <i38> [#uses=1]
+
+ST_4: tmp_11 [41/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 5>: 4.90ns
+ST_5: tmp_11 [40/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 6>: 4.90ns
+ST_6: tmp_11 [39/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 7>: 4.90ns
+ST_7: tmp_11 [38/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 8>: 4.90ns
+ST_8: tmp_11 [37/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 9>: 4.90ns
+ST_9: tmp_11 [36/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 10>: 4.90ns
+ST_10: tmp_11 [35/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 11>: 4.90ns
+ST_11: tmp_11 [34/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 12>: 4.90ns
+ST_12: tmp_11 [33/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 13>: 4.90ns
+ST_13: tmp_11 [32/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 14>: 4.90ns
+ST_14: tmp_11 [31/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 15>: 4.90ns
+ST_15: tmp_11 [30/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 16>: 4.90ns
+ST_16: tmp_11 [29/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 17>: 4.90ns
+ST_17: tmp_11 [28/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 18>: 4.90ns
+ST_18: tmp_11 [27/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 19>: 4.90ns
+ST_19: tmp_11 [26/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 20>: 4.90ns
+ST_20: tmp_11 [25/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 21>: 4.90ns
+ST_21: tmp_11 [24/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 22>: 4.90ns
+ST_22: tmp_11 [23/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 23>: 4.90ns
+ST_23: tmp_11 [22/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 24>: 4.90ns
+ST_24: tmp_11 [21/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 25>: 4.90ns
+ST_25: tmp_11 [20/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 26>: 4.90ns
+ST_26: tmp_11 [19/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 27>: 4.90ns
+ST_27: tmp_11 [18/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 28>: 4.90ns
+ST_28: tmp_11 [17/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 29>: 4.90ns
+ST_29: tmp_11 [16/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 30>: 4.90ns
+ST_30: tmp_11 [15/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 31>: 4.90ns
+ST_31: tmp_11 [14/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 32>: 4.90ns
+ST_32: tmp_11 [13/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 33>: 4.90ns
+ST_33: tmp_11 [12/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 34>: 4.90ns
+ST_34: tmp_11 [11/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 35>: 4.90ns
+ST_35: tmp_11 [10/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 36>: 4.90ns
+ST_36: tmp_11 [9/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 37>: 4.90ns
+ST_37: tmp_11 [8/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 38>: 4.90ns
+ST_38: tmp_11 [7/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 39>: 4.90ns
+ST_39: tmp_11 [6/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 40>: 4.90ns
+ST_40: tmp_11 [5/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 41>: 4.90ns
+ST_41: tmp_11 [4/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 42>: 4.90ns
+ST_42: tmp_11 [3/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 43>: 4.90ns
+ST_43: tmp_11 [2/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+
+ <State 44>: 4.90ns
+ST_44: tmp_11 [1/41] 4.90ns
+bb12:21  %tmp_11 = sdiv i38 %t_V, %tmp_10                ; <i38> [#uses=1]
+
+ST_44: tmp_95 [1/1] 0.00ns
+bb12:22  %tmp_95 = trunc i38 %tmp_11 to i32              ; <i32> [#uses=2]
+
+
+ <State 45>: 6.36ns
+ST_45: slope_V_addr_2 [1/1] 0.00ns
+bb12:23  %slope_V_addr_2 = getelementptr [323 x i32]* %slope_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_45: stg_139 [1/1] 2.39ns
+bb12:24  store i32 %tmp_95, i32* %slope_V_addr_2, align 4
+
+ST_45: tmp_14 [1/1] 0.00ns
+bb12:25  %tmp_14 = sext i32 %tmp_95 to i38               ; <i38> [#uses=1]
+
+ST_45: tmp_19 [1/1] 0.00ns
+bb12:26  %tmp_19 = sext i32 %p_Val2_275 to i38           ; <i38> [#uses=1]
+
+ST_45: rhs_V_cast [6/6] 6.36ns
+bb12:28  %rhs_V_cast = mul i38 %tmp_14, %tmp_19          ; <i38> [#uses=1]
+
+
+ <State 46>: 6.36ns
+ST_46: rhs_V_cast [5/6] 6.36ns
+bb12:28  %rhs_V_cast = mul i38 %tmp_14, %tmp_19          ; <i38> [#uses=1]
+
+
+ <State 47>: 6.36ns
+ST_47: rhs_V_cast [4/6] 6.36ns
+bb12:28  %rhs_V_cast = mul i38 %tmp_14, %tmp_19          ; <i38> [#uses=1]
+
+
+ <State 48>: 6.36ns
+ST_48: rhs_V_cast [3/6] 6.36ns
+bb12:28  %rhs_V_cast = mul i38 %tmp_14, %tmp_19          ; <i38> [#uses=1]
+
+
+ <State 49>: 6.36ns
+ST_49: rhs_V_cast [2/6] 6.36ns
+bb12:28  %rhs_V_cast = mul i38 %tmp_14, %tmp_19          ; <i38> [#uses=1]
+
+
+ <State 50>: 6.36ns
+ST_50: rhs_V_cast [1/6] 6.36ns
+bb12:28  %rhs_V_cast = mul i38 %tmp_14, %tmp_19          ; <i38> [#uses=1]
+
+
+ <State 51>: 5.07ns
+ST_51: empty [1/1] 0.00ns
+bb12:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 322, i64 322, i64 322) nounwind ; <i32> [#uses=0]
+
+ST_51: tmp_13 [1/1] 0.00ns
+bb12:1  %tmp_13 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str189) nounwind ; <i32> [#uses=1]
+
+ST_51: stg_150 [1/1] 0.00ns
+bb12:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str70) nounwind
+
+ST_51: lhs_V [1/1] 0.00ns
+bb12:27  %lhs_V = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %p_Val2_277, i6 0) ; <i38> [#uses=1]
+
+ST_51: r_V_132 [1/1] 2.68ns
+bb12:29  %r_V_132 = sub i38 %lhs_V, %rhs_V_cast          ; <i38> [#uses=1]
+
+ST_51: tmp_15 [1/1] 0.00ns
+bb12:30  %tmp_15 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_132, i32 6, i32 37) ; <i32> [#uses=1]
+
+ST_51: intercept_V_addr_2 [1/1] 0.00ns
+bb12:31  %intercept_V_addr_2 = getelementptr [323 x i32]* %intercept_V, i64 0, i64 %tmp ; <i32*> [#uses=1]
+
+ST_51: stg_155 [1/1] 2.39ns
+bb12:32  store i32 %tmp_15, i32* %intercept_V_addr_2, align 4
+
+ST_51: empty_85 [1/1] 0.00ns
+bb12:33  %empty_85 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str189, i32 %tmp_13) nounwind ; <i32> [#uses=0]
+
+ST_51: stg_157 [1/1] 0.00ns
+bb12:34  br label %bb22
+
+
+ <State 52>: 2.39ns
+ST_52: dx_V_addr [1/1] 0.00ns
+bb23:0  %dx_V_addr = getelementptr [323 x i32]* %dx_V, i64 0, i64 321 ; <i32*> [#uses=1]
+
+ST_52: dx_V_load [2/2] 2.39ns
+bb23:1  %dx_V_load = load i32* %dx_V_addr, align 4      ; <i32> [#uses=1]
+
+ST_52: dy_V_addr [1/1] 0.00ns
+bb23:4  %dy_V_addr = getelementptr [323 x i32]* %dy_V, i64 0, i64 321 ; <i32*> [#uses=1]
+
+ST_52: dy_V_load [2/2] 2.39ns
+bb23:5  %dy_V_load = load i32* %dy_V_addr, align 4      ; <i32> [#uses=1]
+
+ST_52: slope_V_addr [1/1] 0.00ns
+bb23:8  %slope_V_addr = getelementptr [323 x i32]* %slope_V, i64 0, i64 321 ; <i32*> [#uses=1]
+
+ST_52: slope_V_load [2/2] 2.39ns
+bb23:9  %slope_V_load = load i32* %slope_V_addr, align 4 ; <i32> [#uses=1]
+
+ST_52: intercept_V_addr [1/1] 0.00ns
+bb23:12  %intercept_V_addr = getelementptr [323 x i32]* %intercept_V, i64 0, i64 321 ; <i32*> [#uses=1]
+
+ST_52: intercept_V_load [2/2] 2.39ns
+bb23:13  %intercept_V_load = load i32* %intercept_V_addr, align 4 ; <i32> [#uses=1]
+
+
+ <State 53>: 4.78ns
+ST_53: dx_V_load [1/2] 2.39ns
+bb23:1  %dx_V_load = load i32* %dx_V_addr, align 4      ; <i32> [#uses=1]
+
+ST_53: dx_V_addr_1 [1/1] 0.00ns
+bb23:2  %dx_V_addr_1 = getelementptr [323 x i32]* %dx_V, i64 0, i64 322 ; <i32*> [#uses=1]
+
+ST_53: stg_168 [1/1] 2.39ns
+bb23:3  store i32 %dx_V_load, i32* %dx_V_addr_1, align 8
+
+ST_53: dy_V_load [1/2] 2.39ns
+bb23:5  %dy_V_load = load i32* %dy_V_addr, align 4      ; <i32> [#uses=1]
+
+ST_53: dy_V_addr_1 [1/1] 0.00ns
+bb23:6  %dy_V_addr_1 = getelementptr [323 x i32]* %dy_V, i64 0, i64 322 ; <i32*> [#uses=1]
+
+ST_53: stg_171 [1/1] 2.39ns
+bb23:7  store i32 %dy_V_load, i32* %dy_V_addr_1, align 8
+
+ST_53: slope_V_load [1/2] 2.39ns
+bb23:9  %slope_V_load = load i32* %slope_V_addr, align 4 ; <i32> [#uses=1]
+
+ST_53: slope_V_addr_1 [1/1] 0.00ns
+bb23:10  %slope_V_addr_1 = getelementptr [323 x i32]* %slope_V, i64 0, i64 322 ; <i32*> [#uses=1]
+
+ST_53: stg_174 [1/1] 2.39ns
+bb23:11  store i32 %slope_V_load, i32* %slope_V_addr_1, align 8
+
+ST_53: intercept_V_load [1/2] 2.39ns
+bb23:13  %intercept_V_load = load i32* %intercept_V_addr, align 4 ; <i32> [#uses=1]
+
+ST_53: intercept_V_addr_1 [1/1] 0.00ns
+bb23:14  %intercept_V_addr_1 = getelementptr [323 x i32]* %intercept_V, i64 0, i64 322 ; <i32*> [#uses=1]
+
+ST_53: stg_177 [1/1] 2.39ns
+bb23:15  store i32 %intercept_V_load, i32* %intercept_V_addr_1, align 8
+
+ST_53: stg_178 [1/1] 1.39ns
+bb23:16  br label %bb31
+
+
+ <State 54>: 2.39ns
+ST_54: i_3 [1/1] 0.00ns
+bb31:0  %i_3 = phi i9 [ 0, %bb23 ], [ %i_4, %bb26_ifconv ] ; <i9> [#uses=3]
+
+ST_54: exitcond2 [1/1] 2.03ns
+bb31:1  %exitcond2 = icmp eq i9 %i_3, -256              ; <i1> [#uses=1]
+
+ST_54: i_4 [1/1] 1.84ns
+bb31:2  %i_4 = add i9 %i_3, 1                           ; <i9> [#uses=1]
+
+ST_54: stg_182 [1/1] 0.00ns
+bb31:3  br i1 %exitcond2, label %return, label %bb26_ifconv
+
+ST_54: tmp_16 [1/1] 0.00ns
+bb26_ifconv:3  %tmp_16 = zext i9 %i_3 to i64                   ; <i64> [#uses=2]
+
+ST_54: index_output_V_addr [1/1] 0.00ns
+bb26_ifconv:4  %index_output_V_addr = getelementptr [256 x i32]* @index_output_V, i64 0, i64 %tmp_16 ; <i32*> [#uses=1]
+
+ST_54: p_Val2_280 [2/2] 2.39ns
+bb26_ifconv:5  %p_Val2_280 = load i32* %index_output_V_addr, align 4 ; <i32> [#uses=4]
+
+
+ <State 55>: 7.45ns
+ST_55: p_Val2_280 [1/2] 2.39ns
+bb26_ifconv:5  %p_Val2_280 = load i32* %index_output_V_addr, align 4 ; <i32> [#uses=4]
+
+ST_55: ret_V [1/1] 0.00ns
+bb26_ifconv:6  %ret_V = call i26 @_ssdm_op_PartSelect.i26.i32.i32.i32(i32 %p_Val2_280, i32 6, i32 31) ; <i26> [#uses=3]
+
+ST_55: tmp_96 [1/1] 0.00ns
+bb26_ifconv:7  %tmp_96 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_280, i32 31) ; <i1> [#uses=1]
+
+ST_55: tmp_97 [1/1] 0.00ns
+bb26_ifconv:8  %tmp_97 = trunc i32 %p_Val2_280 to i6           ; <i6> [#uses=1]
+
+ST_55: ret_V_1 [1/1] 2.32ns
+bb26_ifconv:9  %ret_V_1 = add nsw i26 %ret_V, 1                ; <i26> [#uses=1]
+
+ST_55: tmp_17 [1/1] 1.94ns
+bb26_ifconv:10  %tmp_17 = icmp eq i6 %tmp_97, 0                 ; <i1> [#uses=1]
+
+ST_55: p_s [1/1] 1.37ns
+bb26_ifconv:11  %p_s = select i1 %tmp_17, i26 %ret_V, i26 %ret_V_1 ; <i26> [#uses=1]
+
+ST_55: ret_V_2 [1/1] 1.37ns
+bb26_ifconv:12  %ret_V_2 = select i1 %tmp_96, i26 %p_s, i26 %ret_V ; <i26> [#uses=1]
+
+
+ <State 56>: 2.39ns
+ST_56: tmp_18 [1/1] 0.00ns
+bb26_ifconv:13  %tmp_18 = sext i26 %ret_V_2 to i64              ; <i64> [#uses=2]
+
+ST_56: slope_V_addr_3 [1/1] 0.00ns
+bb26_ifconv:14  %slope_V_addr_3 = getelementptr [323 x i32]* %slope_V, i64 0, i64 %tmp_18 ; <i32*> [#uses=1]
+
+ST_56: slope_V_load_1 [2/2] 2.39ns
+bb26_ifconv:15  %slope_V_load_1 = load i32* %slope_V_addr_3, align 4 ; <i32> [#uses=1]
+
+ST_56: intercept_V_addr_3 [1/1] 0.00ns
+bb26_ifconv:19  %intercept_V_addr_3 = getelementptr [323 x i32]* %intercept_V, i64 0, i64 %tmp_18 ; <i32*> [#uses=1]
+
+ST_56: p_Val2_281 [2/2] 2.39ns
+bb26_ifconv:20  %p_Val2_281 = load i32* %intercept_V_addr_3, align 4 ; <i32> [#uses=1]
+
+
+ <State 57>: 8.75ns
+ST_57: slope_V_load_1 [1/2] 2.39ns
+bb26_ifconv:15  %slope_V_load_1 = load i32* %slope_V_addr_3, align 4 ; <i32> [#uses=1]
+
+ST_57: tmp_22 [1/1] 0.00ns
+bb26_ifconv:16  %tmp_22 = sext i32 %p_Val2_280 to i38           ; <i38> [#uses=1]
+
+ST_57: tmp_23 [1/1] 0.00ns
+bb26_ifconv:17  %tmp_23 = sext i32 %slope_V_load_1 to i38       ; <i38> [#uses=1]
+
+ST_57: lhs_V_cast [6/6] 6.36ns
+bb26_ifconv:18  %lhs_V_cast = mul i38 %tmp_22, %tmp_23          ; <i38> [#uses=1]
+
+ST_57: p_Val2_281 [1/2] 2.39ns
+bb26_ifconv:20  %p_Val2_281 = load i32* %intercept_V_addr_3, align 4 ; <i32> [#uses=1]
+
+
+ <State 58>: 6.36ns
+ST_58: lhs_V_cast [5/6] 6.36ns
+bb26_ifconv:18  %lhs_V_cast = mul i38 %tmp_22, %tmp_23          ; <i38> [#uses=1]
+
+
+ <State 59>: 6.36ns
+ST_59: lhs_V_cast [4/6] 6.36ns
+bb26_ifconv:18  %lhs_V_cast = mul i38 %tmp_22, %tmp_23          ; <i38> [#uses=1]
+
+
+ <State 60>: 6.36ns
+ST_60: lhs_V_cast [3/6] 6.36ns
+bb26_ifconv:18  %lhs_V_cast = mul i38 %tmp_22, %tmp_23          ; <i38> [#uses=1]
+
+
+ <State 61>: 6.36ns
+ST_61: lhs_V_cast [2/6] 6.36ns
+bb26_ifconv:18  %lhs_V_cast = mul i38 %tmp_22, %tmp_23          ; <i38> [#uses=1]
+
+
+ <State 62>: 6.36ns
+ST_62: lhs_V_cast [1/6] 6.36ns
+bb26_ifconv:18  %lhs_V_cast = mul i38 %tmp_22, %tmp_23          ; <i38> [#uses=1]
+
+
+ <State 63>: 5.07ns
+ST_63: empty_86 [1/1] 0.00ns
+bb26_ifconv:0  %empty_86 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind ; <i32> [#uses=0]
+
+ST_63: tmp_20 [1/1] 0.00ns
+bb26_ifconv:1  %tmp_20 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str290) nounwind ; <i32> [#uses=1]
+
+ST_63: stg_211 [1/1] 0.00ns
+bb26_ifconv:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str70) nounwind
+
+ST_63: rhs_V [1/1] 0.00ns
+bb26_ifconv:21  %rhs_V = call i38 @_ssdm_op_BitConcatenate.i38.i32.i6(i32 %p_Val2_281, i6 0) ; <i38> [#uses=1]
+
+ST_63: r_V_133 [1/1] 2.68ns
+bb26_ifconv:22  %r_V_133 = add i38 %rhs_V, %lhs_V_cast          ; <i38> [#uses=1]
+
+ST_63: tmp_21 [1/1] 0.00ns
+bb26_ifconv:23  %tmp_21 = call i32 @_ssdm_op_PartSelect.i32.i38.i32.i32(i38 %r_V_133, i32 6, i32 37) ; <i32> [#uses=1]
+
+ST_63: output_realtime_V_addr [1/1] 0.00ns
+bb26_ifconv:24  %output_realtime_V_addr = getelementptr [256 x i32]* @output_realtime_V, i64 0, i64 %tmp_16 ; <i32*> [#uses=1]
+
+ST_63: stg_216 [1/1] 2.39ns
+bb26_ifconv:25  store i32 %tmp_21, i32* %output_realtime_V_addr, align 4
+
+ST_63: empty_87 [1/1] 0.00ns
+bb26_ifconv:26  %empty_87 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str290, i32 %tmp_20) nounwind ; <i32> [#uses=0]
+
+ST_63: stg_218 [1/1] 0.00ns
+bb26_ifconv:27  br label %bb31
+
+
+ <State 64>: 0.00ns
+ST_64: stg_219 [1/1] 0.00ns
+return:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

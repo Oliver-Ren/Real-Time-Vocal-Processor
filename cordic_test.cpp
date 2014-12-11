@@ -28,9 +28,9 @@ int main(int argc, char **argv)
 {   
     FILE *fp;
 
-    cos_sin_type s = 0; //sin output
-    cos_sin_type c = 0; //cos output
-    theta_type radian; //radian input
+    fixed_type s = 0; //sin output
+    fixed_type c = 0; //cos output
+    fixed_type radian; //radian input
 
     double zs, zc; // sin and cos values calculated from math.h.
 

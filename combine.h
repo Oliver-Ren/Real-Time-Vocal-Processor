@@ -5,7 +5,8 @@
 #include "ap_int.h"
 
 // typedef ap_fixed <32,12> fixed_type;
-typedef float fixed_type;
+// typedef float fixed_type;
+typedef ap_fixed <32,26> fixed_type;
 
 const int WIN_SIZE                   = 1024;
 const fixed_type WINSIZE_REVERSE     = 0.0009765625;
@@ -21,9 +22,11 @@ const fixed_type sqrt_result         = 1.4142135623731; // sqrt(2)
 const fixed_type sqrt_result_reverse = 0.70710678118;   // 1/sqrt(2)
 const fixed_type PI                  = 3.14159265358979323846;
 
+// #include "top.h"
 #include "cordic.h"
 #include "fft.h"
 #include "pitchshifting.h"
+// #include "interp1fixed.h"
 
 const fixed_type wn[WN_DATA_SIZE] = {
     #include "wn.dat"

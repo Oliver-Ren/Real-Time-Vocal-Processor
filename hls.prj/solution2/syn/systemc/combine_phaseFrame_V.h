@@ -179,7 +179,7 @@ public:
 
 SC_MODULE( combine_phaseFrame_V )
 {
-    static const unsigned int DataWidth = 26;
+    static const unsigned int DataWidth = 11;
     static const unsigned int AddressRange = 1024;
     static const unsigned int AddressWidth = 10;
 

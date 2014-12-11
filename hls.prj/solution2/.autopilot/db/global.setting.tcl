@@ -1,5 +1,5 @@
 
-set TopModule "combine"
+set TopModule "top"
 set ClockPeriod "10.000000"
 set ClockList {ap_clk}
 set multiClockList {}
@@ -34,14 +34,14 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
-set SourceFiles {sc {} c {../../pitchshifting.cpp ../../fft.cpp ../../cordic.cpp ../../combine.cpp}}
-set SourceFlags {sc {} c {-DBIT_ACCURATE -DBIT_ACCURATE -DBIT_ACCURATE -DBIT_ACCURATE}}
+set SourceFiles {sc {} c {../../pitchshifting.cpp ../../fft.cpp ../../cordic.cpp ../../combine.cpp ../../top.cpp}}
+set SourceFlags {sc {} c {-DBIT_ACCURATE -DBIT_ACCURATE -DBIT_ACCURATE -DBIT_ACCURATE -DBIT_ACCURATE}}
 set DirectiveFile {/home/student/kl694/ece5775/final/hls.prj/solution2/solution2.directive}
-set TBFiles {verilog ../../combine_test.cpp bc ../../combine_test.cpp vhdl ../../combine_test.cpp sc ../../combine_test.cpp cas ../../combine_test.cpp c {}}
+set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
-set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBTops {bc "" c "" sc "" cas "" vhdl "" verilog ""}
+set TBInstNames {bc "" c "" sc "" cas "" vhdl "" verilog ""}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}
 set DefaultPlatform "DefaultPlatform"

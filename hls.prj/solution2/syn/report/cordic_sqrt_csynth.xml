@@ -17,7 +17,7 @@
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.45</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.73</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -33,7 +33,7 @@
 <Resources>
 <DSP48E>2</DSP48E>
 <FF>2112</FF>
-<LUT>8418</LUT>
+<LUT>6724</LUT>
 <BRAM_18K>0</BRAM_18K>
 <SLICE>0</SLICE>
 </Resources>

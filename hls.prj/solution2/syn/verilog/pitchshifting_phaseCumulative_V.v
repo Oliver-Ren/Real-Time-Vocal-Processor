@@ -23,6 +23,9 @@ input clk;
 
 (* ram_style = "block" *)reg [DWIDTH-1:0] ram[MEM_SIZE-1:0];
 
+initial begin
+    $readmemh("./pitchshifting_phaseCumulative_V_ram.dat", ram);
+end
 
 
 

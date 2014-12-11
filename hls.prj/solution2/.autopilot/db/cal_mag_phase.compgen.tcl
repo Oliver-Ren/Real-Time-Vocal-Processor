@@ -10,7 +10,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 21 \
+    id 23 \
     name magFrame_V \
     reset_level 1 \
     sync_rst true \
@@ -28,13 +28,13 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 22 \
+    id 24 \
     name phaseFrame_V \
     reset_level 1 \
     sync_rst true \
     corename phaseFrame_V \
     op interface \
-    ports { phaseFrame_V_address0 { O 10 vector } phaseFrame_V_ce0 { O 1 bit } phaseFrame_V_we0 { O 1 bit } phaseFrame_V_d0 { O 26 vector } phaseFrame_V_address1 { O 10 vector } phaseFrame_V_ce1 { O 1 bit } phaseFrame_V_we1 { O 1 bit } phaseFrame_V_d1 { O 26 vector } } \
+    ports { phaseFrame_V_address0 { O 10 vector } phaseFrame_V_ce0 { O 1 bit } phaseFrame_V_we0 { O 1 bit } phaseFrame_V_d0 { O 11 vector } phaseFrame_V_address1 { O 10 vector } phaseFrame_V_ce1 { O 1 bit } phaseFrame_V_we1 { O 1 bit } phaseFrame_V_d1 { O 11 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'phaseFrame_V'"
@@ -46,7 +46,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 23 \
+    id 25 \
     name real_V \
     reset_level 1 \
     sync_rst true \
@@ -64,7 +64,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 24 \
+    id 26 \
     name imag_V \
     reset_level 1 \
     sync_rst true \

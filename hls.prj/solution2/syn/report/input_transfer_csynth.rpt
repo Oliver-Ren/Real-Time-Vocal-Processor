@@ -1,0 +1,230 @@
+
+
+================================================================
+== Vivado HLS Report for 'input_transfer'
+================================================================
+* Date:           Wed Dec 10 22:44:40 2014
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        hls.prj
+* Solution:       solution2
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.36|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+------+-----+------+---------+
+    |   Latency  |  Interval  | Pipeline|
+    | min |  max | min |  max |   Type  |
+    +-----+------+-----+------+---------+
+    |   37|  1130|   37|  1130|   none  |
+    +-----+------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  1058|  1058|        36|          1|          1|  1024|    yes   |
+        |- Loop 2  |  1024|  1024|         2|          1|          1|  1024|    yes   |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       0|    409|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|    5136|   5208|
+|Memory           |        4|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    118|
+|Register         |        -|      -|     158|      -|
+|ShiftMemory      |        -|      -|       0|     24|
++-----------------+---------+-------+--------+-------+
+|Total            |        4|      0|    5294|   5759|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        1|      0|       4|     10|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------+--------------------------+---------+-------+------+------+
+    |           Instance          |          Module          | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-----------------------------+--------------------------+---------+-------+------+------+
+    |top_srem_32ns_32ns_32_35_U1  |top_srem_32ns_32ns_32_35  |        0|      0|  1712|  1736|
+    |top_srem_32ns_32ns_32_35_U2  |top_srem_32ns_32ns_32_35  |        0|      0|  1712|  1736|
+    |top_srem_32ns_32ns_32_35_U3  |top_srem_32ns_32ns_32_35  |        0|      0|  1712|  1736|
+    +-----------------------------+--------------------------+---------+-------+------+------+
+    |Total                        |                          |        0|      0|  5136|  5208|
+    +-----------------------------+--------------------------+---------+-------+------+------+
+
+    * Memory: 
+    +------------------+-------------------------------+---------+------+-----+------+-------------+
+    |      Memory      |             Module            | BRAM_18K| Words| Bits| Banks| W*Bits*Banks|
+    +------------------+-------------------------------+---------+------+-----+------+-------------+
+    |input_buffer_V_U  |input_transfer_input_buffer_V  |        4|  1280|   32|     1|        40960|
+    +------------------+-------------------------------+---------+------+-----+------+-------------+
+    |Total             |                               |        4|  1280|   32|     1|        40960|
+    +------------------+-------------------------------+---------+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    +-----------------------+---+----+-----+-----------+
+    |          Name         | FF| LUT| Bits| Const Bits|
+    +-----------------------+---+----+-----+-----------+
+    |exitcond_reg_431       |  0|   2|    1|          0|
+    |input_counter_reg_160  |  0|  22|   11|          0|
+    +-----------------------+---+----+-----+-----------+
+    |Total                  |  0|  24|   12|          0|
+    +-----------------------+---+----+-----+-----------+
+
+    * Expression: 
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |grp_fu_178_p2              |     +    |      0|  0|  32|          32|           1|
+    |grp_fu_353_p0              |     +    |      0|  0|  32|          32|          32|
+    |grp_fu_381_p0              |     +    |      0|  0|  32|          32|           1|
+    |input_counter_2_fu_331_p2  |     +    |      0|  0|  11|          11|           1|
+    |input_counter_3_fu_314_p2  |     +    |      0|  0|  11|          11|           1|
+    |grp_fu_173_p2              |     -    |      0|  0|  32|           1|          32|
+    |p_neg_t7_fu_237_p2         |     -    |      0|  0|  32|           1|          32|
+    |p_neg_t_fu_284_p2          |     -    |      0|  0|  32|           1|          32|
+    |tmp_33_fu_290_p3           |  Select  |      0|  0|  32|           1|          32|
+    |tmp_35_fu_243_p3           |  Select  |      0|  0|  32|           1|          32|
+    |exitcond8_fu_308_p2        |   icmp   |      0|  0|  14|          11|          12|
+    |exitcond_fu_325_p2         |   icmp   |      0|  0|  14|          11|          12|
+    |tmp_32_fu_201_p2           |   icmp   |      0|  0|  40|          32|           1|
+    |tmp_34_fu_302_p2           |   icmp   |      0|  0|  10|           9|           8|
+    |tmp_36_fu_255_p2           |   icmp   |      0|  0|  13|          11|          10|
+    |tmp_s_fu_195_p2            |   icmp   |      0|  0|  40|          32|          11|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |Total                      |          |      0|  0| 409|         229|         250|
+    +---------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |base_input                   |  32|          2|   32|         64|
+    |initialize_o                 |  32|          2|   32|         64|
+    |input_array_V_address0       |  10|          2|   10|         20|
+    |input_buffer_V_address0      |  11|          3|   11|         33|
+    |input_counter_1_reg_149      |  11|          2|   11|         22|
+    |input_counter_phi_fu_164_p4  |  11|          2|   11|         22|
+    |input_counter_reg_160        |  11|          2|   11|         22|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        | 118|         15|  118|        247|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------+----+-----+-----------+
+    |                Name               | FF | Bits| Const Bits|
+    +-----------------------------------+----+-----+-----------+
+    |ap_CS_fsm                          |   7|    7|          0|
+    |ap_reg_ppiten_pp0_it0              |   1|    1|          0|
+    |ap_reg_ppiten_pp0_it1              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it0              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it1              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it10             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it11             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it12             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it13             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it14             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it15             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it16             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it17             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it18             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it19             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it2              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it20             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it21             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it22             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it23             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it24             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it25             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it26             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it27             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it28             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it29             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it3              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it30             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it31             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it32             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it33             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it34             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it35             |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it4              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it5              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it6              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it7              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it8              |   1|    1|          0|
+    |ap_reg_ppiten_pp1_it9              |   1|    1|          0|
+    |base_input                         |  32|   32|          0|
+    |exitcond8_reg_412                  |   1|    1|          0|
+    |exitcond_reg_431                   |   1|    1|          0|
+    |input_buffer_pointer_load_reg_388  |  32|   32|          0|
+    |input_counter_1_reg_149            |  11|   11|          0|
+    |input_counter_2_reg_435            |  11|   11|          0|
+    |input_counter_reg_160              |  11|   11|          0|
+    |tmp_32_reg_400                     |   1|    1|          0|
+    |tmp_34_reg_408                     |   1|    1|          0|
+    |tmp_36_reg_404                     |   1|    1|          0|
+    |tmp_45_reg_421                     |  11|   64|         53|
+    +-----------------------------------+----+-----+-----------+
+    |Total                              | 158|  211|         53|
+    +-----------------------------------+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+-----------+----------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol |     Source Object    |    C Type    |
++-------------------------------+-----+-----+-----------+----------------------+--------------+
+|ap_clk                         |  in |    1|          -|    input_transfer    | return value |
+|ap_rst                         |  in |    1|          -|    input_transfer    | return value |
+|ap_start                       |  in |    1|          -|    input_transfer    | return value |
+|ap_done                        | out |    1|          -|    input_transfer    | return value |
+|ap_idle                        | out |    1|          -|    input_transfer    | return value |
+|ap_ready                       | out |    1|          -|    input_transfer    | return value |
+|input_V                        |  in |   22|  ap_none  |        input_V       |    scalar    |
+|input_buffer_pointer_i         |  in |   32|  ap_ovld  | input_buffer_pointer |    pointer   |
+|input_buffer_pointer_o         | out |   32|  ap_ovld  | input_buffer_pointer |    pointer   |
+|input_buffer_pointer_o_ap_vld  | out |    1|  ap_ovld  | input_buffer_pointer |    pointer   |
+|initialize_i                   |  in |   32|  ap_ovld  |      initialize      |    pointer   |
+|initialize_o                   | out |   32|  ap_ovld  |      initialize      |    pointer   |
+|initialize_o_ap_vld            | out |    1|  ap_ovld  |      initialize      |    pointer   |
+|input_array_V_address0         | out |   10| ap_memory |     input_array_V    |     array    |
+|input_array_V_ce0              | out |    1| ap_memory |     input_array_V    |     array    |
+|input_array_V_we0              | out |    1| ap_memory |     input_array_V    |     array    |
+|input_array_V_d0               | out |   32| ap_memory |     input_array_V    |     array    |
++-------------------------------+-----+-----+-----------+----------------------+--------------+
+
