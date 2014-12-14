@@ -5,7 +5,7 @@
 
 
 fixed_type input_buffer[1280] = {0};
-fixed_type output_buffer[1993] = {0};
+fixed_type output_buffer[2300] = {0};
 fixed_type previousPhase[WIN_SIZE] = {0};
 fixed_type phaseCumulative[WIN_SIZE] = {0}; 
 fixed_type input_array[WIN_SIZE] = {0};
@@ -21,16 +21,52 @@ int base_input = 0;
 int base_output = 0;
 int output_count = 0;
 
+//==============================
+//   Temp variable
+   
+short xx = 0;
+int frame_num = 1;
+
+
+
+//==============================
 
 void top (short input, short * output) {	   
   fixed_type input0, output0;
   input0 = (fixed_type) input;
   // input_transfer(input0, initialize, base_input, input_buffer_pointer, input_buffer, input_array);
   input_transfer(input0, initialize, base_input, input_buffer_pointer, input_buffer, input_array);
-  if (((initialize == 0) && (input_buffer_pointer == 1023)) || ((initialize == 1) && (input_buffer_pointer % 256 == 255))) {
+  if (((initialize == 0) && (input_buffer_pointer == 1024)) || ((initialize == 1) && (input_buffer_pointer % 256 == 0))) {
+    
+    //Test for the input frame
+    for (int i = 0; i < 1024; i++) {
+        output_array[i] = input_array[i];
+        // xx = (short) input_array[i];
+        // printf("%d, %d\n",xx, input_buffer_pointer);
+    }
+    //printf("end of frame %d\n", frame_num++);
+    
   	combine(input_array, previousPhase, phaseCumulative, output_array);
+    
+    //Test for the output frame
+    // for (int i = 0; i < 1024; i++) {
+        // xx = (short) output_array[i];
+        // printf("%d, %d\n",xx, input_buffer_pointer);
+    // }
+    // printf("end of frame %d\n", frame_num++);
+    
+    
+    
   	output_transfer(output_array, output_buffer, base_output, transfer_array);
+    
+    //Test for the transfer frame
+    // for (int i = 0; i < 323; i++) {
+        // xx = (short) transfer_array[i];
+        // printf("%d\n",xx);
+    // }
+    //printf("end of frame %d\n", frame_num++);
    
+    // linear interpolation
     for (int ii = 0; ii < 323; ii++) {
   	  #pragma HLS PIPELINE II=1
       index_input[ii] = ii;

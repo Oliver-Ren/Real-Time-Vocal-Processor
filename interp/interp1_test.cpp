@@ -4,7 +4,7 @@
 #include "interp1fixed.h"
 #include <iostream>
 #include <fstream>
-#include <stdio.h>
+//#include <stdio.h>
 using namespace std;
 
 
@@ -18,10 +18,8 @@ int main ()
     float  x_new[7];
     float  output[7];
     char in=0;
-    ifstream test("E:\HLS\interp\test.txt",ios::in);
-    int i=0;
-    cout << 0;
-    printf("%d",0);
+    ifstream test("test.txt",ios::in);
+    int i=0;  
     while(test>>in){
     	if(isdigit(in)){
     		test.unget();

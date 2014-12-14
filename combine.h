@@ -19,7 +19,7 @@ const int step                       = 4;
 const fixed_type alpha               = 1.2599;
 const int hopOut                     = 323;
 const fixed_type sqrt_result         = 1.4142135623731; // sqrt(2)
-const fixed_type sqrt_result_reverse = 0.70710678118;   // 1/sqrt(2)
+const fixed_type sqrt_result_reverse = 0.707;   // 1/sqrt(2)
 const fixed_type PI                  = 3.14159265358979323846;
 
 // #include "top.h"

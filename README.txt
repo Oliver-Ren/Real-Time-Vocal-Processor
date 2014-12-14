@@ -19,3 +19,16 @@ Note:
 3 The data set "currentFrame.dat" is the input file and "wn.dat" is 
   the look up table of the window function. The output is the time domain
   signal after pitch shift.
+  
+  
+  
+Debug Log
+After executing the line 67 of PitchShifting.cpp:
+output[m] = real[m] * wn[m] * sqrt_result_reverse;
+
+the output will become 0. 
+
+There is something wrong with the IFFT, after IFFT, the real part became 
+all Zeros.
+
+The interpolation result is not good, there are a lot of spikes and hears noisy.

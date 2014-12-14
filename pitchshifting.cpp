@@ -11,7 +11,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   fixed_type phi_2u[WIN_SIZE];
   fixed_type f_real[WIN_SIZE];
   fixed_type outputMag[WIN_SIZE];
-
+  
   for (int i = 0; i < WIN_SIZE; i++){
     #pragma HLS PIPELINE II=1
     deltaPhi[i] = angle[i] - previousPhase[i];
@@ -46,6 +46,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   fixed_type real[WIN_SIZE], imag[WIN_SIZE], real_angle[WIN_SIZE];
   fixed_type cos_value[WIN_SIZE], sin_value[WIN_SIZE];
 
+
   for (int j = 0; j < WIN_SIZE; j++){
     #pragma HLS PIPELINE II=1
     // real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI<<1));
@@ -55,13 +56,18 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
       
     real[j] = amplitude[j] * cos_value[j];
     imag[j] = amplitude[j] * sin_value[j];
+    
+
   }
 
   IFFT(real, imag);
   
+  
+  
   for (int m = 0 ; m < WIN_SIZE; m++){
     #pragma HLS PIPELINE II=1
-    output[m] = real[m] * wn[m] * sqrt_result_reverse;
+    output[m] = real[m] * wn[m];
+
   }
 }
 
