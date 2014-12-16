@@ -10,7 +10,7 @@ void combine(fixed_type input_array[WIN_SIZE], fixed_type previousPhase[WIN_SIZE
   
   for (int i = 0; i < WIN_SIZE; i++){
     #pragma HLS PIPELINE II=1
-    currentFrameWindowed[i] = input_array[i] * wn[i];
+    currentFrameWindowed[i] = input_array[i] * wn[i] * 0.7071;
     
     
   }

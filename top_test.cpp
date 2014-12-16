@@ -1,9 +1,9 @@
 #include "top.h"
 #include "stdio.h"
 #include "stdlib.h"
- const int N = 519131;
+ const int N = 2048;
  const short c[N]={
- #include "test_dat.dat"
+ #include "./samples/test_dat_2048samples.dat"
     };
 
 int main(int argc, char **argv){
@@ -14,7 +14,7 @@ int main(int argc, char **argv){
   for (i = 0; i < N; i++)
   {
 	top(c[i], output);
-	printf("%d\n",*output);
+//	printf("%d\n",*output);
   }
 
   return 0;

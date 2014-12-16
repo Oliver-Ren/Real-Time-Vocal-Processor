@@ -49,10 +49,10 @@ void top (short input, short * output) {
   	combine(input_array, previousPhase, phaseCumulative, output_array);
     
     //Test for the output frame
-    // for (int i = 0; i < 1024; i++) {
-        // xx = (float) output_array[i];
-        // printf("%8.4f, %d\n",xx, input_buffer_pointer);
-    // }
+     for (int i = 0; i < 1024; i++) {
+         xx = (float) output_array[i];
+         printf("%8.4f, %d\n",xx, input_buffer_pointer);
+     }
     //printf("end of frame %d\n", frame_num++);
     
     
@@ -186,7 +186,7 @@ void  interp1( fixed_type x[n1], fixed_type y[n1], fixed_type x_new[n2], fixed_t
       #pragma HLS PIPELINE II=1
       dx[i]=( x[i+1] - x[i] );
       dy[i]=( y[i+1] - y[i] );
-      slope[i]=( dy[i] / dx[i] );
+      slope[i]=( dy[i]  );
       intercept[i]=( y[i] - x[i] * slope[i] );
     }
     dx[n1-1]=( dx[n1-2] );

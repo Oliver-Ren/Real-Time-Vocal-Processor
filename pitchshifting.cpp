@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "pitchshifting.h"
-
+#include "hls_math.h"
 void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], fixed_type previousPhase[WIN_SIZE], fixed_type phaseCumulative[WIN_SIZE], fixed_type output[WIN_SIZE]){
   
   // internal variables
@@ -22,7 +22,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     
     
     //if (deltaPhiPrime[i] + PI > 0)
-      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI_T2) - PI; 
+      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI) - PI; 
       // deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI * 2) - PI;   
     // else
       // deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI_T2) + PI;
@@ -46,24 +46,26 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     previousPhase[i] = angle[i];
     
     // Get the final phase
-    phaseCumulative[i] = ap_fixed_fmod(phaseCumulative[i] + hopOut * trueFreq[i], 2 * PI);
+    phaseCumulative[i] = ap_fixed_fmod(phaseCumulative[i] + hopOut * trueFreq[i]);
     
     // Get the magnitude
     outputMag[i] = amplitude[i];
 
   }
 
-  fixed_type real[WIN_SIZE], imag[WIN_SIZE], real_angle[WIN_SIZE];
+  fixed_type real[WIN_SIZE], imag[WIN_SIZE];
+  fixed_type1 real_angle[WIN_SIZE];
   fixed_type cos_value[WIN_SIZE], sin_value[WIN_SIZE];
 
 
   for (int j = 0; j < WIN_SIZE; j++){
     #pragma HLS PIPELINE II=1
     // real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI<<1));
-    real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI*2));
+    real_angle[j] = ap_fixed_fmod(phaseCumulative[j]);
     
-    cordic_sin_cos(real_angle[j], sin_value[j], cos_value[j]);
-      
+   // cordic_sin_cos(real_angle[j], sin_value[j], cos_value[j]);
+     sin_value[j]=hls::sin(real_angle[j]); 
+     cos_value[j]=hls::cos(real_angle[j]); 
     real[j] = amplitude[j] * cos_value[j];
     imag[j] = amplitude[j] * sin_value[j];
     
@@ -77,16 +79,21 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   
   for (int m = 0 ; m < WIN_SIZE; m++){
     #pragma HLS PIPELINE II=1
-    output[m] = real[m] * wn[m];
+    output[m] = real[m] * wn[m] * 0.7943;
 
   }
 }
 
 
 // Calculate the mod in ap_fixed version
-fixed_type ap_fixed_fmod(fixed_type a, fixed_type b){
-  int result = (int) floor(a/b);
-  return a - b * (fixed_type) result;
+fixed_type ap_fixed_fmod(fixed_type a){
+  int result = 0;
+  if (a < 0)
+    result = (int)(a*PI_T2) - 1;
+  else
+    result=(int)(a*PI_T2);
+
+  return a - 2*PI* (fixed_type) result;
 }
 
  //xx = (float) deltaPhiPrimeMod[i];
