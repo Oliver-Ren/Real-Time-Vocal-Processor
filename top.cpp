@@ -24,7 +24,7 @@ int output_count = 0;
 //==============================
 //   Temp variable
    
-short xx = 0;
+float xx = 0;
 int frame_num = 1;
 
 
@@ -39,21 +39,21 @@ void top (short input, short * output) {
   if (((initialize == 0) && (input_buffer_pointer == 1024)) || ((initialize == 1) && (input_buffer_pointer % 256 == 0))) {
     
     //Test for the input frame
-    for (int i = 0; i < 1024; i++) {
-        output_array[i] = input_array[i];
+    //for (int i = 0; i < 1024; i++) {
+        //output_array[i] = input_array[i];
         // xx = (short) input_array[i];
         // printf("%d, %d\n",xx, input_buffer_pointer);
-    }
+    //}
     //printf("end of frame %d\n", frame_num++);
     
   	combine(input_array, previousPhase, phaseCumulative, output_array);
     
     //Test for the output frame
     // for (int i = 0; i < 1024; i++) {
-        // xx = (short) output_array[i];
-        // printf("%d, %d\n",xx, input_buffer_pointer);
+        // xx = (float) output_array[i];
+        // printf("%8.4f, %d\n",xx, input_buffer_pointer);
     // }
-    // printf("end of frame %d\n", frame_num++);
+    //printf("end of frame %d\n", frame_num++);
     
     
     
@@ -161,7 +161,7 @@ void output_transfer(fixed_type parsed_array[1024], fixed_type output_buffer[199
 void  interp1( fixed_type x[n1], fixed_type y[n1], fixed_type x_new[n2], fixed_type y_new[n2] )
 {
     fixed_type  dx[n1], dy[n1], slope[n1], intercept[n1];
-    int index=-1;
+    int index = -1;
     fixed_type distance=10000;
     /*
     for( int i = 0; i < n1; ++i ){

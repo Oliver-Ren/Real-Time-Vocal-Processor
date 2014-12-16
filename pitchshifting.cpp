@@ -11,21 +11,30 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   fixed_type phi_2u[WIN_SIZE];
   fixed_type f_real[WIN_SIZE];
   fixed_type outputMag[WIN_SIZE];
-  
+  float xx = 0;
+  float yy = 0;
   for (int i = 0; i < WIN_SIZE; i++){
     #pragma HLS PIPELINE II=1
     deltaPhi[i] = angle[i] - previousPhase[i];
     deltaPhiPrime[i] = deltaPhi[i] - (hop << 1) * PI * i * WINSIZE_REVERSE;
-
-    if (deltaPhiPrime[i] + PI > 0)
-      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI << 1) - PI; 
+     
+    
+    
+    
+    //if (deltaPhiPrime[i] + PI > 0)
+      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI_T2) - PI; 
       // deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI * 2) - PI;   
-    else
-      deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI << 1) + PI;
+    // else
+      // deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI_T2) + PI;
       // deltaPhiPrimeMod[i] = ap_fixed_fmod(deltaPhiPrime[i] + PI, PI * 2) + PI;
       
     trueFreq[i] = (PI << 1) * i * WINSIZE_REVERSE + deltaPhiPrimeMod[i] * hop_reverse;
     // trueFreq[i] = (PI * 2) * i * WINSIZE_REVERSE + deltaPhiPrimeMod[i] * hop_reverse;
+    
+    
+    
+    
+    
     
     // Get the phi_2u
     phi_2u[i] = hop * trueFreq[i];
@@ -41,6 +50,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     
     // Get the magnitude
     outputMag[i] = amplitude[i];
+
   }
 
   fixed_type real[WIN_SIZE], imag[WIN_SIZE], real_angle[WIN_SIZE];
@@ -57,6 +67,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     real[j] = amplitude[j] * cos_value[j];
     imag[j] = amplitude[j] * sin_value[j];
     
+     
 
   }
 
@@ -74,7 +85,12 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
 
 // Calculate the mod in ap_fixed version
 fixed_type ap_fixed_fmod(fixed_type a, fixed_type b){
-  int result = (int)(a/b);
+  int result = (int) floor(a/b);
   return a - b * (fixed_type) result;
 }
+
+ //xx = (float) deltaPhiPrimeMod[i];
+     //yy = (float) phi_2u[i];
+     // printf("outputMag[%d] = %8.4f\n",i,xx);
+     // printf("phi_2u[%d] = %8.4f\n",i,yy);
 

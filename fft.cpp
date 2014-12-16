@@ -33,8 +33,8 @@ void FFT(fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
   int m, k, j, t, index1, index2;
     
   bitrp (xreal, ximag);
-  treal = 0.9999813950576909;
-  timag = -0.0060999621699037165;
+  treal = 0.9999811752826011;
+  timag = -0.006135884649154475;
   wreal [0] = 1.0;
   wimag [0] = 0.0;
   for (j = 1; j < (WIN_SIZE >> 1) ; j ++){
@@ -68,8 +68,8 @@ void IFFT (fixed_type xreal[WIN_SIZE], fixed_type ximag[WIN_SIZE]){
     
   bitrp (xreal, ximag);
 
-  treal = 0.9999813950576909;
-  timag = 0.0060999621699037165;
+  treal = 0.9999811752826011;
+  timag = 0.006135884649154475;
   wreal [0] = 1.0;
   wimag [0] = 0.0;
   for (j = 1; j < (WIN_SIZE >> 1); j ++) {

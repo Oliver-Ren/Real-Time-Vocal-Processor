@@ -6,7 +6,7 @@
 
 // typedef ap_fixed <32,12> fixed_type;
 // typedef float fixed_type;
-typedef ap_fixed <32,26> fixed_type;
+typedef ap_fixed <64,32> fixed_type;
 
 const int WIN_SIZE                   = 1024;
 const fixed_type WINSIZE_REVERSE     = 0.0009765625;
@@ -21,6 +21,7 @@ const int hopOut                     = 323;
 const fixed_type sqrt_result         = 1.4142135623731; // sqrt(2)
 const fixed_type sqrt_result_reverse = 0.707;   // 1/sqrt(2)
 const fixed_type PI                  = 3.14159265358979323846;
+const fixed_type PI_T2               = 6.28318530717958647692;
 
 // #include "top.h"
 #include "cordic.h"

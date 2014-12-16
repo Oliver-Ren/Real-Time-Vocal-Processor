@@ -1,32 +1,36 @@
 #include <stdio.h>
 #include "combine.h"
-// #include <math.h>
+#include <math.h>
 
 void combine(fixed_type input_array[WIN_SIZE], fixed_type previousPhase[WIN_SIZE], fixed_type phaseCumulative[WIN_SIZE], fixed_type output_buffer[WIN_SIZE]){
 
   
   fixed_type currentFrameWindowed[WIN_SIZE] = 0;
   fixed_type imag[WIN_SIZE] = 0;
-
+  
   for (int i = 0; i < WIN_SIZE; i++){
     #pragma HLS PIPELINE II=1
     currentFrameWindowed[i] = input_array[i] * wn[i];
+    
+    
   }
 
-  //FFT(currentFrameWindowed, imag);
-  //fixed_type magFrame[WIN_SIZE], phaseFrame[WIN_SIZE];
-  //cal_mag_phase(magFrame, phaseFrame, currentFrameWindowed, imag);
+  FFT(currentFrameWindowed, imag);
   
-  // pitchshifting(magFrame, phaseFrame, previousPhase, phaseCumulative, output_buffer);
+
+  
+  fixed_type magFrame[WIN_SIZE], phaseFrame[WIN_SIZE];
+  cal_mag_phase(magFrame, phaseFrame, currentFrameWindowed, imag);
+  
+  pitchshifting(magFrame, phaseFrame, previousPhase, phaseCumulative, output_buffer);
   
   
   // Test for the output frame
   // int xx = 0;
-    for (int i = 0; i < 1024; i++) {
-        output_buffer[i] = currentFrameWindowed[i];
+    // for (int i = 0; i < 1024; i++) {
         // xx = (int) output_buffer[i];
         // printf("%d\n",xx);
-    }
+    // }
 }
 
 
