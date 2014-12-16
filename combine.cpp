@@ -5,8 +5,8 @@
 void combine(fixed_type input_array[WIN_SIZE], fixed_type previousPhase[WIN_SIZE], fixed_type phaseCumulative[WIN_SIZE], fixed_type output_buffer[WIN_SIZE]){
 
   
-  fixed_type currentFrameWindowed[WIN_SIZE] = 0;
-  fixed_type imag[WIN_SIZE] = 0;
+  fixed_type currentFrameWindowed[WIN_SIZE] = {0};
+  fixed_type imag[WIN_SIZE] = {0};
   
   for (int i = 0; i < WIN_SIZE; i++){
     #pragma HLS PIPELINE II=1
