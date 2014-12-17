@@ -49,9 +49,9 @@ void top (short input, short * output) {
   	combine(input_array, previousPhase, phaseCumulative, output_array);
     
     //Test for the output frame
-     for (int i = 0; i < 1024; i++) {
+    for (int i = 0; i < 1024; i++) {
          xx = (float) output_array[i];
-         printf("%8.4f, %d\n",xx, input_buffer_pointer);
+         printf("%8.4f\n",xx);
      }
     //printf("end of frame %d\n", frame_num++);
     

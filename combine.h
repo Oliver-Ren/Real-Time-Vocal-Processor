@@ -4,10 +4,10 @@
 #include "ap_fixed.h"
 #include "ap_int.h"
 
+//#include "hls_fft.h"
 // typedef ap_fixed <32,12> fixed_type;
 // typedef float fixed_type;
 typedef ap_fixed <46,25> fixed_type;
-typedef ap_fixed <32,20> fixed_type1;
 const int WIN_SIZE                   = 1024;
 const fixed_type WINSIZE_REVERSE     = 0.0009765625;
 const int MAG_DATA_SIZE              = 1024;
@@ -23,10 +23,23 @@ const fixed_type sqrt_result_reverse = 0.707;   // 1/sqrt(2)
 const fixed_type PI                  = 3.14159265358979323846;
 const fixed_type PI_T2               = 0.15915494309189535;
 // #include "top.h"
+//#include <complex>
+//typedef std::complex<fixed_type> cmpData;
+
 #include "cordic.h"
 #include "fft.h"
 #include "pitchshifting.h"
 // #include "interp1fixed.h"
+//using namespace std;
+//struct config1 : hls::ip_fft::params_t {
+//	static const unsigned ordering_opt=hls::ip_fft::natural_order;
+//};
+
+//typedef hls::ip_fft::config_t<config1> config_t;
+//typedef hls::ip_fft::status_t<config1> status_t;
+
+
+
 
 const fixed_type wn[WN_DATA_SIZE] = {
     #include "wn.dat"

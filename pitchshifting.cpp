@@ -54,7 +54,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   }
 
   fixed_type real[WIN_SIZE], imag[WIN_SIZE];
-  fixed_type1 real_angle[WIN_SIZE];
+  fixed_type real_angle[WIN_SIZE];
   fixed_type cos_value[WIN_SIZE], sin_value[WIN_SIZE];
 
 
@@ -63,9 +63,9 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
     // real_angle[j] = ap_fixed_fmod(phaseCumulative[j],(PI<<1));
     real_angle[j] = ap_fixed_fmod(phaseCumulative[j]);
     
-   // cordic_sin_cos(real_angle[j], sin_value[j], cos_value[j]);
-     sin_value[j]=hls::sin(real_angle[j]); 
-     cos_value[j]=hls::cos(real_angle[j]); 
+ //   cordic_sin_cos(real_angle[j], sin_value[j], cos_value[j]);
+     sin_value[j]=hls::sin((float)real_angle[j]); 
+     cos_value[j]=hls::cos((float)real_angle[j]); 
     real[j] = amplitude[j] * cos_value[j];
     imag[j] = amplitude[j] * sin_value[j];
     
@@ -79,7 +79,7 @@ void pitchshifting(fixed_type amplitude[WIN_SIZE], fixed_type angle[WIN_SIZE], f
   
   for (int m = 0 ; m < WIN_SIZE; m++){
     #pragma HLS PIPELINE II=1
-    output[m] = real[m] * wn[m] * 0.7943;
+    output[m] = real[m] * wn[m] * (fixed_type)0.7943;
 
   }
 }
